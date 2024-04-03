@@ -82,7 +82,7 @@ CREATE TABLE groups (
 
 CREATE TABLE ingredients (
     ingr_name VARCHAR(20),
-    ingr_calories NUMERIC(5,2),
+    ingr_calories NUMERIC(6,2),
     allows_loose_units INT,
     group_name VARCHAR(20),
     FOREIGN KEY (group_name) REFERENCES groups(group_name),
