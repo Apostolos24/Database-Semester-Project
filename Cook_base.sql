@@ -10,14 +10,16 @@ CREATE TABLE recipes (
     recipe_name VARCHAR(30),
     recipe_type ENUM('Cooking','Pastry') NOT NULL,
     recipe_difficulty TINYINT(5) NOT NULL,
-    recipe_desc VARCHAR(500) NOT NULL,
+    recipe_desc TEXT NOT NULL,
     recipe_tip1 VARCHAR(100),
     recipe_tip2 VARCHAR(100),
     recipe_tip3 VARCHAR(100),
-    recipe_proteins NUMERIC(5,2),
-    recipe_carbs NUMERIC(5,2),
-    recipe_calories NUMERIC(5,2), -- Calculated through a function
+    recipe_proteins NUMERIC(6,2),
+    recipe_carbs NUMERIC(6,2),
+    recipe_calories NUMERIC(6,2), -- Calculated through a function
     recipe_country VARCHAR(20),
+    recipe_photo VARCHAR(200),
+    recipe_photo_desc TEXT,
     FOREIGN KEY (recipe_country) REFERENCES countries(country_name),
     PRIMARY KEY (recipe_name)
 );
@@ -53,8 +55,10 @@ CREATE TABLE recipe_belongs_to (
 );
 
 CREATE TABLE equipment (
-    eq_name VARCHAR(20),
+    eq_name VARCHAR(50),
     eq_instructions VARCHAR(100),
+    eq_photo VARCHAR(200),
+    eq_photo_desc VARCHAR(50),
     PRIMARY KEY (eq_name)
 );
 
@@ -126,6 +130,7 @@ CREATE TABLE cook (
     birthdate DATE DEFAULT(STR_TO_DATE("January 1 1900", "%M %d %Y")),
     age INT, -- Calculated through a function
     cook_status ENUM('C Cook','B Cook','A Cook','Sous Chef','Chef') NOT NULL,
+    cook_photo VARCHAR(200),
     PRIMARY KEY (first_name,last_name)
 );
 
@@ -142,6 +147,7 @@ CREATE TABLE expertise (
 
 CREATE TABLE episodes (
     episode INT,
+    ep_image VARCHAR(200),
     PRIMARY KEY (episode)
 );
 
