@@ -147,6 +147,7 @@ CREATE TABLE expertise (
 
 CREATE TABLE episodes (
     episode INT,
+    episode_year INT,
     ep_image VARCHAR(200),
     PRIMARY KEY (episode)
 );
