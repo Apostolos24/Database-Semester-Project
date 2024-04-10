@@ -73,7 +73,7 @@ CREATE TABLE requires_eq (
     PRIMARY KEY (recipe,eq_name)
 );
 
-CREATE TABLE groups (
+CREATE TABLE food_groups (
     group_name VARCHAR(20),
     group_desc VARCHAR(100),
     recipe_characterisation VARCHAR(30),
