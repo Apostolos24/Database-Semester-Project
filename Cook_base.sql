@@ -157,6 +157,7 @@ CREATE TABLE is_a_critic (
     ep_num INT,
     cook_first_name VARCHAR(20),
     cook_last_name VARCHAR(20),
+    id TINYINT(3),
     FOREIGN KEY (ep_num) REFERENCES episodes(episode),
     FOREIGN KEY (cook_first_name,cook_last_name) REFERENCES cook (first_name,last_name),
     PRIMARY KEY (ep_num,cook_first_name,cook_last_name)
