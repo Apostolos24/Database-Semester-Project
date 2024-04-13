@@ -24,8 +24,6 @@ CREATE TABLE recipes (
     PRIMARY KEY (recipe_name)
 );
 
--- Recipe table needs images
-
 CREATE TABLE meal_type (
     recipe VARCHAR(30),
     meal VARCHAR(20),
@@ -62,8 +60,6 @@ CREATE TABLE equipment (
     PRIMARY KEY (eq_name)
 );
 
--- Equipment table requires images
-
 CREATE TABLE requires_eq (
     recipe VARCHAR(30),
     eq_name VARCHAR(20),
@@ -85,11 +81,8 @@ CREATE TABLE ingredients (
     ingr_calories NUMERIC(6,2),
     allows_loose_units INT,
     group_name VARCHAR(20),
-    FOREIGN KEY (group_name) REFERENCES groups(group_name),
-    PRIMARY KEY (ingr_name)
+    FOREIGN KEY (group_name) REFERENCES food_groups(group_name),
 );
-
--- Ingredients table requires images
 
 CREATE TABLE requires_ingr (
     recipe VARCHAR(30),
@@ -127,14 +120,12 @@ CREATE TABLE cook (
     first_name VARCHAR(20),
     last_name VARCHAR(20),
     phone_number INT UNSIGNED UNIQUE,
-    birthdate DATE DEFAULT(STR_TO_DATE("January 1 1900", "%M %d %Y")),
+    birthdate DATE,
     age INT, -- Calculated through a function
-    cook_status ENUM('C Cook','B Cook','A Cook','Sous Chef','Chef') NOT NULL,
+    cook_status ENUM('C Cook','B Cook','A Cook','Sous Chef','Chef') NOT NULL DEFAULT 'C Cook',
     cook_photo VARCHAR(200),
-    PRIMARY KEY (first_name,last_name)
+    PRIMARY KEY (first_name, last_name)
 );
-
--- Cook table requires images
 
 CREATE TABLE expertise (
     cook_first_name VARCHAR(20),
@@ -151,8 +142,6 @@ CREATE TABLE episodes (
     ep_image VARCHAR(200),
     PRIMARY KEY (episode)
 );
-
--- Episodes table requires images
 
 CREATE TABLE is_a_critic (
     ep_num INT,
@@ -186,5 +175,4 @@ CREATE TABLE ep_countries (
     PRIMARY KEY (ep_num,ep_country)
 );
 
-
--- INSERT INTO cook VALUES ('Gordon','Ramsay',4536136,STR_TO_DATE("August 10 2017", "%M %d %Y"),TIMESTAMPDIFF(YEAR,STR_TO_DATE("August 10 2017", "%M %d %Y"),CURRENT_DATE()),'Chef');
+- INSERT INTO cook VALUES ('Gordon','Ramsay',4536136,STR_TO_DATE("August 10 2017", "%M %d %Y"),TIMESTAMPDIFF(YEAR,STR_TO_DATE("August 10 2017", "%M %d %Y"),CURRENT_DATE()),'Chef');
