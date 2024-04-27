@@ -82,6 +82,7 @@ CREATE TABLE ingredients (
     allows_loose_units INT,
     group_name VARCHAR(20),
     FOREIGN KEY (group_name) REFERENCES food_groups(group_name),
+    PRIMARY KEY (ingr_name)
 );
 
 CREATE TABLE requires_ingr (
@@ -175,4 +176,19 @@ CREATE TABLE ep_countries (
     PRIMARY KEY (ep_num,ep_country)
 );
 
+-- Trigger for adding age to cooks
+DELIMITER //
+CREATE TRIGGER cook_age BEFORE INSERT ON cook FOR EACH ROW 
+BEGIN
+--    UPDATE cook 
+    SET new.age=TIMESTAMPDIFF(YEAR,new.birthdate,CURRENT_DATE());
+--    WHERE first_name=NEW.first_name AND last_name=NEW.last_name;
+END;
+//
+DELIMITER ;
+
 -- INSERT INTO cook VALUES ('Gordon','Ramsay',4536136,STR_TO_DATE("August 10 2017", "%M %d %Y"),TIMESTAMPDIFF(YEAR,STR_TO_DATE("August 10 2017", "%M %d %Y"),CURRENT_DATE()),'Chef');
+INSERT INTO cook(first_name,last_name,phone_number,birthdate,cook_status)
+VALUES
+    ('Gordon','Ramsay',4536136,STR_TO_DATE("August 10 2017", "%M %d %Y"),'Chef'),
+    ('Deez','Nuts',4536137,STR_TO_DATE("August 10 1998", "%M %d %Y"),'A Cook');
