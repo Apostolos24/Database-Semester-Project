@@ -180,9 +180,7 @@ CREATE TABLE ep_countries (
 DELIMITER //
 CREATE TRIGGER cook_age BEFORE INSERT ON cook FOR EACH ROW 
 BEGIN
---    UPDATE cook 
     SET new.age=TIMESTAMPDIFF(YEAR,new.birthdate,CURRENT_DATE());
---    WHERE first_name=NEW.first_name AND last_name=NEW.last_name;
 END;
 //
 DELIMITER ;
