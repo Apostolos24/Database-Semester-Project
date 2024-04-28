@@ -116,7 +116,7 @@ CREATE TABLE recipe_steps (
     FOREIGN KEY (step) REFERENCES steps(instruction),
     PRIMARY KEY (recipe,step)
 );
-
+/*
 CREATE TABLE cook (
     first_name VARCHAR(20),
     last_name VARCHAR(20),
@@ -127,7 +127,20 @@ CREATE TABLE cook (
     cook_photo VARCHAR(200),
     PRIMARY KEY (first_name, last_name)
 );
+*/
 
+CREATE TABLE cook (
+    num INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(20),
+    last_name VARCHAR(20),
+    phone_number INT UNSIGNED UNIQUE,
+    birthdate DATE,
+    age INT, -- Calculated through a function
+    cook_status ENUM('C Cook','B Cook','A Cook','Sous Chef','Chef') NOT NULL DEFAULT 'C Cook',
+    cook_photo VARCHAR(200)
+);
+
+/*
 CREATE TABLE expertise (
     cook_first_name VARCHAR(20),
     cook_last_name VARCHAR(20),
@@ -135,6 +148,15 @@ CREATE TABLE expertise (
     FOREIGN KEY (country) REFERENCES countries(country_name),
     FOREIGN KEY (cook_first_name,cook_last_name) REFERENCES cook (first_name,last_name),
     PRIMARY KEY (cook_first_name,cook_last_name,country)
+);
+*/
+
+CREATE TABLE expertise (
+    cook_num INT,
+    country VARCHAR(20),
+    FOREIGN KEY (country) REFERENCES countries(country_name),
+    FOREIGN KEY (cook_num) REFERENCES cook (num),
+    PRIMARY KEY (cook_num,country)
 );
 
 CREATE TABLE episodes (
@@ -144,6 +166,7 @@ CREATE TABLE episodes (
     PRIMARY KEY (episode)
 );
 
+/*
 CREATE TABLE is_a_critic (
     ep_num INT,
     cook_first_name VARCHAR(20),
@@ -153,7 +176,18 @@ CREATE TABLE is_a_critic (
     FOREIGN KEY (cook_first_name,cook_last_name) REFERENCES cook (first_name,last_name),
     PRIMARY KEY (ep_num,cook_first_name,cook_last_name)
 );
+*/
 
+CREATE TABLE is_a_critic (
+    ep_num INT,
+    cook_num INT,
+    id TINYINT(3),
+    FOREIGN KEY (ep_num) REFERENCES episodes(episode),
+    FOREIGN KEY (cook_num) REFERENCES cook (num),
+    PRIMARY KEY (ep_num,cook_num)
+);
+
+/*
 CREATE TABLE is_a_contestant (
     ep_num INT,
     cook_first_name VARCHAR(20),
@@ -167,6 +201,20 @@ CREATE TABLE is_a_contestant (
     FOREIGN KEY (cook_first_name,cook_last_name) REFERENCES cook (first_name,last_name),
     PRIMARY KEY (ep_num,cook_first_name,cook_last_name)
 );
+*/
+
+CREATE TABLE is_a_contestant (
+    ep_num INT,
+    cook_num INT,
+    recipe VARCHAR(30),
+    grade1 TINYINT(5),
+    grade2 TINYINT(5),
+    grade3 TINYINT(5),
+    FOREIGN KEY (recipe) REFERENCES recipes (recipe_name),
+    FOREIGN KEY (ep_num) REFERENCES episodes(episode),
+    FOREIGN KEY (cook_num) REFERENCES cook (num),
+    PRIMARY KEY (ep_num,cook_num)
+);
 
 CREATE TABLE ep_countries (
     ep_num INT,
@@ -175,6 +223,7 @@ CREATE TABLE ep_countries (
     FOREIGN KEY (ep_num) REFERENCES episodes(episode),
     PRIMARY KEY (ep_num,ep_country)
 );
+
 
 -- Trigger for adding age to cooks
 DELIMITER //
@@ -185,8 +234,40 @@ END;
 //
 DELIMITER ;
 
+-- Trigger for initializing calories of a recipe to 0
+DELIMITER //
+CREATE TRIGGER initialize_calories BEFORE INSERT ON recipes FOR EACH ROW 
+BEGIN
+    SET new.recipe_calories=0; 
+END;
+//
+DELIMITER ;
+
+-- Trigger for setting ingredient quantity to NULL when an ingredient doesn't have defined quantity 
+DELIMITER //
+CREATE TRIGGER some_quantity BEFORE INSERT ON requires_ingr FOR EACH ROW 
+BEGIN
+    DECLARE result INT;
+    SELECT (CASE WHEN new.undefined_quantity IS NULL THEN new.quantity ELSE NULL END) INTO result;
+    SET new.quantity=result; 
+END;
+//
+DELIMITER ;
+
+-- Trigger for updating recipe calories when adding an igredient to it
+DELIMITER //
+CREATE TRIGGER recipe_calories BEFORE INSERT ON requires_ingr FOR EACH ROW 
+BEGIN
+    DECLARE calories NUMERIC(6,2);
+    DECLARE quantity INT;
+    SELECT (CASE WHEN new.undefined_quantity IS NULL THEN new.quantity ELSE 0 END) INTO quantity;
+    SELECT (CASE WHEN new.undefined_quantity IS NULL THEN ingr_calories ELSE 0 END) 
+    INTO calories FROM ingredients WHERE ingr_name=new.ingr_name; 
+    UPDATE recipes
+    SET recipe_calories=recipe_calories+calories*quantity
+    WHERE recipe_name=new.recipe;
+END;
+//
+DELIMITER ;
+
 -- INSERT INTO cook VALUES ('Gordon','Ramsay',4536136,STR_TO_DATE("August 10 2017", "%M %d %Y"),TIMESTAMPDIFF(YEAR,STR_TO_DATE("August 10 2017", "%M %d %Y"),CURRENT_DATE()),'Chef');
-INSERT INTO cook(first_name,last_name,phone_number,birthdate,cook_status)
-VALUES
-    ('Gordon','Ramsay',4536136,STR_TO_DATE("August 10 2017", "%M %d %Y"),'Chef'),
-    ('Deez','Nuts',4536137,STR_TO_DATE("August 10 1998", "%M %d %Y"),'A Cook');
