@@ -71,7 +71,7 @@ CREATE TABLE requires_eq (
 
 CREATE TABLE food_groups (
     group_name VARCHAR(20),
-    group_desc VARCHAR(100),
+    group_desc VARCHAR(1000),
     recipe_characterisation VARCHAR(30),
     PRIMARY KEY (group_name)
 );
@@ -260,7 +260,7 @@ CREATE TRIGGER recipe_calories BEFORE INSERT ON requires_ingr FOR EACH ROW
 BEGIN
     DECLARE calories NUMERIC(6,2);
     DECLARE quantity INT;
-    SELECT (CASE WHEN new.undefined_quantity IS NULL THEN new.quantity ELSE 0 END) INTO quantity;
+    SELECT (CASE WHEN new.undefined_quantity IS NULL THEN new.quantity ELSE 0 END) INTO quantity; 
     SELECT (CASE WHEN new.undefined_quantity IS NULL THEN ingr_calories ELSE 0 END) 
     INTO calories FROM ingredients WHERE ingr_name=new.ingr_name; 
     UPDATE recipes
