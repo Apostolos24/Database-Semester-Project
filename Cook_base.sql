@@ -16,6 +16,8 @@ CREATE TABLE recipes (
     recipe_tip3 VARCHAR(100),
     recipe_proteins NUMERIC(6,2),
     recipe_carbs NUMERIC(6,2),
+    recipe_fats NUMERIC(6,2),
+    recipe_alcohol NUMERIC(6,2),
     recipe_calories NUMERIC(6,2), -- Calculated through a function
     recipe_country VARCHAR(20),
     recipe_photo VARCHAR(200),
