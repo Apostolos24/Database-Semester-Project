@@ -119,7 +119,7 @@ CREATE TABLE recipe_steps (
 CREATE TABLE cook (
     first_name VARCHAR(20),
     last_name VARCHAR(20),
-    phone_number VARCHAR(10) UNIQUE,
+    phone_number VARCHAR(15) UNIQUE,
     birthdate DATE,
     age TINYINT UNSIGNED, -- Calculated through a function
     years_of_expertise TINYINT UNSIGNED,
