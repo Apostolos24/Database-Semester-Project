@@ -9,7 +9,7 @@ CREATE TABLE countries (
 CREATE TABLE recipes (
     recipe_name VARCHAR(30),
     recipe_type ENUM('Cooking','Pastry') NOT NULL,
-    recipe_difficulty TINYINT(5) NOT NULL,
+    recipe_difficulty TINYINT NOT NULL,
     recipe_desc TEXT NOT NULL,
     recipe_tip1 VARCHAR(100),
     recipe_tip2 VARCHAR(100),
@@ -17,27 +17,28 @@ CREATE TABLE recipes (
     recipe_proteins NUMERIC(6,2),
     recipe_carbs NUMERIC(6,2),
     recipe_fats NUMERIC(6,2),
-    recipe_alcohol NUMERIC(6,2),
     recipe_calories NUMERIC(6,2), -- Calculated through a function
-    recipe_country VARCHAR(20),
+    country_name VARCHAR(20),
     recipe_photo VARCHAR(200),
     recipe_photo_desc TEXT,
-    FOREIGN KEY (recipe_country) REFERENCES countries(country_name),
+    prep_time SMALLINT UNSIGNED,
+    execution_time SMALLINT UNSIGNED,
+    FOREIGN KEY (country_name) REFERENCES countries(country_name),
     PRIMARY KEY (recipe_name)
 );
 
 CREATE TABLE meal_type (
-    recipe VARCHAR(30),
+    recipe_name VARCHAR(30),
     meal VARCHAR(20),
-    FOREIGN KEY (recipe) REFERENCES recipes (recipe_name),   -- CONSTRAINT fk_meal_type FOREIGN KEY (recipe) REFERENCES recipes (recipe_name),
-    PRIMARY KEY (recipe,meal)                                -- CONSTRAINT pk_meal_type PRIMARY KEY (recipe,meal)
+    FOREIGN KEY (recipe_name) REFERENCES recipes (recipe_name),   -- CONSTRAINT fk_meal_type FOREIGN KEY (recipe) REFERENCES recipes (recipe_name),
+    PRIMARY KEY (recipe_name,meal)                                -- CONSTRAINT pk_meal_type PRIMARY KEY (recipe,meal)
 );
 
 CREATE TABLE tags (
-    recipe VARCHAR(30),
+    recipe_name VARCHAR(30),
     tag_name VARCHAR(20),
-    FOREIGN KEY (recipe) REFERENCES recipes (recipe_name),
-    PRIMARY KEY (recipe,tag_name)
+    FOREIGN KEY (recipe_name) REFERENCES recipes (recipe_name),
+    PRIMARY KEY (recipe_name,tag_name)
 );
 
 CREATE TABLE thematic_section (
@@ -47,11 +48,11 @@ CREATE TABLE thematic_section (
 );
 
 CREATE TABLE recipe_belongs_to (
-    recipe VARCHAR(30),
-    them_sec VARCHAR(20),
-    FOREIGN KEY (recipe) REFERENCES recipes (recipe_name),
-    FOREIGN KEY (them_sec) REFERENCES thematic_section (sec_name),
-    PRIMARY KEY (recipe,them_sec)
+    recipe_name VARCHAR(30),
+    sec_name VARCHAR(20),
+    FOREIGN KEY (recipe_name) REFERENCES recipes (recipe_name),
+    FOREIGN KEY (sec_name) REFERENCES thematic_section (sec_name),
+    PRIMARY KEY (recipe_name,sec_name)
 );
 
 CREATE TABLE equipment (
@@ -63,16 +64,16 @@ CREATE TABLE equipment (
 );
 
 CREATE TABLE requires_eq (
-    recipe VARCHAR(30),
+    recipe_name VARCHAR(30),
     eq_name VARCHAR(20),
-    quantity INT UNSIGNED NOT NULL,
-    FOREIGN KEY (recipe) REFERENCES recipes(recipe_name),
+    quantity TINYINT UNSIGNED NOT NULL,
+    FOREIGN KEY (recipe_name) REFERENCES recipes(recipe_name),
     FOREIGN KEY (eq_name) REFERENCES equipment(eq_name),
-    PRIMARY KEY (recipe,eq_name)
+    PRIMARY KEY (recipe_name,eq_name)
 );
 
 CREATE TABLE food_groups (
-    group_name VARCHAR(20),
+    group_name VARCHAR(80),
     group_desc VARCHAR(1000),
     recipe_characterisation VARCHAR(30),
     PRIMARY KEY (group_name)
@@ -81,63 +82,47 @@ CREATE TABLE food_groups (
 CREATE TABLE ingredients (
     ingr_name VARCHAR(20),
     ingr_calories NUMERIC(6,2),
-    allows_loose_units INT,
-    group_name VARCHAR(20),
+    allows_loose_units TINYINT,
+    group_name VARCHAR(80),
+    unit ENUM('gr','ml',''),
     FOREIGN KEY (group_name) REFERENCES food_groups(group_name),
     PRIMARY KEY (ingr_name)
 );
 
 CREATE TABLE requires_ingr (
-    recipe VARCHAR(30),
+    recipe_name VARCHAR(30),
     ingr_name VARCHAR(20),
-    quantity INT UNSIGNED,
+    quantity SMALLINT UNSIGNED,
     undefined_quantity ENUM ('Some'),
-    FOREIGN KEY (recipe) REFERENCES recipes(recipe_name),
+    FOREIGN KEY (recipe_name) REFERENCES recipes(recipe_name),
     FOREIGN KEY (ingr_name) REFERENCES ingredients(ingr_name),
-    PRIMARY KEY (recipe,ingr_name)
+    PRIMARY KEY (recipe_name,ingr_name)
 );
 
 CREATE TABLE main_ingr (
-    recipe VARCHAR(30),
+    recipe_name VARCHAR(30),
     ingr_name VARCHAR(20),
-    FOREIGN KEY (recipe) REFERENCES recipes(recipe_name),
+    FOREIGN KEY (recipe_name) REFERENCES recipes(recipe_name),
     FOREIGN KEY (ingr_name) REFERENCES ingredients(ingr_name),
-    PRIMARY KEY (recipe,ingr_name)
+    PRIMARY KEY (recipe_name,ingr_name)
 );
 
-CREATE TABLE steps (
-    instruction VARCHAR(50),
-    PRIMARY KEY (instruction)
-);
 
 CREATE TABLE recipe_steps (
-    recipe VARCHAR(30),
-    step VARCHAR(20),
+    recipe_name VARCHAR(30),
+    instruction TEXT,
     step_num INT UNSIGNED,
-    FOREIGN KEY (recipe) REFERENCES recipes(recipe_name),
-    FOREIGN KEY (step) REFERENCES steps(instruction),
-    PRIMARY KEY (recipe,step)
+    FOREIGN KEY (recipe_name) REFERENCES recipes(recipe_name),
+    PRIMARY KEY (recipe_name,step_num)
 );
-/*
-CREATE TABLE cook (
-    first_name VARCHAR(20),
-    last_name VARCHAR(20),
-    phone_number INT UNSIGNED UNIQUE,
-    birthdate DATE,
-    age INT, -- Calculated through a function
-    cook_status ENUM('C Cook','B Cook','A Cook','Sous Chef','Chef') NOT NULL DEFAULT 'C Cook',
-    cook_photo VARCHAR(200),
-    PRIMARY KEY (first_name, last_name)
-);
-*/
 
 CREATE TABLE cook (
---    num INT AUTO_INCREMENT PRIMARY KEY,
     first_name VARCHAR(20),
     last_name VARCHAR(20),
-    phone_number BIGINT UNSIGNED UNIQUE,
+    phone_number VARCHAR(15) UNIQUE,
     birthdate DATE,
-    age INT, -- Calculated through a function
+    age TINYINT UNSIGNED, -- Calculated through a function
+    years_of_expertise TINYINT UNSIGNED,
     cook_status ENUM('C Cook','B Cook','A Cook','Sous Chef','Chef') NOT NULL DEFAULT 'C Cook',
     cook_photo VARCHAR(200),
     PRIMARY KEY (first_name,last_name)
@@ -145,97 +130,50 @@ CREATE TABLE cook (
 
 
 CREATE TABLE expertise (
-    cook_first_name VARCHAR(20),
-    cook_last_name VARCHAR(20),
-    country VARCHAR(20),
-    FOREIGN KEY (country) REFERENCES countries(country_name),
-    FOREIGN KEY (cook_first_name,cook_last_name) REFERENCES cook (first_name,last_name),
-    PRIMARY KEY (cook_first_name,cook_last_name,country)
+    first_name VARCHAR(20),
+    ast_name VARCHAR(20),
+    country_name VARCHAR(20),
+    FOREIGN KEY (country_name) REFERENCES countries(country_name),
+    FOREIGN KEY (first_name,last_name) REFERENCES cook (first_name,last_name),
+    PRIMARY KEY (first_name,last_name,country_name)
 );
 
-/*
-CREATE TABLE expertise (
-    cook_num INT,
-    country VARCHAR(20),
-    FOREIGN KEY (country) REFERENCES countries(country_name),
-    FOREIGN KEY (cook_num) REFERENCES cook (num),
-    PRIMARY KEY (cook_num,country)
-);
-*/
 CREATE TABLE episodes (
-    episode INT,
-    episode_year INT,
+    episode TINYINT UNSIGNED,
+    episode_year SMALLINT UNSIGNED,
     ep_image VARCHAR(200),
     PRIMARY KEY (episode_year,episode)
 );
 
 
 CREATE TABLE is_a_critic (
-    ep_year INT,
-    ep_num INT,
-    cook_first_name VARCHAR(20),
-    cook_last_name VARCHAR(20),
-    id TINYINT(3),
-    FOREIGN KEY (ep_year,ep_num) REFERENCES episodes(episode_year,episode),
-    FOREIGN KEY (cook_first_name,cook_last_name) REFERENCES cook (first_name,last_name),
-    PRIMARY KEY (ep_year,ep_num,cook_first_name,cook_last_name)
+	episode TINYINT UNSIGNED,
+    episode_year SMALLINT UNSIGNED,
+    first_name VARCHAR(20),
+    last_name VARCHAR(20),
+    id TINYINT UNSIGNED,
+    FOREIGN KEY (episode_year,episode) REFERENCES episodes(episode_year,episode),
+    FOREIGN KEY (first_name, last_name) REFERENCES cook (first_name,last_name),
+    PRIMARY KEY (episode,episode_year,first_name,last_name)
 );
 
-/*
-CREATE TABLE is_a_critic (
-    ep_num INT,
-    ep_year INT,
-    cook_num INT,
-    id TINYINT(3),
-    FOREIGN KEY (ep_year,ep_num) REFERENCES episodes(episode_year,episode),
-    FOREIGN KEY (cook_num) REFERENCES cook (num),
-    PRIMARY KEY (ep_year,ep_num,cook_num)
-);
-*/
 
 CREATE TABLE is_a_contestant (
-    ep_year INT,
-    ep_num INT,
-    ep_country VARCHAR(20),
-    cook_first_name VARCHAR(20),
-    cook_last_name VARCHAR(20),
-    recipe VARCHAR(30),
-    grade1 TINYINT(5),
-    grade2 TINYINT(5),
-    grade3 TINYINT(5),
-    FOREIGN KEY (ep_country) REFERENCES countries(country_name),
-    FOREIGN KEY (recipe) REFERENCES recipes (recipe_name),
-    FOREIGN KEY (ep_year,ep_num) REFERENCES episodes(episode_year,episode),
-    FOREIGN KEY (cook_first_name,cook_last_name) REFERENCES cook (first_name,last_name),
-    PRIMARY KEY (ep_year,ep_num,ep_country)
+    episode TINYINT UNSIGNED,
+    episode_year SMALLINT UNSIGNED,
+    country_name VARCHAR(20),
+    first_name VARCHAR(20),
+    last_name VARCHAR(20),
+    recipe_name VARCHAR(30),
+    grade1 TINYINT UNSIGNED,
+    grade2 TINYINT UNSIGNED,
+    grade3 TINYINT UNSIGNED,
+    FOREIGN KEY (country_name) REFERENCES countries(country_name),
+    FOREIGN KEY (recipe_name) REFERENCES recipes (recipe_name),
+    FOREIGN KEY (episode_year,episode) REFERENCES episodes(episode_year,episode),
+    FOREIGN KEY (first_name,last_name) REFERENCES cook (first_name,last_name),
+    PRIMARY KEY (episode_year,episode,country_name)
 );
-
-/*
-CREATE TABLE is_a_contestant (
-    ep_year INT,
-    ep_num INT,
-    ep_country VARCHAR(20),
-    cook_num INT,
-    recipe VARCHAR(30),
-    grade1 TINYINT(5),
-    grade2 TINYINT(5),
-    grade3 TINYINT(5),
-    FOREIGN KEY (ep_country) REFERENCES countries(country_name),
-    FOREIGN KEY (recipe) REFERENCES recipes (recipe_name),
-    FOREIGN KEY (ep_year,ep_num) REFERENCES episodes(episode_year,episode),
-    FOREIGN KEY (cook_num) REFERENCES cook (num),
-    PRIMARY KEY (ep_year,ep_num,ep_country)
-);
-*/
-/*
-CREATE TABLE ep_countries (
-    ep_num INT,
-    ep_country VARCHAR(20),
-    FOREIGN KEY (ep_country) REFERENCES countries(country_name),
-    FOREIGN KEY (ep_num) REFERENCES episodes(episode),
-    PRIMARY KEY (ep_num,ep_country)
-);
-*/
 
 -- Trigger for adding age to cooks
 DELIMITER //
@@ -277,7 +215,7 @@ BEGIN
     INTO calories FROM ingredients WHERE ingr_name=new.ingr_name; 
     UPDATE recipes
     SET recipe_calories=recipe_calories+calories*quantity
-    WHERE recipe_name=new.recipe;
+    WHERE recipe_name=new.recipe_name;
 END;
 //
 DELIMITER ;
@@ -301,7 +239,7 @@ BEGIN
     SET count=0;
     REPEAT
         FETCH cur INTO current_country;
-        INSERT INTO is_a_contestant (ep_year,ep_num,ep_country) VALUES (episode_year,episode_num,current_country);
+        INSERT INTO is_a_contestant (episode_year,episode,country_name) VALUES (episode_year,episode_num,current_country);
         SET count=count+1;
     UNTIL count=10
     END REPEAT;
@@ -316,13 +254,13 @@ CREATE PROCEDURE create_episode2 ( INOUT episode_num INT, IN episode_year INT )
 BEGIN
     DECLARE count INT;
     DECLARE current_country VARCHAR(20);
-    DECLARE cur CURSOR FOR SELECT country_name FROM countries WHERE country_name NOT IN (SELECT ep_country FROM is_a_contestant WHERE ep_num=episode_num-1 OR ep_num=episode_num-2)  ORDER BY RAND() LIMIT 10;
+    DECLARE cur CURSOR FOR SELECT country_name FROM countries WHERE country_name NOT IN (SELECT country_name FROM is_a_contestant WHERE (episode=episode-1 OR episode=episode-2) AND episode_year=episode_year)  ORDER BY RAND() LIMIT 10;
 
     OPEN cur;
     SET count=0;
     REPEAT
         FETCH cur INTO current_country;
-        INSERT INTO is_a_contestant (ep_year,ep_num,ep_country) VALUES (episode_year,episode_num,current_country);
+        INSERT INTO is_a_contestant (episode_year,episode,country_name) VALUES (episode_year,episode_num,current_country);
         SET count=count+1;
     UNTIL count=10
     END REPEAT;
