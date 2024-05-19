@@ -7,48 +7,49 @@ CREATE TABLE countries (
 );
 
 CREATE TABLE recipes (
-    recipe_name VARCHAR(30),
-    recipe_type ENUM('Cooking','Pastry') NOT NULL,
+    recipe_name VARCHAR(60),
+    recipe_type ENUM('Cooking','Pastry','Beverage') NOT NULL,
     recipe_difficulty TINYINT NOT NULL,
     recipe_desc TEXT NOT NULL,
-    recipe_tip1 VARCHAR(100),
-    recipe_tip2 VARCHAR(100),
-    recipe_tip3 VARCHAR(100),
+    recipe_tip1 VARCHAR(300),
+    recipe_tip2 VARCHAR(300),
+    recipe_tip3 VARCHAR(300),
     recipe_proteins NUMERIC(6,2),
     recipe_carbs NUMERIC(6,2),
     recipe_fats NUMERIC(6,2),
-    recipe_calories NUMERIC(6,2), -- Calculated through a function
+    recipe_calories NUMERIC(7,2), -- Calculated through a function (per portion)
     country_name VARCHAR(20),
     recipe_photo VARCHAR(200),
     recipe_photo_desc TEXT,
     prep_time SMALLINT UNSIGNED,
     execution_time SMALLINT UNSIGNED,
+    portions TINYINT UNSIGNED,
     FOREIGN KEY (country_name) REFERENCES countries(country_name),
     PRIMARY KEY (recipe_name)
 );
 
 CREATE TABLE meal_type (
-    recipe_name VARCHAR(30),
+    recipe_name VARCHAR(60),
     meal VARCHAR(20),
     FOREIGN KEY (recipe_name) REFERENCES recipes (recipe_name),   -- CONSTRAINT fk_meal_type FOREIGN KEY (recipe) REFERENCES recipes (recipe_name),
     PRIMARY KEY (recipe_name,meal)                                -- CONSTRAINT pk_meal_type PRIMARY KEY (recipe,meal)
 );
 
 CREATE TABLE tags (
-    recipe_name VARCHAR(30),
+    recipe_name VARCHAR(60),
     tag_name VARCHAR(20),
     FOREIGN KEY (recipe_name) REFERENCES recipes (recipe_name),
     PRIMARY KEY (recipe_name,tag_name)
 );
 
 CREATE TABLE thematic_section (
-    sec_name VARCHAR(20),
-    sec_desc VARCHAR(100),
+    sec_name VARCHAR(50),
+    sec_desc VARCHAR(200),
     PRIMARY KEY (sec_name)
 );
 
 CREATE TABLE recipe_belongs_to (
-    recipe_name VARCHAR(30),
+    recipe_name VARCHAR(60),
     sec_name VARCHAR(20),
     FOREIGN KEY (recipe_name) REFERENCES recipes (recipe_name),
     FOREIGN KEY (sec_name) REFERENCES thematic_section (sec_name),
@@ -58,13 +59,13 @@ CREATE TABLE recipe_belongs_to (
 CREATE TABLE equipment (
     eq_name VARCHAR(50),
     eq_instructions VARCHAR(100),
-    eq_photo VARCHAR(200),
+    eq_photo VARCHAR(400),
     eq_photo_desc VARCHAR(50),
     PRIMARY KEY (eq_name)
 );
 
 CREATE TABLE requires_eq (
-    recipe_name VARCHAR(30),
+    recipe_name VARCHAR(60),
     eq_name VARCHAR(20),
     quantity TINYINT UNSIGNED NOT NULL,
     FOREIGN KEY (recipe_name) REFERENCES recipes(recipe_name),
@@ -80,28 +81,28 @@ CREATE TABLE food_groups (
 );
 
 CREATE TABLE ingredients (
-    ingr_name VARCHAR(20),
-    ingr_calories NUMERIC(6,2),
+    ingr_name VARCHAR(50),
+    ingr_calories NUMERIC(6,2),  -- per gr or ml tsp or tbsp or unit or cup
     allows_loose_units TINYINT,
     group_name VARCHAR(80),
-    unit ENUM('gr','ml',''),
+    unit ENUM('gr','ml','','tsp','tbsp','unit','cup'),
     FOREIGN KEY (group_name) REFERENCES food_groups(group_name),
     PRIMARY KEY (ingr_name)
 );
 
 CREATE TABLE requires_ingr (
-    recipe_name VARCHAR(30),
-    ingr_name VARCHAR(20),
+    recipe_name VARCHAR(60),
+    ingr_name VARCHAR(50),
     quantity SMALLINT UNSIGNED,
-    undefined_quantity ENUM ('Some'),
+    undefined_quantity ENUM ('cups','Some','Little','Much','A lot','pinch','to taste','as needed','to garnish','slices','stalks','cloves'),
     FOREIGN KEY (recipe_name) REFERENCES recipes(recipe_name),
     FOREIGN KEY (ingr_name) REFERENCES ingredients(ingr_name),
     PRIMARY KEY (recipe_name,ingr_name)
 );
 
 CREATE TABLE main_ingr (
-    recipe_name VARCHAR(30),
-    ingr_name VARCHAR(20),
+    recipe_name VARCHAR(60),
+    ingr_name VARCHAR(50),
     FOREIGN KEY (recipe_name) REFERENCES recipes(recipe_name),
     FOREIGN KEY (ingr_name) REFERENCES ingredients(ingr_name),
     PRIMARY KEY (recipe_name,ingr_name)
@@ -109,8 +110,8 @@ CREATE TABLE main_ingr (
 
 
 CREATE TABLE recipe_steps (
-    recipe_name VARCHAR(30),
-    instruction TEXT,
+    recipe_name VARCHAR(60),
+    instruction VARCHAR(1000),
     step_num INT UNSIGNED,
     FOREIGN KEY (recipe_name) REFERENCES recipes(recipe_name),
     PRIMARY KEY (recipe_name,step_num)
@@ -124,14 +125,14 @@ CREATE TABLE cook (
     age TINYINT UNSIGNED, -- Calculated through a function
     years_of_expertise TINYINT UNSIGNED,
     cook_status ENUM('C Cook','B Cook','A Cook','Sous Chef','Chef') NOT NULL DEFAULT 'C Cook',
-    cook_photo VARCHAR(200),
+    cook_photo VARCHAR(400),
     PRIMARY KEY (first_name,last_name)
 );
 
 
 CREATE TABLE expertise (
     first_name VARCHAR(20),
-    ast_name VARCHAR(20),
+    last_name VARCHAR(20),
     country_name VARCHAR(20),
     FOREIGN KEY (country_name) REFERENCES countries(country_name),
     FOREIGN KEY (first_name,last_name) REFERENCES cook (first_name,last_name),
@@ -139,28 +140,28 @@ CREATE TABLE expertise (
 );
 
 CREATE TABLE episodes (
-    episode TINYINT UNSIGNED,
-    episode_year SMALLINT UNSIGNED,
+    episode INT,
+    episode_year INT UNSIGNED,
     ep_image VARCHAR(200),
     PRIMARY KEY (episode_year,episode)
 );
 
 
 CREATE TABLE is_a_critic (
-	episode TINYINT UNSIGNED,
-    episode_year SMALLINT UNSIGNED,
+    episode_year INT UNSIGNED,
+    episode INT,
     first_name VARCHAR(20),
     last_name VARCHAR(20),
     id TINYINT UNSIGNED,
     FOREIGN KEY (episode_year,episode) REFERENCES episodes(episode_year,episode),
     FOREIGN KEY (first_name, last_name) REFERENCES cook (first_name,last_name),
-    PRIMARY KEY (episode,episode_year,first_name,last_name)
+    PRIMARY KEY (episode_year,first_name,last_name)
 );
 
 
 CREATE TABLE is_a_contestant (
-    episode TINYINT UNSIGNED,
-    episode_year SMALLINT UNSIGNED,
+    episode_year INT UNSIGNED,
+    episode INT,
     country_name VARCHAR(20),
     first_name VARCHAR(20),
     last_name VARCHAR(20),
@@ -172,7 +173,7 @@ CREATE TABLE is_a_contestant (
     FOREIGN KEY (recipe_name) REFERENCES recipes (recipe_name),
     FOREIGN KEY (episode_year,episode) REFERENCES episodes(episode_year,episode),
     FOREIGN KEY (first_name,last_name) REFERENCES cook (first_name,last_name),
-    PRIMARY KEY (episode_year,episode,country_name)
+    PRIMARY KEY (episode,country_name)
 );
 
 -- Trigger for adding age to cooks
@@ -193,6 +194,15 @@ END;
 //
 DELIMITER ;
 
+-- Trigger for setting calories pr 1 gram/ml instead of calories per 100 gram/ml
+-- DELIMITER //
+-- CREATE TRIGGER set_calories BEFORE INSERT ON ingredients FOR EACH ROW 
+-- BEGIN
+--    DECLARE cals NUMERIC(6,2);
+--    CASE WHEN new.unit = 'gr' or new.unit =  
+-- END//
+-- DELIMITER;
+
 -- Trigger for setting ingredient quantity to NULL when an ingredient doesn't have defined quantity 
 DELIMITER //
 CREATE TRIGGER some_quantity BEFORE INSERT ON requires_ingr FOR EACH ROW 
@@ -208,13 +218,21 @@ DELIMITER ;
 DELIMITER //
 CREATE TRIGGER recipe_calories BEFORE INSERT ON requires_ingr FOR EACH ROW 
 BEGIN
-    DECLARE calories NUMERIC(6,2);
+    DECLARE calories NUMERIC(10,2);
     DECLARE quantity INT;
+    DECLARE units VARCHAR(10);
+    DECLARE portions_ TINYINT UNSIGNED;
+    
+    SELECT portions INTO portions_ FROM recipes WHERE recipe_name=new.recipe_name;
+    SELECT unit INTO units FROM ingredients WHERE ingr_name=new.ingr_name;
     SELECT (CASE WHEN new.undefined_quantity IS NULL THEN new.quantity ELSE 0 END) INTO quantity; 
     SELECT (CASE WHEN new.undefined_quantity IS NULL THEN ingr_calories ELSE 0 END) 
     INTO calories FROM ingredients WHERE ingr_name=new.ingr_name; 
+    IF units='gr' or units='ml' or units='tbsp' THEN
+        SET calories = calories/100;
+    END IF;
     UPDATE recipes
-    SET recipe_calories=recipe_calories+calories*quantity
+    SET recipe_calories=recipe_calories+calories*quantity/portions_
     WHERE recipe_name=new.recipe_name;
 END;
 //
@@ -234,16 +252,39 @@ CREATE PROCEDURE create_episode1 ( INOUT episode_num INT, IN episode_year INT )
 BEGIN
     DECLARE count INT;
     DECLARE current_country VARCHAR(20);
+    DECLARE cook_first_name VARCHAR(20);
+    DECLARE cook_last_name VARCHAR(20);
+    DECLARE recipe VARCHAR(30);
+    DECLARE gradea INT;
+    DECLARE gradeb INT;
+    DECLARE gradec INT;
     DECLARE cur CURSOR FOR SELECT * FROM countries ORDER BY RAND() LIMIT 10;
+    DECLARE cur2 CURSOR FOR SELECT first_name,last_name FROM cook ORDER BY RAND() LIMIT 3;
+
     OPEN cur;
     SET count=0;
     REPEAT
         FETCH cur INTO current_country;
-        INSERT INTO is_a_contestant (episode_year,episode,country_name) VALUES (episode_year,episode_num,current_country);
+        SELECT FLOOR(RAND() * 11) INTO gradea;
+        SELECT FLOOR(RAND() * 11) INTO gradeb;
+        SELECT FLOOR(RAND() * 11) INTO gradec;
+        SELECT recipe_name INTO recipe FROM recipes WHERE country_name=current_country ORDER BY RAND() LIMIT 1;
+        SELECT first_name,last_name INTO cook_first_name,cook_last_name FROM expertise WHERE country_name=current_country ORDER BY RAND() LIMIT 1; 
+        INSERT INTO is_a_contestant (episode_year,episode,country_name,first_name,last_name,recipe_name,grade1,grade2,grade3) VALUES (episode_year,episode_num,current_country,cook_first_name,cook_last_name,recipe,gradea,gradeb,gradec);
         SET count=count+1;
     UNTIL count=10
     END REPEAT;
     CLOSE cur;
+
+    SET count=1;
+    OPEN cur2;
+    REPEAT
+        FETCH NEXT FROM cur2 INTO cook_first_name,cook_last_name;
+        INSERT INTO is_a_critic VALUES (episode_year,episode_num,cook_first_name,cook_last_name,count);
+        SET count=count+1;
+    UNTIL count=4
+    END REPEAT;
+    CLOSE cur2;
 END //
 DELIMITER ;
 
@@ -254,17 +295,39 @@ CREATE PROCEDURE create_episode2 ( INOUT episode_num INT, IN episode_year INT )
 BEGIN
     DECLARE count INT;
     DECLARE current_country VARCHAR(20);
-    DECLARE cur CURSOR FOR SELECT country_name FROM countries WHERE country_name NOT IN (SELECT country_name FROM is_a_contestant WHERE (episode=episode-1 OR episode=episode-2) AND episode_year=episode_year)  ORDER BY RAND() LIMIT 10;
+    DECLARE cook_first_name VARCHAR(20);
+    DECLARE cook_last_name VARCHAR(20);
+    DECLARE recipe VARCHAR(30);
+    DECLARE gradea INT;
+    DECLARE gradeb INT;
+    DECLARE gradec INT;
+    DECLARE cur CURSOR FOR SELECT country_name FROM countries WHERE country_name NOT IN (SELECT country_name FROM is_a_contestant WHERE (episode=episode_num-1 OR episode=episode_num-2) AND episode_year=episode_year)  ORDER BY RAND() LIMIT 10;
+    DECLARE cur2 CURSOR FOR SELECT first_name,last_name FROM cook WHERE CONCAT(first_name,' ',last_name) NOT IN (SELECT CONCAT(first_name,' ',last_name) FROM is_a_critic WHERE episode_year=episode_year AND (episode=episode-1 OR episode=episode-2)) ORDER BY RAND() LIMIT 3;
 
     OPEN cur;
     SET count=0;
     REPEAT
         FETCH cur INTO current_country;
-        INSERT INTO is_a_contestant (episode_year,episode,country_name) VALUES (episode_year,episode_num,current_country);
+        SELECT FLOOR(RAND() * 11) INTO gradea;
+        SELECT FLOOR(RAND() * 11) INTO gradeb;
+        SELECT FLOOR(RAND() * 11) INTO gradec;
+        SELECT recipe_name INTO recipe FROM recipes WHERE country_name=current_country ORDER BY RAND() LIMIT 1;
+        SELECT first_name,last_name INTO cook_first_name,cook_last_name FROM expertise WHERE (country_name=current_country AND CONCAT(first_name,' ',last_name) NOT IN (SELECT CONCAT(first_name,' ',last_name) FROM is_a_contestant WHERE episode_year=episode_year AND (episode=episode-1 OR episode=episode-2))) ORDER BY RAND() LIMIT 1;
+        INSERT INTO is_a_contestant (episode_year,episode,country_name,first_name,last_name,recipe_name,grade1,grade2,grade3) VALUES (episode_year,episode_num,current_country,cook_first_name,cook_last_name,recipe,gradea,gradeb,gradec);
         SET count=count+1;
     UNTIL count=10
     END REPEAT;
     CLOSE cur;
+
+    SET count=1;
+    OPEN cur2;
+    REPEAT
+        FETCH NEXT FROM cur2 INTO cook_first_name,cook_last_name;
+        INSERT INTO is_a_critic VALUES (episode_year,episode_num,cook_first_name,cook_last_name,count);
+        SET count=count+1;
+    UNTIL count=4
+    END REPEAT;
+    CLOSE cur2;
 END //
 DELIMITER ;
 
@@ -318,4 +381,5 @@ INSERT INTO test VALUES ('Greece'),('Italy'),('France'),('Spain'),('Japan'),('In
 
 -- SELECT country_name from countries WHERE country_name NOT IN (SELECT * FROM test) ORDER BY RAND() LIMIT 10;
 
+-- INSERT INTO cook VALUES ('Gordon','Ramsay',4536136,STR_TO_DATE("August 10 2017", "%M %d %Y"),TIMESTAMPDIFF(YEAR,STR_TO_DATE("August 10 2017", "%M %d %Y"),CURRENT_DATE()),'Chef');
 -- INSERT INTO cook VALUES ('Gordon','Ramsay',4536136,STR_TO_DATE("August 10 2017", "%M %d %Y"),TIMESTAMPDIFF(YEAR,STR_TO_DATE("August 10 2017", "%M %d %Y"),CURRENT_DATE()),'Chef');
