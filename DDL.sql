@@ -302,9 +302,9 @@ BEGIN
     SET count=0;
     REPEAT
         FETCH cur INTO current_country;
-        SELECT FLOOR(RAND() * 11) INTO gradea;
-        SELECT FLOOR(RAND() * 11) INTO gradeb;
-        SELECT FLOOR(RAND() * 11) INTO gradec;
+        SELECT FLOOR(RAND() * 6) INTO gradea;
+        SELECT FLOOR(RAND() * 6) INTO gradeb;
+        SELECT FLOOR(RAND() * 6) INTO gradec;
         SELECT recipe_name INTO recipe FROM recipes WHERE country_name=current_country ORDER BY RAND() LIMIT 1;
         SELECT first_name,last_name INTO cook_first_name,cook_last_name FROM expertise WHERE country_name=current_country ORDER BY RAND() LIMIT 1; 
         INSERT INTO is_a_contestant (episode_year,episode,country_name,first_name,last_name,recipe_name,grade1,grade2,grade3) VALUES (episode_year,episode_num,current_country,cook_first_name,cook_last_name,recipe,gradea,gradeb,gradec);
@@ -345,9 +345,9 @@ BEGIN
     SET count=0;
     REPEAT
         FETCH cur INTO current_country;
-        SELECT FLOOR(RAND() * 11) INTO gradea;
-        SELECT FLOOR(RAND() * 11) INTO gradeb;
-        SELECT FLOOR(RAND() * 11) INTO gradec;
+        SELECT FLOOR(RAND() * 6) INTO gradea;
+        SELECT FLOOR(RAND() * 6) INTO gradeb;
+        SELECT FLOOR(RAND() * 6) INTO gradec;
         SELECT recipe_name INTO recipe FROM recipes WHERE country_name=current_country ORDER BY RAND() LIMIT 1;
         SELECT first_name,last_name INTO cook_first_name,cook_last_name FROM expertise WHERE (country_name=current_country AND CONCAT(first_name,' ',last_name) NOT IN (SELECT CONCAT(first_name,' ',last_name) FROM is_a_contestant WHERE episode_year=episode_year_ AND (episode=episode-1 OR episode=episode-2))) ORDER BY RAND() LIMIT 1;
         INSERT INTO is_a_contestant (episode_year,episode,country_name,first_name,last_name,recipe_name,grade1,grade2,grade3) VALUES (episode_year_,episode_num,current_country,cook_first_name,cook_last_name,recipe,gradea,gradeb,gradec);
