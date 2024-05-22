@@ -1,4 +1,4 @@
-DROP DATABASE cooking_show;
+DROP DATABASE IF EXISTS cooking_show;
 
 CREATE DATABASE cooking_show;
 USE cooking_show;
@@ -29,6 +29,8 @@ CREATE TABLE recipes (
     FOREIGN KEY (country_name) REFERENCES countries(country_name),
     PRIMARY KEY (recipe_name)
 );
+
+CREATE INDEX find_recipes ON recipes (recipe_name);
 
 CREATE TABLE meal_type (
     recipe_name VARCHAR(60),
@@ -92,6 +94,8 @@ CREATE TABLE ingredients (
     PRIMARY KEY (ingr_name)
 );
 
+CREATE INDEX get_ingredients ON ingredients (ingr_name);
+
 CREATE TABLE requires_ingr (
     recipe_name VARCHAR(60),
     ingr_name VARCHAR(50),
@@ -102,6 +106,8 @@ CREATE TABLE requires_ingr (
     PRIMARY KEY (recipe_name,ingr_name)
 );
 
+CREATE INDEX find_recipe_ingredients ON requires_ingr (recipe_name);
+
 CREATE TABLE main_ingr (
     recipe_name VARCHAR(60),
     ingr_name VARCHAR(50),
@@ -110,6 +116,7 @@ CREATE TABLE main_ingr (
     PRIMARY KEY (recipe_name,ingr_name)
 );
 
+CREATE INDEX get_main_ingredient ON main_ingr (recipe_name);
 
 CREATE TABLE recipe_steps (
     recipe_name VARCHAR(60),
@@ -130,6 +137,8 @@ CREATE TABLE cook (
     cook_photo VARCHAR(400),
     PRIMARY KEY (first_name,last_name)
 );
+
+CREATE INDEX find_cook ON cook (last_name);
 
 
 CREATE TABLE expertise (
@@ -160,6 +169,7 @@ CREATE TABLE is_a_critic (
     PRIMARY KEY (episode_year,first_name,last_name)
 );
 
+CREATE INDEX critic_cook_name ON is_a_critic (last_name);
 
 CREATE TABLE is_a_contestant (
     episode_year INT UNSIGNED,
@@ -178,6 +188,9 @@ CREATE TABLE is_a_contestant (
     PRIMARY KEY (episode,country_name)
 );
 
+CREATE INDEX contest_cook_name ON is_a_contestant (last_name);
+CREATE INDEX contest_country_name ON is_a_contestant (country_name);
+
 -- Trigger for adding age to cooks
 DELIMITER //
 CREATE TRIGGER cook_age BEFORE INSERT ON cook FOR EACH ROW 
@@ -195,15 +208,6 @@ BEGIN
 END;
 //
 DELIMITER ;
-
--- Trigger for setting calories pr 1 gram/ml instead of calories per 100 gram/ml
--- DELIMITER //
--- CREATE TRIGGER set_calories BEFORE INSERT ON ingredients FOR EACH ROW 
--- BEGIN
---    DECLARE cals NUMERIC(6,2);
---    CASE WHEN new.unit = 'gr' or new.unit =  
--- END//
--- DELIMITER;
 
 -- Trigger for setting ingredient quantity to NULL when an ingredient doesn't have defined quantity 
 DELIMITER //
@@ -374,13 +378,6 @@ BEGIN
 END //
 
 DELIMITER ;
-
-CREATE TABLE test (
-    ttest VARCHAR(100)
-);
-
-INSERT INTO test VALUES ('Greece'),('Italy'),('France'),('Spain'),('Japan'),('India'),('Sweden'),('Jamaica'),('Portugal'),('China'),('Arabia'),('Brazil'),('Argetina'),
-('Poland'),('Russia'),('Hungary'),('Germany'),('Thailand'),('Turkey');
 
 -- SELECT * from countries ORDER BY RAND() LIMIT 10;
 
