@@ -191,6 +191,28 @@ CREATE TABLE is_a_contestant (
 CREATE INDEX contest_cook_name ON is_a_contestant (last_name);
 CREATE INDEX contest_country_name ON is_a_contestant (country_name);
 
+-- Function to turn cook status into int
+DELIMITER //
+CREATE FUNCTION status_to_int (cook_status ENUM('C Cook','B Cook','A Cook','Sous Chef','Chef'))
+RETURNS INT 
+DETERMINISTIC
+BEGIN 
+    DECLARE stat INT;
+    IF cook_status = 'C Cook' THEN 
+        SET stat = 1;
+    ELSEIF cook_status = 'B Cook' THEN
+        SET stat = 2; 
+    ELSEIF cook_status = 'A Cook' THEN
+        SET stat = 3; 
+    ELSEIF cook_status = 'Sous Chef' THEN
+        SET stat = 4;
+    ELSEIF cook_status = 'Chef' THEN
+        SET stat = 5; 
+    END IF;
+    RETURN (stat);
+END//
+DELIMITER ;
+
 -- Trigger for adding age to cooks
 DELIMITER //
 CREATE TRIGGER cook_age BEFORE INSERT ON cook FOR EACH ROW 
