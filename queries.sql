@@ -49,12 +49,37 @@ as table1) - 5;
 
 -- QUESTION 3.8
 
+select episode_year,episode,total_equipment from (
+select episode_year,episode,sum(quantity) as total_equipment, rank() over (order by total_equipment desc) as rk from is_a_contestant as a join requires_eq as b on a.recipe_name = b.recipe_name group by episode_year,episode)
+as table1 
+where table1.rk = 1;
+
 -- QUESTION 3.9
 select episode_year,avg(recipe_carbs) from is_a_contestant as a inner join recipes as b on a.recipe_name=b.recipe_name group by episode_year;
 
 -- QUESTION 3.10
 
 -- QUESTION 3.11
+
+SELECT
+c.first_name AS critic_first_name,
+    c.last_name AS critic_last_name,
+    co.first_name AS cook_first_name,
+    co.last_name AS cook_last_name,
+    SUM(ia.grade1 + ia.grade2 + ia.grade3) AS total_score
+FROM
+    is_a_critic ic
+JOIN
+    is_a_contestant ia ON ic.episode_year = ia.episode_year AND ic.episode = ia.episode
+JOIN
+    cook co ON ia.first_name = co.first_name AND ia.last_name = co.last_name
+JOIN
+    cook c ON ic.first_name = c.first_name AND ic.last_name = c.last_name
+GROUP BY
+    c.first_name, c.last_name, co.first_name, co.last_name
+ORDER BY
+    total_score DESC
+LIMIT 5;
 
 -- QUESTION 3.12
 
@@ -65,7 +90,28 @@ where res.rk=1;
 
 -- QUESTION 3.13
 
+select episode_year,episode,tot_prof_level from (
+select episode_year,episode,sum(prof_level) as tot_prof_level, rank() over (order by tot_prof_level) as rk from (
+select episode_year,episode,sum(status_to_int(cook_status)) as prof_level from is_a_contestant as a join cook as b on (concat(a.first_name,a.last_name) = concat(b.first_name,b.last_name)) group by episode_year,episode
+union
+select episode_year,episode,sum(status_to_int(cook_status)) as prof_level from is_a_critic as a join cook as b on (concat(a.first_name,a.last_name) = concat(b.first_name,b.last_name)) group by episode_year,episode)
+as final
+group by episode_year,episode)
+as finalfinal
+where finalfinal.rk = 1;
+
+
+-- select episode_year,episode,a.first_name,a.last_name,status_to_int(cook_status) as prof_level from is_a_contestant as a join cook as b on (concat(a.first_name,a.last_name) = concat(b.first_name,b.last_name)) order by episode_year,episode;
+
 -- QUESTION 3.14
 
+select sec_name, appearences from (
+select sec_name,count(*) as appearences, rank() over (order by appearences desc) as rk from is_a_contestant as a join recipe_belongs_to as b on a.recipe_name=b.recipe_name group by sec_name)
+as t 
+where t.rk = 1;
+
 -- QUESTION 3.15
+
+select group_name from food_groups where group_name not in (
+select distinct group_name from is_a_contestant as a join requires_ingr as b join ingredients as c on (a.recipe_name = b.recipe_name and b.ingr_name = c.ingr_name));
 
