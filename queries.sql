@@ -40,6 +40,167 @@ group by episode_year,c1
 having c2>1) as table3);
 
 -- QUESTION 3.6
+WITH recipe_tags AS (
+    SELECT 
+        ia.recipe_name,
+        t1.tag_name AS tag1,
+        t2.tag_name AS tag2
+    FROM 
+        is_a_contestant ia
+        JOIN tags t1 ON ia.recipe_name = t1.recipe_name
+        JOIN tags t2 ON ia.recipe_name = t2.recipe_name
+    WHERE 
+        t1.tag_name < t2.tag_name
+),
+tag_pairs AS (
+    SELECT 
+        tag1,
+        tag2,
+        COUNT(*) AS pair_count
+    FROM 
+        recipe_tags
+    GROUP BY 
+        tag1, tag2
+),
+top_3_pairs AS (
+    SELECT 
+        tag1,
+        tag2,
+        pair_count
+    FROM 
+        tag_pairs
+    ORDER BY 
+        pair_count DESC
+    LIMIT 3
+)
+SELECT 
+    tag1, 
+    tag2, 
+    pair_count
+FROM 
+    top_3_pairs;
+
+WITH recipe_tags AS (
+    SELECT 
+        ia.recipe_name,
+        t1.tag_name AS tag1,
+        t2.tag_name AS tag2
+    FROM 
+        is_a_contestant ia
+        JOIN tags t1 FORCE INDEX (get_tags) ON ia.recipe_name = t1.recipe_name
+        JOIN tags t2 FORCE INDEX (get_tags) ON ia.recipe_name = t2.recipe_name
+    WHERE 
+        t1.tag_name < t2.tag_name
+),
+tag_pairs AS (
+    SELECT 
+        tag1,
+        tag2,
+        COUNT(*) AS pair_count
+    FROM 
+        recipe_tags
+    GROUP BY 
+        tag1, tag2
+),
+top_3_pairs AS (
+    SELECT 
+        tag1,
+        tag2,
+        pair_count
+    FROM 
+        tag_pairs
+    ORDER BY 
+        pair_count DESC
+    LIMIT 3
+)
+SELECT 
+    tag1, 
+    tag2, 
+    pair_count
+FROM 
+    top_3_pairs;
+
+EXPLAIN
+WITH recipe_tags AS (
+    SELECT 
+        ia.recipe_name,
+        t1.tag_name AS tag1,
+        t2.tag_name AS tag2
+    FROM 
+        is_a_contestant ia
+        JOIN tags t1 ON ia.recipe_name = t1.recipe_name
+        JOIN tags t2 ON ia.recipe_name = t2.recipe_name
+    WHERE 
+        t1.tag_name < t2.tag_name
+),
+tag_pairs AS (
+    SELECT 
+        tag1,
+        tag2,
+        COUNT(*) AS pair_count
+    FROM 
+        recipe_tags
+    GROUP BY 
+        tag1, tag2
+),
+top_3_pairs AS (
+    SELECT 
+        tag1,
+        tag2,
+        pair_count
+    FROM 
+        tag_pairs
+    ORDER BY 
+        pair_count DESC
+    LIMIT 3
+)
+SELECT 
+    tag1, 
+    tag2, 
+    pair_count
+FROM 
+    top_3_pairs;
+
+EXPLAIN
+WITH recipe_tags AS (
+    SELECT 
+        ia.recipe_name,
+        t1.tag_name AS tag1,
+        t2.tag_name AS tag2
+    FROM 
+        is_a_contestant ia
+        JOIN tags t1 FORCE INDEX (get_tags) ON ia.recipe_name = t1.recipe_name
+        JOIN tags t2 FORCE INDEX (get_tags) ON ia.recipe_name = t2.recipe_name
+    WHERE 
+        t1.tag_name < t2.tag_name
+),
+tag_pairs AS (
+    SELECT 
+        tag1,
+        tag2,
+        COUNT(*) AS pair_count
+    FROM 
+        recipe_tags
+    GROUP BY 
+        tag1, tag2
+),
+top_3_pairs AS (
+    SELECT 
+        tag1,
+        tag2,
+        pair_count
+    FROM 
+        tag_pairs
+    ORDER BY 
+        pair_count DESC
+    LIMIT 3
+)
+SELECT 
+    tag1, 
+    tag2, 
+    pair_count
+FROM 
+    top_3_pairs;
 
 -- QUESTION 3.7
 
