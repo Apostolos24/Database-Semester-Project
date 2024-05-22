@@ -46,7 +46,7 @@ having c2>1) as table3);
 select first_name,last_name 
 from (select first_name,last_name, count(*) as num from is_a_contestant group by first_name,last_name) as freq 
 where freq.num <= ( select max(c) 
-					from (select count(*) as c from is_a_contestant group by first_name,last_name) as table1)
+		    from (select count(*) as c from is_a_contestant group by first_name,last_name) as table1)
                     - 5;
 
 -- QUESTION 3.8
