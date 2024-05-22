@@ -1,3 +1,7 @@
+
+
+-- ---------------------------------------------------------------------
+
 USE cooking_show;
 
 -- QUESTION 3.1
@@ -39,13 +43,11 @@ having c2>1) as table3);
 
 -- QUESTION 3.7
 
-select first_name,last_name from 
-(select first_name,last_name, count(*) as num from is_a_contestant group by first_name,last_name)
-as freq 
-where freq.num <= ( 
-select max(c) from (
-select first_name,last_name,count(*) as c from is_a_contestant group by first_name,last_name)
-as table1) - 5;
+select first_name,last_name 
+from (select first_name,last_name, count(*) as num from is_a_contestant group by first_name,last_name) as freq 
+where freq.num <= ( select max(c) 
+					from (select count(*) as c from is_a_contestant group by first_name,last_name) as table1)
+                    - 5;
 
 -- QUESTION 3.8
 
@@ -55,9 +57,43 @@ as table1
 where table1.rk = 1;
 
 -- QUESTION 3.9
+
 select episode_year,avg(recipe_carbs) from is_a_contestant as a inner join recipes as b on a.recipe_name=b.recipe_name group by episode_year;
 
 -- QUESTION 3.10
+
+select distinct *
+from	(
+		select a.country_name, a.num + b.num as sum_num
+		from	(
+				select country_name, episode_year, count(*) as num
+				from is_a_contestant
+				group by country_name, episode_year 
+				) as a, 
+				(
+				select country_name, episode_year, count(*) as num
+				from is_a_contestant
+				group by country_name, episode_year 
+				) as b
+		where (a.episode_year - b.episode_year) = 1 and a.country_name = b.country_name and a.num >= 3 and b.num >= 3
+		) as T
+		join
+		(
+		select a.country_name, a.num + b.num as sum_num
+		from	(
+				select country_name, episode_year, count(*) as num
+				from is_a_contestant
+				group by country_name, episode_year 
+				) as a, 
+				(
+				select country_name, episode_year, count(*) as num
+				from is_a_contestant
+				group by country_name, episode_year 
+				) as b
+		where (a.episode_year - b.episode_year) = 1 and a.country_name = b.country_name and a.num >= 3 and b.num >= 3
+		) as R
+		using (sum_num)
+        
 
 -- QUESTION 3.11
 
@@ -114,4 +150,3 @@ where t.rk = 1;
 
 select group_name from food_groups where group_name not in (
 select distinct group_name from is_a_contestant as a join requires_ingr as b join ingredients as c on (a.recipe_name = b.recipe_name and b.ingr_name = c.ingr_name));
-
