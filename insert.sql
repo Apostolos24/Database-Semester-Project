@@ -186,7 +186,7 @@ INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_nam
 ('Butter', 102.0, 0, 'Milk, Eggs, and Their Products', 'gr'),
 ('Brown Sugar', 380.0, 1, 'Sweeteners', 'gr'),
 ('Granulated Sugar', 387.0, 1, 'Sweeteners', 'gr'),
-('Egg', 72.0, 0, 'Milk, Eggs, and Their Products', ''),
+('Egg', 72.0, 0, 'Milk, Eggs, and Their Products', 'unit'),
 ('Vanilla Extract', 288.0, 0, 'Milk, Eggs, and Their Products', 'ml'),
 ('All-Purpose Flour', 364.0, 0, 'Cereals and Cereal Products', 'gr'),
 ('Baking Soda', 0.0, 0, 'Others', 'gr'),
@@ -436,15 +436,11 @@ VALUES
 ('Hearty Pancakes', 'Measuring Cups', 1),
 ('Hearty Pancakes', 'Measuring Spoons', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Whole Wheat Flour', 364.0, 0, 'Cereals and Cereal Products', 'gr'),
 ('Oats', 389.0, 0, 'Cereals and Cereal Products', 'gr'),
 ('Baking Powder', 2.0, 0, 'Others', 'tsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Banana', 105.0, 0, 'Various Plant-based Foods', 'gr'),
-('Egg', 72.0, 0, 'Milk, Eggs, and Their Products', ''),
-('Milk', 42.0, 0, 'Milk, Eggs, and Their Products', 'ml'),
-('Butter', 102.0, 0, 'Milk, Eggs, and Their Products', 'gr'),
 ('Maple Syrup', 52.0, 0, 'Sweeteners', 'ml');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
@@ -469,7 +465,7 @@ VALUES
 ('Hearty Pancakes', 'Mash the banana in a separate bowl and whisk in the egg, milk, and melted butter.', 2),
 ('Hearty Pancakes', 'Pour the wet ingredients into the dry ingredients and stir until just combined.', 3),
 ('Hearty Pancakes', 'Heat a skillet over medium heat and lightly grease with butter or oil.', 4),
-('Hearty Pancakes', 'Pour 1/4 cup of batter onto the skillet for each pancake.', 5),
+('Hearty Pancakes', 'Pour 1/4 cups of batter onto the skillet for each pancake.', 5),
 ('Hearty Pancakes', 'Cook until bubbles form on the surface, then flip and cook until golden brown.', 6),
 ('Hearty Pancakes', 'Serve warm with maple syrup.', 7);
 
@@ -496,20 +492,13 @@ VALUES
 ('Summer Garden Couscous Salad', 'Measuring Spoons', 1),
 ('Summer Garden Couscous Salad', 'Strainer', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Couscous', 376.0, 0, 'Cereals and Cereal Products', 'gr'),
 ('Water', 0.0, 0, 'Others', 'ml'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
-('Olive Oil', 884.0, 0, 'Fats and Oils', 'ml'),
 ('Lemon Juice', 4.0, 0, 'Coffee, Tea, and Their Products', 'tbsp'),
-('Garlic', 5.0, 0, 'Herbs and Essential Oils', 'cloves'),
-('Cherry Tomatoes', 18.0, 1, 'Various Plant-based Foods', 'gr'),
-('Cucumber', 15.0, 1, 'Various Plant-based Foods', 'gr'),
-('Red Onion', 44.0, 1, 'Various Plant-based Foods', 'gr'),
 ('Bell Pepper', 25.0, 1, 'Various Plant-based Foods', 'gr'),
 ('Fresh Parsley', 2.0, 0, 'Herbs and Essential Oils', 'tbsp'),
-('Fresh Mint', 2.0, 0, 'Herbs and Essential Oils', 'tbsp'),
-('Feta Cheese', 264.0, 0, 'Milk, Eggs, and Their Products', 'gr');
+('Fresh Mint', 2.0, 0, 'Herbs and Essential Oils', 'tbsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -563,18 +552,15 @@ VALUES
 ('Squash Corn Chowder', 'Measuring Spoons', 1),
 ('Squash Corn Chowder', 'Immersion Blender', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Butternut Squash', 45.0, 1, 'Various Plant-based Foods', 'gr'),
 ('Sweet Corn', 86.0, 1, 'Various Plant-based Foods', 'gr'),
-('Onion', 44.0, 1, 'Various Plant-based Foods', 'gr'),
-('Celery', 6.0, 1, 'Various Plant-based Foods', 'stalks'),
+('Celery', 6.0, 1, 'Various Plant-based Foods', NULL),
 ('Carrot', 25.0, 1, 'Various Plant-based Foods', 'gr'),
 ('Potato', 77.0, 1, 'Various Plant-based Foods', 'gr'),
 ('Vegetable Broth', 3.0, 0, 'Others', 'cups'),
-('Garlic', 5.0, 0, 'Herbs and Essential Oils', 'cloves'),
-('Bay Leaf', 0.0, 0, 'Herbs and Essential Oils', 'leaf'),
+('Bay Leaf', 0.0, 0, 'Herbs and Essential Oils', NULL),
 ('Thyme', 1.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp'),
 ('Heavy Cream', 345.0, 0, 'Milk, Eggs, and Their Products', 'ml');
 
@@ -629,15 +615,12 @@ VALUES
 ('White Beans, Tomatoes, and Spinach', 'Measuring Cups', 1),
 ('White Beans, Tomatoes, and Spinach', 'Measuring Spoons', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('White Beans', 339.0, 1, 'Various Plant-based Foods', 'gr'),
 ('Tomatoes', 18.0, 1, 'Various Plant-based Foods', 'gr'),
 ('Spinach', 23.0, 1, 'Various Plant-based Foods', 'gr'),
-('Olive Oil', 884.0, 0, 'Fats and Oils', 'ml'),
-('Garlic', 5.0, 0, 'Herbs and Essential Oils', 'cloves'),
 ('Vegetable Broth', 3.0, 0, 'Others', 'cups'),
 ('Dried Thyme', 0.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
@@ -686,16 +669,12 @@ VALUES
 ('Spaghetti', 'Measuring Cups', 1),
 ('Spaghetti', 'Measuring Spoons', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Spaghetti Noodles', 371.0, 0, 'Cereals and Cereal Products', 'gr'),
 ('Tomatoes', 18.0, 1, 'Various Plant-based Foods', 'gr'),
-('Onion', 44.0, 1, 'Various Plant-based Foods', 'gr'),
-('Garlic', 5.0, 0, 'Herbs and Essential Oils', 'cloves'),
-('Olive Oil', 884.0, 0, 'Fats and Oils', 'ml'),
 ('Tomato Paste', 82.0, 0, 'Various Plant-based Foods', 'ml'),
 ('Dried Basil', 0.0, 0, 'Herbs and Essential Oils', 'tsp'),
 ('Dried Oregano', 0.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp'),
 ('Parmesan Cheese', 420.0, 0, 'Milk, Eggs, and Their Products', 'gr');
 
@@ -747,13 +726,10 @@ VALUES
 ('Scones', 'Measuring Cups', 1),
 ('Scones', 'Measuring Spoons', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('All-Purpose Flour', 364.0, 0, 'Cereals and Cereal Products', 'gr'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Granulated Sugar', 387.0, 0, 'Sweeteners', 'gr'),
 ('Baking Powder', 2.0, 0, 'Others', 'tsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Unsalted Butter', 102.0, 0, 'Milk, Eggs, and Their Products', 'gr'),
-('Egg', 72.0, 0, 'Milk, Eggs, and Their Products', ''),
 ('Heavy Cream', 345.0, 0, 'Milk, Eggs, and Their Products', 'ml'),
 ('Vanilla Extract', 288.0, 0, 'Flavorings', 'tsp');
 
@@ -867,13 +843,12 @@ VALUES
 ('Stir-Fry', 'Measuring Cups', 1),
 ('Stir-Fry', 'Measuring Spoons', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Protein (e.g., chicken, tofu, shrimp)', 200.0, 1, 'Meat and Meat Products', 'gr'),
 ('Vegetables (e.g., bell peppers, broccoli, carrots)', 50.0, 1, 'Various Plant-based Foods', 'gr'),
 ('Rice or Noodles', 130.0, 0, 'Cereals and Cereal Products', 'gr'),
 ('Soy Sauce', 8.0, 0, 'Various Plant-based Foods', 'tbsp'),
 ('Sesame Oil', 884.0, 0, 'Fats and Oils', 'tbsp'),
-('Garlic', 5.0, 0, 'Herbs and Essential Oils', 'cloves'),
 ('Ginger', 18.0, 0, 'Herbs and Essential Oils', 'gr'),
 ('Cornstarch', 30.0, 0, 'Various Plant-based Foods', 'tbsp'),
 ('Water', 0.0, 0, 'Others', 'tbsp');
@@ -927,16 +902,13 @@ VALUES
 ('Rustic Italian Tortellini Soup', 'Measuring Cups', 1),
 ('Rustic Italian Tortellini Soup', 'Measuring Spoons', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Cheese Tortellini', 100.0, 0, 'Cereals and Cereal Products', 'gr'),
 ('Tomatoes', 18.0, 1, 'Various Plant-based Foods', 'gr'),
 ('Spinach', 23.0, 1, 'Various Plant-based Foods', 'gr'),
-('Onion', 44.0, 1, 'Various Plant-based Foods', 'gr'),
-('Garlic', 5.0, 0, 'Herbs and Essential Oils', 'cloves'),
 ('Vegetable Broth', 3.0, 0, 'Others', 'cups'),
 ('Dried Basil', 0.0, 0, 'Herbs and Essential Oils', 'tsp'),
 ('Dried Oregano', 0.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp'),
 ('Heavy Cream', 345.0, 0, 'Milk, Eggs, and Their Products', 'ml');
 
@@ -990,19 +962,14 @@ VALUES
 ('Swedish Meatballs', 'Measuring Cups', 1),
 ('Swedish Meatballs', 'Measuring Spoons', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Ground Beef', 250.0, 0, 'Meat and Meat Products', 'gr'),
 ('Ground Pork', 310.0, 0, 'Meat and Meat Products', 'gr'),
 ('Breadcrumbs', 400.0, 0, 'Cereals and Cereal Products', 'gr'),
-('Egg', 72.0, 0, 'Milk, Eggs, and Their Products', ''),
-('Onion', 44.0, 1, 'Various Plant-based Foods', 'gr'),
-('Garlic', 5.0, 0, 'Herbs and Essential Oils', 'cloves'),
 ('Allspice', 263.0, 0, 'Herbs and Essential Oils', 'tsp'),
 ('Nutmeg', 357.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp'),
 ('Butter', 717.0, 0, 'Fats and Oils', 'gr'),
-('All-Purpose Flour', 364.0, 0, 'Cereals and Cereal Products', 'gr'),
 ('Beef Broth', 2.0, 0, 'Others', 'cups'),
 ('Heavy Cream', 345.0, 0, 'Milk, Eggs, and Their Products', 'ml');
 
@@ -1059,18 +1026,15 @@ VALUES
 ('Barley Beef Skillet', 'Measuring Cups', 1),
 ('Barley Beef Skillet', 'Measuring Spoons', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Beef (e.g., stew meat, ground beef)', 250.0, 1, 'Meat and Meat Products', 'gr'),
 ('Pearl Barley', 123.0, 0, 'Cereals and Cereal Products', 'gr'),
-('Onion', 44.0, 1, 'Various Plant-based Foods', 'gr'),
 ('Carrots', 41.0, 1, 'Various Plant-based Foods', 'gr'),
 ('Celery', 16.0, 1, 'Various Plant-based Foods', 'gr'),
-('Garlic', 5.0, 0, 'Herbs and Essential Oils', 'cloves'),
 ('Beef Broth', 3.0, 0, 'Others', 'cups'),
 ('Tomato Paste', 82.0, 0, 'Various Plant-based Foods', 'ml'),
 ('Worcestershire Sauce', 66.0, 0, 'Various Plant-based Foods', 'tbsp'),
 ('Dried Thyme', 0.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
@@ -1123,17 +1087,14 @@ VALUES
 ('Southwest Beef & Rice Skillet', 'Measuring Cups', 1),
 ('Southwest Beef & Rice Skillet', 'Measuring Spoons', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Ground Beef', 250.0, 0, 'Meat and Meat Products', 'gr'),
 ('Rice', 130.0, 0, 'Cereals and Cereal Products', 'gr'),
 ('Black Beans', 127.0, 0, 'Legumes and Legume Products', 'gr'),
 ('Corn', 86.0, 0, 'Various Plant-based Foods', 'gr'),
-('Onion', 44.0, 1, 'Various Plant-based Foods', 'gr'),
 ('Bell Pepper', 25.0, 1, 'Various Plant-based Foods', 'gr'),
-('Garlic', 5.0, 0, 'Herbs and Essential Oils', 'cloves'),
 ('Chili Powder', 0.0, 0, 'Herbs and Essential Oils', 'tsp'),
 ('Cumin', 0.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp'),
 ('Olive Oil', 884.0, 0, 'Fats and Oils', 'tbsp');
 
@@ -1188,19 +1149,15 @@ VALUES
 ('Glazed Pork Chops with Corn Bread Dressing', 'Measuring Cups', 1),
 ('Glazed Pork Chops with Corn Bread Dressing', 'Measuring Spoons', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Pork Chops', 250.0, 0, 'Meat and Meat Products', 'gr'),
 ('Cornbread', 250.0, 0, 'Cereals and Cereal Products', 'gr'),
-('Onion', 44.0, 1, 'Various Plant-based Foods', 'gr'),
 ('Celery', 16.0, 1, 'Various Plant-based Foods', 'gr'),
-('Garlic', 5.0, 0, 'Herbs and Essential Oils', 'cloves'),
 ('Chicken Broth', 2.0, 0, 'Others', 'cups'),
 ('Butter', 717.0, 0, 'Fats and Oils', 'gr'),
-('Egg', 72.0, 0, 'Milk, Eggs, and Their Products', ''),
 ('Brown Sugar', 380.0, 0, 'Sweeteners', 'gr'),
 ('Apple Cider Vinegar', 22.0, 0, 'Others', 'ml'),
 ('Dijon Mustard', 128.0, 0, 'Others', 'tbsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
@@ -1254,16 +1211,13 @@ VALUES
 ('Fried Rice', 'Measuring Cups', 1),
 ('Fried Rice', 'Measuring Spoons', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Rice', 130.0, 0, 'Cereals and Cereal Products', 'gr'),
 ('Carrots', 41.0, 1, 'Various Plant-based Foods', 'gr'),
 ('Peas', 67.0, 0, 'Legumes and Legume Products', 'gr'),
-('Onion', 44.0, 1, 'Various Plant-based Foods', 'gr'),
-('Garlic', 5.0, 0, 'Herbs and Essential Oils', 'cloves'),
 ('Eggs', 72.0, 0, 'Milk, Eggs, and Their Products', ''),
 ('Soy Sauce', 8.0, 0, 'Others', 'tbsp'),
 ('Sesame Oil', 120.0, 0, 'Fats and Oils', 'tsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp'),
 ('Vegetable Oil', 884.0, 0, 'Fats and Oils', 'tbsp');
 
@@ -1317,16 +1271,13 @@ VALUES
 ('Zesty Sausage & Beans', 'Measuring Cups', 1),
 ('Zesty Sausage & Beans', 'Measuring Spoons', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Italian Sausage', 300.0, 0, 'Meat and Meat Products', 'gr'),
-('Onion', 44.0, 1, 'Various Plant-based Foods', 'gr'),
-('Garlic', 5.0, 0, 'Herbs and Essential Oils', 'cloves'),
 ('Canned Diced Tomatoes', 32.0, 0, 'Various Plant-based Foods', 'ml'),
 ('White Beans (e.g., cannellini)', 127.0, 0, 'Legumes and Legume Products', 'gr'),
 ('Chicken Broth', 2.0, 0, 'Others', 'cups'),
 ('Dried Oregano', 0.0, 0, 'Herbs and Essential Oils', 'tsp'),
 ('Dried Basil', 0.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp'),
 ('Olive Oil', 884.0, 0, 'Fats and Oils', 'tbsp');
 
@@ -1378,15 +1329,13 @@ VALUES
 ('Prosciutto Pasta Toss', 'Measuring Spoons', 1),
 ('Prosciutto Pasta Toss', 'Colander', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Pasta', 130.0, 0, 'Cereals and Cereal Products', 'gr'),
 ('Prosciutto', 195.0, 0, 'Meat and Meat Products', 'gr'),
 ('Frozen Peas', 68.0, 0, 'Various Plant-based Foods', 'gr'),
-('Garlic', 5.0, 0, 'Herbs and Essential Oils', 'cloves'),
 ('Butter', 717.0, 0, 'Fats and Oils', 'gr'),
 ('Chicken Broth', 2.0, 0, 'Others', 'cups'),
 ('Lemon Juice', 4.0, 0, 'Various Plant-based Foods', 'tbsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
@@ -1437,11 +1386,10 @@ VALUES
 ('Cashew Chicken with Noodles', 'Measuring Spoons', 1),
 ('Cashew Chicken with Noodles', 'Pot', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Chicken Breast', 165.0, 0, 'Meat and Meat Products', 'gr'),
 ('Noodles', 130.0, 0, 'Cereals and Cereal Products', 'gr'),
 ('Cashews', 155.0, 1, 'Fats and Oils', 'gr'),
-('Garlic', 5.0, 0, 'Herbs and Essential Oils', 'cloves'),
 ('Soy Sauce', 8.0, 0, 'Others', 'tbsp'),
 ('Honey', 304.0, 0, 'Sweeteners', 'tbsp'),
 ('Sesame Oil', 120.0, 0, 'Fats and Oils', 'tsp'),
@@ -1500,12 +1448,11 @@ VALUES
 ('Herb Chicken with Honey Butter', 'Measuring Cups', 1),
 ('Herb Chicken with Honey Butter', 'Measuring Spoons', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Chicken Breast', 165.0, 0, 'Meat and Meat Products', 'gr'),
 ('Butter', 717.0, 0, 'Fats and Oils', 'gr'),
 ('Honey', 304.0, 0, 'Sweeteners', 'tbsp'),
 ('Fresh Herbs (e.g., parsley, thyme, rosemary)', 1.0, 0, 'Herbs and Essential Oils', 'tbsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp'),
 ('Vegetable Oil', 884.0, 0, 'Fats and Oils', 'tbsp');
 
@@ -1554,10 +1501,9 @@ VALUES
 ('French Toast', 'Measuring Spoons', 1),
 ('French Toast', 'Spatula', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Bread', 130.0, 0, 'Cereals and Cereal Products', 'slice'),
 ('Eggs', 72.0, 0, 'Milk, Eggs, and Their Products', ''),
-('Milk', 42.0, 0, 'Milk, Eggs, and Their Products', 'ml'),
 ('Cinnamon', 6.0, 0, 'Herbs and Essential Oils', 'tsp'),
 ('Butter', 717.0, 0, 'Fats and Oils', 'tbsp'),
 ('Maple Syrup', 52.0, 0, 'Sweeteners', 'ml');
@@ -1606,9 +1552,8 @@ VALUES
 ('Swedish Pancakes', 'Measuring Spoons', 1),
 ('Swedish Pancakes', 'Spatula', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Eggs', 72.0, 0, 'Milk, Eggs, and Their Products', ''),
-('Milk', 42.0, 0, 'Milk, Eggs, and Their Products', 'ml'),
 ('Flour', 364.0, 0, 'Cereals and Cereal Products', 'gr'),
 ('Sugar', 387.0, 0, 'Sweeteners', 'gr'),
 ('Butter', 717.0, 0, 'Fats and Oils', 'tbsp');
@@ -1646,7 +1591,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Baked Cheddar Eggs & Potatoes', 'Cooking', 2, 'Baked Cheddar Eggs & Potatoes is a hearty and delicious breakfast or brunch dish. Sliced potatoes are baked until crispy, then topped with eggs, cheddar cheese, and your favorite seasonings. It\'s easy to make and perfect for feeding a crowd.', 'You can customize this dish by adding cooked bacon, sausage, or vegetables.', 'Make sure to slice the potatoes thinly and evenly for even cooking.', 'For extra flavor, sprinkle chopped herbs such as parsley or chives over the eggs before baking.', 15.0, 45.0, 30.0, 'Vietnam', 'http://fakephotolink.com/baked_cheddar_eggs_potatoes.jpg', 'Baked Cheddar Eggs & Potatoes with herbs', 15, 45);
+('Baked Cheddar Eggs & Potatoes', 'Cooking', 2, 'Baked Cheddar Eggs & Potatoes is a hearty and delicious breakfast or brunch dish. Sliced potatoes are baked until crispy, then topped with eggs, cheddar cheese, and your favorite seasonings. It\'s easy to make and perfect for feeding a crowd.', 'You can customize this dish by adding cooked bacon, sausage, or vegetables.', 'Make sure to slice the potatoes thinly and evenly for even cooking.', 'For extra flavor, sprinkle chopped herbs such as parsley or chives over the eggs before baking.', 15.0, 45.0, 30.0, 'Vietnam', 'http://fakephotolink.com/baked_cheddar_eggs_potatoes.jpg', 'Baked Cheddar Eggs & Potatoes with herbs', 15, 45, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -1658,12 +1603,10 @@ VALUES
 ('Baked Cheddar Eggs & Potatoes', 'Measuring Cups', 1),
 ('Baked Cheddar Eggs & Potatoes', 'Measuring Spoons', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Potatoes', 77.0, 0, 'Various Plant-based Foods', 'gr'),
 ('Eggs', 72.0, 0, 'Milk, Eggs, and Their Products', ''),
 ('Cheddar Cheese', 402.0, 0, 'Meat and Meat Products', 'gr'),
-('Milk', 42.0, 0, 'Milk, Eggs, and Their Products', 'ml'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp'),
 ('Butter', 717.0, 0, 'Fats and Oils', 'tbsp');
 
@@ -1702,7 +1645,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Baked Mostaccioli', 'Cooking', 3, 'Baked Mostaccioli is a classic Italian-American dish that\'s hearty, comforting, and perfect for feeding a crowd. Tube-shaped pasta is tossed in a savory tomato sauce with ground beef, Italian sausage, and plenty of cheese, then baked until bubbly and golden.', 'Feel free to customize this dish by adding your favorite vegetables, such as bell peppers, mushrooms, or spinach.', 'You can substitute mostaccioli pasta with penne or rigatoni if desired.', 'Serve with garlic bread and a side salad for a complete meal.', 20.0, 45.0, 25.0, 'Italy', 'http://fakephotolink.com/baked_mostaccioli.jpg', 'Baked Mostaccioli with melted cheese', 20, 45);
+('Baked Mostaccioli', 'Cooking', 3, 'Baked Mostaccioli is a classic Italian-American dish that\'s hearty, comforting, and perfect for feeding a crowd. Tube-shaped pasta is tossed in a savory tomato sauce with ground beef, Italian sausage, and plenty of cheese, then baked until bubbly and golden.', 'Feel free to customize this dish by adding your favorite vegetables, such as bell peppers, mushrooms, or spinach.', 'You can substitute mostaccioli pasta with penne or rigatoni if desired.', 'Serve with garlic bread and a side salad for a complete meal.', 20.0, 45.0, 25.0, 'Italy', 'http://fakephotolink.com/baked_mostaccioli.jpg', 'Baked Mostaccioli with melted cheese', 20, 45, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -1713,17 +1656,15 @@ VALUES
 ('Baked Mostaccioli', 'Measuring Spoons', 1),
 ('Baked Mostaccioli', 'Spatula', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Mostaccioli Pasta', 131.0, 0, 'Cereals and Cereal Products', 'gr'),
 ('Ground Beef', 250.0, 0, 'Meat and Meat Products', 'gr'),
 ('Italian Sausage', 450.0, 0, 'Meat and Meat Products', 'gr'),
 ('Onion', 44.0, 0, 'Various Plant-based Foods', 'gr'),
-('Garlic', 5.0, 0, 'Herbs and Essential Oils', 'cloves'),
 ('Canned Crushed Tomatoes', 32.0, 0, 'Various Plant-based Foods', 'ml'),
 ('Tomato Paste', 82.0, 0, 'Various Plant-based Foods', 'gr'),
 ('Dried Oregano', 0.0, 0, 'Herbs and Essential Oils', 'tsp'),
 ('Dried Basil', 0.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp'),
 ('Mozzarella Cheese', 300.0, 0, 'Meat and Meat Products', 'gr'),
 ('Parmesan Cheese', 431.0, 0, 'Meat and Meat Products', 'gr');
@@ -1771,7 +1712,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Ravioli with Snap Peas', 'Cooking', 2, 'Ravioli with Snap Peas is a quick and easy pasta dish that\'s perfect for busy weeknights. Cheese-filled ravioli is cooked until tender, then tossed with crisp snap peas, garlic, and Parmesan cheese for a simple yet flavorful meal.', 'Feel free to use your favorite type of ravioli for this recipe, such as spinach and ricotta or mushroom-filled.', 'For added protein, you can top the dish with grilled chicken or shrimp.', 'Garnish with chopped fresh herbs like basil or parsley for a burst of flavor.', 10.0, 15.0, 10.0, 'Italy', 'http://fakephotolink.com/ravioli_snap_peas.jpg', 'Ravioli with Snap Peas with grated Parmesan cheese', 10, 15);
+('Ravioli with Snap Peas', 'Cooking', 2, 'Ravioli with Snap Peas is a quick and easy pasta dish that\'s perfect for busy weeknights. Cheese-filled ravioli is cooked until tender, then tossed with crisp snap peas, garlic, and Parmesan cheese for a simple yet flavorful meal.', 'Feel free to use your favorite type of ravioli for this recipe, such as spinach and ricotta or mushroom-filled.', 'For added protein, you can top the dish with grilled chicken or shrimp.', 'Garnish with chopped fresh herbs like basil or parsley for a burst of flavor.', 10.0, 15.0, 10.0, 'Italy', 'http://fakephotolink.com/ravioli_snap_peas.jpg', 'Ravioli with Snap Peas with grated Parmesan cheese', 10, 15, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -1782,13 +1723,11 @@ VALUES
 ('Ravioli with Snap Peas', 'Measuring Spoons', 1),
 ('Ravioli with Snap Peas', 'Spatula', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Ravioli', 168.0, 0, 'Cereals and Cereal Products', 'gr'),
 ('Snap Peas', 42.0, 0, 'Various Plant-based Foods', 'gr'),
-('Garlic', 5.0, 0, 'Herbs and Essential Oils', 'cloves'),
 ('Butter', 717.0, 0, 'Fats and Oils', 'tbsp'),
 ('Parmesan Cheese', 431.0, 0, 'Meat and Meat Products', 'gr'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
@@ -1825,7 +1764,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Cloverleaf Rolls','Cooking', 3, 'Cloverleaf Rolls are soft, fluffy dinner rolls that are perfect for any occasion. They get their name from their unique shape, which resembles a cloverleaf. These rolls are easy to make and are sure to impress your family and friends.', 'Make sure the yeast is activated and frothy before adding it to the flour mixture.', 'Knead the dough until it is smooth and elastic for the best texture.', 'Brush the rolls with melted butter after baking for extra flavor and shine.', 5.0, 20.0, 15.0, 'Norway', 'http://fakephotolink.com/cloverleaf_rolls.jpg', 'Cloverleaf Rolls on a baking tray', 5, 20);
+('Cloverleaf Rolls','Cooking', 3, 'Cloverleaf Rolls are soft, fluffy dinner rolls that are perfect for any occasion. They get their name from their unique shape, which resembles a cloverleaf. These rolls are easy to make and are sure to impress your family and friends.', 'Make sure the yeast is activated and frothy before adding it to the flour mixture.', 'Knead the dough until it is smooth and elastic for the best texture.', 'Brush the rolls with melted butter after baking for extra flavor and shine.', 5.0, 20.0, 15.0, 'Norway', 'http://fakephotolink.com/cloverleaf_rolls.jpg', 'Cloverleaf Rolls on a baking tray', 5, 20, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -1836,13 +1775,11 @@ VALUES
 ('Cloverleaf Rolls', 'Spatula', 1),
 ('Cloverleaf Rolls', 'Pastry Brush', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Warm Water', 0.0, 0, 'Others', 'ml'),
 ('Active Dry Yeast', 0.0, 0, 'Others', 'tbsp'),
 ('Granulated Sugar', 387.0, 0, 'Sweeteners', 'gr'),
-('Egg', 72.0, 0, 'Milk, Eggs, and Their Products', ''),
 ('Butter', 717.0, 0, 'Fats and Oils', 'tbsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('All-Purpose Flour', 364.0, 0, 'Cereals and Cereal Products', 'gr');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
@@ -1865,7 +1802,7 @@ VALUES
 ('Cloverleaf Rolls', 'Add beaten egg, melted butter, salt, and half of the flour to the yeast mixture. Stir until well combined.', 2),
 ('Cloverleaf Rolls', 'Gradually add the remaining flour until a soft dough forms. Knead the dough on a floured surface for 5-7 minutes, or until smooth and elastic.', 3),
 ('Cloverleaf Rolls', 'Place the dough in a greased bowl, cover with a clean kitchen towel, and let rise in a warm place for 1 hour, or until doubled in size.', 4),
-('Cloverleaf Rolls', 'Punch down the dough and divide it into small pieces. Shape each piece into a ball and place three balls into each greased muffin cup.', 5),
+('Cloverleaf Rolls', 'Punch down the dough and divide it into small pieces. Shape each piece into a ball and place three balls into each greased muffin cups.', 5),
 ('Cloverleaf Rolls', 'Cover the muffin tin with a clean kitchen towel and let rise for an additional 30 minutes.', 6),
 ('Cloverleaf Rolls', 'Preheat the oven to 375°F (190°C).', 7),
 ('Cloverleaf Rolls', 'Bake the rolls for 12-15 minutes, or until golden brown.', 8),
@@ -1883,7 +1820,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Greek Yogurt and Honey Blueberry Muffins', 'Pastry', 2, 'These Greek Yogurt and Honey Blueberry Muffins are moist, tender, and bursting with blueberries. Made with Greek yogurt and sweetened with honey, they\'re a healthier option for breakfast or snack time. Enjoy them fresh out of the oven or freeze for later!', 'Fold blueberries into the batter gently to avoid bursting them.', 'For extra flavor, add lemon zest or almond extract to the batter.', 'You can use fresh or frozen blueberries for this recipe.', 5.0, 20.0, 15.0, 'Greece', 'http://fakephotolink.com/greek_yogurt_blueberry_muffins.jpg', 'Greek Yogurt and Honey Blueberry Muffins', 5, 20);
+('Greek Yogurt and Honey Blueberry Muffins', 'Pastry', 2, 'These Greek Yogurt and Honey Blueberry Muffins are moist, tender, and bursting with blueberries. Made with Greek yogurt and sweetened with honey, they\'re a healthier option for breakfast or snack time. Enjoy them fresh out of the oven or freeze for later!', 'Fold blueberries into the batter gently to avoid bursting them.', 'For extra flavor, add lemon zest or almond extract to the batter.', 'You can use fresh or frozen blueberries for this recipe.', 5.0, 20.0, 15.0, 'Greece', 'http://fakephotolink.com/greek_yogurt_blueberry_muffins.jpg', 'Greek Yogurt and Honey Blueberry Muffins', 5, 20, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -1894,14 +1831,11 @@ VALUES
 ('Greek Yogurt and Honey Blueberry Muffins', 'Measuring Spoons', 1),
 ('Greek Yogurt and Honey Blueberry Muffins', 'Spatula', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('All-Purpose Flour', 364.0, 0, 'Cereals and Cereal Products', 'gr'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Baking Powder', 0.0, 0, 'Others', 'tsp'),
 ('Baking Soda', 0.0, 0, 'Others', 'tsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Greek Yogurt', 59.0, 0, 'Milk, Eggs, and Their Products', 'ml'),
 ('Honey', 304.0, 0, 'Sweeteners', 'ml'),
-('Egg', 72.0, 0, 'Milk, Eggs, and Their Products', ''),
 ('Butter', 717.0, 0, 'Fats and Oils', 'tbsp'),
 ('Vanilla Extract', 288.0, 0, 'Other', 'tsp'),
 ('Blueberries', 85.0, 0, 'Various Plant-based Foods', 'gr');
@@ -1946,7 +1880,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Whole Grain Waffles', 'Pastry', 2, 'Whole Grain Waffles are a healthier alternative to traditional waffles, made with whole wheat flour and sweetened with honey. They\'re crispy on the outside, fluffy on the inside, and perfect for a wholesome breakfast or brunch.', 'Make sure your waffle iron is well-greased to prevent sticking.', 'For extra flavor, add a teaspoon of cinnamon or vanilla extract to the batter.', 'Serve with fresh fruit, maple syrup, or yogurt for a delicious breakfast.', 10.0, 20.0, 10.0, 'Canada', 'http://fakephotolink.com/whole_grain_waffles.jpg', 'Whole Grain Waffles with berries and syrup', 10, 20);
+('Whole Grain Waffles', 'Pastry', 2, 'Whole Grain Waffles are a healthier alternative to traditional waffles, made with whole wheat flour and sweetened with honey. They\'re crispy on the outside, fluffy on the inside, and perfect for a wholesome breakfast or brunch.', 'Make sure your waffle iron is well-greased to prevent sticking.', 'For extra flavor, add a teaspoon of cinnamon or vanilla extract to the batter.', 'Serve with fresh fruit, maple syrup, or yogurt for a delicious breakfast.', 10.0, 20.0, 10.0, 'Canada', 'http://fakephotolink.com/whole_grain_waffles.jpg', 'Whole Grain Waffles with berries and syrup', 10, 20, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -1957,12 +1891,10 @@ VALUES
 ('Whole Grain Waffles', 'Measuring Spoons', 1),
 ('Whole Grain Waffles', 'Spatula', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Whole Wheat Flour', 340.0, 0, 'Cereals and Cereal Products', 'gr'),
 ('Baking Powder', 0.0, 0, 'Others', 'tsp'),
 ('Baking Soda', 0.0, 0, 'Others', 'tsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
-('Egg', 72.0, 0, 'Milk, Eggs, and Their Products', ''),
 ('Honey', 304.0, 0, 'Sweeteners', 'ml'),
 ('Buttermilk', 98.0, 0, 'Milk, Eggs, and Their Products', 'ml'),
 ('Butter', 717.0, 0, 'Fats and Oils', 'tbsp'),
@@ -2004,7 +1936,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Lemon Bars', 'Pastry', 2, 'Lemon Bars are a classic dessert that combines the tartness of lemon with the sweetness of a buttery shortbread crust. These bars are easy to make and perfect for any occasion, from picnics to potlucks.', 'Make sure to thoroughly chill the bars before slicing to get clean edges.', 'You can dust the bars with powdered sugar for a decorative touch before serving.', 'Store leftovers in an airtight container in the refrigerator for up to 3 days.', 5.0, 35.0, 20.0, 'United States', 'http://fakephotolink.com/lemon_bars.jpg', 'Lemon Bars with powdered sugar', 5, 35);
+('Lemon Bars', 'Pastry', 2, 'Lemon Bars are a classic dessert that combines the tartness of lemon with the sweetness of a buttery shortbread crust. These bars are easy to make and perfect for any occasion, from picnics to potlucks.', 'Make sure to thoroughly chill the bars before slicing to get clean edges.', 'You can dust the bars with powdered sugar for a decorative touch before serving.', 'Store leftovers in an airtight container in the refrigerator for up to 3 days.', 5.0, 35.0, 20.0, 'United States', 'http://fakephotolink.com/lemon_bars.jpg', 'Lemon Bars with powdered sugar', 5, 35, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -2015,12 +1947,9 @@ VALUES
 ('Lemon Bars', 'Measuring Spoons', 1),
 ('Lemon Bars', 'Spatula', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('All-Purpose Flour', 364.0, 0, 'Cereals and Cereal Products', 'gr'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Powdered Sugar', 389.0, 0, 'Sweeteners', 'gr'),
 ('Butter', 717.0, 0, 'Fats and Oils', 'tbsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
-('Egg', 72.0, 0, 'Milk, Eggs, and Their Products', ''),
 ('Granulated Sugar', 387.0, 0, 'Sweeteners', 'gr'),
 ('Lemon Juice', 4.0, 0, 'Various Plant-based Foods', 'ml'),
 ('Lemon Zest', 3.0, 0, 'Various Plant-based Foods', 'tbsp'),
@@ -2065,7 +1994,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Qahaq Cookies', 'Pastry', 2, 'Qahaq Cookies are traditional Iranian cookies that are flavored with cardamom and rosewater, giving them a unique and exotic taste. These cookies are delicate, buttery, and perfect for serving with tea or coffee.', 'For the best flavor, use freshly ground cardamom.', 'Be careful not to overwork the dough, as it can make the cookies tough.', 'Store the cookies in an airtight container to keep them fresh.', 10.0, 20.0, 15.0, 'Iran', 'http://fakephotolink.com/qahaq_cookies.jpg', 'Qahaq Cookies with tea', 10, 20);
+('Qahaq Cookies', 'Pastry', 2, 'Qahaq Cookies are traditional Iranian cookies that are flavored with cardamom and rosewater, giving them a unique and exotic taste. These cookies are delicate, buttery, and perfect for serving with tea or coffee.', 'For the best flavor, use freshly ground cardamom.', 'Be careful not to overwork the dough, as it can make the cookies tough.', 'Store the cookies in an airtight container to keep them fresh.', 10.0, 20.0, 15.0, 'Iran', 'http://fakephotolink.com/qahaq_cookies.jpg', 'Qahaq Cookies with tea', 10, 20, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -2076,10 +2005,9 @@ VALUES
 ('Qahaq Cookies', 'Measuring Spoons', 1),
 ('Qahaq Cookies', 'Rolling Pin', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Butter', 717.0, 0, 'Fats and Oils', 'tbsp'),
 ('Granulated Sugar', 387.0, 0, 'Sweeteners', 'gr'),
-('Egg', 72.0, 0, 'Milk, Eggs, and Their Products', ''),
 ('Rosewater', 2.0, 0, 'Herbs and Essential Oils', 'tbsp'),
 ('Ground Cardamom', 0.0, 0, 'Herbs and Essential Oils', 'tsp'),
 ('All-Purpose Flour', 364.0, 0, 'Cereals and Cereal Products', 'gr');
@@ -2121,7 +2049,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Blondies with Nutella', 'Pastry', 2, 'Blondies with Nutella are a delicious twist on the classic blondie recipe. These chewy, buttery bars are swirled with rich Nutella for an indulgent treat that\'s sure to satisfy your sweet tooth.', 'For extra flavor, sprinkle chopped nuts or chocolate chips on top before baking.', 'Be careful not to overmix the batter, as this can make the blondies tough.', 'Allow the blondies to cool completely in the pan before slicing for clean edges.', 5.0, 25.0, 20.0, 'Venezuela', 'http://fakephotolink.com/blondies_nutella.jpg', 'Blondies with Nutella', 5, 25);
+('Blondies with Nutella', 'Pastry', 2, 'Blondies with Nutella are a delicious twist on the classic blondie recipe. These chewy, buttery bars are swirled with rich Nutella for an indulgent treat that\'s sure to satisfy your sweet tooth.', 'For extra flavor, sprinkle chopped nuts or chocolate chips on top before baking.', 'Be careful not to overmix the batter, as this can make the blondies tough.', 'Allow the blondies to cool completely in the pan before slicing for clean edges.', 5.0, 25.0, 20.0, 'Venezuela', 'http://fakephotolink.com/blondies_nutella.jpg', 'Blondies with Nutella', 5, 25, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -2132,14 +2060,11 @@ VALUES
 ('Blondies with Nutella', 'Measuring Spoons', 1),
 ('Blondies with Nutella', 'Spatula', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Butter', 717.0, 0, 'Fats and Oils', 'tbsp'),
 ('Brown Sugar', 377.0, 0, 'Sweeteners', 'gr'),
-('Egg', 72.0, 0, 'Milk, Eggs, and Their Products', ''),
 ('Vanilla Extract', 288.0, 0, 'Others', 'tsp'),
-('All-Purpose Flour', 364.0, 0, 'Cereals and Cereal Products', 'gr'),
 ('Baking Powder', 0.0, 0, 'Others', 'tsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Nutella', 80.0, 0, 'Sweeteners', 'tbsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
@@ -2181,7 +2106,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Hot Chocolate', 'Beverage', 1, 'Hot Chocolate is a cozy and comforting drink perfect for cold days or evenings by the fireplace. Made with rich cocoa, sugar, and milk, it\'s easy to make and can be customized with your favorite toppings like whipped cream or marshmallows.', 'Use high-quality cocoa powder for the best flavor.', 'For a richer taste, use whole milk or half-and-half.', 'Top with whipped cream, marshmallows, or a sprinkle of cinnamon before serving.', 5.0, 10.0, 5.0, 'Czech Republic', 'http://fakephotolink.com/hot_chocolate.jpg', 'Hot Chocolate with marshmallows', 5, 10);
+('Hot Chocolate', 'Beverage', 1, 'Hot Chocolate is a cozy and comforting drink perfect for cold days or evenings by the fireplace. Made with rich cocoa, sugar, and milk, it\'s easy to make and can be customized with your favorite toppings like whipped cream or marshmallows.', 'Use high-quality cocoa powder for the best flavor.', 'For a richer taste, use whole milk or half-and-half.', 'Top with whipped cream, marshmallows, or a sprinkle of cinnamon before serving.', 5.0, 10.0, 5.0, 'Czech Republic', 'http://fakephotolink.com/hot_chocolate.jpg', 'Hot Chocolate with marshmallows', 5, 10, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -2191,7 +2116,7 @@ VALUES
 ('Hot Chocolate', 'Measuring Spoons', 1),
 ('Hot Chocolate', 'Mug', 2);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Cocoa Powder', 228.0, 0, 'Sweeteners', 'tbsp'),
 ('Granulated Sugar', 387.0, 0, 'Sweeteners', 'gr'),
 ('Milk', 148.0, 0, 'Milk, Eggs, and Their Products', 'ml'),
@@ -2232,7 +2157,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Chocolate Mousse', 'Pastry', 4, 'Chocolate Mousse is a decadent and velvety dessert that is surprisingly easy to make. Made with rich chocolate and airy whipped cream, it\'s a classic indulgence that never fails to impress.', 'Use high-quality chocolate for the best flavor and texture.', 'Be gentle when folding the whipped cream into the chocolate mixture to keep the mousse light and airy.', 'Chill the mousse for at least 4 hours, or overnight, to allow it to set properly.', 5.0, 15.0, 30.0, 'France', 'http://fakephotolink.com/chocolate_mousse.jpg', 'Chocolate Mousse in a glass', 5, 15);
+('Chocolate Mousse', 'Pastry', 4, 'Chocolate Mousse is a decadent and velvety dessert that is surprisingly easy to make. Made with rich chocolate and airy whipped cream, it\'s a classic indulgence that never fails to impress.', 'Use high-quality chocolate for the best flavor and texture.', 'Be gentle when folding the whipped cream into the chocolate mixture to keep the mousse light and airy.', 'Chill the mousse for at least 4 hours, or overnight, to allow it to set properly.', 5.0, 15.0, 30.0, 'France', 'http://fakephotolink.com/chocolate_mousse.jpg', 'Chocolate Mousse in a glass', 5, 15, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -2242,11 +2167,10 @@ VALUES
 ('Chocolate Mousse', 'Spatula', 1),
 ('Chocolate Mousse', 'Glass Bowls', 4);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Semi-Sweet Chocolate', 525.0, 0, 'Sweeteners', 'gr'),
 ('Heavy Cream', 414.0, 0, 'Milk, Eggs, and Their Products', 'ml'),
 ('Vanilla Extract', 288.0, 0, 'Others', 'tsp'),
-('Egg', 72.0, 0, 'Milk, Eggs, and Their Products', ''),
 ('Granulated Sugar', 387.0, 0, 'Sweeteners', 'gr'),
 ('Water', 0.0, 0, 'Water and Water-Based Drinks', 'tbsp');
 
@@ -2284,7 +2208,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('S\'mores Cookie Bars', 'Pastry', 5, 'S\'mores Cookie Bars combine the classic flavors of s\'mores into an easy and portable treat. These bars have a graham cracker crust, a chewy cookie layer, and are topped with melted chocolate and toasted marshmallows.', 'For easier cutting, chill the bars in the refrigerator before slicing.', 'You can use a kitchen torch or the broiler in your oven to toast the marshmallows.', 'Store any leftovers in an airtight container at room temperature for up to 3 days.', 5.0, 20.0, 25.0, 'United States', 'http://fakephotolink.com/smores_cookie_bars.jpg', 'S\'mores Cookie Bars', 5, 20);
+('S\'mores Cookie Bars', 'Pastry', 5, 'S\'mores Cookie Bars combine the classic flavors of s\'mores into an easy and portable treat. These bars have a graham cracker crust, a chewy cookie layer, and are topped with melted chocolate and toasted marshmallows.', 'For easier cutting, chill the bars in the refrigerator before slicing.', 'You can use a kitchen torch or the broiler in your oven to toast the marshmallows.', 'Store any leftovers in an airtight container at room temperature for up to 3 days.', 5.0, 20.0, 25.0, 'United States', 'http://fakephotolink.com/smores_cookie_bars.jpg', 'S\'mores Cookie Bars', 5, 20, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -2295,16 +2219,13 @@ VALUES
 ('S\'mores Cookie Bars', 'Measuring Spoons', 1),
 ('S\'mores Cookie Bars', 'Spatula', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Graham Cracker Crumbs', 108.0, 0, 'Cereals and Cereal Products', 'gr'),
 ('Butter', 717.0, 0, 'Fats and Oils', 'tbsp'),
 ('Granulated Sugar', 387.0, 0, 'Sweeteners', 'gr'),
 ('Brown Sugar', 377.0, 0, 'Sweeteners', 'gr'),
-('Egg', 72.0, 0, 'Milk, Eggs, and Their Products', ''),
 ('Vanilla Extract', 288.0, 0, 'Others', 'tsp'),
-('All-Purpose Flour', 364.0, 0, 'Cereals and Cereal Products', 'gr'),
 ('Baking Powder', 0.0, 0, 'Others', 'tsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Chocolate Chips', 805.0, 0, 'Sweeteners', 'gr'),
 ('Mini Marshmallows', 100.0, 0, 'Sweeteners', 'gr');
 
@@ -2352,7 +2273,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Orange Chicken', 'Cooking', 4, 'Orange Chicken is a popular Chinese-American dish featuring crispy fried chicken pieces coated in a tangy orange sauce. This homemade version is healthier than takeout and just as delicious!', 'To get crispy chicken, make sure the oil is hot enough before frying.', 'For extra flavor, marinate the chicken in soy sauce, garlic, and ginger for at least 30 minutes before cooking.', 'Serve with steamed rice and steamed broccoli for a complete meal.', 30.0, 30.0, 30.0, 'China', 'http://fakephotolink.com/orange_chicken.jpg', 'Orange Chicken with rice and broccoli', 30, 30);
+('Orange Chicken', 'Cooking', 4, 'Orange Chicken is a popular Chinese-American dish featuring crispy fried chicken pieces coated in a tangy orange sauce. This homemade version is healthier than takeout and just as delicious!', 'To get crispy chicken, make sure the oil is hot enough before frying.', 'For extra flavor, marinate the chicken in soy sauce, garlic, and ginger for at least 30 minutes before cooking.', 'Serve with steamed rice and steamed broccoli for a complete meal.', 30.0, 30.0, 30.0, 'China', 'http://fakephotolink.com/orange_chicken.jpg', 'Orange Chicken with rice and broccoli', 30, 30, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -2361,7 +2282,7 @@ VALUES
 ('Orange Chicken', 'Skillet', 1),
 ('Orange Chicken', 'Tongs', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Chicken Breast', 165.0, 0, 'Meat and Meat Products', 'gr'),
 ('Soy Sauce', 8.0, 0, 'Legumes and Legume Products', 'tbsp'),
 ('Cornstarch', 381.0, 0, 'Cereals and Cereal Products', 'tbsp'),
@@ -2370,7 +2291,6 @@ INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, gr
 ('Orange Zest', 6.0, 0, 'Various Plant-based Foods', 'tsp'),
 ('Brown Sugar', 387.0, 0, 'Sweeteners', 'gr'),
 ('Rice Vinegar', 43.0, 0, 'Fats and Oils', 'tbsp'),
-('Garlic', 4.0, 0, 'Various Plant-based Foods', 'clove'),
 ('Ginger', 3.0, 0, 'Herbs and Essential Oils', 'tsp'),
 ('Red Chili Flakes', 8.0, 0, 'Herbs and Essential Oils', 'tsp'),
 ('Green Onion', 32.0, 0, 'Various Plant-based Foods', 'stalk');
@@ -2415,7 +2335,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Tostadas', 'Cooking', 2, 'Tostadas are a popular Mexican dish consisting of crispy fried tortillas topped with various ingredients. These vegetarian tostadas are loaded with refried beans, lettuce, tomatoes, cheese, and avocado for a flavorful and satisfying meal.', 'Feel free to customize your tostadas with your favorite toppings like salsa, sour cream, or jalapeños.', 'For a healthier version, you can bake the tortillas instead of frying them.', 'Serve with a side of Mexican rice and beans for a complete meal.', 20.0, 15.0, 15.0, 'Mexico', 'http://fakephotolink.com/tostadas.jpg', 'Tostadas with refried beans and avocado', 20, 15);
+('Tostadas', 'Cooking', 2, 'Tostadas are a popular Mexican dish consisting of crispy fried tortillas topped with various ingredients. These vegetarian tostadas are loaded with refried beans, lettuce, tomatoes, cheese, and avocado for a flavorful and satisfying meal.', 'Feel free to customize your tostadas with your favorite toppings like salsa, sour cream, or jalapeños.', 'For a healthier version, you can bake the tortillas instead of frying them.', 'Serve with a side of Mexican rice and beans for a complete meal.', 20.0, 15.0, 15.0, 'Mexico', 'http://fakephotolink.com/tostadas.jpg', 'Tostadas with refried beans and avocado', 20, 15, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -2424,12 +2344,12 @@ VALUES
 ('Tostadas', 'Baking Sheet', 1),
 ('Tostadas', 'Mixing Bowl', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Corn Tortillas', 52.0, 0, 'Cereals and Cereal Products', 'piece'),
-('Refried Beans', 91.0, 0, 'Legumes and Legume Products', 'cup'),
-('Lettuce', 5.0, 0, 'Various Plant-based Foods', 'cup'),
+('Refried Beans', 91.0, 0, 'Legumes and Legume Products', 'cups'),
+('Lettuce', 5.0, 0, 'Various Plant-based Foods', 'cups'),
 ('Tomato', 22.0, 0, 'Various Plant-based Foods', 'piece'),
-('Cheese', 402.0, 0, 'Milk, Eggs, and Their Products', 'cup'),
+('Cheese', 402.0, 0, 'Milk, Eggs, and Their Products', 'cups'),
 ('Avocado', 234.0, 0, 'Various Plant-based Foods', 'piece');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
@@ -2463,7 +2383,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Black Bean Stuffed Sweet Potatoes', 'Cooking', 5, 'Black Bean Stuffed Sweet Potatoes are a nutritious and satisfying meal that\'s easy to make. Baked sweet potatoes are topped with a flavorful mixture of black beans, corn, tomatoes, and spices for a delicious vegetarian dish.', 'You can prepare the filling in advance and refrigerate it until ready to use.', 'Feel free to customize the filling with your favorite ingredients like avocado, salsa, or cilantro.', 'Serve with a dollop of sour cream or Greek yogurt and a sprinkle of chopped green onions.', 10.0, 45.0, 60.0, 'United States', 'http://fakephotolink.com/stuffed_sweet_potatoes.jpg', 'Black Bean Stuffed Sweet Potatoes', 10, 45);
+('Black Bean Stuffed Sweet Potatoes', 'Cooking', 5, 'Black Bean Stuffed Sweet Potatoes are a nutritious and satisfying meal that\'s easy to make. Baked sweet potatoes are topped with a flavorful mixture of black beans, corn, tomatoes, and spices for a delicious vegetarian dish.', 'You can prepare the filling in advance and refrigerate it until ready to use.', 'Feel free to customize the filling with your favorite ingredients like avocado, salsa, or cilantro.', 'Serve with a dollop of sour cream or Greek yogurt and a sprinkle of chopped green onions.', 10.0, 45.0, 60.0, 'United States', 'http://fakephotolink.com/stuffed_sweet_potatoes.jpg', 'Black Bean Stuffed Sweet Potatoes', 10, 45, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -2472,10 +2392,10 @@ VALUES
 ('Black Bean Stuffed Sweet Potatoes', 'Knife', 1),
 ('Black Bean Stuffed Sweet Potatoes', 'Saucepan', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Sweet Potatoes', 90.0, 0, 'Various Plant-based Foods', 'piece'),
-('Black Beans', 241.0, 0, 'Legumes and Legume Products', 'cup'),
-('Corn', 132.0, 0, 'Various Plant-based Foods', 'cup'),
+('Black Beans', 241.0, 0, 'Legumes and Legume Products', 'cups'),
+('Corn', 132.0, 0, 'Various Plant-based Foods', 'cups'),
 ('Tomato', 22.0, 0, 'Various Plant-based Foods', 'piece'),
 ('Cumin', 8.0, 0, 'Herbs and Essential Oils', 'tsp'),
 ('Chili Powder', 6.0, 0, 'Herbs and Essential Oils', 'tsp'),
@@ -2522,7 +2442,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Asian Shredded Beef', 'Cooking', 5, 'Asian Shredded Beef is a savory and tender dish that\'s full of flavor. Thinly sliced beef is marinated in a mixture of soy sauce, ginger, garlic, and other spices, then slow-cooked until perfectly tender. Serve it over rice or noodles for a satisfying meal.', 'For best results, marinate the beef for at least 2 hours, or overnight, to allow the flavors to develop.', 'You can use a slow cooker or pressure cooker to cook the beef.', 'Garnish with sliced green onions and sesame seeds for extra flavor and presentation.', 15.0, 240.0, 480.0, 'China', 'http://fakephotolink.com/asian_shredded_beef.jpg', 'Asian Shredded Beef with rice', 15, 240);
+('Asian Shredded Beef', 'Cooking', 5, 'Asian Shredded Beef is a savory and tender dish that\'s full of flavor. Thinly sliced beef is marinated in a mixture of soy sauce, ginger, garlic, and other spices, then slow-cooked until perfectly tender. Serve it over rice or noodles for a satisfying meal.', 'For best results, marinate the beef for at least 2 hours, or overnight, to allow the flavors to develop.', 'You can use a slow cooker or pressure cooker to cook the beef.', 'Garnish with sliced green onions and sesame seeds for extra flavor and presentation.', 15.0, 240.0, 480.0, 'China', 'http://fakephotolink.com/asian_shredded_beef.jpg', 'Asian Shredded Beef with rice', 15, 240, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -2531,12 +2451,11 @@ VALUES
 ('Asian Shredded Beef', 'Cutting Board', 1),
 ('Asian Shredded Beef', 'Skillet', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Beef Chuck Roast', 250.0, 0, 'Meat and Meat Products', 'gr'),
 ('Soy Sauce', 8.0, 0, 'Legumes and Legume Products', 'tbsp'),
 ('Brown Sugar', 387.0, 0, 'Sweeteners', 'tbsp'),
 ('Sesame Oil', 40.0, 0, 'Fats and Oils', 'tbsp'),
-('Garlic', 4.0, 0, 'Various Plant-based Foods', 'clove'),
 ('Ginger', 3.0, 0, 'Herbs and Essential Oils', 'tsp'),
 ('Rice Vinegar', 43.0, 0, 'Fats and Oils', 'tbsp'),
 ('Green Onion', 32.0, 0, 'Various Plant-based Foods', 'stalk'),
@@ -2579,7 +2498,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 -- Capellini with sausage, spinach, and jalapeno
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Capellini with Sausage, Spinach, and Jalapeno', 'Cooking', 3, 'Capellini with Sausage, Spinach, and Jalapeno is a spicy and flavorful pasta dish that\'s quick and easy to make. Thin pasta is tossed with spicy Italian sausage, fresh spinach, and sliced jalapenos, then finished with a sprinkle of Parmesan cheese. It\'s perfect for a weeknight dinner or a special occasion.', 'Adjust the amount of jalapeno according to your spice preference.', 'You can use any type of sausage you like, such as spicy or mild.', 'Serve with garlic bread and a side salad for a complete meal.', 20.0, 15.0, 20.0, 'Italy', 'http://fakephotolink.com/capellini_sausage_spinach_jalapeno.jpg', 'Capellini with Sausage, Spinach, and Jalapeno pasta dish', 15, 20);
+('Capellini with Sausage, Spinach, and Jalapeno', 'Cooking', 3, 'Capellini with Sausage, Spinach, and Jalapeno is a spicy and flavorful pasta dish that\'s quick and easy to make. Thin pasta is tossed with spicy Italian sausage, fresh spinach, and sliced jalapenos, then finished with a sprinkle of Parmesan cheese. It\'s perfect for a weeknight dinner or a special occasion.', 'Adjust the amount of jalapeno according to your spice preference.', 'You can use any type of sausage you like, such as spicy or mild.', 'Serve with garlic bread and a side salad for a complete meal.', 20.0, 15.0, 20.0, 'Italy', 'http://fakephotolink.com/capellini_sausage_spinach_jalapeno.jpg', 'Capellini with Sausage, Spinach, and Jalapeno pasta dish', 15, 20, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -2590,10 +2509,10 @@ VALUES
 ('Capellini with Sausage, Spinach, and Jalapeno', 'Cutting Board', 2),
 ('Capellini with Sausage, Spinach, and Jalapeno', 'Mixing Bowl', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Capellini Pasta', 210.0, 0, 'Cereals and Cereal Products', 'gr'),
 ('Italian Sausage', 289.0, 0, 'Meat and Meat Products', 'gr'),
-('Spinach', 23.0, 0, 'Various Plant-based Foods', 'cup'),
+('Spinach', 23.0, 0, 'Various Plant-based Foods', 'cups'),
 ('Jalapeno', 4.0, 0, 'Various Plant-based Foods', 'unit'),
 ('Parmesan Cheese', 110.0, 0, 'Milk, Eggs, and Their Products', 'tbsp');
 
@@ -2630,7 +2549,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Crispy Chicken with Kale', 'Cooking', 4, 'Crispy Chicken with Kale is a delicious and healthy dish that\'s easy to make. Tender chicken breasts are coated in breadcrumbs and baked until golden and crispy, then served over a bed of sautéed kale. It\'s a nutritious and satisfying meal that the whole family will love.', 'For extra flavor, season the breadcrumbs with your favorite herbs and spices.', 'You can use boneless, skinless chicken thighs instead of chicken breasts if you prefer.', 'Serve with a squeeze of lemon juice for a fresh citrus flavor.', 30.0, 25.0, 20.0, 'United States', 'http://fakephotolink.com/crispy_chicken_with_kale.jpg', 'Crispy Chicken with Kale served over sautéed kale', 15, 25);
+('Crispy Chicken with Kale', 'Cooking', 4, 'Crispy Chicken with Kale is a delicious and healthy dish that\'s easy to make. Tender chicken breasts are coated in breadcrumbs and baked until golden and crispy, then served over a bed of sautéed kale. It\'s a nutritious and satisfying meal that the whole family will love.', 'For extra flavor, season the breadcrumbs with your favorite herbs and spices.', 'You can use boneless, skinless chicken thighs instead of chicken breasts if you prefer.', 'Serve with a squeeze of lemon juice for a fresh citrus flavor.', 30.0, 25.0, 20.0, 'United States', 'http://fakephotolink.com/crispy_chicken_with_kale.jpg', 'Crispy Chicken with Kale served over sautéed kale', 15, 25, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -2640,12 +2559,11 @@ VALUES
 ('Crispy Chicken with Kale', 'Knife', 3),
 ('Crispy Chicken with Kale', 'Cutting Board', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Chicken Breasts', 165.0, 0, 'Meat and Meat Products', 'gr'),
 ('Breadcrumbs', 400.0, 0, 'Cereals and Cereal Products', 'gr'),
-('Kale', 33.0, 0, 'Various Plant-based Foods', 'cup'),
+('Kale', 33.0, 0, 'Various Plant-based Foods', 'cups'),
 ('Olive Oil', 119.0, 0, 'Fats and Oils', 'tbsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp'),
 ('Lemon', 17.0, 0, 'Various Plant-based Foods', 'unit');
 
@@ -2686,7 +2604,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Roast Chicken Grain Bowl', 'Cooking', 3, 'Roast Chicken Grain Bowl is a healthy and satisfying meal that\'s perfect for lunch or dinner. Tender roasted chicken is served over a bed of mixed grains, roasted vegetables, and fresh greens, then drizzled with a flavorful dressing. It\'s easy to customize with your favorite grains and veggies.', 'You can use a mix of quinoa, farro, and brown rice for the grains.', 'Feel free to add any roasted vegetables you like, such as sweet potatoes, Brussels sprouts, or carrots.', 'Top with sliced avocado or a boiled egg for extra protein and creaminess.', 35.0, 30.0, 25.0, 'United States', 'http://fakephotolink.com/roast_chicken_grain_bowl.jpg', 'Roast Chicken Grain Bowl with mixed grains and vegetables', 15, 30);
+('Roast Chicken Grain Bowl', 'Cooking', 3, 'Roast Chicken Grain Bowl is a healthy and satisfying meal that\'s perfect for lunch or dinner. Tender roasted chicken is served over a bed of mixed grains, roasted vegetables, and fresh greens, then drizzled with a flavorful dressing. It\'s easy to customize with your favorite grains and veggies.', 'You can use a mix of quinoa, farro, and brown rice for the grains.', 'Feel free to add any roasted vegetables you like, such as sweet potatoes, Brussels sprouts, or carrots.', 'Top with sliced avocado or a boiled egg for extra protein and creaminess.', 35.0, 30.0, 25.0, 'United States', 'http://fakephotolink.com/roast_chicken_grain_bowl.jpg', 'Roast Chicken Grain Bowl with mixed grains and vegetables', 15, 30, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -2696,13 +2614,12 @@ VALUES
 ('Roast Chicken Grain Bowl', 'Cutting Board',2),
 ('Roast Chicken Grain Bowl', 'Skillet', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Chicken Breasts', 165.0, 0, 'Meat and Meat Products', 'gr'),
 ('Mixed Grains', 150.0, 0, 'Cereals and Cereal Products', 'gr'),
-('Assorted Vegetables', 40.0, 0, 'Various Plant-based Foods', 'cup'),
-('Mixed Greens', 4.0, 0, 'Various Plant-based Foods', 'cup'),
+('Assorted Vegetables', 40.0, 0, 'Various Plant-based Foods', 'cups'),
+('Mixed Greens', 4.0, 0, 'Various Plant-based Foods', 'cups'),
 ('Olive Oil', 119.0, 0, 'Fats and Oils', 'tbsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp'),
 ('Lemon', 17.0, 0, 'Various Plant-based Foods', 'unit');
 
@@ -2744,7 +2661,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Chicken Thighs with Barley and Peas', 'Cooking', 2, 'Chicken Thighs with Barley and Peas is a hearty and flavorful one-pot meal that\'s perfect for a cozy dinner. Tender chicken thighs are cooked with barley, peas, and aromatic vegetables in a savory broth until everything is tender and delicious. It\'s a comforting dish that\'s easy to make and sure to please the whole family.', 'You can use chicken drumsticks or chicken breasts instead of chicken thighs if you prefer.', 'Feel free to add other vegetables like carrots or mushrooms for extra flavor and nutrition.', 'Garnish with fresh herbs like parsley or thyme before serving for a pop of color and freshness.', 15.0, 45.0, 30.0, 'United States', 'http://fakephotolink.com/chicken_thighs_barley_peas.jpg', 'Chicken Thighs with Barley and Peas served in a bowl', 15, 45);
+('Chicken Thighs with Barley and Peas', 'Cooking', 2, 'Chicken Thighs with Barley and Peas is a hearty and flavorful one-pot meal that\'s perfect for a cozy dinner. Tender chicken thighs are cooked with barley, peas, and aromatic vegetables in a savory broth until everything is tender and delicious. It\'s a comforting dish that\'s easy to make and sure to please the whole family.', 'You can use chicken drumsticks or chicken breasts instead of chicken thighs if you prefer.', 'Feel free to add other vegetables like carrots or mushrooms for extra flavor and nutrition.', 'Garnish with fresh herbs like parsley or thyme before serving for a pop of color and freshness.', 15.0, 45.0, 30.0, 'United States', 'http://fakephotolink.com/chicken_thighs_barley_peas.jpg', 'Chicken Thighs with Barley and Peas served in a bowl', 15, 45, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -2752,14 +2669,12 @@ VALUES
 ('Chicken Thighs with Barley and Peas', 'Cutting Board', 2),
 ('Chicken Thighs with Barley and Peas', 'Mixing Spoon', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Chicken Thighs', 209.0, 0, 'Meat and Meat Products', 'gr'),
 ('Barley', 123.0, 0, 'Cereals and Cereal Products', 'gr'),
-('Peas', 134.0, 0, 'Various Plant-based Foods', 'cup'),
+('Peas', 134.0, 0, 'Various Plant-based Foods', 'cups'),
 ('Onion', 44.0, 0, 'Various Plant-based Foods', 'unit'),
-('Garlic', 4.0, 0, 'Various Plant-based Foods', 'clove'),
-('Chicken Broth', 17.0, 0, 'Others', 'cup'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
+('Chicken Broth', 17.0, 0, 'Others', 'cups'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
@@ -2799,7 +2714,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Rice Noodles with Meatballs and Bok Choy', 'Cooking', 3, 'Rice Noodles with Meatballs and Bok Choy is a delicious and satisfying Asian-inspired dish that\'s perfect for a quick and easy dinner. Tender rice noodles are tossed with savory meatballs, crunchy bok choy, and a flavorful sauce made with soy sauce, ginger, and garlic. It\'s a nutritious and delicious meal that the whole family will love.', 'You can use any type of ground meat for the meatballs, such as pork, chicken, or turkey.', 'Feel free to add other vegetables like bell peppers, carrots, or mushrooms for extra flavor and nutrition.', 'Garnish with sliced green onions and sesame seeds before serving for a pop of color and texture.', 20.0, 25.0, 20.0, 'Indonesia', 'http://fakephotolink.com/rice_noodles_meatballs_bok_choy.jpg', 'Rice Noodles with Meatballs and Bok Choy dish', 15, 25);
+('Rice Noodles with Meatballs and Bok Choy', 'Cooking', 3, 'Rice Noodles with Meatballs and Bok Choy is a delicious and satisfying Asian-inspired dish that\'s perfect for a quick and easy dinner. Tender rice noodles are tossed with savory meatballs, crunchy bok choy, and a flavorful sauce made with soy sauce, ginger, and garlic. It\'s a nutritious and delicious meal that the whole family will love.', 'You can use any type of ground meat for the meatballs, such as pork, chicken, or turkey.', 'Feel free to add other vegetables like bell peppers, carrots, or mushrooms for extra flavor and nutrition.', 'Garnish with sliced green onions and sesame seeds before serving for a pop of color and texture.', 20.0, 25.0, 20.0, 'Indonesia', 'http://fakephotolink.com/rice_noodles_meatballs_bok_choy.jpg', 'Rice Noodles with Meatballs and Bok Choy dish', 15, 25, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -2809,11 +2724,10 @@ VALUES
 ('Rice Noodles with Meatballs and Bok Choy', 'Knife', 3),
 ('Rice Noodles with Meatballs and Bok Choy', 'Cutting Board', 2);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Rice Noodles', 192.0, 0, 'Cereals and Cereal Products', 'gr'),
 ('Ground Meat', 250.0, 0, 'Meat and Meat Products', 'gr'),
-('Bok Choy', 13.0, 0, 'Various Plant-based Foods', 'cup'),
-('Garlic', 4.0, 0, 'Various Plant-based Foods', 'clove'),
+('Bok Choy', 13.0, 0, 'Various Plant-based Foods', 'cups'),
 ('Ginger', 18.0, 0, 'Various Plant-based Foods', 'tsp'),
 ('Soy Sauce', 8.0, 0, 'Others', 'tbsp'),
 ('Rice Vinegar', 4.0, 0, 'Others', 'tbsp'),
@@ -2862,7 +2776,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Paprika Pork with Roasted Potatoes and Dill Cream', 'Cooking', 3, 'Paprika Pork with Roasted Potatoes and Dill Cream is a flavorful and satisfying dish that\'s perfect for a cozy dinner. Tender pork chops are seasoned with paprika and garlic, then seared until golden brown and crispy. They\'re served alongside crispy roasted potatoes and a creamy dill sauce for dipping. It\'s a delicious meal that\'s sure to become a family favorite.', 'Make sure to pat the pork chops dry with paper towels before seasoning and searing to ensure a crispy crust.', 'You can use baby potatoes or regular potatoes for the roasted potatoes.', 'Feel free to substitute sour cream for the Greek yogurt in the dill cream sauce if you prefer.', 20.0, 35.0, 30.0, 'United States', 'http://fakephotolink.com/paprika_pork_roasted_potatoes_dill_cream.jpg', 'Paprika Pork with Roasted Potatoes and Dill Cream served on a plate', 15, 35);
+('Paprika Pork with Roasted Potatoes and Dill Cream', 'Cooking', 3, 'Paprika Pork with Roasted Potatoes and Dill Cream is a flavorful and satisfying dish that\'s perfect for a cozy dinner. Tender pork chops are seasoned with paprika and garlic, then seared until golden brown and crispy. They\'re served alongside crispy roasted potatoes and a creamy dill sauce for dipping. It\'s a delicious meal that\'s sure to become a family favorite.', 'Make sure to pat the pork chops dry with paper towels before seasoning and searing to ensure a crispy crust.', 'You can use baby potatoes or regular potatoes for the roasted potatoes.', 'Feel free to substitute sour cream for the Greek yogurt in the dill cream sauce if you prefer.', 20.0, 35.0, 30.0, 'United States', 'http://fakephotolink.com/paprika_pork_roasted_potatoes_dill_cream.jpg', 'Paprika Pork with Roasted Potatoes and Dill Cream served on a plate', 15, 35, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -2872,15 +2786,13 @@ VALUES
 ('Paprika Pork with Roasted Potatoes and Dill Cream', 'Knife', 2),
 ('Paprika Pork with Roasted Potatoes and Dill Cream', 'Cutting Board', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Pork Chops', 250.0, 0, 'Meat and Meat Products', 'gr'),
-('Potatoes', 163.0, 0, 'Various Plant-based Foods', 'cup'),
-('Greek Yogurt', 59.0, 0, 'Milk, Eggs, and Their Products', 'cup'),
+('Potatoes', 163.0, 0, 'Various Plant-based Foods', 'cups'),
+('Greek Yogurt', 59.0, 0, 'Milk, Eggs, and Their Products', 'cups'),
 ('Fresh Dill', 7.0, 0, 'Various Plant-based Foods', 'tbsp'),
-('Garlic', 4.0, 0, 'Various Plant-based Foods', 'clove'),
 ('Paprika', 20.0, 0, 'Herbs and Essential Oils', 'tsp'),
 ('Olive Oil', 119.0, 0, 'Fats and Oils', 'tbsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
@@ -2920,7 +2832,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Chicken Cutlets with Carrot and Kale Salad', 'Cooking', 2, 'Chicken Cutlets with Carrot and Kale Salad is a light and healthy dish that\'s perfect for a quick and easy dinner. Thinly pounded chicken cutlets are seasoned, pan-fried until golden and crispy, then served alongside a fresh and crunchy salad made with shredded carrots, kale, and a tangy vinaigrette. It\'s a simple and delicious meal that\'s packed with flavor and nutrients.', 'You can use chicken breasts or chicken thighs instead of chicken cutlets if you prefer.', 'Massage the kale with a bit of olive oil and lemon juice before adding it to the salad to help soften its texture.', 'Feel free to add other vegetables like cherry tomatoes, cucumbers, or bell peppers to the salad for extra color and flavor.', 20.0, 20.0, 20.0, 'United States', 'http://fakephotolink.com/chicken_cutlets_carrot_kale_salad.jpg', 'Chicken Cutlets with Carrot and Kale Salad served on a plate', 15, 20);
+('Chicken Cutlets with Carrot and Kale Salad', 'Cooking', 2, 'Chicken Cutlets with Carrot and Kale Salad is a light and healthy dish that\'s perfect for a quick and easy dinner. Thinly pounded chicken cutlets are seasoned, pan-fried until golden and crispy, then served alongside a fresh and crunchy salad made with shredded carrots, kale, and a tangy vinaigrette. It\'s a simple and delicious meal that\'s packed with flavor and nutrients.', 'You can use chicken breasts or chicken thighs instead of chicken cutlets if you prefer.', 'Massage the kale with a bit of olive oil and lemon juice before adding it to the salad to help soften its texture.', 'Feel free to add other vegetables like cherry tomatoes, cucumbers, or bell peppers to the salad for extra color and flavor.', 20.0, 20.0, 20.0, 'United States', 'http://fakephotolink.com/chicken_cutlets_carrot_kale_salad.jpg', 'Chicken Cutlets with Carrot and Kale Salad served on a plate', 15, 20, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -2929,13 +2841,12 @@ VALUES
 ('Chicken Cutlets with Carrot and Kale Salad', 'Knife', 1),
 ('Chicken Cutlets with Carrot and Kale Salad', 'Cutting Board', 2);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Chicken Cutlets', 165.0, 0, 'Meat and Meat Products', 'gr'),
-('Carrots', 41.0, 0, 'Various Plant-based Foods', 'cup'),
-('Kale', 33.0, 0, 'Various Plant-based Foods', 'cup'),
+('Carrots', 41.0, 0, 'Various Plant-based Foods', 'cups'),
+('Kale', 33.0, 0, 'Various Plant-based Foods', 'cups'),
 ('Lemon', 17.0, 0, 'Various Plant-based Foods', 'unit'),
 ('Olive Oil', 119.0, 0, 'Fats and Oils', 'tbsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp'),
 ('White Wine Vinegar', 4.0, 0, 'Others', 'tbsp');
 
@@ -2976,7 +2887,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Gnocchi and Sweet Potatoes', 'Cooking', 2, 'Gnocchi and Sweet Potatoes is a comforting and flavorful dish that\'s perfect for a cozy dinner. Pillowy gnocchi is paired with roasted sweet potatoes, garlic, spinach, and Parmesan cheese for a delicious and satisfying meal. It\'s easy to make and sure to become a family favorite.', 'You can use store-bought gnocchi or make your own from scratch.', 'Feel free to add other vegetables like mushrooms or cherry tomatoes for extra flavor and nutrition.', 'Serve with a sprinkle of additional Parmesan cheese and a drizzle of olive oil for extra richness.', 20.0, 40.0, 20.0, 'Italy', 'http://fakephotolink.com/gnocchi_sweet_potatoes.jpg', 'Gnocchi and Sweet Potatoes served on a plate', 20, 40);
+('Gnocchi and Sweet Potatoes', 'Cooking', 2, 'Gnocchi and Sweet Potatoes is a comforting and flavorful dish that\'s perfect for a cozy dinner. Pillowy gnocchi is paired with roasted sweet potatoes, garlic, spinach, and Parmesan cheese for a delicious and satisfying meal. It\'s easy to make and sure to become a family favorite.', 'You can use store-bought gnocchi or make your own from scratch.', 'Feel free to add other vegetables like mushrooms or cherry tomatoes for extra flavor and nutrition.', 'Serve with a sprinkle of additional Parmesan cheese and a drizzle of olive oil for extra richness.', 20.0, 40.0, 20.0, 'Italy', 'http://fakephotolink.com/gnocchi_sweet_potatoes.jpg', 'Gnocchi and Sweet Potatoes served on a plate', 20, 40, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -2986,14 +2897,12 @@ VALUES
 ('Gnocchi and Sweet Potatoes', 'Knife', 1),
 ('Gnocchi and Sweet Potatoes', 'Cutting Board', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Gnocchi', 130.0, 0, 'Cereals and Cereal Products', 'gr'),
-('Sweet Potatoes', 86.0, 0, 'Various Plant-based Foods', 'cup'),
-('Garlic', 4.0, 0, 'Various Plant-based Foods', 'clove'),
-('Spinach', 7.0, 0, 'Various Plant-based Foods', 'cup'),
+('Sweet Potatoes', 86.0, 0, 'Various Plant-based Foods', 'cups'),
+('Spinach', 7.0, 0, 'Various Plant-based Foods', 'cups'),
 ('Parmesan Cheese', 110.0, 0, 'Milk, Eggs, and Their Products', 'tbsp'),
 ('Olive Oil', 119.0, 0, 'Fats and Oils', 'tbsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
@@ -3033,7 +2942,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Shepherd''s Pie', 'Cooking', 2, 'Shepherd''s Pie is a classic comfort food dish that\'s perfect for a cozy dinner. Seasoned ground beef or lamb is cooked with vegetables and topped with creamy mashed potatoes, then baked until golden and bubbly. It\'s hearty, flavorful, and sure to become a family favorite.', 'You can use ground beef, lamb, or turkey for the meat filling.', 'Feel free to add other vegetables like peas, carrots, or corn to the filling for extra flavor and nutrition.', 'For a crispy topping, broil the Shepherd''s Pie for a few minutes after baking until the mashed potatoes are golden brown.', 30.0, 60.0, 30.0, 'United Kingdom', 'http://fakephotolink.com/shepherds_pie.jpg', 'Shepherd''s Pie served in a baking dish', 30, 60);
+('Shepherd''s Pie', 'Cooking', 2, 'Shepherd''s Pie is a classic comfort food dish that\'s perfect for a cozy dinner. Seasoned ground beef or lamb is cooked with vegetables and topped with creamy mashed potatoes, then baked until golden and bubbly. It\'s hearty, flavorful, and sure to become a family favorite.', 'You can use ground beef, lamb, or turkey for the meat filling.', 'Feel free to add other vegetables like peas, carrots, or corn to the filling for extra flavor and nutrition.', 'For a crispy topping, broil the Shepherd''s Pie for a few minutes after baking until the mashed potatoes are golden brown.', 30.0, 60.0, 30.0, 'United Kingdom', 'http://fakephotolink.com/shepherds_pie.jpg', 'Shepherd''s Pie served in a baking dish', 30, 60, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -3044,19 +2953,17 @@ VALUES
 ('Shepherd''s Pie', 'Knife', 1),
 ('Shepherd''s Pie', 'Cutting Board', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Ground Beef', 250.0, 0, 'Meat and Meat Products', 'gr'),
 ('Onion', 44.0, 0, 'Various Plant-based Foods', 'unit'),
-('Carrots', 41.0, 0, 'Various Plant-based Foods', 'cup'),
-('Frozen Corn', 177.0, 0, 'Various Plant-based Foods', 'cup'),
-('Garlic', 4.0, 0, 'Various Plant-based Foods', 'clove'),
+('Carrots', 41.0, 0, 'Various Plant-based Foods', 'cups'),
+('Frozen Corn', 177.0, 0, 'Various Plant-based Foods', 'cups'),
 ('Tomato Paste', 53.0, 0, 'Various Plant-based Foods', 'tbsp'),
 ('Worcestershire Sauce', 3.0, 0, 'Others', 'tbsp'),
-('Beef Broth', 17.0, 0, 'Others', 'cup'),
-('Potatoes', 104.0, 0, 'Various Plant-based Foods', 'cup'),
+('Beef Broth', 17.0, 0, 'Others', 'cups'),
+('Potatoes', 104.0, 0, 'Various Plant-based Foods', 'cups'),
 ('Butter', 204.0, 0, 'Fats and Oils', 'tbsp'),
-('Milk', 8.0, 0, 'Milk, Eggs, and Their Products', 'cup'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
+('Milk', 8.0, 0, 'Milk, Eggs, and Their Products', 'cups'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
@@ -3103,7 +3010,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Garlic Parmesan Chicken', 'Cooking', 2, 'Garlic Parmesan Chicken is a delicious and easy-to-make dish that\'s perfect for a quick weeknight dinner. Tender chicken breasts are coated in a crispy Parmesan and breadcrumb mixture, then baked until golden and juicy. Served with a garlicky butter sauce, it\'s a crowd-pleaser the whole family will love.', 'For extra flavor, add dried herbs like basil, oregano, or thyme to the breadcrumb mixture.', 'If you prefer a lighter version, you can use chicken tenders or thighs instead of chicken breasts.', 'Serve with a side of pasta, salad, or roasted vegetables for a complete meal.', 15.0, 25.0, 20.0, 'Italy', 'http://fakephotolink.com/garlic_parmesan_chicken.jpg', 'Garlic Parmesan Chicken served on a plate', 15, 25);
+('Garlic Parmesan Chicken', 'Cooking', 2, 'Garlic Parmesan Chicken is a delicious and easy-to-make dish that\'s perfect for a quick weeknight dinner. Tender chicken breasts are coated in a crispy Parmesan and breadcrumb mixture, then baked until golden and juicy. Served with a garlicky butter sauce, it\'s a crowd-pleaser the whole family will love.', 'For extra flavor, add dried herbs like basil, oregano, or thyme to the breadcrumb mixture.', 'If you prefer a lighter version, you can use chicken tenders or thighs instead of chicken breasts.', 'Serve with a side of pasta, salad, or roasted vegetables for a complete meal.', 15.0, 25.0, 20.0, 'Italy', 'http://fakephotolink.com/garlic_parmesan_chicken.jpg', 'Garlic Parmesan Chicken served on a plate', 15, 25, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -3113,14 +3020,12 @@ VALUES
 ('Garlic Parmesan Chicken', 'Knife', 1),
 ('Garlic Parmesan Chicken', 'Cutting Board', 2);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Chicken Breasts', 165.0, 0, 'Meat and Meat Products', 'gr'),
-('Breadcrumbs', 265.0, 0, 'Cereals and Cereal Products', 'cup'),
+('Breadcrumbs', 265.0, 0, 'Cereals and Cereal Products', 'cups'),
 ('Parmesan Cheese', 110.0, 0, 'Milk, Eggs, and Their Products', 'tbsp'),
 ('Garlic Powder', 10.0, 0, 'Herbs and Essential Oils', 'tsp'),
 ('Butter', 204.0, 0, 'Fats and Oils', 'tbsp'),
-('Garlic', 4.0, 0, 'Various Plant-based Foods', 'clove'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
@@ -3160,7 +3065,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Turkey Pot Pie', 'Cooking', 3, 'Turkey Pot Pie is a comforting and hearty dish that\'s perfect for using up leftover turkey. Tender pieces of turkey are mixed with vegetables and gravy, then topped with a flaky pie crust and baked until golden brown. It\'s a delicious way to enjoy Thanksgiving leftovers or to make any time of year.', 'Feel free to use store-bought pie crust for a quicker option.', 'You can add other vegetables like peas, carrots, or mushrooms to the filling for extra flavor and nutrition.', 'Serve with cranberry sauce on the side for a classic Thanksgiving touch.', 20.0, 60.0, 30.0, 'United States', 'http://fakephotolink.com/turkey_pot_pie.jpg', 'Turkey Pot Pie served in a baking dish', 20, 60);
+('Turkey Pot Pie', 'Cooking', 3, 'Turkey Pot Pie is a comforting and hearty dish that\'s perfect for using up leftover turkey. Tender pieces of turkey are mixed with vegetables and gravy, then topped with a flaky pie crust and baked until golden brown. It\'s a delicious way to enjoy Thanksgiving leftovers or to make any time of year.', 'Feel free to use store-bought pie crust for a quicker option.', 'You can add other vegetables like peas, carrots, or mushrooms to the filling for extra flavor and nutrition.', 'Serve with cranberry sauce on the side for a classic Thanksgiving touch.', 20.0, 60.0, 30.0, 'United States', 'http://fakephotolink.com/turkey_pot_pie.jpg', 'Turkey Pot Pie served in a baking dish', 20, 60, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -3170,17 +3075,16 @@ VALUES
 ('Turkey Pot Pie', 'Knife', 2),
 ('Turkey Pot Pie', 'Cutting Board', 2);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Turkey Meat', 189.0, 0, 'Meat and Meat Products', 'cup'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+('Turkey Meat', 189.0, 0, 'Meat and Meat Products', 'cups'),
 ('Onion', 44.0, 0, 'Various Plant-based Foods', 'unit'),
-('Carrots', 41.0, 0, 'Various Plant-based Foods', 'cup'),
-('Frozen Peas', 62.0, 0, 'Various Plant-based Foods', 'cup'),
+('Carrots', 41.0, 0, 'Various Plant-based Foods', 'cups'),
+('Frozen Peas', 62.0, 0, 'Various Plant-based Foods', 'cups'),
 ('Butter', 204.0, 0, 'Fats and Oils', 'tbsp'),
-('All-Purpose Flour', 455.0, 0, 'Cereals and Cereal Products', 'cup'),
-('Chicken Broth', 17.0, 0, 'Others', 'cup'),
-('Milk', 8.0, 0, 'Milk, Eggs, and Their Products', 'cup'),
-('Pie Crust', 49.0, 0, 'Cereals and Cereal Products', 'cup'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
+('All-Purpose Flour', 455.0, 0, 'Cereals and Cereal Products', 'cups'),
+('Chicken Broth', 17.0, 0, 'Others', 'cups'),
+('Milk', 8.0, 0, 'Milk, Eggs, and Their Products', 'cups'),
+('Pie Crust', 49.0, 0, 'Cereals and Cereal Products', 'cups'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
@@ -3226,7 +3130,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Balsamic Bacon Brussels Sprouts', 'Cooking', 2, 'Balsamic Bacon Brussels Sprouts is a delicious and flavorful side dish that pairs perfectly with any meal. Brussels sprouts are sautéed with crispy bacon and glazed with a tangy balsamic reduction, creating a dish that\'s both savory and slightly sweet. It\'s quick and easy to make, and sure to be a hit with the whole family.', 'Make sure to trim the Brussels sprouts and cut them in half for even cooking.', 'For extra crispiness, cook the bacon separately until crispy, then crumble it over the Brussels sprouts just before serving.', 'You can adjust the amount of balsamic glaze according to your taste preferences.', 15.0, 20.0, 20.0, 'United States', 'http://fakephotolink.com/balsamic_bacon_brussels_sprouts.jpg', 'Balsamic Bacon Brussels Sprouts served in a bowl', 10, 20);
+('Balsamic Bacon Brussels Sprouts', 'Cooking', 2, 'Balsamic Bacon Brussels Sprouts is a delicious and flavorful side dish that pairs perfectly with any meal. Brussels sprouts are sautéed with crispy bacon and glazed with a tangy balsamic reduction, creating a dish that\'s both savory and slightly sweet. It\'s quick and easy to make, and sure to be a hit with the whole family.', 'Make sure to trim the Brussels sprouts and cut them in half for even cooking.', 'For extra crispiness, cook the bacon separately until crispy, then crumble it over the Brussels sprouts just before serving.', 'You can adjust the amount of balsamic glaze according to your taste preferences.', 15.0, 20.0, 20.0, 'United States', 'http://fakephotolink.com/balsamic_bacon_brussels_sprouts.jpg', 'Balsamic Bacon Brussels Sprouts served in a bowl', 10, 20, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -3234,12 +3138,11 @@ VALUES
 ('Balsamic Bacon Brussels Sprouts', 'Knife', 1),
 ('Balsamic Bacon Brussels Sprouts', 'Cutting Board', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Brussels Sprouts', 38.0, 0, 'Various Plant-based Foods', 'cup'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+('Brussels Sprouts', 38.0, 0, 'Various Plant-based Foods', 'cups'),
 ('Bacon', 42.0, 0, 'Meat and Meat Products', 'slice'),
 ('Balsamic Vinegar', 14.0, 0, 'Others', 'tbsp'),
 ('Brown Sugar', 52.0, 0, 'Sweeteners', 'tbsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
@@ -3277,7 +3180,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Lemon Red Potatoes', 'Cooking', 1, 'Lemon Red Potatoes are a simple yet flavorful side dish that pairs well with a variety of main courses. Red potatoes are roasted with olive oil, garlic, and fresh lemon juice until tender and golden brown. Finished with a sprinkle of parsley, these potatoes are bright and zesty, making them the perfect addition to any meal.', 'For extra flavor, add a sprinkle of grated Parmesan cheese before serving.', 'You can use other herbs like rosemary or thyme instead of parsley.', 'Make sure to toss the potatoes halfway through cooking to ensure even browning.', 10.0, 30.0, 20.0, 'United States', 'http://fakephotolink.com/lemon_red_potatoes.jpg', 'Lemon Red Potatoes served in a bowl', 10, 30);
+('Lemon Red Potatoes', 'Cooking', 1, 'Lemon Red Potatoes are a simple yet flavorful side dish that pairs well with a variety of main courses. Red potatoes are roasted with olive oil, garlic, and fresh lemon juice until tender and golden brown. Finished with a sprinkle of parsley, these potatoes are bright and zesty, making them the perfect addition to any meal.', 'For extra flavor, add a sprinkle of grated Parmesan cheese before serving.', 'You can use other herbs like rosemary or thyme instead of parsley.', 'Make sure to toss the potatoes halfway through cooking to ensure even browning.', 10.0, 30.0, 20.0, 'United States', 'http://fakephotolink.com/lemon_red_potatoes.jpg', 'Lemon Red Potatoes served in a bowl', 10, 30, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -3286,13 +3189,11 @@ VALUES
 ('Lemon Red Potatoes', 'Knife', 1),
 ('Lemon Red Potatoes', 'Cutting Board', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Red Potatoes', 105.0, 0, 'Various Plant-based Foods', 'cup'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+('Red Potatoes', 105.0, 0, 'Various Plant-based Foods', 'cups'),
 ('Olive Oil', 239.0, 0, 'Fats and Oils', 'tbsp'),
-('Garlic', 4.0, 0, 'Various Plant-based Foods', 'clove'),
 ('Lemon Juice', 4.0, 0, 'Various Plant-based Foods', 'tbsp'),
 ('Parsley', 1.0, 0, 'Various Plant-based Foods', 'tbsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
@@ -3329,7 +3230,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Potato and Corn Chowder', 'Cooking', 5, 'Potato and Corn Chowder is a hearty and comforting soup that\'s perfect for chilly days. Tender potatoes and sweet corn are simmered in a creamy broth flavored with bacon, onions, and garlic. Finished with a sprinkle of cheddar cheese and fresh chives, it\'s a satisfying meal in a bowl.', 'For extra creaminess, blend a portion of the soup until smooth before adding back to the pot.', 'Feel free to add other vegetables like carrots or celery for added flavor and nutrition.', 'Serve with crusty bread or oyster crackers for dipping.', 20.0, 40.0, 30.0, 'United States', 'http://fakephotolink.com/potato_corn_chowder.jpg', 'Potato and Corn Chowder served in a bowl', 20, 40);
+('Potato and Corn Chowder', 'Cooking', 5, 'Potato and Corn Chowder is a hearty and comforting soup that\'s perfect for chilly days. Tender potatoes and sweet corn are simmered in a creamy broth flavored with bacon, onions, and garlic. Finished with a sprinkle of cheddar cheese and fresh chives, it\'s a satisfying meal in a bowl.', 'For extra creaminess, blend a portion of the soup until smooth before adding back to the pot.', 'Feel free to add other vegetables like carrots or celery for added flavor and nutrition.', 'Serve with crusty bread or oyster crackers for dipping.', 20.0, 40.0, 30.0, 'United States', 'http://fakephotolink.com/potato_corn_chowder.jpg', 'Potato and Corn Chowder served in a bowl', 20, 40, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -3337,16 +3238,14 @@ VALUES
 ('Potato and Corn Chowder', 'Knife', 1),
 ('Potato and Corn Chowder', 'Cutting Board', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Potatoes', 104.0, 0, 'Various Plant-based Foods', 'cup'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+('Potatoes', 104.0, 0, 'Various Plant-based Foods', 'cups'),
 ('Bacon', 42.0, 0, 'Meat and Meat Products', 'slice'),
 ('Onion', 44.0, 0, 'Various Plant-based Foods', 'unit'),
-('Garlic', 4.0, 0, 'Various Plant-based Foods', 'clove'),
-('Corn', 86.0, 0, 'Various Plant-based Foods', 'cup'),
-('Chicken Broth', 17.0, 0, 'Others', 'cup'),
-('Milk', 8.0, 0, 'Milk, Eggs, and Their Products', 'cup'),
-('Cheddar Cheese', 113.0, 0, 'Milk, Eggs, and Their Products', 'cup'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
+('Corn', 86.0, 0, 'Various Plant-based Foods', 'cups'),
+('Chicken Broth', 17.0, 0, 'Others', 'cups'),
+('Milk', 8.0, 0, 'Milk, Eggs, and Their Products', 'cups'),
+('Cheddar Cheese', 113.0, 0, 'Milk, Eggs, and Their Products', 'cups'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
@@ -3386,7 +3285,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Thai Chicken', 'Cooking', 4, 'Thai Chicken is a vibrant and flavorful dish that\'s easy to make at home. Tender chicken is marinated in a spicy, tangy sauce made with coconut milk, lime juice, garlic, and ginger, then grilled or broiled to perfection. Served with rice and garnished with cilantro and peanuts, it\'s a delicious taste of Thailand.', 'For extra heat, add chopped Thai chilies or red pepper flakes to the marinade.', 'You can also use this marinade for tofu or shrimp for a vegetarian or seafood option.', 'If you don''t have a grill, you can broil the chicken in the oven.', 20.0, 20.0, 20.0, 'Thailand', 'http://fakephotolink.com/thai_chicken.jpg', 'Thai Chicken served with rice and vegetables', 20, 20);
+('Thai Chicken', 'Cooking', 4, 'Thai Chicken is a vibrant and flavorful dish that\'s easy to make at home. Tender chicken is marinated in a spicy, tangy sauce made with coconut milk, lime juice, garlic, and ginger, then grilled or broiled to perfection. Served with rice and garnished with cilantro and peanuts, it\'s a delicious taste of Thailand.', 'For extra heat, add chopped Thai chilies or red pepper flakes to the marinade.', 'You can also use this marinade for tofu or shrimp for a vegetarian or seafood option.', 'If you don''t have a grill, you can broil the chicken in the oven.', 20.0, 20.0, 20.0, 'Thailand', 'http://fakephotolink.com/thai_chicken.jpg', 'Thai Chicken served with rice and vegetables', 20, 20, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -3395,17 +3294,15 @@ VALUES
 ('Thai Chicken', 'Knife', 1),
 ('Thai Chicken', 'Cutting Board', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Chicken Breasts', 165.0, 0, 'Meat and Meat Products', 'gr'),
-('Coconut Milk', 230.0, 0, 'Milk, Eggs, and Their Products', 'cup'),
+('Coconut Milk', 230.0, 0, 'Milk, Eggs, and Their Products', 'cups'),
 ('Lime Juice', 8.0, 0, 'Various Plant-based Foods', 'tbsp'),
-('Garlic', 4.0, 0, 'Various Plant-based Foods', 'clove'),
 ('Ginger', 18.0, 0, 'Herbs and Essential Oils', 'slice'),
 ('Soy Sauce', 8.0, 0, 'Legumes and Legume Products', 'tbsp'),
 ('Brown Sugar', 52.0, 0, 'Sweeteners', 'tbsp'),
 ('Peanuts', 166.0, 0, 'Legumes and Legume Products', 'tbsp'),
 ('Cilantro', 1.0, 0, 'Various Plant-based Foods', 'tbsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
@@ -3447,7 +3344,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Italian Fagoli Vegetable Soup', 'Cooking', 4, 'Italian Fagoli Vegetable Soup is a hearty and comforting dish that\'s packed with flavor and nutrition. This classic Italian soup features a rich tomato broth, cannellini beans, pasta, and plenty of vegetables like carrots, celery, and spinach. Finished with a sprinkle of Parmesan cheese and fresh basil, it\'s a delicious meal that\'s perfect for chilly nights.', 'Feel free to customize the vegetables based on what you have on hand.', 'For extra protein, add cooked Italian sausage or shredded chicken.', 'Serve with crusty bread or a side salad for a complete meal.', 20.0, 40.0, 30.0, 'Italy', 'http://fakephotolink.com/italian_fagoli_vegetable_soup.jpg', 'Italian Fagoli Vegetable Soup served in a bowl', 20, 40);
+('Italian Fagoli Vegetable Soup', 'Cooking', 4, 'Italian Fagoli Vegetable Soup is a hearty and comforting dish that\'s packed with flavor and nutrition. This classic Italian soup features a rich tomato broth, cannellini beans, pasta, and plenty of vegetables like carrots, celery, and spinach. Finished with a sprinkle of Parmesan cheese and fresh basil, it\'s a delicious meal that\'s perfect for chilly nights.', 'Feel free to customize the vegetables based on what you have on hand.', 'For extra protein, add cooked Italian sausage or shredded chicken.', 'Serve with crusty bread or a side salad for a complete meal.', 20.0, 40.0, 30.0, 'Italy', 'http://fakephotolink.com/italian_fagoli_vegetable_soup.jpg', 'Italian Fagoli Vegetable Soup served in a bowl', 20, 40, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -3455,17 +3352,16 @@ VALUES
 ('Italian Fagoli Vegetable Soup', 'Knife', 1),
 ('Italian Fagoli Vegetable Soup', 'Cutting Board', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Cannellini Beans', 127.0, 0, 'Legumes and Legume Products', 'cup'),
-('Tomato Sauce', 39.0, 0, 'Various Plant-based Foods', 'cup'),
-('Vegetable Broth', 3.0, 0, 'Others', 'cup'),
-('Carrots', 41.0, 0, 'Various Plant-based Foods', 'cup'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+('Cannellini Beans', 127.0, 0, 'Legumes and Legume Products', 'cups'),
+('Tomato Sauce', 39.0, 0, 'Various Plant-based Foods', 'cups'),
+('Vegetable Broth', 3.0, 0, 'Others', 'cups'),
+('Carrots', 41.0, 0, 'Various Plant-based Foods', 'cups'),
 ('Celery', 6.0, 0, 'Various Plant-based Foods', 'stalk'),
-('Spinach', 7.0, 0, 'Various Plant-based Foods', 'cup'),
-('Pasta', 200.0, 0, 'Cereals and Cereal Products', 'cup'),
+('Spinach', 7.0, 0, 'Various Plant-based Foods', 'cups'),
+('Pasta', 200.0, 0, 'Cereals and Cereal Products', 'cups'),
 ('Parmesan Cheese', 110.0, 0, 'Milk, Eggs, and Their Products', 'tbsp'),
 ('Basil', 1.0, 0, 'Various Plant-based Foods', 'tbsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
@@ -3506,7 +3402,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Blueberry Pie', 'Pastry', 5, 'Blueberry Pie is a classic dessert that\'s bursting with sweet, juicy blueberries and wrapped in a flaky, golden crust. Whether you\'re using fresh or frozen berries, this pie is sure to be a hit at any gathering. Serve it warm with a scoop of vanilla ice cream for the ultimate treat.', 'Toss the blueberries with a bit of lemon juice and zest to enhance their flavor.', 'For a decorative touch, cut vents or shapes in the top crust before baking.', 'To prevent the crust from getting too dark, cover the edges with aluminum foil halfway through baking.', 20.0, 50.0, 30.0, 'United States', 'http://fakephotolink.com/blueberry_pie.jpg', 'Blueberry Pie served with vanilla ice cream', 20, 50);
+('Blueberry Pie', 'Pastry', 5, 'Blueberry Pie is a classic dessert that\'s bursting with sweet, juicy blueberries and wrapped in a flaky, golden crust. Whether you\'re using fresh or frozen berries, this pie is sure to be a hit at any gathering. Serve it warm with a scoop of vanilla ice cream for the ultimate treat.', 'Toss the blueberries with a bit of lemon juice and zest to enhance their flavor.', 'For a decorative touch, cut vents or shapes in the top crust before baking.', 'To prevent the crust from getting too dark, cover the edges with aluminum foil halfway through baking.', 20.0, 50.0, 30.0, 'United States', 'http://fakephotolink.com/blueberry_pie.jpg', 'Blueberry Pie served with vanilla ice cream', 20, 50, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -3514,12 +3410,12 @@ VALUES
 ('Blueberry Pie', 'Knife', 1),
 ('Blueberry Pie', 'Cutting Board', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Blueberries', 84.0, 0, 'Various Plant-based Foods', 'cup'),
-('Granulated Sugar', 774.0, 0, 'Sweeteners', 'cup'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+('Blueberries', 84.0, 0, 'Various Plant-based Foods', 'cups'),
+('Granulated Sugar', 774.0, 0, 'Sweeteners', 'cups'),
 ('Cornstarch', 488.0, 0, 'Cereals and Cereal Products', 'tbsp'),
 ('Lemon Juice', 4.0, 0, 'Various Plant-based Foods', 'tbsp'),
-('Pie Crust', 49.0, 0, 'Cereals and Cereal Products', 'cup'),
+('Pie Crust', 49.0, 0, 'Cereals and Cereal Products', 'cups'),
 ('Butter', 204.0, 0, 'Fats and Oils', 'tbsp'),
 ('Salt', 0.0, 0, 'Others', 'tsp');
 
@@ -3559,7 +3455,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Chocolate Pudding', 'Pastry', 2, 'Chocolate Pudding is a rich and creamy dessert that\'s sure to satisfy any chocolate craving. Made with cocoa powder, milk, and sugar, this stovetop pudding is quick and easy to prepare. Serve it warm or chilled, topped with whipped cream or fresh berries, for a decadent treat.', 'For extra richness, use whole milk instead of low-fat milk.', 'To prevent a skin from forming on the pudding, press plastic wrap directly onto the surface before chilling.', 'Feel free to adjust the sweetness by adding more or less sugar to taste.', 10.0, 20.0, 15.0, 'United States', 'http://fakephotolink.com/chocolate_pudding.jpg', 'Chocolate Pudding served in a glass', 10, 20);
+('Chocolate Pudding', 'Pastry', 2, 'Chocolate Pudding is a rich and creamy dessert that\'s sure to satisfy any chocolate craving. Made with cocoa powder, milk, and sugar, this stovetop pudding is quick and easy to prepare. Serve it warm or chilled, topped with whipped cream or fresh berries, for a decadent treat.', 'For extra richness, use whole milk instead of low-fat milk.', 'To prevent a skin from forming on the pudding, press plastic wrap directly onto the surface before chilling.', 'Feel free to adjust the sweetness by adding more or less sugar to taste.', 10.0, 20.0, 15.0, 'United States', 'http://fakephotolink.com/chocolate_pudding.jpg', 'Chocolate Pudding served in a glass', 10, 20, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -3568,21 +3464,20 @@ VALUES
 ('Chocolate Pudding', 'Measuring Cups', 1),
 ('Chocolate Pudding', 'Measuring Spoons', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Granulated Sugar', 774.0, 0, 'Sweeteners', 'cup'),
-('Cocoa Powder', 197.0, 0, 'Sweeteners', 'cup'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+('Granulated Sugar', 774.0, 0, 'Sweeteners', 'cups'),
+('Cocoa Powder', 197.0, 0, 'Sweeteners', 'cups'),
 ('Cornstarch', 488.0, 0, 'Cereals and Cereal Products', 'tbsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
-('Milk', 42.0, 0, 'Milk, Eggs, and Their Products', 'cup'),
+('Milk', 42.0, 0, 'Milk, Eggs, and Their Products', 'cups'),
 ('Vanilla Extract', 37.0, 0, 'Herbs and Essential Oils', 'tsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
 ('Chocolate Pudding', 'Granulated Sugar', 0.5, NULL),
-('Chocolate Pudding', 'Cocoa Powder', 0.25, 'cups'),
+('Chocolate Pudding', 'Cocoa Powder', 0.25, NULL),
 ('Chocolate Pudding', 'Cornstarch', 3, NULL),
 ('Chocolate Pudding', 'Salt', 0.25, NULL),
-('Chocolate Pudding', 'Milk', 2, 'cups'),
+('Chocolate Pudding', 'Milk', 2, NULL),
 ('Chocolate Pudding', 'Vanilla Extract', 1, NULL);
 
 INSERT INTO recipe_steps (recipe_name, instruction, step_num)
@@ -3607,7 +3502,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Browned Butter Beets', 'Cooking', 2, 'Browned Butter Beets is a simple and delicious side dish that highlights the natural sweetness of beets. Sliced beets are sautéed in browned butter until tender and caramelized, then finished with a sprinkle of fresh herbs. It\'s a perfect accompaniment to any meal.', 'Use fresh beets for the best flavor and texture.', 'To save time, you can use pre-cooked beets from the grocery store.', 'Feel free to experiment with different herbs like thyme or rosemary.', 10.0, 20.0, 15.0, 'United States', 'http://fakephotolink.com/browned_butter_beets.jpg', 'Browned Butter Beets served in a skillet', 10, 20);
+('Browned Butter Beets', 'Cooking', 2, 'Browned Butter Beets is a simple and delicious side dish that highlights the natural sweetness of beets. Sliced beets are sautéed in browned butter until tender and caramelized, then finished with a sprinkle of fresh herbs. It\'s a perfect accompaniment to any meal.', 'Use fresh beets for the best flavor and texture.', 'To save time, you can use pre-cooked beets from the grocery store.', 'Feel free to experiment with different herbs like thyme or rosemary.', 10.0, 20.0, 15.0, 'United States', 'http://fakephotolink.com/browned_butter_beets.jpg', 'Browned Butter Beets served in a skillet', 10, 20, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -3615,16 +3510,15 @@ VALUES
 ('Browned Butter Beets', 'Knife', 1),
 ('Browned Butter Beets', 'Cutting Board', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Beets', 44.0, 0, 'Various Plant-based Foods', 'cup'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+('Beets', 44.0, 0, 'Various Plant-based Foods', 'cups'),
 ('Butter', 204.0, 0, 'Fats and Oils', 'tbsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp'),
 ('Fresh Herbs', 1.0, 0, 'Various Plant-based Foods', 'tbsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
-('Browned Butter Beets', 'Beets', 4, 'cups'),
+('Browned Butter Beets', 'Beets', 4, NULL),
 ('Browned Butter Beets', 'Butter', 2, NULL),
 ('Browned Butter Beets', 'Salt', NULL, 'to taste'),
 ('Browned Butter Beets', 'Black Pepper', NULL, 'to taste'),
@@ -3653,7 +3547,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Turkey Soup with Homemade Noodles', 'Cooking', 2, 'Turkey Soup with Homemade Noodles is a comforting and nourishing dish that\'s perfect for using up leftover turkey. The broth is flavored with aromatic vegetables and fresh herbs, and the homemade noodles add a rustic touch. Serve this soup on a chilly day for a cozy and satisfying meal.', 'Feel free to add other vegetables like carrots or celery for extra flavor.', 'For a shortcut, you can use store-bought noodles instead of making them from scratch.', 'Make a double batch and freeze half for an easy meal later.', 30.0, 90.0, 60.0, 'United States', 'http://fakephotolink.com/turkey_soup_with_homemade_noodles.jpg', 'Turkey Soup with Homemade Noodles served in a bowl', 30, 90);
+('Turkey Soup with Homemade Noodles', 'Cooking', 2, 'Turkey Soup with Homemade Noodles is a comforting and nourishing dish that\'s perfect for using up leftover turkey. The broth is flavored with aromatic vegetables and fresh herbs, and the homemade noodles add a rustic touch. Serve this soup on a chilly day for a cozy and satisfying meal.', 'Feel free to add other vegetables like carrots or celery for extra flavor.', 'For a shortcut, you can use store-bought noodles instead of making them from scratch.', 'Make a double batch and freeze half for an easy meal later.', 30.0, 90.0, 60.0, 'United States', 'http://fakephotolink.com/turkey_soup_with_homemade_noodles.jpg', 'Turkey Soup with Homemade Noodles served in a bowl', 30, 90, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -3663,34 +3557,32 @@ VALUES
 ('Turkey Soup with Homemade Noodles', 'Rolling Pin', 1),
 ('Turkey Soup with Homemade Noodles', 'Pasta Machine', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Turkey', 189.0, 0, 'Meat and Meat Products', 'cup'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+('Turkey', 189.0, 0, 'Meat and Meat Products', 'cups'),
 ('Onion', 44.0, 0, 'Various Plant-based Foods', 'unit'),
-('Carrots', 41.0, 0, 'Various Plant-based Foods', 'cup'),
+('Carrots', 41.0, 0, 'Various Plant-based Foods', 'cups'),
 ('Celery', 6.0, 0, 'Various Plant-based Foods', 'stalk'),
-('Garlic', 4.0, 0, 'Various Plant-based Foods', 'clove'),
 ('Bay Leaf', 1.0, 0, 'Herbs and Essential Oils', 'leaf'),
 ('Thyme', 1.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Chicken Broth', 17.0, 0, 'Others', 'cup'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
+('Chicken Broth', 17.0, 0, 'Others', 'cups'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp'),
 ('Eggs', 72.0, 0, 'Milk, Eggs, and Their Products', 'unit'),
-('All-Purpose Flour', 455.0, 0, 'Cereals and Cereal Products', 'cup');
+('All-Purpose Flour', 455.0, 0, 'Cereals and Cereal Products', 'cups');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
-('Turkey Soup with Homemade Noodles', 'Turkey', 2, 'cups'),
+('Turkey Soup with Homemade Noodles', 'Turkey', 2, NULL),
 ('Turkey Soup with Homemade Noodles', 'Onion', 1, NULL),
-('Turkey Soup with Homemade Noodles', 'Carrots', 1, 'cups'),
+('Turkey Soup with Homemade Noodles', 'Carrots', 1, NULL),
 ('Turkey Soup with Homemade Noodles', 'Celery', 2, 'stalks'),
 ('Turkey Soup with Homemade Noodles', 'Garlic', 2, 'cloves'),
 ('Turkey Soup with Homemade Noodles', 'Bay Leaf', 1, NULL),
 ('Turkey Soup with Homemade Noodles', 'Thyme', 1, NULL),
-('Turkey Soup with Homemade Noodles', 'Chicken Broth', 8, 'cups'),
+('Turkey Soup with Homemade Noodles', 'Chicken Broth', 8, NULL),
 ('Turkey Soup with Homemade Noodles', 'Salt', NULL, 'to taste'),
 ('Turkey Soup with Homemade Noodles', 'Black Pepper', NULL, 'to taste'),
 ('Turkey Soup with Homemade Noodles', 'Eggs', 2, NULL),
-('Turkey Soup with Homemade Noodles', 'All-Purpose Flour', 2, 'cups');
+('Turkey Soup with Homemade Noodles', 'All-Purpose Flour', 2, NULL);
 
 INSERT INTO main_ingr (recipe_name, ingr_name)
 VALUES 
@@ -3716,7 +3608,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Home fries', 'Cooking', 1, 'Home fries are a classic breakfast side dish made from diced potatoes that are seasoned and fried until crispy and golden brown. This simple recipe is easy to customize with your favorite seasonings and herbs, making it the perfect accompaniment to eggs, bacon, or pancakes.', 'For extra flavor, try adding diced onions or bell peppers to the potatoes.', 'Make sure not to overcrowd the pan when frying the potatoes to ensure they get crispy.', 'Feel free to use your preferred cooking fat, such as butter or olive oil.', 10.0, 20.0, 15.0, 'United States', 'http://fakephotolink.com/home_fries.jpg', 'Home fries served on a plate', 10, 20);
+('Home fries', 'Cooking', 1, 'Home fries are a classic breakfast side dish made from diced potatoes that are seasoned and fried until crispy and golden brown. This simple recipe is easy to customize with your favorite seasonings and herbs, making it the perfect accompaniment to eggs, bacon, or pancakes.', 'For extra flavor, try adding diced onions or bell peppers to the potatoes.', 'Make sure not to overcrowd the pan when frying the potatoes to ensure they get crispy.', 'Feel free to use your preferred cooking fat, such as butter or olive oil.', 10.0, 20.0, 15.0, 'United States', 'http://fakephotolink.com/home_fries.jpg', 'Home fries served on a plate', 10, 20, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -3724,10 +3616,9 @@ VALUES
 ('Home fries', 'Knife', 1),
 ('Home fries', 'Cutting Board', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Potatoes', 77.0, 0, 'Various Plant-based Foods', 'unit'),
 ('Vegetable Oil', 192.0, 0, 'Fats and Oils', 'tbsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp'),
 ('Paprika', 2.0, 0, 'Herbs and Essential Oils', 'tsp');
 
@@ -3763,7 +3654,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Chocolate Raspberry Torte', 'Pastry', 3, 'Chocolate Raspberry Torte is an elegant dessert that\'s perfect for special occasions. Layers of rich chocolate cake are sandwiched with raspberry preserves and finished with a decadent chocolate ganache. Garnished with fresh raspberries, it\'s a show-stopping finale to any meal.', 'For extra flavor, add a splash of raspberry liqueur to the cake layers.', 'Make sure to use good quality chocolate for the ganache for the best flavor and texture.', 'Allow the torte to chill in the refrigerator for at least 1 hour before serving to set the ganache.', 30.0, 60.0, 60.0, 'United States', 'http://fakephotolink.com/chocolate_raspberry_torte.jpg', 'Chocolate Raspberry Torte garnished with fresh raspberries', 30, 60);
+('Chocolate Raspberry Torte', 'Pastry', 3, 'Chocolate Raspberry Torte is an elegant dessert that\'s perfect for special occasions. Layers of rich chocolate cake are sandwiched with raspberry preserves and finished with a decadent chocolate ganache. Garnished with fresh raspberries, it\'s a show-stopping finale to any meal.', 'For extra flavor, add a splash of raspberry liqueur to the cake layers.', 'Make sure to use good quality chocolate for the ganache for the best flavor and texture.', 'Allow the torte to chill in the refrigerator for at least 1 hour before serving to set the ganache.', 30.0, 60.0, 60.0, 'United States', 'http://fakephotolink.com/chocolate_raspberry_torte.jpg', 'Chocolate Raspberry Torte garnished with fresh raspberries', 30, 60, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -3774,37 +3665,36 @@ VALUES
 ('Chocolate Raspberry Torte', 'Spatula', 1),
 ('Chocolate Raspberry Torte', 'Cooling Rack', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('All-Purpose Flour', 455.0, 0, 'Cereals and Cereal Products', 'cup'),
-('Cocoa Powder', 197.0, 0, 'Sweeteners', 'cup'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+('All-Purpose Flour', 455.0, 0, 'Cereals and Cereal Products', 'cups'),
+('Cocoa Powder', 197.0, 0, 'Sweeteners', 'cups'),
 ('Baking Powder', 5.0, 0, 'Cereals and Cereal Products', 'tsp'),
 ('Baking Soda', 0.0, 0, 'Others', 'tsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
-('Butter', 204.0, 0, 'Fats and Oils', 'cup'),
-('Granulated Sugar', 774.0, 0, 'Sweeteners', 'cup'),
+('Butter', 204.0, 0, 'Fats and Oils', 'cups'),
+('Granulated Sugar', 774.0, 0, 'Sweeteners', 'cups'),
 ('Eggs', 72.0, 0, 'Milk, Eggs, and Their Products', 'unit'),
 ('Vanilla Extract', 37.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Buttermilk', 98.0, 0, 'Milk, Eggs, and Their Products', 'cup'),
-('Raspberry Preserves', 120.0, 0, 'Sweeteners', 'cup'),
-('Heavy Cream', 52.0, 0, 'Milk, Eggs, and Their Products', 'cup'),
-('Semi-Sweet Chocolate', 401.0, 0, 'Sweeteners', 'cup'),
-('Fresh Raspberries', 64.0, 0, 'Various Plant-based Foods', 'cup');
+('Buttermilk', 98.0, 0, 'Milk, Eggs, and Their Products', 'cups'),
+('Raspberry Preserves', 120.0, 0, 'Sweeteners', 'cups'),
+('Heavy Cream', 52.0, 0, 'Milk, Eggs, and Their Products', 'cups'),
+('Semi-Sweet Chocolate', 401.0, 0, 'Sweeteners', 'cups'),
+('Fresh Raspberries', 64.0, 0, 'Various Plant-based Foods', 'cups');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
-('Chocolate Raspberry Torte', 'All-Purpose Flour', 1.5, 'cups'),
-('Chocolate Raspberry Torte', 'Cocoa Powder', 0.75, 'cups'),
+('Chocolate Raspberry Torte', 'All-Purpose Flour', 1.5, NULL),
+('Chocolate Raspberry Torte', 'Cocoa Powder', 0.75, NULL),
 ('Chocolate Raspberry Torte', 'Baking Powder', 1, NULL),
 ('Chocolate Raspberry Torte', 'Baking Soda', 1, NULL),
 ('Chocolate Raspberry Torte', 'Salt', 0.5, NULL),
-('Chocolate Raspberry Torte', 'Butter', 0.5, 'cups'),
-('Chocolate Raspberry Torte', 'Granulated Sugar', 1.5, 'cups'),
+('Chocolate Raspberry Torte', 'Butter', 0.5, NULL),
+('Chocolate Raspberry Torte', 'Granulated Sugar', 1.5, NULL),
 ('Chocolate Raspberry Torte', 'Eggs', 3, NULL),
 ('Chocolate Raspberry Torte', 'Vanilla Extract', 1, NULL),
 ('Chocolate Raspberry Torte', 'Buttermilk', 0.5, NULL),
-('Chocolate Raspberry Torte', 'Raspberry Preserves', 0.5, 'cups'),
-('Chocolate Raspberry Torte', 'Heavy Cream', 1, 'cups'),
-('Chocolate Raspberry Torte', 'Semi-Sweet Chocolate', 1, 'cups'),
+('Chocolate Raspberry Torte', 'Raspberry Preserves', 0.5, NULL),
+('Chocolate Raspberry Torte', 'Heavy Cream', 1, NULL),
+('Chocolate Raspberry Torte', 'Semi-Sweet Chocolate', 1, NULL),
 ('Chocolate Raspberry Torte', 'Fresh Raspberries', NULL, NULL);
 
 INSERT INTO main_ingr (recipe_name, ingr_name)
@@ -3837,7 +3727,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Golden Latte', 'Pastry', 1, 'Golden Latte, also known as Turmeric Latte or Golden Milk, is a warm and soothing drink made with turmeric, milk, and spices. It\'s known for its anti-inflammatory properties and has a rich, earthy flavor with a hint of sweetness. Enjoy it as a comforting beverage any time of day.', 'You can use any type of milk you prefer, such as cow\'s milk, almond milk, or coconut milk.', 'Adjust the sweetness by adding more or less honey or sweetener of your choice.', 'Feel free to customize the spices to your taste, adding more ginger for a spicier kick or more cinnamon for sweetness.', 5.0, 10.0, 5.0, 'India', 'http://fakephotolink.com/golden_latte.jpg', 'Golden Latte served in a mug', 5, 10);
+('Golden Latte', 'Pastry', 1, 'Golden Latte, also known as Turmeric Latte or Golden Milk, is a warm and soothing drink made with turmeric, milk, and spices. It\'s known for its anti-inflammatory properties and has a rich, earthy flavor with a hint of sweetness. Enjoy it as a comforting beverage any time of day.', 'You can use any type of milk you prefer, such as cow\'s milk, almond milk, or coconut milk.', 'Adjust the sweetness by adding more or less honey or sweetener of your choice.', 'Feel free to customize the spices to your taste, adding more ginger for a spicier kick or more cinnamon for sweetness.', 5.0, 10.0, 5.0, 'India', 'http://fakephotolink.com/golden_latte.jpg', 'Golden Latte served in a mug', 5, 10, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -3846,12 +3736,12 @@ VALUES
 ('Golden Latte', 'Mug', 1),
 ('Golden Latte', 'Measuring Spoons', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Turmeric', 24.0, 0, 'Herbs and Essential Oils', 'tsp'),
 ('Cinnamon', 6.0, 0, 'Herbs and Essential Oils', 'tsp'),
 ('Ginger', 9.0, 0, 'Herbs and Essential Oils', 'tsp'),
 ('Black Pepper', 0.0, 0, 'Others', 'pinch'),
-('Milk', 42.0, 0, 'Milk, Eggs, and Their Products', 'cup'),
+('Milk', 42.0, 0, 'Milk, Eggs, and Their Products', 'cups'),
 ('Honey', 304.0, 0, 'Sweeteners', 'tbsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
@@ -3860,7 +3750,7 @@ VALUES
 ('Golden Latte', 'Cinnamon', 0.5, NULL),
 ('Golden Latte', 'Ginger', 0.25, NULL),
 ('Golden Latte', 'Black Pepper', NULL, 'pinch'),
-('Golden Latte', 'Milk', 1, 'cups'),
+('Golden Latte', 'Milk', 1, NULL),
 ('Golden Latte', 'Honey', 1, NULL);
 
 INSERT INTO main_ingr (recipe_name, ingr_name)
@@ -3885,7 +3775,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Fig Shake', 'Beverage', 1, 'Fig Shake is a delicious and refreshing drink made with fresh figs, yogurt, and honey. It\'s packed with nutrients and makes for a perfect breakfast or snack. Blend it up in minutes for a quick and satisfying treat.', 'For a thicker shake, add more yogurt or a frozen banana.', 'Feel free to adjust the sweetness by adding more or less honey.', 'Garnish with a sprinkle of cinnamon or a few sliced figs for an extra special touch.', 5.0, 5.0, 5.0, 'Kuwait', 'http://fakephotolink.com/fig_shake.jpg', 'Fig Shake served in a glass', 5, 5);
+('Fig Shake', 'Beverage', 1, 'Fig Shake is a delicious and refreshing drink made with fresh figs, yogurt, and honey. It\'s packed with nutrients and makes for a perfect breakfast or snack. Blend it up in minutes for a quick and satisfying treat.', 'For a thicker shake, add more yogurt or a frozen banana.', 'Feel free to adjust the sweetness by adding more or less honey.', 'Garnish with a sprinkle of cinnamon or a few sliced figs for an extra special touch.', 5.0, 5.0, 5.0, 'Kuwait', 'http://fakephotolink.com/fig_shake.jpg', 'Fig Shake served in a glass', 5, 5, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -3894,15 +3784,15 @@ VALUES
 ('Fig Shake', 'Knife', 1),
 ('Fig Shake', 'Cutting Board', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Fresh Figs', 74.0, 0, 'Various Plant-based Foods', 'cup'),
-('Yogurt', 149.0, 0, 'Milk, Eggs, and Their Products', 'cup'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+('Fresh Figs', 74.0, 0, 'Various Plant-based Foods', 'cups'),
+('Yogurt', 149.0, 0, 'Milk, Eggs, and Their Products', 'cups'),
 ('Honey', 304.0, 0, 'Sweeteners', 'tbsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
-('Fig Shake', 'Fresh Figs', 1, 'cups'),
-('Fig Shake', 'Yogurt', 0.5, 'cups'),
+('Fig Shake', 'Fresh Figs', 1, NULL),
+('Fig Shake', 'Yogurt', 0.5, NULL),
 ('Fig Shake', 'Honey', 1, NULL);
 
 INSERT INTO main_ingr (recipe_name, ingr_name)
@@ -3927,7 +3817,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Lentil Soup', 'Cooking', 4, 'Lentil Soup is a hearty and nutritious dish that\'s perfect for a cold day. Made with lentils, vegetables, and spices, this soup is packed with flavor and protein. Serve it with crusty bread for a satisfying meal.', 'For extra flavor, add a splash of balsamic vinegar or a squeeze of lemon juice before serving.', 'Feel free to customize the vegetables and spices based on what you have on hand.', 'Lentil soup tends to thicken as it sits, so you may need to add more broth or water when reheating leftovers.', 15.0, 45.0, 30.0, 'Iraq', 'http://fakephotolink.com/lentil_soup.jpg', 'Lentil Soup served in a bowl with bread', 15, 45);
+('Lentil Soup', 'Cooking', 4, 'Lentil Soup is a hearty and nutritious dish that\'s perfect for a cold day. Made with lentils, vegetables, and spices, this soup is packed with flavor and protein. Serve it with crusty bread for a satisfying meal.', 'For extra flavor, add a splash of balsamic vinegar or a squeeze of lemon juice before serving.', 'Feel free to customize the vegetables and spices based on what you have on hand.', 'Lentil soup tends to thicken as it sits, so you may need to add more broth or water when reheating leftovers.', 15.0, 45.0, 30.0, 'Iraq', 'http://fakephotolink.com/lentil_soup.jpg', 'Lentil Soup served in a bowl with bread', 15, 45, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -3935,28 +3825,26 @@ VALUES
 ('Lentil Soup', 'Knife', 1),
 ('Lentil Soup', 'Cutting Board', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Lentils', 230.0, 0, 'Legumes and Legume Products', 'cup'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+('Lentils', 353.0, 0, 'Various Plant-based Foods', 'gr'),
 ('Onion', 44.0, 0, 'Various Plant-based Foods', 'unit'),
-('Carrots', 41.0, 0, 'Various Plant-based Foods', 'cup'),
+('Carrots', 41.0, 0, 'Various Plant-based Foods', 'cups'),
 ('Celery', 6.0, 0, 'Various Plant-based Foods', 'stalk'),
-('Garlic', 4.0, 0, 'Various Plant-based Foods', 'clove'),
-('Vegetable Broth', 11.0, 0, 'Others', 'cup'),
+('Vegetable Broth', 11.0, 0, 'Others', 'cups'),
 ('Tomato Paste', 29.0, 0, 'Various Plant-based Foods', 'tbsp'),
 ('Bay Leaf', 1.0, 0, 'Herbs and Essential Oils', 'leaf'),
 ('Cumin', 8.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp'),
 ('Fresh Parsley', 1.0, 0, 'Various Plant-based Foods', 'tbsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
-('Lentil Soup', 'Lentils', 1, 'cups'),
+('Lentil Soup', 'Lentils', 60, NULL),
 ('Lentil Soup', 'Onion', 1, NULL),
-('Lentil Soup', 'Carrots', 0.5, 'cups'),
+('Lentil Soup', 'Carrots', 0.5, NULL),
 ('Lentil Soup', 'Celery', 1, 'stalks'),
 ('Lentil Soup', 'Garlic', 2, 'cloves'),
-('Lentil Soup', 'Vegetable Broth', 6, 'cups'),
+('Lentil Soup', 'Vegetable Broth', 6, NULL),
 ('Lentil Soup', 'Tomato Paste', 2, NULL),
 ('Lentil Soup', 'Bay Leaf', 1, NULL),
 ('Lentil Soup', 'Cumin', 1, NULL),
@@ -3990,11 +3878,11 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Buckwheat Tabbouleh', 'Cooking', 5, 'Buckwheat Tabbouleh is a gluten-free twist on the traditional Middle Eastern salad. Instead of bulgur wheat, this version uses nutty and nutritious buckwheat as the base. Combined with fresh herbs, vegetables, and a zesty lemon dressing, it\'s a light and refreshing dish.', 'Make sure to rinse the buckwheat thoroughly before cooking to remove any bitterness.', 'Feel free to add other vegetables like cucumbers or bell peppers for extra crunch.', 'This salad can be made ahead of time and stored in the refrigerator for up to 3 days.', 15.0, 15.0, 30.0, 'Brazil', 'http://fakephotolink.com/buckwheat_tabbouleh.jpg', 'Buckwheat Tabbouleh served in a bowl', 15, 15);
+('Buckwheat Tabbouleh', 'Cooking', 5, 'Buckwheat Tabbouleh is a gluten-free twist on the traditional Middle Eastern salad. Instead of bulgur wheat, this version uses nutty and nutritious buckwheat as the base. Combined with fresh herbs, vegetables, and a zesty lemon dressing, it\'s a light and refreshing dish.', 'Make sure to rinse the buckwheat thoroughly before cooking to remove any bitterness.', 'Feel free to add other vegetables like cucumbers or bell peppers for extra crunch.', 'This salad can be made ahead of time and stored in the refrigerator for up to 3 days.', 15.0, 15.0, 30.0, 'Brazil', 'http://fakephotolink.com/buckwheat_tabbouleh.jpg', 'Buckwheat Tabbouleh served in a bowl', 15, 15, 1);
 
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Potato Curry', 'Cooking', 3, 'A flavorful and comforting potato curry made with potatoes cooked in a fragrant and spicy sauce. Perfect served over rice or with naan.', 'For a creamier texture, mash some of the potatoes into the curry.', 'Adjust the spice level by adding more or less chili powder according to your preference.', 'Garnish with fresh cilantro before serving for extra flavor.', 5.0, 30.0, 15.0, 'India', 'http://fakephotolink.com/potato_curry.jpg', 'Delicious and aromatic Potato Curry', 15, 30);
+('Potato Curry', 'Cooking', 3, 'A flavorful and comforting potato curry made with potatoes cooked in a fragrant and spicy sauce. Perfect served over rice or with naan.', 'For a creamier texture, mash some of the potatoes into the curry.', 'Adjust the spice level by adding more or less chili powder according to your preference.', 'Garnish with fresh cilantro before serving for extra flavor.', 5.0, 30.0, 15.0, 'India', 'http://fakephotolink.com/potato_curry.jpg', 'Delicious and aromatic Potato Curry', 15, 30, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -4002,17 +3890,15 @@ VALUES
 ('Potato Curry', 'Skillet', 1),
 ('Potato Curry', 'Spatula', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
 ('Potatoes', 77.0, 0, 'Cereals and Cereal Products', 'gr'),
 ('Onion', 44.0, 0, 'Herbs and Essential Oils', 'gr'),
 ('Tomatoes', 18.0, 0, 'Vegetables', 'gr'),
-('Garlic', 149.0, 0, 'Herbs and Essential Oils', 'gr'),
 ('Ginger', 80.0, 0, 'Herbs and Essential Oils', 'gr'),
 ('Chili Powder', 282.0, 0, 'Herbs and Essential Oils', 'gr'),
 ('Turmeric', 525.0, 0, 'Herbs and Essential Oils', 'gr'),
 ('Cumin Seeds', 375.0, 0, 'Herbs and Essential Oils', 'gr'),
 ('Coriander Powder', 23.0, 0, 'Herbs and Essential Oils', 'gr'),
-('Salt', 0.0, 0, 'Others', 'gr'),
 ('Vegetable Oil', 884.0, 0, 'Fats and Oils', 'ml'),
 ('Water', 0.0, 0, 'Others', 'ml');
 
@@ -4055,7 +3941,7 @@ INSERT INTO meal_type (recipe_name,meal) VALUES
 -- Bucatini all'Amatriciana
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Bucatini all\'Amatriciana', 'Cooking', 4, 'Bucatini all\'Amatriciana is a classic Italian pasta dish made with bucatini pasta, pancetta, tomatoes, and pecorino cheese. It\'s simple yet delicious, perfect for a cozy dinner.', 'For extra flavor, use high-quality canned tomatoes or fresh tomatoes when they\'re in season.', 'If you can\'t find bucatini pasta, spaghetti works well as a substitute.', 'Serve with a sprinkle of freshly grated pecorino cheese on top.', 10.0, 50.0, 15.0, 'Italy', 'http://fakephotolink.com/bucatini_all_amatriciana.jpg', 'Bucatini all\'Amatriciana with pancetta and tomatoes', 10, 40);
+('Bucatini all\'Amatriciana', 'Cooking', 4, 'Bucatini all\'Amatriciana is a classic Italian pasta dish made with bucatini pasta, pancetta, tomatoes, and pecorino cheese. It\'s simple yet delicious, perfect for a cozy dinner.', 'For extra flavor, use high-quality canned tomatoes or fresh tomatoes when they\'re in season.', 'If you can\'t find bucatini pasta, spaghetti works well as a substitute.', 'Serve with a sprinkle of freshly grated pecorino cheese on top.', 10.0, 50.0, 15.0, 'Italy', 'http://fakephotolink.com/bucatini_all_amatriciana.jpg', 'Bucatini all\'Amatriciana with pancetta and tomatoes', 10, 40, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -4063,15 +3949,13 @@ VALUES
 ('Bucatini all\'Amatriciana', 'Skillet', 1),
 ('Bucatini all\'Amatriciana', 'Colander', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
 ('Bucatini Pasta', 349.0, 0, 'Cereals and Cereal Products', 'gr'),
 ('Pancetta', 416.0, 0, 'Meat and Meat Products', 'gr'),
 ('Onion', 44.0, 0, 'Herbs and Essential Oils', 'gr'),
 ('Canned Tomatoes', 32.0, 0, 'Various Plant-based Foods', 'gr'),
-('Garlic', 149.0, 0, 'Herbs and Essential Oils', 'gr'),
 ('Red Chili Flakes', 282.0, 0, 'Herbs and Essential Oils', 'gr'),
 ('Pecorino Cheese', 392.0, 0, 'Milk, Eggs, and Their Products', 'gr'),
-('Salt', 0.0, 0, 'Others', 'gr'),
 ('Black Pepper', 255.0, 0, 'Herbs and Essential Oils', 'gr'),
 ('Olive Oil', 884.0, 0, 'Fats and Oils', 'ml');
 
@@ -4094,7 +3978,7 @@ VALUES
 
 INSERT INTO recipe_steps (recipe_name, instruction, step_num)
 VALUES 
-('Bucatini all\'Amatriciana', 'Cook the pasta in a large pot of boiling salted water until al dente. Reserve 1 cup of pasta water, then drain the pasta in a colander.', 1),
+('Bucatini all\'Amatriciana', 'Cook the pasta in a large pot of boiling salted water until al dente. Reserve 1 cups of pasta water, then drain the pasta in a colander.', 1),
 ('Bucatini all\'Amatriciana', 'In a skillet, heat olive oil over medium heat. Add pancetta and cook until browned and crispy.', 2),
 ('Bucatini all\'Amatriciana', 'Add chopped onion and garlic to the skillet. Cook until softened.', 3),
 ('Bucatini all\'Amatriciana', 'Add canned tomatoes and red chili flakes to the skillet. Cook until the sauce thickens slightly.', 4),
@@ -4112,7 +3996,7 @@ INSERT INTO meal_type (recipe_name,meal) VALUES
 -- Brioche Chocolate Rolls
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Brioche Chocolate Rolls', 'Pastry', 2, 'Brioche chocolate rolls are soft and buttery rolls filled with rich chocolate, perfect for breakfast or as a sweet treat. They\'re easy to make and sure to impress!', 'For best results, use high-quality chocolate for the filling.', 'You can make the dough ahead of time and refrigerate overnight for convenience.', 'Serve warm for a gooey chocolate experience.', 6.0, 40.0, 20.0, 'France', 'http://fakephotolink.com/brioche_chocolate_rolls.jpg', 'Brioche Chocolate Rolls with rich chocolate filling', 20, 30);
+('Brioche Chocolate Rolls', 'Pastry', 2, 'Brioche chocolate rolls are soft and buttery rolls filled with rich chocolate, perfect for breakfast or as a sweet treat. They\'re easy to make and sure to impress!', 'For best results, use high-quality chocolate for the filling.', 'You can make the dough ahead of time and refrigerate overnight for convenience.', 'Serve warm for a gooey chocolate experience.', 6.0, 40.0, 20.0, 'France', 'http://fakephotolink.com/brioche_chocolate_rolls.jpg', 'Brioche Chocolate Rolls with rich chocolate filling', 20, 30, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -4120,15 +4004,11 @@ VALUES
 ('Brioche Chocolate Rolls', 'Baking Sheet', 1),
 ('Brioche Chocolate Rolls', 'Rolling Pin', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
 ('Bread Flour', 364.0, 0, 'Cereals and Cereal Products', 'gr'),
 ('Sugar', 387.0, 1, 'Sweeteners', 'gr'),
 ('Active Dry Yeast', 47.0, 0, 'Others', 'gr'),
-('Salt', 0.0, 0, 'Others', 'gr'),
-('Eggs', 72.0, 0, 'Milk, Eggs, and Their Products', ''),
-('Milk', 42.0, 0, 'Milk, Eggs, and Their Products', 'ml'),
-('Butter', 102.0, 0, 'Milk, Eggs, and Their Products', 'gr'),
-('Chocolate Chips', 535.0, 1, 'Products with Sweeteners', 'gr');
+('Eggs', 72.0, 0, 'Milk, Eggs, and Their Products', ''),;
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -4175,28 +4055,26 @@ VALUES
 ('Buckwheat Tabbouleh', 'Whisk', 1),
 ('Buckwheat Tabbouleh', 'Bowl', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Buckwheat Groats', 155.0, 0, 'Cereals and Cereal Products', 'cup'),
-('Water', 0.0, 0, 'Beverages', 'cup'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+('Buckwheat Groats', 155.0, 0, 'Cereals and Cereal Products', 'cups'),
+('Water', 0.0, 0, 'Beverages', 'cups'),
 ('Tomatoes', 18.0, 0, 'Various Plant-based Foods', 'unit'),
-('Cucumber', 8.0, 0, 'Various Plant-based Foods', 'unit'),
 ('Green Onion', 4.0, 0, 'Various Plant-based Foods', 'unit'),
-('Fresh Parsley', 1.0, 0, 'Various Plant-based Foods', 'cup'),
-('Fresh Mint', 2.0, 0, 'Various Plant-based Foods', 'cup'),
+('Fresh Parsley', 1.0, 0, 'Various Plant-based Foods', 'cups'),
+('Fresh Mint', 2.0, 0, 'Various Plant-based Foods', 'cups'),
 ('Lemon Juice', 4.0, 0, 'Various Plant-based Foods', 'tbsp'),
 ('Olive Oil', 119.0, 0, 'Fats and Oils', 'tbsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
-('Buckwheat Tabbouleh', 'Buckwheat Groats', 1, 'cups'),
-('Buckwheat Tabbouleh', 'Water', 2, 'cups'),
+('Buckwheat Tabbouleh', 'Buckwheat Groats', 1, NULL),
+('Buckwheat Tabbouleh', 'Water', 2, NULL),
 ('Buckwheat Tabbouleh', 'Tomatoes', 2, NULL),
 ('Buckwheat Tabbouleh', 'Cucumber', 0.5, NULL),
 ('Buckwheat Tabbouleh', 'Green Onion', 3, NULL),
-('Buckwheat Tabbouleh', 'Fresh Parsley', 0.5, 'cups'),
-('Buckwheat Tabbouleh', 'Fresh Mint', 0.25, 'cups'),
+('Buckwheat Tabbouleh', 'Fresh Parsley', 0.5, NULL),
+('Buckwheat Tabbouleh', 'Fresh Mint', 0.25, NULL),
 ('Buckwheat Tabbouleh', 'Lemon Juice', 2, NULL),
 ('Buckwheat Tabbouleh', 'Olive Oil', 2, NULL),
 ('Buckwheat Tabbouleh', 'Salt', NULL, 'to taste'),
@@ -4229,7 +4107,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 -- Lentil Rice Bowls with Egg
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Lentil Rice Bowls with Egg', 'Cooking', 5, 'These Lentil Rice Bowls with Egg are a nutritious and satisfying meal. They feature a flavorful combination of lentils, rice, vegetables, and a perfectly cooked egg on top. This dish is easy to customize with your favorite toppings and seasonings.', 'You can use any type of lentils you prefer, such as green, brown, or red lentils.', 'Feel free to add extra vegetables like bell peppers, spinach, or cherry tomatoes for added nutrition.', 'For extra flavor, drizzle with your favorite sauce or dressing, such as tahini, yogurt, or sriracha.', 15.0, 30.0, 20.0, 'Japan', 'http://fakephotolink.com/lentil_rice_bowls.jpg', 'Lentil Rice Bowls with Egg served in a bowl', 15, 30);
+('Lentil Rice Bowls with Egg', 'Cooking', 5, 'These Lentil Rice Bowls with Egg are a nutritious and satisfying meal. They feature a flavorful combination of lentils, rice, vegetables, and a perfectly cooked egg on top. This dish is easy to customize with your favorite toppings and seasonings.', 'You can use any type of lentils you prefer, such as green, brown, or red lentils.', 'Feel free to add extra vegetables like bell peppers, spinach, or cherry tomatoes for added nutrition.', 'For extra flavor, drizzle with your favorite sauce or dressing, such as tahini, yogurt, or sriracha.', 15.0, 30.0, 20.0, 'Japan', 'http://fakephotolink.com/lentil_rice_bowls.jpg', 'Lentil Rice Bowls with Egg served in a bowl', 15, 30, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -4239,21 +4117,18 @@ VALUES
 ('Lentil Rice Bowls with Egg', 'Mixing Bowl', 1),
 ('Lentil Rice Bowls with Egg', 'Whisk', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Lentils', 230.0, 0, 'Meat and Meat Products', 'cup'),
-('Rice', 205.0, 0, 'Cereals and Cereal Products', 'cup'),
-('Egg', 72.0, 0, 'Milk, Eggs, and Their Products', ''),
-('Mixed Vegetables', 25.0, 0, 'Various Plant-based Foods', 'cup'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+('Rice', 205.0, 0, 'Cereals and Cereal Products', 'cups'),
+('Mixed Vegetables', 25.0, 0, 'Various Plant-based Foods', 'cups'),
 ('Olive Oil', 119.0, 0, 'Fats and Oils', 'tbsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
-('Lentil Rice Bowls with Egg', 'Lentils', 1, 'cups'),
-('Lentil Rice Bowls with Egg', 'Rice', 0.5, 'cups'),
+('Lentil Rice Bowls with Egg', 'Lentils', 65, NULL),
+('Lentil Rice Bowls with Egg', 'Rice', 0.5, NULL),
 ('Lentil Rice Bowls with Egg', 'Egg', 1, NULL),
-('Lentil Rice Bowls with Egg', 'Mixed Vegetables', 0.5, 'cups'),
+('Lentil Rice Bowls with Egg', 'Mixed Vegetables', 0.5, NULL),
 ('Lentil Rice Bowls with Egg', 'Olive Oil', 1, NULL),
 ('Lentil Rice Bowls with Egg', 'Salt', NULL, 'to taste'),
 ('Lentil Rice Bowls with Egg', 'Black Pepper', NULL, 'to taste');
@@ -4284,7 +4159,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 -- Italian Vegetable Lentil Soup
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Italian Vegetable Lentil Soup', 'Cooking', 4, 'Italian Vegetable Lentil Soup is a hearty and flavorful dish that\'s perfect for chilly days. Loaded with lentils, vegetables, and Italian herbs, this soup is nutritious and comforting. Serve it with crusty bread for a complete meal.', 'For extra flavor, add a Parmesan rind to the soup while it simmers.', 'Feel free to use any vegetables you have on hand, such as carrots, celery, zucchini, or bell peppers.', 'If you prefer a thicker soup, blend a portion of it with an immersion blender.', 10.0, 30.0, 40.0, 'Italy', 'http://fakephotolink.com/italian_lentil_soup.jpg', 'Italian Vegetable Lentil Soup served in a bowl', 10, 30);
+('Italian Vegetable Lentil Soup', 'Cooking', 4, 'Italian Vegetable Lentil Soup is a hearty and flavorful dish that\'s perfect for chilly days. Loaded with lentils, vegetables, and Italian herbs, this soup is nutritious and comforting. Serve it with crusty bread for a complete meal.', 'For extra flavor, add a Parmesan rind to the soup while it simmers.', 'Feel free to use any vegetables you have on hand, such as carrots, celery, zucchini, or bell peppers.', 'If you prefer a thicker soup, blend a portion of it with an immersion blender.', 10.0, 30.0, 40.0, 'Italy', 'http://fakephotolink.com/italian_lentil_soup.jpg', 'Italian Vegetable Lentil Soup served in a bowl', 10, 30, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -4295,23 +4170,20 @@ VALUES
 ('Italian Vegetable Lentil Soup', 'Mixing Spoon', 1),
 ('Italian Vegetable Lentil Soup', 'Immersion Blender', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Lentils', 230.0, 0, 'Meat and Meat Products', 'cup'),
-('Vegetable Broth', 15.0, 0, 'Others', 'cup'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+('Vegetable Broth', 15.0, 0, 'Others', 'cups'),
 ('Tomatoes', 18.0, 0, 'Various Plant-based Foods', 'unit'),
 ('Carrots', 25.0, 0, 'Various Plant-based Foods', 'unit'),
 ('Celery', 6.0, 0, 'Various Plant-based Foods', 'stalk'),
 ('Onion', 44.0, 0, 'Various Plant-based Foods', 'unit'),
-('Garlic', 4.0, 0, 'Various Plant-based Foods', 'clove'),
 ('Olive Oil', 119.0, 0, 'Fats and Oils', 'tbsp'),
 ('Italian Seasoning', 0.0, 0, 'Others', 'tbsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
-('Italian Vegetable Lentil Soup', 'Lentils', 1, 'cups'),
-('Italian Vegetable Lentil Soup', 'Vegetable Broth', 4, 'cups'),
+('Italian Vegetable Lentil Soup', 'Lentils', 1, NULL),
+('Italian Vegetable Lentil Soup', 'Vegetable Broth', 4, NULL),
 ('Italian Vegetable Lentil Soup', 'Tomatoes', 2, NULL),
 ('Italian Vegetable Lentil Soup', 'Carrots', 2, NULL),
 ('Italian Vegetable Lentil Soup', 'Celery', 1, NULL),
@@ -4347,7 +4219,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 -- One Pot Chicken & Potatoes
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('One Pot Chicken & Potatoes', 'Cooking', 2, 'One Pot Chicken & Potatoes is a simple and delicious meal that\'s perfect for busy weeknights. Everything cooks together in one pot, making cleanup a breeze. Tender chicken thighs, potatoes, and flavorful seasonings make this dish a family favorite.', 'For extra flavor, add lemon slices and fresh herbs such as rosemary or thyme.', 'You can use any type of potatoes you like, such as russet, red, or Yukon gold.', 'Feel free to add extra vegetables like carrots, green beans, or bell peppers for a complete meal.', 15.0, 40.0, 30.0, 'Australia', 'http://fakephotolink.com/one_pot_chicken_potatoes.jpg', 'One Pot Chicken & Potatoes served in a skillet', 15, 40);
+('One Pot Chicken & Potatoes', 'Cooking', 2, 'One Pot Chicken & Potatoes is a simple and delicious meal that\'s perfect for busy weeknights. Everything cooks together in one pot, making cleanup a breeze. Tender chicken thighs, potatoes, and flavorful seasonings make this dish a family favorite.', 'For extra flavor, add lemon slices and fresh herbs such as rosemary or thyme.', 'You can use any type of potatoes you like, such as russet, red, or Yukon gold.', 'Feel free to add extra vegetables like carrots, green beans, or bell peppers for a complete meal.', 15.0, 40.0, 30.0, 'Australia', 'http://fakephotolink.com/one_pot_chicken_potatoes.jpg', 'One Pot Chicken & Potatoes served in a skillet', 15, 40, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -4357,13 +4229,11 @@ VALUES
 ('One Pot Chicken & Potatoes', 'Mixing Spoon', 1),
 ('One Pot Chicken & Potatoes', 'Tongs', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Chicken Thighs', 280.0, 0, 'Meat and Meat Products', 'unit'),
 ('Potatoes', 163.0, 0, 'Various Plant-based Foods', 'unit'),
 ('Olive Oil', 119.0, 0, 'Fats and Oils', 'tbsp'),
-('Garlic', 4.0, 0, 'Various Plant-based Foods', 'clove'),
 ('Italian Seasoning', 0.0, 0, 'Others', 'tbsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
@@ -4400,7 +4270,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 -- Sweet Korean Lentils
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Sweet Korean Lentils', 'Cooking', 5, 'Sweet Korean Lentils are a delicious and healthy dish inspired by Korean flavors. Made with lentils cooked in a sweet and savory sauce, this recipe is easy to make and perfect for a weeknight dinner. Serve over rice for a complete meal.', 'Adjust the amount of gochujang sauce according to your spice preference.', 'Feel free to add vegetables like bell peppers, carrots, or spinach for extra nutrition.', 'Garnish with sliced green onions and sesame seeds for added flavor and texture.', 15.0, 30.0, 20.0, 'South Korea', 'http://fakephotolink.com/sweet_korean_lentils.jpg', 'Sweet Korean Lentils served in a bowl over rice', 15, 30);
+('Sweet Korean Lentils', 'Cooking', 5, 'Sweet Korean Lentils are a delicious and healthy dish inspired by Korean flavors. Made with lentils cooked in a sweet and savory sauce, this recipe is easy to make and perfect for a weeknight dinner. Serve over rice for a complete meal.', 'Adjust the amount of gochujang sauce according to your spice preference.', 'Feel free to add vegetables like bell peppers, carrots, or spinach for extra nutrition.', 'Garnish with sliced green onions and sesame seeds for added flavor and texture.', 15.0, 30.0, 20.0, 'South Korea', 'http://fakephotolink.com/sweet_korean_lentils.jpg', 'Sweet Korean Lentils served in a bowl over rice', 15, 30, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -4410,22 +4280,20 @@ VALUES
 ('Sweet Korean Lentils', 'Cutting Board', 1),
 ('Sweet Korean Lentils', 'Mixing Spoon', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Lentils', 230.0, 0, 'Meat and Meat Products', 'cup'),
-('Water', 0.0, 0, 'Others', 'cup'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+('Water', 0.0, 0, 'Others', 'cups'),
 ('Soy Sauce', 8.0, 0, 'Others', 'tbsp'),
 ('Gochujang Sauce', 40.0, 0, 'Others', 'tbsp'),
 ('Honey', 64.0, 1, 'Sweeteners', 'tbsp'),
 ('Rice Vinegar', 4.0, 0, 'Others', 'tbsp'),
-('Garlic', 4.0, 0, 'Various Plant-based Foods', 'clove'),
 ('Sesame Oil', 120.0, 0, 'Fats and Oils', 'tbsp'),
 ('Green Onions', 4.0, 0, 'Various Plant-based Foods', 'stalk'),
 ('Sesame Seeds', 52.0, 0, 'Others', 'tbsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
-('Sweet Korean Lentils', 'Lentils', 1, 'cups'),
-('Sweet Korean Lentils', 'Water', 2, 'cups'),
+('Sweet Korean Lentils', 'Lentils', 60, NULL),
+('Sweet Korean Lentils', 'Water', 2, NULL),
 ('Sweet Korean Lentils', 'Soy Sauce', 3, NULL),
 ('Sweet Korean Lentils', 'Gochujang Sauce', 2, NULL),
 ('Sweet Korean Lentils', 'Honey', 1, NULL),
@@ -4460,7 +4328,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 -- Buckwheat Beetroot Salad
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Buckwheat Beetroot Salad', 'Cooking', 5, 'Buckwheat Beetroot Salad is a vibrant and nutritious dish that\'s perfect for lunch or as a side dish. It features earthy buckwheat, sweet roasted beets, crunchy vegetables, and a tangy vinaigrette. This salad is easy to make and bursting with flavor.', 'You can cook the buckwheat ahead of time and store it in the refrigerator until ready to use.', 'Feel free to add other vegetables like cucumber, radishes, or bell peppers for extra crunch and color.', 'Garnish with fresh herbs like parsley, dill, or chives for added freshness.', 15.0, 30.0, 30.0, 'Germany', 'http://fakephotolink.com/buckwheat_beetroot_salad.jpg', 'Buckwheat Beetroot Salad served in a bowl', 15, 30);
+('Buckwheat Beetroot Salad', 'Cooking', 5, 'Buckwheat Beetroot Salad is a vibrant and nutritious dish that\'s perfect for lunch or as a side dish. It features earthy buckwheat, sweet roasted beets, crunchy vegetables, and a tangy vinaigrette. This salad is easy to make and bursting with flavor.', 'You can cook the buckwheat ahead of time and store it in the refrigerator until ready to use.', 'Feel free to add other vegetables like cucumber, radishes, or bell peppers for extra crunch and color.', 'Garnish with fresh herbs like parsley, dill, or chives for added freshness.', 15.0, 30.0, 30.0, 'Germany', 'http://fakephotolink.com/buckwheat_beetroot_salad.jpg', 'Buckwheat Beetroot Salad served in a bowl', 15, 30, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -4471,22 +4339,19 @@ VALUES
 ('Buckwheat Beetroot Salad', 'Mixing Bowl', 1),
 ('Buckwheat Beetroot Salad', 'Whisk', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Buckwheat Groats', 155.0, 0, 'Cereals and Cereal Products', 'cup'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+('Buckwheat Groats', 155.0, 0, 'Cereals and Cereal Products', 'cups'),
 ('Beets', 43.0, 0, 'Various Plant-based Foods', 'unit'),
-('Red Onion', 44.0, 0, 'Various Plant-based Foods', 'unit'),
-('Cucumber', 8.0, 0, 'Various Plant-based Foods', 'unit'),
 ('Bell Pepper', 25.0, 0, 'Various Plant-based Foods', 'unit'),
 ('Olive Oil', 119.0, 0, 'Fats and Oils', 'tbsp'),
 ('Balsamic Vinegar', 14.0, 0, 'Others', 'tbsp'),
 ('Dijon Mustard', 15.0, 0, 'Others', 'tsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp'),
 ('Fresh Herbs', 2.0, 0, 'Various Plant-based Foods', 'tbsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
-('Buckwheat Beetroot Salad', 'Buckwheat Groats', 1, 'cups'),
+('Buckwheat Beetroot Salad', 'Buckwheat Groats', 1, NULL),
 ('Buckwheat Beetroot Salad', 'Beets', 2, NULL),
 ('Buckwheat Beetroot Salad', 'Red Onion', 1, NULL),
 ('Buckwheat Beetroot Salad', 'Cucumber', 1, NULL),
@@ -4524,7 +4389,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 -- New Potato Lentil Salad
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('New Potato Lentil Salad', 'Cooking', 4, 'New Potato Lentil Salad is a hearty and flavorful dish that\'s perfect for picnics, barbecues, or as a light lunch. It combines tender new potatoes, cooked lentils, fresh herbs, and a zesty vinaigrette. This salad is easy to make and bursting with summery flavors.', 'You can use any type of lentils you prefer, such as green, brown, or red lentils.', 'Feel free to add other vegetables like cherry tomatoes, cucumbers, or bell peppers for extra color and flavor.', 'Garnish with chopped fresh parsley or dill for added freshness.', 15.0, 30.0, 30.0, 'Japan', 'http://fakephotolink.com/new_potato_lentil_salad.jpg', 'New Potato Lentil Salad served in a bowl', 15, 30);
+('New Potato Lentil Salad', 'Cooking', 4, 'New Potato Lentil Salad is a hearty and flavorful dish that\'s perfect for picnics, barbecues, or as a light lunch. It combines tender new potatoes, cooked lentils, fresh herbs, and a zesty vinaigrette. This salad is easy to make and bursting with summery flavors.', 'You can use any type of lentils you prefer, such as green, brown, or red lentils.', 'Feel free to add other vegetables like cherry tomatoes, cucumbers, or bell peppers for extra color and flavor.', 'Garnish with chopped fresh parsley or dill for added freshness.', 15.0, 30.0, 30.0, 'Japan', 'http://fakephotolink.com/new_potato_lentil_salad.jpg', 'New Potato Lentil Salad served in a bowl', 15, 30, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -4534,21 +4399,18 @@ VALUES
 ('New Potato Lentil Salad', 'Knife', 1),
 ('New Potato Lentil Salad', 'Cutting Board', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('New Potatoes', 77.0, 0, 'Various Plant-based Foods', 'unit'),
-('Lentils', 230.0, 0, 'Meat and Meat Products', 'cup'),
-('Red Onion', 44.0, 0, 'Various Plant-based Foods', 'unit'),
 ('Olive Oil', 119.0, 0, 'Fats and Oils', 'tbsp'),
 ('White Wine Vinegar', 2.0, 0, 'Others', 'tbsp'),
 ('Dijon Mustard', 15.0, 0, 'Others', 'tsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp'),
 ('Fresh Herbs', 2.0, 0, 'Various Plant-based Foods', 'tbsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
-('New Potato Lentil Salad', 'New Potatoes', 1.5, NULL),
-('New Potato Lentil Salad', 'Lentils', 1, 'cups'),
+('New Potato Lentil Salad', 'New Potatoes', 100, NULL),
+('New Potato Lentil Salad', 'Lentils', 1, NULL),
 ('New Potato Lentil Salad', 'Red Onion', 0.5, NULL),
 ('New Potato Lentil Salad', 'Olive Oil', 3, NULL),
 ('New Potato Lentil Salad', 'White Wine Vinegar', 2, NULL),
@@ -4583,7 +4445,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 -- Ham & Potato Soup
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Ham & Potato Soup', 'Cooking', 2, 'Ham & Potato Soup is a comforting and hearty dish that\'s perfect for chilly days. Made with tender potatoes, smoky ham, and flavorful herbs, this soup is sure to warm you up from the inside out. Serve with crusty bread for a satisfying meal.', 'For extra flavor, use homemade chicken or vegetable broth instead of store-bought.', 'Feel free to add other vegetables like carrots, celery, or peas for added nutrition.', 'Garnish each bowl with a dollop of sour cream or a sprinkle of shredded cheese for extra richness.', 15.0, 40.0, 30.0, 'Egypt', 'http://fakephotolink.com/ham_potato_soup.jpg', 'Ham & Potato Soup served in a bowl', 15, 40);
+('Ham & Potato Soup', 'Cooking', 2, 'Ham & Potato Soup is a comforting and hearty dish that\'s perfect for chilly days. Made with tender potatoes, smoky ham, and flavorful herbs, this soup is sure to warm you up from the inside out. Serve with crusty bread for a satisfying meal.', 'For extra flavor, use homemade chicken or vegetable broth instead of store-bought.', 'Feel free to add other vegetables like carrots, celery, or peas for added nutrition.', 'Garnish each bowl with a dollop of sour cream or a sprinkle of shredded cheese for extra richness.', 15.0, 40.0, 30.0, 'Egypt', 'http://fakephotolink.com/ham_potato_soup.jpg', 'Ham & Potato Soup served in a bowl', 15, 40, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -4592,30 +4454,28 @@ VALUES
 ('Ham & Potato Soup', 'Cutting Board', 2),
 ('Ham & Potato Soup', 'Mixing Spoon', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Ham', 145.0, 0, 'Meat and Meat Products', 'cup'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+('Ham', 145.0, 0, 'Meat and Meat Products', 'cups'),
 ('Potatoes', 163.0, 0, 'Various Plant-based Foods', 'unit'),
 ('Onion', 44.0, 0, 'Various Plant-based Foods', 'unit'),
 ('Celery', 6.0, 0, 'Various Plant-based Foods', 'stalk'),
 ('Carrots', 25.0, 0, 'Various Plant-based Foods', 'unit'),
-('Garlic', 4.0, 0, 'Various Plant-based Foods', 'clove'),
-('Chicken Broth', 15.0, 0, 'Others', 'cup'),
-('Milk', 103.0, 0, 'Milk, Eggs, and Their Products', 'cup'),
+('Chicken Broth', 15.0, 0, 'Others', 'cups'),
+('Milk', 103.0, 0, 'Milk, Eggs, and Their Products', 'cups'),
 ('Flour', 455.0, 0, 'Cereals and Cereal Products', 'tbsp'),
 ('Butter', 102.0, 0, 'Fats and Oils', 'tbsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
-('Ham & Potato Soup', 'Ham', 1, 'cups'),
+('Ham & Potato Soup', 'Ham', 1, NULL),
 ('Ham & Potato Soup', 'Potatoes', 2, NULL),
 ('Ham & Potato Soup', 'Onion', 1, NULL),
 ('Ham & Potato Soup', 'Celery', 1, NULL),
 ('Ham & Potato Soup', 'Carrots', 2, NULL),
 ('Ham & Potato Soup', 'Garlic', 2, 'cloves'),
-('Ham & Potato Soup', 'Chicken Broth', 4, 'cups'),
-('Ham & Potato Soup', 'Milk', 1, 'cups'),
+('Ham & Potato Soup', 'Chicken Broth', 4, NULL),
+('Ham & Potato Soup', 'Milk', 1, NULL),
 ('Ham & Potato Soup', 'Flour', 2, NULL),
 ('Ham & Potato Soup', 'Butter', 1, NULL),
 ('Ham & Potato Soup', 'Salt', NULL, 'to taste'),
@@ -4646,7 +4506,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 -- Lemon Dill Potatoes
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Lemon Dill Potatoes', 'Cooking', 1, 'Lemon Dill Potatoes are a bright and flavorful side dish that pairs perfectly with grilled meats or fish. Baby potatoes are roasted until tender and tossed with a tangy lemon dill dressing. This dish is simple to make but adds a burst of freshness to any meal.', 'For extra crispiness, roast the potatoes at a higher temperature for the last 5-10 minutes of cooking.', 'Feel free to substitute dried dill if you don\'t have fresh dill on hand.', 'Serve garnished with additional chopped fresh dill and lemon wedges for presentation.', 10.0, 30.0, 20.0, 'Australia', 'http://fakephotolink.com/lemon_dill_potatoes.jpg', 'Lemon Dill Potatoes served on a plate', 10, 30);
+('Lemon Dill Potatoes', 'Cooking', 1, 'Lemon Dill Potatoes are a bright and flavorful side dish that pairs perfectly with grilled meats or fish. Baby potatoes are roasted until tender and tossed with a tangy lemon dill dressing. This dish is simple to make but adds a burst of freshness to any meal.', 'For extra crispiness, roast the potatoes at a higher temperature for the last 5-10 minutes of cooking.', 'Feel free to substitute dried dill if you don\'t have fresh dill on hand.', 'Serve garnished with additional chopped fresh dill and lemon wedges for presentation.', 10.0, 30.0, 20.0, 'Australia', 'http://fakephotolink.com/lemon_dill_potatoes.jpg', 'Lemon Dill Potatoes served on a plate', 10, 30, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -4657,13 +4517,12 @@ VALUES
 ('Lemon Dill Potatoes', 'Cutting Board', 2),
 ('Lemon Dill Potatoes', 'Zester', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Baby Potatoes', 77.0, 0, 'Various Plant-based Foods', 'unit'),
 ('Olive Oil', 119.0, 0, 'Fats and Oils', 'tbsp'),
 ('Lemon Juice', 4.0, 0, 'Various Plant-based Foods', 'tbsp'),
 ('Lemon Zest', 2.0, 0, 'Various Plant-based Foods', 'tsp'),
 ('Fresh Dill', 2.0, 0, 'Various Plant-based Foods', 'tbsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
@@ -4700,7 +4559,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 -- BBQ Lentils
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('BBQ Lentils', 'Cooking', 2, 'BBQ Lentils are a tasty and satisfying vegetarian dish that\'s perfect for weeknight dinners. Lentils are simmered in a smoky barbecue sauce until tender and flavorful. Serve over rice or with crusty bread for a complete meal.', 'For extra heat, add a pinch of cayenne pepper or a dash of hot sauce to the lentils.', 'Feel free to customize the vegetables in this dish based on what you have on hand.', 'Top with a dollop of Greek yogurt or sour cream for a creamy contrast to the smoky lentils.', 10.0, 30.0, 20.0, 'Saudi Arabia', 'http://fakephotolink.com/bbq_lentils.jpg', 'BBQ Lentils served in a bowl', 10, 30);
+('BBQ Lentils', 'Cooking', 2, 'BBQ Lentils are a tasty and satisfying vegetarian dish that\'s perfect for weeknight dinners. Lentils are simmered in a smoky barbecue sauce until tender and flavorful. Serve over rice or with crusty bread for a complete meal.', 'For extra heat, add a pinch of cayenne pepper or a dash of hot sauce to the lentils.', 'Feel free to customize the vegetables in this dish based on what you have on hand.', 'Top with a dollop of Greek yogurt or sour cream for a creamy contrast to the smoky lentils.', 10.0, 30.0, 20.0, 'Saudi Arabia', 'http://fakephotolink.com/bbq_lentils.jpg', 'BBQ Lentils served in a bowl', 10, 30, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -4710,21 +4569,18 @@ VALUES
 ('BBQ Lentils', 'Cutting Board', 1),
 ('BBQ Lentils', 'Mixing Spoon', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Lentils', 230.0, 0, 'Meat and Meat Products', 'cup'),
-('Water', 0.0, 0, 'Others', 'cup'),
-('Barbecue Sauce', 29.0, 0, 'Others', 'cup'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+('Water', 0.0, 0, 'Others', 'cups'),
+('Barbecue Sauce', 29.0, 0, 'Others', 'cups'),
 ('Onion', 44.0, 0, 'Various Plant-based Foods', 'unit'),
-('Garlic', 4.0, 0, 'Various Plant-based Foods', 'clove'),
 ('Vegetable Oil', 124.0, 0, 'Fats and Oils', 'tbsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
-('BBQ Lentils', 'Lentils', 1, 'cups'),
-('BBQ Lentils', 'Water', 2, 'cups'),
-('BBQ Lentils', 'Barbecue Sauce', 0.5, 'cups'),
+('BBQ Lentils', 'Lentils', 70, NULL),
+('BBQ Lentils', 'Water', 2, NULL),
+('BBQ Lentils', 'Barbecue Sauce', 0.5, NULL),
 ('BBQ Lentils', 'Onion', 1, NULL),
 ('BBQ Lentils', 'Garlic', 2, 'cloves'),
 ('BBQ Lentils', 'Vegetable Oil', 1, NULL),
@@ -4755,7 +4611,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 -- Healthy Buckwheat Soup
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Healthy Buckwheat Soup', 'Cooking', 2, 'Healthy Buckwheat Soup is a nutritious and comforting dish that\'s perfect for chilly days. Loaded with vegetables, protein-rich buckwheat, and fragrant herbs, this soup is both satisfying and delicious. Serve with a slice of crusty bread for a complete meal.', 'Feel free to add other vegetables like carrots, celery, or spinach to the soup.', 'For extra flavor, use homemade vegetable or chicken broth instead of store-bought.', 'Garnish each bowl with a drizzle of olive oil and a sprinkle of fresh herbs for added freshness.', 15.0, 40.0, 30.0, 'Russia', 'http://fakephotolink.com/healthy_buckwheat_soup.jpg', 'Healthy Buckwheat Soup served in a bowl', 15, 40);
+('Healthy Buckwheat Soup', 'Cooking', 2, 'Healthy Buckwheat Soup is a nutritious and comforting dish that\'s perfect for chilly days. Loaded with vegetables, protein-rich buckwheat, and fragrant herbs, this soup is both satisfying and delicious. Serve with a slice of crusty bread for a complete meal.', 'Feel free to add other vegetables like carrots, celery, or spinach to the soup.', 'For extra flavor, use homemade vegetable or chicken broth instead of store-bought.', 'Garnish each bowl with a drizzle of olive oil and a sprinkle of fresh herbs for added freshness.', 15.0, 40.0, 30.0, 'Russia', 'http://fakephotolink.com/healthy_buckwheat_soup.jpg', 'Healthy Buckwheat Soup served in a bowl', 15, 40, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -4764,29 +4620,27 @@ VALUES
 ('Healthy Buckwheat Soup', 'Cutting Board', 1),
 ('Healthy Buckwheat Soup', 'Mixing Spoon', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Buckwheat Groats', 155.0, 0, 'Cereals and Cereal Products', 'cup'),
-('Water', 0.0, 0, 'Others', 'cup'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+('Buckwheat Groats', 155.0, 0, 'Cereals and Cereal Products', 'cups'),
+('Water', 0.0, 0, 'Others', 'cups'),
 ('Carrots', 25.0, 0, 'Various Plant-based Foods', 'unit'),
 ('Celery', 6.0, 0, 'Various Plant-based Foods', 'stalk'),
 ('Onion', 44.0, 0, 'Various Plant-based Foods', 'unit'),
-('Garlic', 4.0, 0, 'Various Plant-based Foods', 'clove'),
-('Vegetable Broth', 15.0, 0, 'Others', 'cup'),
+('Vegetable Broth', 15.0, 0, 'Others', 'cups'),
 ('Bay Leaf', 2.0, 0, 'Herbs and Essential Oils', 'unit'),
 ('Thyme', 3.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp'),
 ('Fresh Herbs', 2.0, 0, 'Various Plant-based Foods', 'tbsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
-('Healthy Buckwheat Soup', 'Buckwheat Groats', 1, 'cups'),
-('Healthy Buckwheat Soup', 'Water', 4, 'cups'),
+('Healthy Buckwheat Soup', 'Buckwheat Groats', 1, NULL),
+('Healthy Buckwheat Soup', 'Water', 4, NULL),
 ('Healthy Buckwheat Soup', 'Carrots', 2, NULL),
 ('Healthy Buckwheat Soup', 'Celery', 2, NULL),
 ('Healthy Buckwheat Soup', 'Onion', 1, NULL),
 ('Healthy Buckwheat Soup', 'Garlic', 2, 'cloves'),
-('Healthy Buckwheat Soup', 'Vegetable Broth', 4, 'cups'),
+('Healthy Buckwheat Soup', 'Vegetable Broth', 4, NULL),
 ('Healthy Buckwheat Soup', 'Bay Leaf', 2, NULL),
 ('Healthy Buckwheat Soup', 'Thyme', 1, NULL),
 ('Healthy Buckwheat Soup', 'Salt', NULL, 'to taste'),
@@ -4816,7 +4670,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 -- Buckwheat Chicken Pilaf
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Buckwheat Chicken Pilaf', 'Cooking', 3, 'Buckwheat Chicken Pilaf is a wholesome and flavorful one-pot meal that\'s perfect for busy weeknights. Tender chicken, earthy buckwheat, and aromatic spices come together in this comforting dish. Serve with a side of yogurt or a fresh salad for a complete meal.', 'You can use boneless chicken thighs or breasts for this recipe, just adjust the cooking time accordingly.', 'Feel free to add your favorite vegetables like peas, carrots, or bell peppers for added nutrition.', 'Garnish with chopped fresh herbs like parsley or cilantro before serving for extra freshness.', 15.0, 40.0, 30.0, 'Turkey', 'http://fakephotolink.com/buckwheat_chicken_pilaf.jpg', 'Buckwheat Chicken Pilaf served in a bowl', 15, 40);
+('Buckwheat Chicken Pilaf', 'Cooking', 3, 'Buckwheat Chicken Pilaf is a wholesome and flavorful one-pot meal that\'s perfect for busy weeknights. Tender chicken, earthy buckwheat, and aromatic spices come together in this comforting dish. Serve with a side of yogurt or a fresh salad for a complete meal.', 'You can use boneless chicken thighs or breasts for this recipe, just adjust the cooking time accordingly.', 'Feel free to add your favorite vegetables like peas, carrots, or bell peppers for added nutrition.', 'Garnish with chopped fresh herbs like parsley or cilantro before serving for extra freshness.', 15.0, 40.0, 30.0, 'Turkey', 'http://fakephotolink.com/buckwheat_chicken_pilaf.jpg', 'Buckwheat Chicken Pilaf served in a bowl', 15, 40, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -4824,15 +4678,13 @@ VALUES
 ('Buckwheat Chicken Pilaf', 'Cutting Board', 1),
 ('Buckwheat Chicken Pilaf', 'Mixing Spoon', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Chicken Thighs', 209.0, 0, 'Meat and Meat Products', 'unit'),
 ('Onion', 44.0, 0, 'Various Plant-based Foods', 'unit'),
 ('Carrots', 25.0, 0, 'Various Plant-based Foods', 'unit'),
-('Garlic', 4.0, 0, 'Various Plant-based Foods', 'clove'),
-('Buckwheat Groats', 155.0, 0, 'Cereals and Cereal Products', 'cup'),
-('Chicken Broth', 15.0, 0, 'Others', 'cup'),
+('Buckwheat Groats', 155.0, 0, 'Cereals and Cereal Products', 'cups'),
+('Chicken Broth', 15.0, 0, 'Others', 'cups'),
 ('Bay Leaf', 2.0, 0, 'Herbs and Essential Oils', 'unit'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp'),
 ('Fresh Herbs', 2.0, 0, 'Various Plant-based Foods', 'tbsp');
 
@@ -4842,8 +4694,8 @@ VALUES
 ('Buckwheat Chicken Pilaf', 'Onion', 1, NULL),
 ('Buckwheat Chicken Pilaf', 'Carrots', 2, NULL),
 ('Buckwheat Chicken Pilaf', 'Garlic', 2, 'cloves'),
-('Buckwheat Chicken Pilaf', 'Buckwheat Groats', 1, 'cups'),
-('Buckwheat Chicken Pilaf', 'Chicken Broth', 2, 'cups'),
+('Buckwheat Chicken Pilaf', 'Buckwheat Groats', 1, NULL),
+('Buckwheat Chicken Pilaf', 'Chicken Broth', 2, NULL),
 ('Buckwheat Chicken Pilaf', 'Bay Leaf', 1, NULL),
 ('Buckwheat Chicken Pilaf', 'Salt', NULL, 'to taste'),
 ('Buckwheat Chicken Pilaf', 'Black Pepper', NULL, 'to taste'),
@@ -4876,7 +4728,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 -- Vegetable Noodle Soup
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Vegetable Noodle Soup', 'Cooking', 2, 'Vegetable Noodle Soup is a light and comforting dish that\'s perfect for any time of year. Loaded with colorful vegetables, tender noodles, and aromatic herbs, this soup is both nutritious and delicious. Serve as a starter or a light meal on its own.', 'Feel free to customize the vegetables based on what you have on hand.', 'For added protein, you can add cooked chicken, tofu, or beans to the soup.', 'To make this soup gluten-free, use gluten-free noodles or rice instead of wheat noodles.', 15.0, 30.0, 20.0, 'Japan', 'http://fakephotolink.com/vegetable_noodle_soup.jpg', 'Vegetable Noodle Soup served in a bowl', 15, 30);
+('Vegetable Noodle Soup', 'Cooking', 2, 'Vegetable Noodle Soup is a light and comforting dish that\'s perfect for any time of year. Loaded with colorful vegetables, tender noodles, and aromatic herbs, this soup is both nutritious and delicious. Serve as a starter or a light meal on its own.', 'Feel free to customize the vegetables based on what you have on hand.', 'For added protein, you can add cooked chicken, tofu, or beans to the soup.', 'To make this soup gluten-free, use gluten-free noodles or rice instead of wheat noodles.', 15.0, 30.0, 20.0, 'Japan', 'http://fakephotolink.com/vegetable_noodle_soup.jpg', 'Vegetable Noodle Soup served in a bowl', 15, 30, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -4885,29 +4737,27 @@ VALUES
 ('Vegetable Noodle Soup', 'Cutting Board', 1),
 ('Vegetable Noodle Soup', 'Mixing Spoon', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Vegetable Broth', 15.0, 0, 'Others', 'cup'),
-('Water', 0.0, 0, 'Others', 'cup'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+('Vegetable Broth', 15.0, 0, 'Others', 'cups'),
+('Water', 0.0, 0, 'Others', 'cups'),
 ('Carrots', 25.0, 0, 'Various Plant-based Foods', 'unit'),
 ('Celery', 6.0, 0, 'Various Plant-based Foods', 'stalk'),
 ('Onion', 44.0, 0, 'Various Plant-based Foods', 'unit'),
-('Garlic', 4.0, 0, 'Various Plant-based Foods', 'clove'),
-('Noodles', 221.0, 0, 'Cereals and Cereal Products', 'cup'),
+('Noodles', 221.0, 0, 'Cereals and Cereal Products', 'cups'),
 ('Bay Leaf', 2.0, 0, 'Herbs and Essential Oils', 'unit'),
 ('Thyme', 3.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp'),
 ('Fresh Herbs', 2.0, 0, 'Various Plant-based Foods', 'tbsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
-('Vegetable Noodle Soup', 'Vegetable Broth', 4, 'cups'),
-('Vegetable Noodle Soup', 'Water', 2, 'cups'),
+('Vegetable Noodle Soup', 'Vegetable Broth', 4, NULL),
+('Vegetable Noodle Soup', 'Water', 2, NULL),
 ('Vegetable Noodle Soup', 'Carrots', 2, NULL),
 ('Vegetable Noodle Soup', 'Celery', 2, NULL),
 ('Vegetable Noodle Soup', 'Onion', 1, NULL),
 ('Vegetable Noodle Soup', 'Garlic', 2, 'cloves'),
-('Vegetable Noodle Soup', 'Noodles', 2, 'cups'),
+('Vegetable Noodle Soup', 'Noodles', 2, NULL),
 ('Vegetable Noodle Soup', 'Bay Leaf', 1, NULL),
 ('Vegetable Noodle Soup', 'Thyme', 1, NULL),
 ('Vegetable Noodle Soup', 'Salt', NULL, 'to taste'),
@@ -4939,7 +4789,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 -- Bacon and Honey Potato Salad
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Bacon and Honey Potato Salad', 'Cooking', 2, 'Bacon and Honey Potato Salad is a flavorful twist on the classic potato salad. Tender potatoes are mixed with crispy bacon, sweet honey, and tangy mustard for a delicious side dish that\'s perfect for barbecues, picnics, or any occasion.', 'For a lighter version, you can use turkey bacon instead of regular bacon.', 'Feel free to add chopped hard-boiled eggs for extra protein.', 'Make sure to let the salad chill in the fridge for at least an hour before serving to allow the flavors to meld together.', 15.0, 30.0, 20.0, 'Poland', 'http://fakephotolink.com/bacon_honey_potato_salad.jpg', 'Bacon and Honey Potato Salad served in a bowl', 15, 30);
+('Bacon and Honey Potato Salad', 'Cooking', 2, 'Bacon and Honey Potato Salad is a flavorful twist on the classic potato salad. Tender potatoes are mixed with crispy bacon, sweet honey, and tangy mustard for a delicious side dish that\'s perfect for barbecues, picnics, or any occasion.', 'For a lighter version, you can use turkey bacon instead of regular bacon.', 'Feel free to add chopped hard-boiled eggs for extra protein.', 'Make sure to let the salad chill in the fridge for at least an hour before serving to allow the flavors to meld together.', 15.0, 30.0, 20.0, 'Poland', 'http://fakephotolink.com/bacon_honey_potato_salad.jpg', 'Bacon and Honey Potato Salad served in a bowl', 15, 30, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -4949,12 +4799,11 @@ VALUES
 ('Bacon and Honey Potato Salad', 'Mixing Bowl', 1),
 ('Bacon and Honey Potato Salad', 'Whisk', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Potatoes', 163.0, 0, 'Various Plant-based Foods', 'unit'),
-('Bacon', 145.0, 0, 'Meat and Meat Products', 'cup'),
+('Bacon', 145.0, 0, 'Meat and Meat Products', 'cups'),
 ('Honey', 304.0, 0, 'Sweeteners', 'tbsp'),
 ('Mustard', 66.0, 0, 'Others', 'tbsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp'),
 ('Green Onions', 32.0, 0, 'Various Plant-based Foods', 'unit');
 
@@ -4993,7 +4842,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 -- Pretzel Sticks
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Pretzel Sticks', 'Pastry', 2, 'Pretzel Sticks are a crunchy and addictive snack that\'s perfect for munching on during movie nights or as a party appetizer. These homemade pretzels are easy to make and can be customized with your favorite seasonings.', 'For a sweeter version, brush the pretzel sticks with melted butter and sprinkle with cinnamon sugar.', 'Serve with mustard, cheese sauce, or your favorite dip for dipping.', 'Store any leftover pretzel sticks in an airtight container for up to 3 days.', 15.0, 30.0, 20.0, 'Germany', 'http://fakephotolink.com/pretzel_sticks.jpg', 'Pretzel Sticks served on a plate', 15, 30);
+('Pretzel Sticks', 'Pastry', 2, 'Pretzel Sticks are a crunchy and addictive snack that\'s perfect for munching on during movie nights or as a party appetizer. These homemade pretzels are easy to make and can be customized with your favorite seasonings.', 'For a sweeter version, brush the pretzel sticks with melted butter and sprinkle with cinnamon sugar.', 'Serve with mustard, cheese sauce, or your favorite dip for dipping.', 'Store any leftover pretzel sticks in an airtight container for up to 3 days.', 15.0, 30.0, 20.0, 'Germany', 'http://fakephotolink.com/pretzel_sticks.jpg', 'Pretzel Sticks served on a plate', 15, 30, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -5003,25 +4852,24 @@ VALUES
 ('Pretzel Sticks', 'Whisk', 1),
 ('Pretzel Sticks', 'Slotted Spoon', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('All-Purpose Flour', 455.0, 0, 'Cereals and Cereal Products', 'cup'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+('All-Purpose Flour', 455.0, 0, 'Cereals and Cereal Products', 'cups'),
 ('Active Dry Yeast', 23.0, 0, 'Baked Products', 'tsp'),
-('Warm Water', 0.0, 0, 'Others', 'cup'),
+('Warm Water', 0.0, 0, 'Others', 'cups'),
 ('Sugar', 49.0, 0, 'Sweeteners', 'tbsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Baking Soda', 0.0, 0, 'Baked Products', 'tbsp'),
-('Water', 0.0, 0, 'Others', 'cup'),
+('Water', 0.0, 0, 'Others', 'cups'),
 ('Coarse Salt', 0.0, 0, 'Others', 'tbsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
-('Pretzel Sticks', 'All-Purpose Flour', 3, 'cups'),
+('Pretzel Sticks', 'All-Purpose Flour', 3, NULL),
 ('Pretzel Sticks', 'Active Dry Yeast', 2, NULL),
-('Pretzel Sticks', 'Warm Water', 1, 'cups'),
+('Pretzel Sticks', 'Warm Water', 1, NULL),
 ('Pretzel Sticks', 'Sugar', 1, NULL),
 ('Pretzel Sticks', 'Salt', 1, NULL),
-('Pretzel Sticks', 'Baking Soda', 0.25, 'cups'),
-('Pretzel Sticks', 'Water', 9, 'cups'),
+('Pretzel Sticks', 'Baking Soda', 0.25, NULL),
+('Pretzel Sticks', 'Water', 9, NULL),
 ('Pretzel Sticks', 'Coarse Salt', NULL, 'to taste');
 
 INSERT INTO recipe_steps (recipe_name, instruction, step_num)
@@ -5048,7 +4896,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 -- Golden French Lentil Soup
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Golden French Lentil Soup', 'Cooking', 2, 'Golden French Lentil Soup is a hearty and flavorful dish that\'s perfect for chilly days. Made with nutritious lentils, aromatic spices, and a hint of lemon, this soup is both comforting and satisfying. Serve with crusty bread for a complete meal.', 'Feel free to add other vegetables like carrots, celery, or spinach to the soup.', 'For extra flavor, use homemade vegetable or chicken broth instead of store-bought.', 'Garnish each bowl with a drizzle of olive oil and a sprinkle of fresh herbs for added freshness.', 15.0, 40.0, 30.0, 'France', 'http://fakephotolink.com/golden_french_lentil_soup.jpg', 'Golden French Lentil Soup served in a bowl', 15, 40);
+('Golden French Lentil Soup', 'Cooking', 2, 'Golden French Lentil Soup is a hearty and flavorful dish that\'s perfect for chilly days. Made with nutritious lentils, aromatic spices, and a hint of lemon, this soup is both comforting and satisfying. Serve with crusty bread for a complete meal.', 'Feel free to add other vegetables like carrots, celery, or spinach to the soup.', 'For extra flavor, use homemade vegetable or chicken broth instead of store-bought.', 'Garnish each bowl with a drizzle of olive oil and a sprinkle of fresh herbs for added freshness.', 15.0, 40.0, 30.0, 'France', 'http://fakephotolink.com/golden_french_lentil_soup.jpg', 'Golden French Lentil Soup served in a bowl', 15, 40, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -5057,30 +4905,27 @@ VALUES
 ('Golden French Lentil Soup', 'Cutting Board',1),
 ('Golden French Lentil Soup', 'Mixing Spoon', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('French Lentils', 230.0, 0, 'Meat and Meat Products', 'cup'),
-('Water', 0.0, 0, 'Others', 'cup'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+('Water', 0.0, 0, 'Others', 'cups'),
 ('Carrots', 25.0, 0, 'Various Plant-based Foods', 'unit'),
 ('Celery', 6.0, 0, 'Various Plant-based Foods', 'stalk'),
 ('Onion', 44.0, 0, 'Various Plant-based Foods', 'unit'),
-('Garlic', 4.0, 0, 'Various Plant-based Foods', 'clove'),
-('Vegetable Broth', 15.0, 0, 'Others', 'cup'),
+('Vegetable Broth', 15.0, 0, 'Others', 'cups'),
 ('Bay Leaf', 2.0, 0, 'Herbs and Essential Oils', 'unit'),
 ('Thyme', 3.0, 0, 'Herbs and Essential Oils', 'tsp'),
 ('Lemon', 17.0, 0, 'Various Plant-based Foods', 'unit'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp'),
 ('Fresh Herbs', 2.0, 0, 'Various Plant-based Foods', 'tbsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
-('Golden French Lentil Soup', 'French Lentils', 1, 'cups'),
-('Golden French Lentil Soup', 'Water', 4, 'cups'),
+('Golden French Lentil Soup', 'Lentils', 70, NULL),
+('Golden French Lentil Soup', 'Water', 4, NULL),
 ('Golden French Lentil Soup', 'Carrots', 2, NULL),
 ('Golden French Lentil Soup', 'Celery', 2, NULL),
 ('Golden French Lentil Soup', 'Onion', 1, NULL),
 ('Golden French Lentil Soup', 'Garlic', 2, 'cloves'),
-('Golden French Lentil Soup', 'Vegetable Broth', 4, 'cups'),
+('Golden French Lentil Soup', 'Vegetable Broth', 4, NULL),
 ('Golden French Lentil Soup', 'Bay Leaf', 2, NULL),
 ('Golden French Lentil Soup', 'Thyme', 1,NULL),
 ('Golden French Lentil Soup', 'Lemon', 1, NULL),
@@ -5090,7 +4935,7 @@ VALUES
 
 INSERT INTO main_ingr (recipe_name, ingr_name)
 VALUES 
-('Golden French Lentil Soup', 'French Lentils');
+('Golden French Lentil Soup', 'Lentils');
 
 INSERT INTO recipe_steps (recipe_name, instruction, step_num)
 VALUES 
@@ -5112,7 +4957,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 -- Lentil Shepherd's Pie
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Lentil Shepherd''s Pie', 'Cooking', 3, 'Lentil Shepherd''s Pie is a hearty and comforting dish that\'s perfect for vegetarians or anyone looking for a meatless meal option. This version replaces the traditional lamb with protein-rich lentils and tops it with creamy mashed potatoes. It\'s a delicious and nutritious dinner that the whole family will love.', 'Feel free to add other vegetables like peas, carrots, or corn to the lentil mixture for extra flavor and nutrition.', 'For a vegan version, use plant-based milk and vegan butter in the mashed potatoes.', 'Let the shepherd''s pie rest for 10-15 minutes after baking to allow it to set before serving.', 20.0, 60.0, 40.0, 'Egypt', 'http://fakephotolink.com/lentil_shepherds_pie.jpg', 'Lentil Shepherd''s Pie served in a dish', 20, 60);
+('Lentil Shepherd''s Pie', 'Cooking', 3, 'Lentil Shepherd''s Pie is a hearty and comforting dish that\'s perfect for vegetarians or anyone looking for a meatless meal option. This version replaces the traditional lamb with protein-rich lentils and tops it with creamy mashed potatoes. It\'s a delicious and nutritious dinner that the whole family will love.', 'Feel free to add other vegetables like peas, carrots, or corn to the lentil mixture for extra flavor and nutrition.', 'For a vegan version, use plant-based milk and vegan butter in the mashed potatoes.', 'Let the shepherd''s pie rest for 10-15 minutes after baking to allow it to set before serving.', 20.0, 60.0, 40.0, 'Egypt', 'http://fakephotolink.com/lentil_shepherds_pie.jpg', 'Lentil Shepherd''s Pie served in a dish', 20, 60, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -5123,39 +4968,36 @@ VALUES
 ('Lentil Shepherd''s Pie', 'Cutting Board', 1),
 ('Lentil Shepherd''s Pie', 'Potato Masher', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Lentils', 230.0, 0, 'Meat and Meat Products', 'cup'),
-('Water', 0.0, 0, 'Others', 'cup'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+('Water', 0.0, 0, 'Others', 'cups'),
 ('Onion', 44.0, 0, 'Various Plant-based Foods', 'unit'),
 ('Carrots', 25.0, 0, 'Various Plant-based Foods', 'unit'),
 ('Celery', 6.0, 0, 'Various Plant-based Foods', 'stalk'),
-('Garlic', 4.0, 0, 'Various Plant-based Foods', 'clove'),
-('Vegetable Broth', 15.0, 0, 'Others', 'cup'),
+('Vegetable Broth', 15.0, 0, 'Others', 'cups'),
 ('Tomato Paste', 29.0, 0, 'Others', 'tbsp'),
 ('Worcestershire Sauce', 3.0, 0, 'Others', 'tbsp'),
-('Frozen Peas', 134.0, 0, 'Various Plant-based Foods', 'cup'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
+('Frozen Peas', 134.0, 0, 'Various Plant-based Foods', 'cups'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp'),
 ('Potatoes', 163.0, 0, 'Various Plant-based Foods', 'unit'),
-('Milk', 50.0, 0, 'Milk, Eggs, and Their Products', 'cup'),
+('Milk', 50.0, 0, 'Milk, Eggs, and Their Products', 'cups'),
 ('Butter', 102.0, 0, 'Milk, Eggs, and Their Products', 'tbsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
-('Lentil Shepherd''s Pie', 'Lentils', 1, 'cups'),
-('Lentil Shepherd''s Pie', 'Water', 2, 'cups'),
+('Lentil Shepherd''s Pie', 'Lentils', 70, NULL),
+('Lentil Shepherd''s Pie', 'Water', 2, NULL),
 ('Lentil Shepherd''s Pie', 'Onion', 1, NULL),
 ('Lentil Shepherd''s Pie', 'Carrots', 2, NULL),
 ('Lentil Shepherd''s Pie', 'Celery', 2, NULL),
 ('Lentil Shepherd''s Pie', 'Garlic', 2, 'cloves'),
-('Lentil Shepherd''s Pie', 'Vegetable Broth', 1, 'cups'),
+('Lentil Shepherd''s Pie', 'Vegetable Broth', 1, NULL),
 ('Lentil Shepherd''s Pie', 'Tomato Paste', 2, NULL),
 ('Lentil Shepherd''s Pie', 'Worcestershire Sauce', 1, NULL),
-('Lentil Shepherd''s Pie', 'Frozen Peas', 0.5, 'cups'),
+('Lentil Shepherd''s Pie', 'Frozen Peas', 0.5, NULL),
 ('Lentil Shepherd''s Pie', 'Salt', NULL, 'to taste'),
 ('Lentil Shepherd''s Pie', 'Black Pepper', NULL, 'to taste'),
 ('Lentil Shepherd''s Pie', 'Potatoes', 4, NULL),
-('Lentil Shepherd''s Pie', 'Milk', 0.5, 'cups'),
+('Lentil Shepherd''s Pie', 'Milk', 0.5, NULL),
 ('Lentil Shepherd''s Pie', 'Butter', 2, NULL);
 
 INSERT INTO main_ingr (recipe_name, ingr_name)
@@ -5186,7 +5028,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 -- Honey Lime Chicken
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Honey Lime Chicken', 'Cooking', 2, 'Honey Lime Chicken is a sweet and tangy dish that\'s bursting with flavor. Tender chicken breasts are marinated in a mixture of honey, lime juice, garlic, and spices, then grilled or baked to perfection. Serve with rice and steamed vegetables for a complete meal.', 'For extra flavor, marinate the chicken for at least 30 minutes, or up to overnight.', 'Make sure not to overcook the chicken breasts to keep them juicy and tender.', 'You can use chicken thighs or drumsticks instead of chicken breasts if you prefer.', 10.0, 20.0, 30.0, 'Poland', 'http://fakephotolink.com/honey_lime_chicken.jpg', 'Honey Lime Chicken served with rice and vegetables', 10, 20);
+('Honey Lime Chicken', 'Cooking', 2, 'Honey Lime Chicken is a sweet and tangy dish that\'s bursting with flavor. Tender chicken breasts are marinated in a mixture of honey, lime juice, garlic, and spices, then grilled or baked to perfection. Serve with rice and steamed vegetables for a complete meal.', 'For extra flavor, marinate the chicken for at least 30 minutes, or up to overnight.', 'Make sure not to overcook the chicken breasts to keep them juicy and tender.', 'You can use chicken thighs or drumsticks instead of chicken breasts if you prefer.', 10.0, 20.0, 30.0, 'Poland', 'http://fakephotolink.com/honey_lime_chicken.jpg', 'Honey Lime Chicken served with rice and vegetables', 10, 20, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -5198,20 +5040,18 @@ VALUES
 ('Honey Lime Chicken', 'Measuring Cups', 1),
 ('Honey Lime Chicken', 'Pastry Brush', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Chicken Breasts', 165.0, 0, 'Meat and Meat Products', 'unit'),
 ('Honey', 304.0, 0, 'Sweeteners', 'tbsp'),
 ('Lime Juice', 8.0, 0, 'Various Plant-based Foods', 'tbsp'),
-('Garlic', 4.0, 0, 'Various Plant-based Foods', 'clove'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp'),
 ('Olive Oil', 119.0, 0, 'Fats and Oils', 'tbsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
 ('Honey Lime Chicken', 'Chicken Breasts', 4, NULL),
-('Honey Lime Chicken', 'Honey', 0.25, 'cups'),
-('Honey Lime Chicken', 'Lime Juice', 0.25, 'cups'),
+('Honey Lime Chicken', 'Honey', 0.25, NULL),
+('Honey Lime Chicken', 'Lime Juice', 0.25, NULL),
 ('Honey Lime Chicken', 'Garlic', 2, 'cloves'),
 ('Honey Lime Chicken', 'Salt', NULL, 'to taste'),
 ('Honey Lime Chicken', 'Black Pepper', NULL, 'to taste'),
@@ -5242,7 +5082,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Naan', 'Cooking', 3, 'Naan is a traditional Indian flatbread that is soft, fluffy, and perfect for scooping up curries or as a side dish. This recipe produces delicious homemade naan with just a few simple ingredients.', 'Make sure to knead the dough until it is smooth and elastic for the best texture.', 'Cook the naan in a hot skillet or grill for that authentic charred flavor.', 'Brush with melted butter before serving for extra richness and flavor.', 5.0, 30.0, 20.0, 'India', 'http://fakephotolink.com/naan.jpg', 'Homemade Naan Bread', 15, 15);
+('Naan', 'Cooking', 3, 'Naan is a traditional Indian flatbread that is soft, fluffy, and perfect for scooping up curries or as a side dish. This recipe produces delicious homemade naan with just a few simple ingredients.', 'Make sure to knead the dough until it is smooth and elastic for the best texture.', 'Cook the naan in a hot skillet or grill for that authentic charred flavor.', 'Brush with melted butter before serving for extra richness and flavor.', 5.0, 30.0, 20.0, 'India', 'http://fakephotolink.com/naan.jpg', 'Homemade Naan Bread', 15, 15, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -5250,12 +5090,9 @@ VALUES
 ('Naan', 'Rolling Pin', 1),
 ('Naan', 'Skillet', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
-('All-Purpose Flour', 364.0, 0, 'Cereals and Cereal Products', 'gr'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
 ('Yeast', 7.0, 0, 'Others', 'gr'),
 ('Sugar', 387.0, 1, 'Sweeteners', 'gr'),
-('Salt', 0.0, 0, 'Others', 'gr'),
-('Milk', 42.0, 0, 'Milk, Eggs, and Their Products', 'ml'),
 ('Yogurt', 59.0, 0, 'Milk, Eggs, and Their Products', 'ml'),
 ('Butter', 102.0, 0, 'Milk, Eggs, and Their Products', 'gr');
 
@@ -5291,7 +5128,7 @@ INSERT INTO meal_type (recipe_name,meal) VALUES
 -- Lemon Poppy Seed Scones
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Lemon Poppy Seed Scones', 'Pastry', 2, 'These lemon poppy seed scones are light, tender, and bursting with fresh lemon flavor. They make a delightful breakfast or afternoon treat.', 'Use cold butter and work quickly to keep the dough cold and crumbly.', 'Don\'t overmix the dough to avoid tough scones. Mix until just combined.', 'Drizzle with a lemon glaze for extra sweetness and tanginess.', 4.0, 20.0, 15.0, 'United States', 'http://fakephotolink.com/lemon_poppy_seed_scones.jpg', 'Lemon Poppy Seed Scones with a lemon glaze', 15, 25);
+('Lemon Poppy Seed Scones', 'Pastry', 2, 'These lemon poppy seed scones are light, tender, and bursting with fresh lemon flavor. They make a delightful breakfast or afternoon treat.', 'Use cold butter and work quickly to keep the dough cold and crumbly.', 'Don\'t overmix the dough to avoid tough scones. Mix until just combined.', 'Drizzle with a lemon glaze for extra sweetness and tanginess.', 4.0, 20.0, 15.0, 'United States', 'http://fakephotolink.com/lemon_poppy_seed_scones.jpg', 'Lemon Poppy Seed Scones with a lemon glaze', 15, 25, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -5299,12 +5136,9 @@ VALUES
 ('Lemon Poppy Seed Scones', 'Baking Sheet', 1),
 ('Lemon Poppy Seed Scones', 'Rolling Pin', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
-('All-Purpose Flour', 364.0, 0, 'Cereals and Cereal Products', 'gr'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
 ('Sugar', 387.0, 1, 'Sweeteners', 'gr'),
 ('Baking Powder', 0.0, 0, 'Others', 'gr'),
-('Salt', 0.0, 0, 'Others', 'gr'),
-('Butter', 102.0, 0, 'Milk, Eggs, and Their Products', 'gr'),
 ('Lemon Zest', 29.0, 0, 'Herbs and Essential Oils', 'gr'),
 ('Poppy Seeds', 525.0, 1, 'Herbs and Essential Oils', 'gr'),
 ('Heavy Cream', 345.0, 0, 'Milk, Eggs, and Their Products', 'ml');
@@ -5348,7 +5182,7 @@ INSERT INTO meal_type (recipe_name,meal) VALUES
 -- Balsamic Dijon Root Vegetables
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Balsamic Dijon Root Vegetables', 'Cooking', 2, 'These balsamic dijon root vegetables are a flavorful and colorful side dish that pairs perfectly with any main course. Roasted to perfection, they are both tender and caramelized.', 'Choose a variety of root vegetables for a colorful presentation.', 'Make sure to toss the vegetables halfway through roasting to ensure even cooking.', 'Drizzle with extra balsamic glaze before serving for added flavor.', 2.0, 35.0, 25.0, 'Turkey', 'http://fakephotolink.com/balsamic_dijon_root_vegetables.jpg', 'Balsamic Dijon Root Vegetables', 10, 25);
+('Balsamic Dijon Root Vegetables', 'Cooking', 2, 'These balsamic dijon root vegetables are a flavorful and colorful side dish that pairs perfectly with any main course. Roasted to perfection, they are both tender and caramelized.', 'Choose a variety of root vegetables for a colorful presentation.', 'Make sure to toss the vegetables halfway through roasting to ensure even cooking.', 'Drizzle with extra balsamic glaze before serving for added flavor.', 2.0, 35.0, 25.0, 'Turkey', 'http://fakephotolink.com/balsamic_dijon_root_vegetables.jpg', 'Balsamic Dijon Root Vegetables', 10, 25, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -5356,15 +5190,13 @@ VALUES
 ('Balsamic Dijon Root Vegetables', 'Mixing Bowl', 1),
 ('Balsamic Dijon Root Vegetables', 'Whisk', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
 ('Potatoes', 77.0, 0, 'Various Plant-based Foods', 'gr'),
 ('Carrots', 41.0, 0, 'Various Plant-based Foods', 'gr'),
 ('Parsnips', 75.0, 0, 'Various Plant-based Foods', 'gr'),
-('Olive Oil', 884.0, 0, 'Fats and Oils', 'ml'),
 ('Balsamic Vinegar', 88.0, 0, 'Herbs and Essential Oils', 'ml'),
 ('Dijon Mustard', 73.0, 0, 'Various Plant-based Foods', 'ml'),
 ('Honey', 304.0, 0, 'Sweeteners', 'ml'),
-('Salt', 0.0, 0, 'Others', 'gr'),
 ('Black Pepper', 0.0, 0, 'Others', 'gr'),
 ('Fresh Rosemary', 131.0, 0, 'Herbs and Essential Oils', 'gr');
 
@@ -5406,7 +5238,7 @@ VALUES
 -- Best Baked Chicken Legs
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Best Baked Chicken Legs', 'Cooking', 2, 'These baked chicken legs are crispy on the outside, juicy on the inside, and packed with flavor. They make a simple and delicious dinner that the whole family will love.', 'Marinate the chicken legs for at least 30 minutes for maximum flavor.', 'Place a wire rack on the baking sheet to allow air to circulate around the chicken legs for even cooking.', 'Serve with your favorite dipping sauce or alongside roasted vegetables.', 20.0, 45.0, 35.0, 'Pakistan', 'http://fakephotolink.com/baked_chicken_legs.jpg', 'Best Baked Chicken Legs', 15, 30);
+('Best Baked Chicken Legs', 'Cooking', 2, 'These baked chicken legs are crispy on the outside, juicy on the inside, and packed with flavor. They make a simple and delicious dinner that the whole family will love.', 'Marinate the chicken legs for at least 30 minutes for maximum flavor.', 'Place a wire rack on the baking sheet to allow air to circulate around the chicken legs for even cooking.', 'Serve with your favorite dipping sauce or alongside roasted vegetables.', 20.0, 45.0, 35.0, 'Pakistan', 'http://fakephotolink.com/baked_chicken_legs.jpg', 'Best Baked Chicken Legs', 15, 30, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -5414,10 +5246,8 @@ VALUES
 -- ('Best Baked Chicken Legs', 'Wire Rack', 1),
 ('Best Baked Chicken Legs', 'Mixing Bowl', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
 ('Chicken Legs', 209.0, 0, 'Meat and Meat Products', 'gr'),
-('Olive Oil', 884.0, 0, 'Fats and Oils', 'ml'),
-('Salt', 0.0, 0, 'Others', 'gr'),
 ('Black Pepper', 0.0, 0, 'Others', 'gr'),
 ('Garlic Powder', 331.0, 0, 'Others', 'gr'),
 ('Paprika', 282.0, 0, 'Others', 'gr');
@@ -5455,7 +5285,7 @@ VALUES
 -- Spanish Lentil Soup
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Spanish Lentil Soup', 'Cooking', 2, 'Spanish lentil soup, or "Lentejas", is a hearty and flavorful dish made with lentils, vegetables, and Spanish chorizo. It\'s easy to make and perfect for a cozy meal on a cold day.', 'Soak the lentils for at least 1 hour before cooking to reduce cooking time.', 'Use Spanish chorizo for an authentic flavor, but you can also use other types of sausage.', 'Garnish with fresh parsley and a squeeze of lemon juice before serving for brightness.', 15.0, 45.0, 30.0, 'Spain', 'http://fakephotolink.com/spanish_lentil_soup.jpg', 'Spanish Lentil Soup with chorizo and vegetables', 15, 30);
+('Spanish Lentil Soup', 'Cooking', 2, 'Spanish lentil soup, or "Lentejas", is a hearty and flavorful dish made with lentils, vegetables, and Spanish chorizo. It\'s easy to make and perfect for a cozy meal on a cold day.', 'Soak the lentils for at least 1 hour before cooking to reduce cooking time.', 'Use Spanish chorizo for an authentic flavor, but you can also use other types of sausage.', 'Garnish with fresh parsley and a squeeze of lemon juice before serving for brightness.', 15.0, 45.0, 30.0, 'Spain', 'http://fakephotolink.com/spanish_lentil_soup.jpg', 'Spanish Lentil Soup with chorizo and vegetables', 15, 30, 4);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -5463,28 +5293,24 @@ VALUES
 ('Spanish Lentil Soup', 'Mixing Spoon', 1),
 ('Spanish Lentil Soup', 'Knife', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
-('Lentils', 353.0, 0, 'Various Plant-based Foods', 'gr'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
 ('Spanish Chorizo', 455.0, 0, 'Meat and Meat Products', 'gr'),
-('Olive Oil', 884.0, 0, 'Fats and Oils', 'ml'),
-('Onion', 44.0, 0, 'Various Plant-based Foods', ''),
-('Carrots', 41.0, 0, 'Various Plant-based Foods', ''),
-('Celery', 16.0, 0, 'Various Plant-based Foods', ''),
-('Garlic', 149.0, 0, 'Various Plant-based Foods', 'cloves'),
-('Tomatoes', 18.0, 0, 'Various Plant-based Foods', ''),
-('Bay Leaf', 5.0, 0, 'Herbs and Essential Oils', ''),
+('Onion', 44.0, 0, 'Various Plant-based Foods', 'unit'),
+('Carrots', 41.0, 0, 'Various Plant-based Foods', 'unit'),
+('Celery', 16.0, 0, 'Various Plant-based Foods', 'unit'),
+('Tomatoes', 18.0, 0, 'Various Plant-based Foods', 'unit'),
+('Bay Leaf', 5.0, 0, 'Herbs and Essential Oils', NULL),
 ('Chicken Broth', 7.0, 0, 'Others', 'ml'),
-('Salt', 0.0, 0, 'Others', 'gr'),
 ('Black Pepper', 0.0, 0, 'Others', 'gr');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
-('Spanish Lentil Soup', 'Lentils', 250, NULL),
+('Spanish Lentil Soup', 'Lentils', 200, NULL),
 ('Spanish Lentil Soup', 'Spanish Chorizo', 150, NULL),
 ('Spanish Lentil Soup', 'Olive Oil', 30, NULL),
 ('Spanish Lentil Soup', 'Onion', 1, NULL),
 ('Spanish Lentil Soup', 'Carrots', 2, NULL),
-('Spanish Lentil Soup', 'Celery', 2,NULL),
+('Spanish Lentil Soup', 'Celery', 2, NULL),
 ('Spanish Lentil Soup', 'Garlic', 3, 'cloves'),
 ('Spanish Lentil Soup', 'Tomatoes', 2, NULL),
 ('Spanish Lentil Soup', 'Bay Leaf', 2, NULL),
@@ -5520,7 +5346,7 @@ VALUES
 -- Chocolate Chip Irish Soda Bread
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Chocolate Chip Irish Soda Bread', 'Pastry', 2, 'Chocolate chip Irish soda bread is a delicious twist on the traditional Irish soda bread. It\'s quick and easy to make, with no yeast required, and is loaded with chocolate chips for a sweet treat.', 'Be sure not to overmix the dough, or the bread may become tough.', 'Fold the chocolate chips into the dough gently to prevent them from sinking to the bottom.', 'Serve warm with butter and a cup of tea for a cozy snack or breakfast.', 7.0, 40.0, 30.0, 'Ireland', 'http://fakephotolink.com/chocolate_chip_irish_soda_bread.jpg', 'Chocolate Chip Irish Soda Bread', 10, 30);
+('Chocolate Chip Irish Soda Bread', 'Pastry', 2, 'Chocolate chip Irish soda bread is a delicious twist on the traditional Irish soda bread. It\'s quick and easy to make, with no yeast required, and is loaded with chocolate chips for a sweet treat.', 'Be sure not to overmix the dough, or the bread may become tough.', 'Fold the chocolate chips into the dough gently to prevent them from sinking to the bottom.', 'Serve warm with butter and a cups of tea for a cozy snack or breakfast.', 7.0, 40.0, 30.0, 'Ireland', 'http://fakephotolink.com/chocolate_chip_irish_soda_bread.jpg', 'Chocolate Chip Irish Soda Bread', 10, 30, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -5528,14 +5354,9 @@ VALUES
 ('Chocolate Chip Irish Soda Bread', 'Baking Sheet', 1),
 ('Chocolate Chip Irish Soda Bread', 'Pastry Cutter', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
-('All-Purpose Flour', 364.0, 0, 'Cereals and Cereal Products', 'gr'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
 ('Sugar', 387.0, 1, 'Sweeteners', 'gr'),
-('Baking Soda', 0.0, 0, 'Others', 'gr'),
-('Salt', 0.0, 0, 'Others', 'gr'),
 ('Buttermilk', 62.0, 0, 'Milk, Eggs, and Their Products', 'ml'),
-('Egg', 72.0, 0, 'Milk, Eggs, and Their Products', ''),
-('Butter', 102.0, 0, 'Milk, Eggs, and Their Products', 'gr'),
 ('Chocolate Chips', 535.0, 1, 'Products with Added Fats and/or Sugar', 'gr');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
@@ -5579,7 +5400,7 @@ VALUES
 -- Malteese Gilatti
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Malteese Gilatti', 'Pastry', 3, 'Malteese Gilatti is a delicious Maltese dessert made with puff pastry, ricotta cheese, and citrus zest. It\'s light, flaky, and perfect for any occasion.', 'Make sure to thoroughly drain the ricotta cheese to prevent the pastry from becoming soggy.', 'You can add a sprinkle of powdered sugar on top for extra sweetness.', 'Serve with a cup of coffee or tea for a delightful treat.', 5.0, 30.0, 25.0, 'Malta', 'http://fakephotolink.com/malteese_gilatti.jpg', 'Malteese Gilatti with ricotta cheese and citrus zest', 10, 25);
+('Malteese Gilatti', 'Pastry', 3, 'Malteese Gilatti is a delicious Maltese dessert made with puff pastry, ricotta cheese, and citrus zest. It\'s light, flaky, and perfect for any occasion.', 'Make sure to thoroughly drain the ricotta cheese to prevent the pastry from becoming soggy.', 'You can add a sprinkle of powdered sugar on top for extra sweetness.', 'Serve with a cups of coffee or tea for a delightful treat.', 5.0, 30.0, 25.0, 'Malta', 'http://fakephotolink.com/malteese_gilatti.jpg', 'Malteese Gilatti with ricotta cheese and citrus zest', 10, 25, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -5587,10 +5408,9 @@ VALUES
 ('Malteese Gilatti', 'Mixing Bowl', 1),
 ('Malteese Gilatti', 'Rolling Pin', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
 ('Puff Pastry', 466.0, 0, 'Cereals and Cereal Products', 'gr'),
 ('Ricotta Cheese', 174.0, 0, 'Milk, Eggs, and Their Products', 'gr'),
-('Egg', 72.0, 0, 'Milk, Eggs, and Their Products', ''),
 ('Sugar', 387.0, 1, 'Sweeteners', 'gr'),
 ('Lemon Zest', 29.0, 0, 'Herbs and Essential Oils', 'gr'),
 ('Orange Zest', 27.0, 0, 'Herbs and Essential Oils', 'gr'),
@@ -5633,7 +5453,7 @@ VALUES
 -- Buckwheat Carrot and Onion
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Buckwheat Carrot and Onion', 'Cooking', 2, 'This buckwheat carrot and onion dish is a healthy and flavorful side that pairs well with a variety of mains. It\'s simple to make and packed with nutrients from the vegetables and buckwheat.', 'Make sure to rinse the buckwheat thoroughly before cooking to remove any bitterness.', 'Toast the buckwheat in a dry skillet before cooking to enhance its nutty flavor.', 'Garnish with fresh herbs like parsley or dill before serving for added freshness.', 5.0, 25.0, 20.0, 'Russia', 'http://fakephotolink.com/buckwheat_carrot_and_onion.jpg', 'Buckwheat Carrot and Onion Side Dish', 10, 15);
+('Buckwheat Carrot and Onion', 'Cooking', 2, 'This buckwheat carrot and onion dish is a healthy and flavorful side that pairs well with a variety of mains. It\'s simple to make and packed with nutrients from the vegetables and buckwheat.', 'Make sure to rinse the buckwheat thoroughly before cooking to remove any bitterness.', 'Toast the buckwheat in a dry skillet before cooking to enhance its nutty flavor.', 'Garnish with fresh herbs like parsley or dill before serving for added freshness.', 5.0, 25.0, 20.0, 'Russia', 'http://fakephotolink.com/buckwheat_carrot_and_onion.jpg', 'Buckwheat Carrot and Onion Side Dish', 10, 15, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -5641,12 +5461,10 @@ VALUES
 ('Buckwheat Carrot and Onion', 'Saucepan', 1),
 ('Buckwheat Carrot and Onion', 'Mixing Spoon', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
 ('Buckwheat Groats', 343.0, 0, 'Cereals and Cereal Products', 'gr'),
 ('Carrots', 41.0, 0, 'Various Plant-based Foods', 'gr'),
 ('Onion', 44.0, 0, 'Various Plant-based Foods', ''),
-('Olive Oil', 884.0, 0, 'Fats and Oils', 'ml'),
-('Salt', 0.0, 0, 'Others', 'gr'),
 ('Black Pepper', 0.0, 0, 'Others', 'gr');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
@@ -5685,7 +5503,7 @@ VALUES
 -- Sweet Potatoes with Yogurt and Chickpeas
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Sweet Potatoes with Yogurt and Chickpeas', 'Cooking', 2, 'These sweet potatoes with yogurt and chickpeas are a satisfying and nutritious vegetarian meal. Roasted sweet potatoes are topped with creamy yogurt, spiced chickpeas, and a drizzle of tahini for a burst of flavor.', 'Prick the sweet potatoes with a fork before roasting to allow steam to escape.', 'Make sure to drain and rinse the chickpeas well to remove excess salt and starch.', 'Feel free to customize the toppings with your favorite herbs, nuts, or seeds.', 12.0, 45.0, 30.0, 'Denmark', 'http://fakephotolink.com/sweet_potatoes_with_yogurt_and_chickpeas.jpg', 'Sweet Potatoes with Yogurt and Chickpeas', 15, 30);
+('Sweet Potatoes with Yogurt and Chickpeas', 'Cooking', 2, 'These sweet potatoes with yogurt and chickpeas are a satisfying and nutritious vegetarian meal. Roasted sweet potatoes are topped with creamy yogurt, spiced chickpeas, and a drizzle of tahini for a burst of flavor.', 'Prick the sweet potatoes with a fork before roasting to allow steam to escape.', 'Make sure to drain and rinse the chickpeas well to remove excess salt and starch.', 'Feel free to customize the toppings with your favorite herbs, nuts, or seeds.', 12.0, 45.0, 30.0, 'Denmark', 'http://fakephotolink.com/sweet_potatoes_with_yogurt_and_chickpeas.jpg', 'Sweet Potatoes with Yogurt and Chickpeas', 15, 30, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -5693,15 +5511,13 @@ VALUES
 ('Sweet Potatoes with Yogurt and Chickpeas', 'Mixing Bowl', 1),
 ('Sweet Potatoes with Yogurt and Chickpeas', 'Saucepan', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
 ('Sweet Potatoes', 86.0, 0, 'Various Plant-based Foods', 'gr'),
 ('Chickpeas', 164.0, 0, 'Various Plant-based Foods', 'gr'),
-('Olive Oil', 884.0, 0, 'Fats and Oils', 'ml'),
 ('Greek Yogurt', 59.0, 0, 'Milk, Eggs, and Their Products', 'ml'),
 ('Tahini', 89.0, 0, 'Fats and Oils', 'ml'),
 ('Cumin', 375.0, 0, 'Herbs and Essential Oils', 'gr'),
 ('Paprika', 282.0, 0, 'Others', 'gr'),
-('Salt', 0.0, 0, 'Others', 'gr'),
 ('Black Pepper', 0.0, 0, 'Others', 'gr'),
 ('Fresh Cilantro', 23.0, 0, 'Herbs and Essential Oils', 'gr');
 
@@ -5745,7 +5561,7 @@ VALUES
 -- Lentil Curry
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Lentil Curry', 'Cooking', 2, 'Lentil Curry is a flavorful and satisfying dish that\'s perfect for vegetarians and meat-eaters alike. Made with protein-rich lentils, aromatic spices, and creamy coconut milk, this curry is both nutritious and delicious. Serve with rice or naan for a complete meal.', 'Feel free to add other vegetables like spinach, potatoes, or cauliflower to the curry for extra flavor and nutrition.', 'Adjust the amount of spices according to your taste preferences.', 'For a thicker curry, you can mash some of the lentils before serving.', 15.0, 30.0, 20.0, 'Bangladesh', 'http://fakephotolink.com/lentil_curry.jpg', 'Lentil Curry served in a bowl with rice and naan', 15, 30);
+('Lentil Curry', 'Cooking', 2, 'Lentil Curry is a flavorful and satisfying dish that\'s perfect for vegetarians and meat-eaters alike. Made with protein-rich lentils, aromatic spices, and creamy coconut milk, this curry is both nutritious and delicious. Serve with rice or naan for a complete meal.', 'Feel free to add other vegetables like spinach, potatoes, or cauliflower to the curry for extra flavor and nutrition.', 'Adjust the amount of spices according to your taste preferences.', 'For a thicker curry, you can mash some of the lentils before serving.', 15.0, 30.0, 20.0, 'Bangladesh', 'http://fakephotolink.com/lentil_curry.jpg', 'Lentil Curry served in a bowl with rice and naan', 15, 30, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -5754,25 +5570,22 @@ VALUES
 ('Lentil Curry', 'Cutting Board', 1),
 ('Lentil Curry', 'Mixing Spoon', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Lentils', 230.0, 0, 'Meat and Meat Products', 'cup'),
-('Water', 0.0, 0, 'Others', 'cup'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+('Water', 0.0, 0, 'Others', 'cups'),
 ('Onion', 44.0, 0, 'Various Plant-based Foods', 'unit'),
-('Garlic', 4.0, 0, 'Various Plant-based Foods', 'clove'),
 ('Ginger', 18.0, 0, 'Various Plant-based Foods', 'tsp'),
 ('Curry Powder', 20.0, 0, 'Herbs and Essential Oils', 'tbsp'),
 ('Turmeric', 29.0, 0, 'Herbs and Essential Oils', 'tsp'),
 ('Cumin', 8.0, 0, 'Herbs and Essential Oils', 'tsp'),
 ('Coriander', 5.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Coconut Milk', 230.0, 0, 'Nut and Seed Products', 'cup'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
+('Coconut Milk', 230.0, 0, 'Nut and Seed Products', 'cups'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp'),
 ('Fresh Cilantro', 1.0, 0, 'Various Plant-based Foods', 'tbsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
-('Lentil Curry', 'Lentils', 1, 'cups'),
-('Lentil Curry', 'Water', 4, 'cups'),
+('Lentil Curry', 'Lentils', 50, NULL),
+('Lentil Curry', 'Water', 4, NULL),
 ('Lentil Curry', 'Onion', 1, NULL),
 ('Lentil Curry', 'Garlic', 2, 'cloves'),
 ('Lentil Curry', 'Ginger', 1, NULL),
@@ -5780,7 +5593,7 @@ VALUES
 ('Lentil Curry', 'Turmeric', 1, NULL),
 ('Lentil Curry', 'Cumin', 0.5, NULL),
 ('Lentil Curry', 'Coriander', 0.5, NULL),
-('Lentil Curry', 'Coconut Milk', 1, 'cups'),
+('Lentil Curry', 'Coconut Milk', 1, NULL),
 ('Lentil Curry', 'Salt', NULL, 'to taste'),
 ('Lentil Curry', 'Black Pepper', NULL, 'to taste'),
 ('Lentil Curry', 'Fresh Cilantro', 2, NULL);
@@ -5810,7 +5623,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 -- Dutch Oven Bread
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Dutch Oven Bread', 'Cooking', 2, 'Dutch Oven Bread is a rustic and crusty loaf that\'s surprisingly easy to make at home. With just a few simple ingredients and some patience, you can enjoy fresh-baked bread straight from your oven. It\'s perfect for sandwiches, toast, or dipping in soups and stews.', 'Make sure your Dutch oven is preheated along with the oven to ensure a crispy crust.', 'Feel free to add seeds, herbs, or cheese to the dough for extra flavor.', 'Let the bread cool completely before slicing to prevent it from becoming too dense.', 10.0, 60.0, 50.0, 'Netherlands', 'http://fakephotolink.com/dutch_oven_bread.jpg', 'Dutch Oven Bread served on a wooden board', 10, 60);
+('Dutch Oven Bread', 'Cooking', 2, 'Dutch Oven Bread is a rustic and crusty loaf that\'s surprisingly easy to make at home. With just a few simple ingredients and some patience, you can enjoy fresh-baked bread straight from your oven. It\'s perfect for sandwiches, toast, or dipping in soups and stews.', 'Make sure your Dutch oven is preheated along with the oven to ensure a crispy crust.', 'Feel free to add seeds, herbs, or cheese to the dough for extra flavor.', 'Let the bread cool completely before slicing to prevent it from becoming too dense.', 10.0, 60.0, 50.0, 'Netherlands', 'http://fakephotolink.com/dutch_oven_bread.jpg', 'Dutch Oven Bread served on a wooden board', 10, 60, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -5820,18 +5633,17 @@ VALUES
 ('Dutch Oven Bread', 'Baking Sheet', 1);
 -- ('Dutch Oven Bread', 'Bench Scraper', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('All-Purpose Flour', 455.0, 0, 'Cereals and Cereal Products', 'cup'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+('All-Purpose Flour', 455.0, 0, 'Cereals and Cereal Products', 'cups'),
 ('Active Dry Yeast', 23.0, 0, 'Baked Products', 'tsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
-('Water', 0.0, 0, 'Others', 'cup');
+('Water', 0.0, 0, 'Others', 'cups');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
-('Dutch Oven Bread', 'All-Purpose Flour', 3, 'cups'),
+('Dutch Oven Bread', 'All-Purpose Flour', 3, NULL),
 ('Dutch Oven Bread', 'Active Dry Yeast', 2, NULL),
 ('Dutch Oven Bread', 'Salt', 1, NULL),
-('Dutch Oven Bread', 'Water', 1.5, 'cups');
+('Dutch Oven Bread', 'Water', 1.5, NULL);
 
 INSERT INTO recipe_steps (recipe_name, instruction, step_num)
 VALUES 
@@ -5860,7 +5672,7 @@ VALUES
 -- Potato Apple Roast
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Potato Apple Roast', 'Cooking', 1, 'Potato Apple Roast is a simple yet delicious side dish that pairs well with roasted meats or as a vegetarian main course. Tender potatoes and sweet apples are roasted with herbs and spices until golden and caramelized. It\'s the perfect blend of savory and sweet flavors.', 'Use a mix of tart and sweet apples for a balanced flavor profile.', 'Make sure to cut the potatoes and apples into uniform pieces to ensure even cooking.', 'Feel free to customize the seasoning with your favorite herbs and spices.', 10.0, 40.0, 30.0, 'United Arab Emirates', 'http://fakephotolink.com/potato_apple_roast.jpg', 'Potato Apple Roast served in a dish', 10, 40);
+('Potato Apple Roast', 'Cooking', 1, 'Potato Apple Roast is a simple yet delicious side dish that pairs well with roasted meats or as a vegetarian main course. Tender potatoes and sweet apples are roasted with herbs and spices until golden and caramelized. It\'s the perfect blend of savory and sweet flavors.', 'Use a mix of tart and sweet apples for a balanced flavor profile.', 'Make sure to cut the potatoes and apples into uniform pieces to ensure even cooking.', 'Feel free to customize the seasoning with your favorite herbs and spices.', 10.0, 40.0, 30.0, 'United Arab Emirates', 'http://fakephotolink.com/potato_apple_roast.jpg', 'Potato Apple Roast served in a dish', 10, 40, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -5871,11 +5683,10 @@ VALUES
 ('Potato Apple Roast', 'Measuring Spoons', 1),
 ('Potato Apple Roast', 'Measuring Cups', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
 ('Potatoes', 77.0, 0, 'Various Plant-based Foods', 'unit'),
 ('Apples', 95.0, 0, 'Various Plant-based Foods', 'unit'),
 ('Olive Oil', 119.0, 0, 'Fats and Oils', 'tbsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Black Pepper', 0.0, 0, 'Others', 'tsp'),
 ('Thyme', 3.0, 0, 'Herbs and Essential Oils', 'tsp'),
 ('Rosemary', 2.0, 0, 'Herbs and Essential Oils', 'tsp'),
@@ -5917,7 +5728,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 -- Baking Powder Biscuits
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Baking Powder Biscuits', 'Pastry', 1, 'Baking Powder Biscuits are light, fluffy, and perfect for breakfast, brunch, or alongside a comforting bowl of soup or stew. These biscuits require just a few basic ingredients and come together quickly, making them a great addition to any meal.', 'Make sure your butter is cold for flakier biscuits.', 'Handle the dough gently to keep the biscuits tender and airy.', 'For extra flavor, brush the tops of the biscuits with melted butter before baking.', 5.0, 15.0, 10.0, 'Hungary', 'http://fakephotolink.com/baking_powder_biscuits.jpg', 'Baking Powder Biscuits served with butter and jam', 5, 15);
+('Baking Powder Biscuits', 'Pastry', 1, 'Baking Powder Biscuits are light, fluffy, and perfect for breakfast, brunch, or alongside a comforting bowl of soup or stew. These biscuits require just a few basic ingredients and come together quickly, making them a great addition to any meal.', 'Make sure your butter is cold for flakier biscuits.', 'Handle the dough gently to keep the biscuits tender and airy.', 'For extra flavor, brush the tops of the biscuits with melted butter before baking.', 5.0, 15.0, 10.0, 'Hungary', 'http://fakephotolink.com/baking_powder_biscuits.jpg', 'Baking Powder Biscuits served with butter and jam', 5, 15, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -5927,20 +5738,19 @@ VALUES
 ('Baking Powder Biscuits', 'Blender', 1),
 ('Baking Powder Biscuits', 'Rolling Pin', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('All-Purpose Flour', 455.0, 0, 'Cereals and Cereal Products', 'cup'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+('All-Purpose Flour', 455.0, 0, 'Cereals and Cereal Products', 'cups'),
 ('Baking Powder', 5.0, 0, 'Baked Products', 'tbsp'),
-('Salt', 0.0, 0, 'Others', 'tsp'),
 ('Butter', 102.0, 0, 'Milk, Eggs, and Their Products', 'tbsp'),
-('Milk', 50.0, 0, 'Milk, Eggs, and Their Products', 'cup');
+('Milk', 50.0, 0, 'Milk, Eggs, and Their Products', 'cups');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
-('Baking Powder Biscuits', 'All-Purpose Flour', 2, 'cups'),
+('Baking Powder Biscuits', 'All-Purpose Flour', 2, NULL),
 ('Baking Powder Biscuits', 'Baking Powder', 1, NULL),
 ('Baking Powder Biscuits', 'Salt', 0.5, NULL),
 ('Baking Powder Biscuits', 'Butter', 6, NULL),
-('Baking Powder Biscuits', 'Milk', 0.75, 'cups');
+('Baking Powder Biscuits', 'Milk', 0.75, NULL);
 
 INSERT INTO main_ingr (recipe_name, ingr_name)
 VALUES 
@@ -5970,7 +5780,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 -- Sugar Cookies
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Sugar Cookies', 'Pastry', 2, 'Sugar Cookies are a classic treat that\'s perfect for any occasion. These cookies are soft, buttery, and deliciously sweet, with a hint of vanilla. Decorate them with icing or sprinkles for a festive touch.', 'Chill the dough for at least 1 hour before rolling and cutting to prevent spreading.', 'For extra flavor, add a teaspoon of almond or lemon extract to the dough.', 'Don\'t overbake the cookies - they should be just set and slightly golden around the edges.', 2.0, 10.0, 10.0, 'Peru', 'http://fakephotolink.com/sugar_cookies.jpg', 'Sugar Cookies decorated with icing and sprinkles', 20, 30);
+('Sugar Cookies', 'Pastry', 2, 'Sugar Cookies are a classic treat that\'s perfect for any occasion. These cookies are soft, buttery, and deliciously sweet, with a hint of vanilla. Decorate them with icing or sprinkles for a festive touch.', 'Chill the dough for at least 1 hour before rolling and cutting to prevent spreading.', 'For extra flavor, add a teaspoon of almond or lemon extract to the dough.', 'Don\'t overbake the cookies - they should be just set and slightly golden around the edges.', 2.0, 10.0, 10.0, 'Peru', 'http://fakephotolink.com/sugar_cookies.jpg', 'Sugar Cookies decorated with icing and sprinkles', 20, 30, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -5981,22 +5791,22 @@ VALUES
 -- ('Sugar Cookies', 'Parchment Paper', NULL),
 ('Sugar Cookies', 'Spatula', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Butter', 102.0, 0, 'Milk, Eggs, and Their Products', 'cup'),
-('Sugar', 774.0, 0, 'Sweeteners', 'cup'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+('Butter', 102.0, 0, 'Milk, Eggs, and Their Products', 'cups'),
+('Sugar', 774.0, 0, 'Sweeteners', 'cups'),
 ('Egg', 72.0, 0, 'Milk, Eggs, and Their Products', 'unit'),
 ('Vanilla Extract', 12.0, 0, 'Baked Products', 'tsp'),
-('All-Purpose Flour', 455.0, 0, 'Cereals and Cereal Products', 'cup'),
+('All-Purpose Flour', 455.0, 0, 'Cereals and Cereal Products', 'cups'),
 ('Baking Powder', 5.0, 0, 'Baked Products', 'tsp'),
 ('Salt', 0.0, 0, 'Others', 'tsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
-('Sugar Cookies', 'Butter', 1, 'cups'),
-('Sugar Cookies', 'Sugar', 1.5, 'cups'),
+('Sugar Cookies', 'Butter', 1, NULL),
+('Sugar Cookies', 'Sugar', 1.5, NULL),
 ('Sugar Cookies', 'Egg', 1, NULL),
 ('Sugar Cookies', 'Vanilla Extract', 1, NULL),
-('Sugar Cookies', 'All-Purpose Flour', 3, 'cups'),
+('Sugar Cookies', 'All-Purpose Flour', 3, NULL),
 ('Sugar Cookies', 'Baking Powder', 2, NULL),
 ('Sugar Cookies', 'Salt', 0.25, NULL);
 
@@ -6029,21 +5839,16 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Spanish Chickpeas', 'Cooking', 2, 'This Spanish Chickpeas recipe is a hearty and flavorful dish made with chickpeas, tomatoes, onions, garlic, and spices. It\'s a simple and satisfying vegetarian meal that\'s perfect for a cozy dinner.', 'For extra flavor, you can add smoked paprika or Spanish chorizo.', 'Serve with crusty bread or over cooked rice for a complete meal.', 'Garnish with fresh parsley or cilantro before serving for a burst of freshness.', 15.0, 30.0, 20.0, 'Spain', 'http://fakephotolink.com/spanish_chickpeas.jpg', 'Spanish Chickpeas with tomatoes, onions, and garlic', 10, 20);
+('Spanish Chickpeas', 'Cooking', 2, 'This Spanish Chickpeas recipe is a hearty and flavorful dish made with chickpeas, tomatoes, onions, garlic, and spices. It\'s a simple and satisfying vegetarian meal that\'s perfect for a cozy dinner.', 'For extra flavor, you can add smoked paprika or Spanish chorizo.', 'Serve with crusty bread or over cooked rice for a complete meal.', 'Garnish with fresh parsley or cilantro before serving for a burst of freshness.', 15.0, 30.0, 20.0, 'Spain', 'http://fakephotolink.com/spanish_chickpeas.jpg', 'Spanish Chickpeas with tomatoes, onions, and garlic', 10, 20, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
 ('Spanish Chickpeas', 'Skillet', 1),
 ('Spanish Chickpeas', 'Saucepan', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
-('Chickpeas', 164.0, 0, 'Various Plant-based Foods', 'gr'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
 ('Tomatoes', 18.0, 0, 'Various Plant-based Foods', 'gr'),
-('Onion', 40.0, 0, 'Various Plant-based Foods', 'gr'),
-('Garlic', 4.0, 0, 'Herbs and Essential Oils', 'cloves'),
-('Olive Oil', 884.0, 0, 'Fats and Oils', 'ml'),
 ('Paprika', 282.0, 0, 'Herbs and Essential Oils', 'gr'),
-('Salt', 0.0, 0, 'Others', 'gr'),
 ('Black Pepper', 0.0, 0, 'Others', 'gr');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
@@ -6082,21 +5887,18 @@ VALUES
 -- Lemon Fettuchini
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Lemon Fettuchini', 'Cooking', 2, 'This Lemon Fettuccine recipe is a light and refreshing pasta dish that\'s perfect for spring or summer. It features tender fettuccine noodles tossed in a creamy lemon sauce with garlic, Parmesan cheese, and fresh parsley.', 'For extra flavor, you can add cooked chicken, shrimp, or veggies to the pasta.', 'Use freshly grated Parmesan cheese for the best flavor and texture.', 'Garnish with lemon zest and additional parsley before serving for a pop of color and freshness.', 10.0, 15.0, 15.0, 'Italy', 'http://fakephotolink.com/lemon_fettuccine.jpg', 'Lemon Fettuccine with garlic, Parmesan cheese, and parsley', 5, 10);
+('Lemon Fettuchini', 'Cooking', 2, 'This Lemon Fettuccine recipe is a light and refreshing pasta dish that\'s perfect for spring or summer. It features tender fettuccine noodles tossed in a creamy lemon sauce with garlic, Parmesan cheese, and fresh parsley.', 'For extra flavor, you can add cooked chicken, shrimp, or veggies to the pasta.', 'Use freshly grated Parmesan cheese for the best flavor and texture.', 'Garnish with lemon zest and additional parsley before serving for a pop of color and freshness.', 10.0, 15.0, 15.0, 'Italy', 'http://fakephotolink.com/lemon_fettuccine.jpg', 'Lemon Fettuccine with garlic, Parmesan cheese, and parsley', 5, 10, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
 ('Lemon Fettuchini', 'Saucepan', 1),
 ('Lemon Fettuchini', 'Skillet', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
 ('Fettuccine', 210.0, 0, 'Cereals and Cereal Products', 'gr'),
-('Garlic', 4.0, 0, 'Herbs and Essential Oils', 'cloves'),
-('Butter', 102.0, 0, 'Milk, Eggs, and Their Products', 'gr'),
 ('Heavy Cream', 340.0, 0, 'Milk, Eggs, and Their Products', 'ml'),
 ('Lemon', 29.0, 0, 'Herbs and Essential Oils', 'unit'),
 ('Parmesan Cheese', 420.0, 0, 'Milk, Eggs, and Their Products', 'gr'),
-('Salt', 0.0, 0, 'Others', 'gr'),
 ('Black Pepper', 0.0, 0, 'Others', 'gr'),
 ('Fresh Parsley', 4.0, 0, 'Herbs and Essential Oils', 'gr');
 
@@ -6136,24 +5938,20 @@ VALUES
 -- Chickpea Masala
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Chickpea Masala', 'Cooking', 2, 'Chickpea Masala is a flavorful and comforting Indian dish made with chickpeas cooked in a spiced tomato-based sauce. It\'s packed with protein and spices, making it perfect for a satisfying vegetarian meal.', 'For extra heat, add chopped green chilies or a pinch of cayenne pepper.', 'Serve the chickpea masala over steamed rice or with naan bread for a complete meal.', 'Garnish with fresh cilantro before serving for a pop of color and freshness.', 15.0, 30.0, 20.0, 'India', 'http://fakephotolink.com/chickpea_masala.jpg', 'Chickpea Masala with spiced tomato sauce', 10, 25);
+('Chickpea Masala', 'Cooking', 2, 'Chickpea Masala is a flavorful and comforting Indian dish made with chickpeas cooked in a spiced tomato-based sauce. It\'s packed with protein and spices, making it perfect for a satisfying vegetarian meal.', 'For extra heat, add chopped green chilies or a pinch of cayenne pepper.', 'Serve the chickpea masala over steamed rice or with naan bread for a complete meal.', 'Garnish with fresh cilantro before serving for a pop of color and freshness.', 15.0, 30.0, 20.0, 'India', 'http://fakephotolink.com/chickpea_masala.jpg', 'Chickpea Masala with spiced tomato sauce', 10, 25, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
 ('Chickpea Masala', 'Skillet', 1),
 ('Chickpea Masala', 'Saucepan', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
-('Chickpeas', 164.0, 0, 'Various Plant-based Foods', 'gr'),
+INSERT  INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
 ('Tomato', 18.0, 0, 'Various Plant-based Foods', 'gr'),
-('Onion', 40.0, 0, 'Various Plant-based Foods', 'gr'),
-('Garlic', 4.0, 0, 'Herbs and Essential Oils', 'cloves'),
 ('Ginger', 80.0, 0, 'Herbs and Essential Oils', 'gr'),
 ('Garam Masala', 340.0, 0, 'Herbs and Essential Oils', 'gr'),
 ('Turmeric', 312.0, 0, 'Herbs and Essential Oils', 'gr'),
 ('Cumin', 375.0, 0, 'Herbs and Essential Oils', 'gr'),
 ('Coriander', 23.0, 0, 'Herbs and Essential Oils', 'gr'),
-('Salt', 0.0, 0, 'Others', 'gr'),
 ('Black Pepper', 0.0, 0, 'Others', 'gr'),
 ('Cilantro', 4.0, 0, 'Herbs and Essential Oils', 'gr');
 
@@ -6196,22 +5994,18 @@ VALUES
 -- Chickpea Broccoli Pesto
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Chickpea Broccoli Pesto', 'Cooking', 2, 'Chickpea Broccoli Pesto is a delicious and nutritious twist on traditional pesto pasta. It\'s made with a creamy pesto sauce featuring chickpeas, broccoli, garlic, Parmesan cheese, and pine nuts.', 'For extra creaminess, you can add a splash of heavy cream or a dollop of Greek yogurt to the sauce.', 'Use whole wheat or gluten-free pasta for a healthier option.', 'Garnish with extra grated Parmesan cheese and fresh basil leaves before serving.', 15.0, 25.0, 20.0, 'Italy', 'http://fakephotolink.com/chickpea_broccoli_pesto.jpg', 'Chickpea Broccoli Pesto with pasta, garlic, and Parmesan cheese', 10, 20);
+('Chickpea Broccoli Pesto', 'Cooking', 2, 'Chickpea Broccoli Pesto is a delicious and nutritious twist on traditional pesto pasta. It\'s made with a creamy pesto sauce featuring chickpeas, broccoli, garlic, Parmesan cheese, and pine nuts.', 'For extra creaminess, you can add a splash of heavy cream or a dollop of Greek yogurt to the sauce.', 'Use whole wheat or gluten-free pasta for a healthier option.', 'Garnish with extra grated Parmesan cheese and fresh basil leaves before serving.', 15.0, 25.0, 20.0, 'Italy', 'http://fakephotolink.com/chickpea_broccoli_pesto.jpg', 'Chickpea Broccoli Pesto with pasta, garlic, and Parmesan cheese', 10, 20, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
 ('Chickpea Broccoli Pesto', 'Saucepan', 1),
 ('Chickpea Broccoli Pesto', 'Skillet', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
 ('Pasta', 210.0, 0, 'Cereals and Cereal Products', 'gr'),
 ('Broccoli', 34.0, 0, 'Various Plant-based Foods', 'gr'),
-('Garlic', 4.0, 0, 'Herbs and Essential Oils', 'cloves'),
-('Chickpeas', 164.0, 0, 'Various Plant-based Foods', 'gr'),
 ('Parmesan Cheese', 420.0, 0, 'Milk, Eggs, and Their Products', 'gr'),
-('Olive Oil', 884.0, 0, 'Fats and Oils', 'ml'),
 ('Pine Nuts', 673.0, 0, 'Various Plant-based Foods', 'gr'),
-('Salt', 0.0, 0, 'Others', 'gr'),
 ('Black Pepper', 0.0, 0, 'Others', 'gr'),
 ('Fresh Basil', 3.0, 0, 'Herbs and Essential Oils', 'gr');
 
@@ -6253,7 +6047,7 @@ VALUES
 -- Thai Veggie Soup
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Thai Veggie Soup', 'Cooking', 2, 'This Thai Veggie Soup is a light and flavorful soup that\'s packed with fresh vegetables, Thai spices, and creamy coconut milk. It\'s a healthy and satisfying dish that\'s perfect for any time of year.', 'For extra protein, you can add cooked chicken, shrimp, or tofu to the soup.', 'Adjust the spiciness of the soup by adding more or less Thai red curry paste.', 'Garnish with fresh cilantro, lime wedges, and sliced red chili before serving for a burst of freshness and flavor.', 10.0, 25.0, 20.0, 'Thailand', 'http://fakephotolink.com/thai_veggie_soup.jpg', 'Thai Veggie Soup with coconut milk and Thai spices', 10, 20);
+('Thai Veggie Soup', 'Cooking', 2, 'This Thai Veggie Soup is a light and flavorful soup that\'s packed with fresh vegetables, Thai spices, and creamy coconut milk. It\'s a healthy and satisfying dish that\'s perfect for any time of year.', 'For extra protein, you can add cooked chicken, shrimp, or tofu to the soup.', 'Adjust the spiciness of the soup by adding more or less Thai red curry paste.', 'Garnish with fresh cilantro, lime wedges, and sliced red chili before serving for a burst of freshness and flavor.', 10.0, 25.0, 20.0, 'Thailand', 'http://fakephotolink.com/thai_veggie_soup.jpg', 'Thai Veggie Soup with coconut milk and Thai spices', 10, 20, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -6262,10 +6056,8 @@ VALUES
 ('Thai Veggie Soup', 'Cutting Board', 1),
 ('Thai Veggie Soup', 'Saucepan', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
 ('Coconut Oil', 884.0, 0, 'Fats and Oils', 'ml'),
-('Onion', 40.0, 0, 'Various Plant-based Foods', 'gr'),
-('Garlic', 4.0, 0, 'Herbs and Essential Oils', 'cloves'),
 ('Ginger', 80.0, 0, 'Herbs and Essential Oils', 'gr'),
 ('Carrot', 41.0, 0, 'Various Plant-based Foods', 'gr'),
 ('Red Bell Pepper', 31.0, 0, 'Various Plant-based Foods', 'gr'),
@@ -6274,7 +6066,6 @@ INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, gr
 ('Coconut Milk', 230.0, 0, 'Milk, Eggs, and Their Products', 'ml'),
 ('Vegetable Broth', 10.0, 0, 'Various Plant-based Foods', 'ml'),
 ('Lime', 30.0, 0, 'Herbs and Essential Oils', 'unit'),
-('Salt', 0.0, 0, 'Others', 'gr'),
 ('Black Pepper', 0.0, 0, 'Others', 'gr'),
 ('Fresh Cilantro', 4.0, 0, 'Herbs and Essential Oils', 'gr');
 
@@ -6315,22 +6106,20 @@ INSERT INTO meal_type (recipe_name,meal) VALUES
 
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Buttery Herb Chicken', 'Cooking', 2, 'Buttery Herb Chicken is a simple yet flavorful dish featuring tender chicken breasts cooked in a creamy herb sauce. It\'s easy to make and perfect for a cozy weeknight dinner.', 'For extra flavor, you can add minced garlic or shallots to the sauce.', 'Use boneless, skinless chicken breasts for quicker cooking.', 'Serve with mashed potatoes, rice, or roasted vegetables for a complete meal.', 30.0, 20.0, 25.0, 'Chile', 'http://fakephotolink.com/buttery_herb_chicken.jpg', 'Buttery Herb Chicken with creamy herb sauce', 10, 15);
+('Buttery Herb Chicken', 'Cooking', 2, 'Buttery Herb Chicken is a simple yet flavorful dish featuring tender chicken breasts cooked in a creamy herb sauce. It\'s easy to make and perfect for a cozy weeknight dinner.', 'For extra flavor, you can add minced garlic or shallots to the sauce.', 'Use boneless, skinless chicken breasts for quicker cooking.', 'Serve with mashed potatoes, rice, or roasted vegetables for a complete meal.', 30.0, 20.0, 25.0, 'Chile', 'http://fakephotolink.com/buttery_herb_chicken.jpg', 'Buttery Herb Chicken with creamy herb sauce', 10, 15, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
 ('Buttery Herb Chicken', 'Skillet', 1),
 ('Buttery Herb Chicken', 'Saucepan', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
 ('Chicken Breast', 165.0, 0, 'Meat and Meat Products', 'gr'),
-('Butter', 102.0, 0, 'Milk, Eggs, and Their Products', 'gr'),
 ('Flour', 364.0, 0, 'Cereals and Cereal Products', 'gr'),
 ('Chicken Broth', 10.0, 0, 'Meat and Meat Products', 'ml'),
 ('Heavy Cream', 340.0, 0, 'Milk, Eggs, and Their Products', 'ml'),
 ('Garlic Powder', 5.0, 0, 'Herbs and Essential Oils', 'gr'),
 ('Dried Thyme', 2.0, 0, 'Herbs and Essential Oils', 'gr'),
-('Salt', 0.0, 0, 'Others', 'gr'),
 ('Black Pepper', 0.0, 0, 'Others', 'gr');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
@@ -6370,19 +6159,16 @@ VALUES
 -- Rosemary Parsnips
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Rosemary Parsnips', 'Cooking', 1, 'Rosemary Parsnips are a simple and delicious side dish that\'s perfect for any meal. Tender parsnips are roasted with olive oil, garlic, and fresh rosemary until caramelized and flavorful.', 'For extra sweetness, you can drizzle honey over the parsnips before roasting.', 'Make sure to toss the parsnips halfway through cooking to ensure even browning.', 'Garnish with fresh chopped parsley before serving for a pop of color.', 10.0, 25.0, 30.0, 'Saudi Arabia', 'http://fakephotolink.com/rosemary_parsnips.jpg', 'Rosemary Parsnips with garlic and fresh rosemary', 5, 20);
+('Rosemary Parsnips', 'Cooking', 1, 'Rosemary Parsnips are a simple and delicious side dish that\'s perfect for any meal. Tender parsnips are roasted with olive oil, garlic, and fresh rosemary until caramelized and flavorful.', 'For extra sweetness, you can drizzle honey over the parsnips before roasting.', 'Make sure to toss the parsnips halfway through cooking to ensure even browning.', 'Garnish with fresh chopped parsley before serving for a pop of color.', 10.0, 25.0, 30.0, 'Saudi Arabia', 'http://fakephotolink.com/rosemary_parsnips.jpg', 'Rosemary Parsnips with garlic and fresh rosemary', 5, 20, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
 ('Rosemary Parsnips', 'Baking Sheet', 1),
 ('Rosemary Parsnips', 'Mixing Bowl', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
 ('Parsnips', 75.0, 0, 'Various Plant-based Foods', 'gr'),
-('Olive Oil', 884.0, 0, 'Fats and Oils', 'ml'),
-('Garlic', 4.0, 0, 'Herbs and Essential Oils', 'cloves'),
 ('Fresh Rosemary', 3.0, 0, 'Herbs and Essential Oils', 'sprigs'),
-('Salt', 0.0, 0, 'Others', 'gr'),
 ('Black Pepper', 0.0, 0, 'Others', 'gr');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
@@ -6418,21 +6204,18 @@ VALUES
 -- Balsamic Potatoes and Asparagus
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Balsamic Potatoes and Asparagus', 'Cooking', 2, 'Balsamic Potatoes and Asparagus is a flavorful side dish that pairs perfectly with any main course. Tender potatoes and crisp asparagus are roasted with balsamic vinegar, garlic, and herbs for a delicious combination of flavors.', 'For extra flavor, you can sprinkle Parmesan cheese over the potatoes and asparagus before serving.', 'Make sure to toss the potatoes and asparagus halfway through cooking to ensure even roasting.', 'Garnish with fresh chopped parsley or basil before serving for a pop of color.', 10.0, 25.0, 30.0, 'Portugal', 'http://fakephotolink.com/balsamic_potatoes_asparagus.jpg', 'Balsamic Potatoes and Asparagus with garlic and herbs', 10, 20);
+('Balsamic Potatoes and Asparagus', 'Cooking', 2, 'Balsamic Potatoes and Asparagus is a flavorful side dish that pairs perfectly with any main course. Tender potatoes and crisp asparagus are roasted with balsamic vinegar, garlic, and herbs for a delicious combination of flavors.', 'For extra flavor, you can sprinkle Parmesan cheese over the potatoes and asparagus before serving.', 'Make sure to toss the potatoes and asparagus halfway through cooking to ensure even roasting.', 'Garnish with fresh chopped parsley or basil before serving for a pop of color.', 10.0, 25.0, 30.0, 'Portugal', 'http://fakephotolink.com/balsamic_potatoes_asparagus.jpg', 'Balsamic Potatoes and Asparagus with garlic and herbs', 10, 20, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
 ('Balsamic Potatoes and Asparagus', 'Baking Sheet', 1),
 ('Balsamic Potatoes and Asparagus', 'Mixing Bowl', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
 ('Potatoes', 77.0, 0, 'Various Plant-based Foods', 'gr'),
 ('Asparagus', 20.0, 0, 'Various Plant-based Foods', 'gr'),
-('Olive Oil', 884.0, 0, 'Fats and Oils', 'ml'),
 ('Balsamic Vinegar', 88.0, 0, 'Various Plant-based Foods', 'ml'),
-('Garlic', 4.0, 0, 'Herbs and Essential Oils', 'cloves'),
 ('Dried Thyme', 2.0, 0, 'Herbs and Essential Oils', 'gr'),
-('Salt', 0.0, 0, 'Others', 'gr'),
 ('Black Pepper', 0.0, 0, 'Others', 'gr');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
@@ -6441,7 +6224,6 @@ VALUES
 ('Balsamic Potatoes and Asparagus', 'Asparagus', 200, NULL),
 ('Balsamic Potatoes and Asparagus', 'Olive Oil', 45, NULL),
 ('Balsamic Potatoes and Asparagus', 'Balsamic Vinegar', 30, NULL),
-('Balsamic Potatoes and Asparagus', 'Garlic', 2, 'cloves'),
 ('Balsamic Potatoes and Asparagus', 'Dried Thyme', 1, NULL),
 ('Balsamic Potatoes and Asparagus', 'Salt', 3, NULL),
 ('Balsamic Potatoes and Asparagus', 'Black Pepper', 3, NULL);
@@ -6470,7 +6252,7 @@ VALUES
 -- Quinoa Brussels Sweet Potato Salad
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Quinoa Brussels Sweet Potato Salad', 'Cooking', 2, 'Quinoa Brussels Sweet Potato Salad is a hearty and nutritious salad that\'s perfect for lunch or as a side dish. It\'s made with quinoa, roasted sweet potatoes, shredded Brussels sprouts, and a tangy vinaigrette.', 'You can add other vegetables like cherry tomatoes or cucumber for extra freshness.', 'Make sure to massage the shredded Brussels sprouts with the dressing to soften them slightly.', 'Garnish with chopped nuts or seeds for added crunch and protein.', 15.0, 25.0, 25.0, 'Netherlands', 'http://fakephotolink.com/quinoa_brussels_sweet_potato_salad.jpg', 'Quinoa Brussels Sweet Potato Salad with shredded Brussels sprouts and vinaigrette', 10, 15);
+('Quinoa Brussels Sweet Potato Salad', 'Cooking', 2, 'Quinoa Brussels Sweet Potato Salad is a hearty and nutritious salad that\'s perfect for lunch or as a side dish. It\'s made with quinoa, roasted sweet potatoes, shredded Brussels sprouts, and a tangy vinaigrette.', 'You can add other vegetables like cherry tomatoes or cucumber for extra freshness.', 'Make sure to massage the shredded Brussels sprouts with the dressing to soften them slightly.', 'Garnish with chopped nuts or seeds for added crunch and protein.', 15.0, 25.0, 25.0, 'Netherlands', 'http://fakephotolink.com/quinoa_brussels_sweet_potato_salad.jpg', 'Quinoa Brussels Sweet Potato Salad with shredded Brussels sprouts and vinaigrette', 10, 15, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -6478,15 +6260,13 @@ VALUES
 ('Quinoa Brussels Sweet Potato Salad', 'Mixing Bowl', 1),
 ('Quinoa Brussels Sweet Potato Salad', 'Pot', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
 ('Quinoa', 120.0, 0, 'Cereals and Cereal Products', 'gr'),
 ('Sweet Potato', 86.0, 0, 'Various Plant-based Foods', 'gr'),
 ('Brussels Sprouts', 43.0, 0, 'Various Plant-based Foods', 'gr'),
-('Olive Oil', 884.0, 0, 'Fats and Oils', 'ml'),
 ('Apple Cider Vinegar', 3.0, 0, 'Various Plant-based Foods', 'ml'),
 ('Maple Syrup', 260.0, 0, 'Various Plant-based Foods', 'ml'),
 ('Dijon Mustard', 130.0, 0, 'Various Plant-based Foods', 'ml'),
-('Salt', 0.0, 0, 'Others', 'gr'),
 ('Black Pepper', 0.0, 0, 'Others', 'gr'),
 ('Chopped Nuts', 607.0, 0, 'Various Plant-based Foods', 'gr');
 
@@ -6528,25 +6308,23 @@ VALUES
 -- Thai Peanut Cabbage Quinoa
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Thai Peanut Cabbage Quinoa', 'Cooking', 2, 'Thai Peanut Cabbage Quinoa is a vibrant and flavorful dish inspired by Thai cuisine. It\'s made with cooked quinoa, shredded cabbage, carrots, and a creamy peanut sauce infused with Thai flavors.', 'You can add cooked chicken, shrimp, or tofu for extra protein.', 'For a spicy kick, add a pinch of red pepper flakes or chopped red chili to the peanut sauce.', 'Garnish with chopped peanuts, cilantro, and lime wedges before serving.', 15.0, 20.0, 25.0, 'Thailand', 'http://fakephotolink.com/thai_peanut_cabbage_quinoa.jpg', 'Thai Peanut Cabbage Quinoa with shredded cabbage and peanut sauce', 10, 15);
+('Thai Peanut Cabbage Quinoa', 'Cooking', 2, 'Thai Peanut Cabbage Quinoa is a vibrant and flavorful dish inspired by Thai cuisine. It\'s made with cooked quinoa, shredded cabbage, carrots, and a creamy peanut sauce infused with Thai flavors.', 'You can add cooked chicken, shrimp, or tofu for extra protein.', 'For a spicy kick, add a pinch of red pepper flakes or chopped red chili to the peanut sauce.', 'Garnish with chopped peanuts, cilantro, and lime wedges before serving.', 15.0, 20.0, 25.0, 'Thailand', 'http://fakephotolink.com/thai_peanut_cabbage_quinoa.jpg', 'Thai Peanut Cabbage Quinoa with shredded cabbage and peanut sauce', 10, 15, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
 ('Thai Peanut Cabbage Quinoa', 'Pot', 1),
 ('Thai Peanut Cabbage Quinoa', 'Skillet', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
 ('Quinoa', 120.0, 0, 'Cereals and Cereal Products', 'gr'),
 ('Cabbage', 25.0, 0, 'Various Plant-based Foods', 'gr'),
 ('Carrot', 41.0, 0, 'Various Plant-based Foods', 'gr'),
 ('Peanut Butter', 588.0, 0, 'Various Plant-based Foods', 'gr'),
 ('Soy Sauce', 9.0, 0, 'Various Plant-based Foods', 'ml'),
 ('Lime', 30.0, 0, 'Herbs and Essential Oils', 'unit'),
-('Garlic', 4.0, 0, 'Herbs and Essential Oils', 'cloves'),
 ('Ginger', 80.0, 0, 'Herbs and Essential Oils', 'gr'),
 ('Honey', 304.0, 0, 'Various Plant-based Foods', 'ml'),
 ('Water', 0.0, 0, 'Various Plant-based Foods', 'ml'),
-('Salt', 0.0, 0, 'Others', 'gr'),
 ('Black Pepper', 0.0, 0, 'Others', 'gr'),
 ('Chopped Peanuts', 607.0, 0, 'Various Plant-based Foods', 'gr');
 
@@ -6558,7 +6336,6 @@ VALUES
 ('Thai Peanut Cabbage Quinoa', 'Peanut Butter', 120, NULL),
 ('Thai Peanut Cabbage Quinoa', 'Soy Sauce', 30, NULL),
 ('Thai Peanut Cabbage Quinoa', 'Lime', 1, NULL),
-('Thai Peanut Cabbage Quinoa', 'Garlic', 2, 'cloves'),
 ('Thai Peanut Cabbage Quinoa', 'Ginger', 1, NULL),
 ('Thai Peanut Cabbage Quinoa', 'Honey', 45, NULL),
 ('Thai Peanut Cabbage Quinoa', 'Water', 60, NULL),
@@ -6589,21 +6366,18 @@ VALUES
 -- Lemon Garlic Asparagus with Orzo
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Lemon Garlic Asparagus with Orzo', 'Cooking', 2, 'Lemon Garlic Asparagus with Orzo is a light and refreshing dish that\'s perfect for spring. Tender asparagus and flavorful garlic are sautéed with lemon zest and served over a bed of orzo pasta.', 'For extra protein, you can add grilled chicken or shrimp to the dish.', 'Make sure not to overcook the asparagus; it should be tender but still crisp.', 'Garnish with freshly grated Parmesan cheese and chopped parsley before serving.', 10.0, 20.0, 20.0, 'Morocco', 'http://fakephotolink.com/lemon_garlic_asparagus_orzo.jpg', 'Lemon Garlic Asparagus with Orzo pasta and lemon zest', 10, 15);
+('Lemon Garlic Asparagus with Orzo', 'Cooking', 2, 'Lemon Garlic Asparagus with Orzo is a light and refreshing dish that\'s perfect for spring. Tender asparagus and flavorful garlic are sautéed with lemon zest and served over a bed of orzo pasta.', 'For extra protein, you can add grilled chicken or shrimp to the dish.', 'Make sure not to overcook the asparagus; it should be tender but still crisp.', 'Garnish with freshly grated Parmesan cheese and chopped parsley before serving.', 10.0, 20.0, 20.0, 'Morocco', 'http://fakephotolink.com/lemon_garlic_asparagus_orzo.jpg', 'Lemon Garlic Asparagus with Orzo pasta and lemon zest', 10, 15, 1);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
 ('Lemon Garlic Asparagus with Orzo', 'Pot', 1),
 ('Lemon Garlic Asparagus with Orzo', 'Skillet', 1);
 
-INSERT IGNORE INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
 ('Orzo Pasta', 364.0, 0, 'Cereals and Cereal Products', 'gr'),
 ('Asparagus', 20.0, 0, 'Various Plant-based Foods', 'gr'),
-('Olive Oil', 884.0, 0, 'Fats and Oils', 'ml'),
-('Garlic', 4.0, 0, 'Herbs and Essential Oils', 'cloves'),
 ('Lemon Zest', 3.0, 0, 'Herbs and Essential Oils', 'tsp'),
 ('Lemon Juice', 4.0, 0, 'Herbs and Essential Oils', 'tbsp'),
-('Salt', 0.0, 0, 'Others', 'gr'),
 ('Black Pepper', 0.0, 0, 'Others', 'gr'),
 ('Parmesan Cheese', 420.0, 0, 'Milk, Eggs, and Their Products', 'gr'),
 ('Fresh Parsley', 4.0, 0, 'Herbs and Essential Oils', 'tbsp');
@@ -6613,7 +6387,6 @@ VALUES
 ('Lemon Garlic Asparagus with Orzo', 'Orzo Pasta', 200, NULL),
 ('Lemon Garlic Asparagus with Orzo', 'Asparagus', 200, NULL),
 ('Lemon Garlic Asparagus with Orzo', 'Olive Oil', 30,NULL),
-('Lemon Garlic Asparagus with Orzo', 'Garlic', 2, 'cloves'),
 ('Lemon Garlic Asparagus with Orzo', 'Lemon Zest', 1, NULL),
 ('Lemon Garlic Asparagus with Orzo', 'Lemon Juice', 2,NULL),
 ('Lemon Garlic Asparagus with Orzo', 'Salt', 3, NULL),
@@ -6807,3 +6580,4 @@ INSERT INTO expertise (first_name, last_name, country_name) VALUES
 ('Mikhail', 'Ivanov', 'Australia'),
 ('Sara', 'Larsson', 'Turkey'),
 ('Sara', 'Larsson', 'Sweden');
+
