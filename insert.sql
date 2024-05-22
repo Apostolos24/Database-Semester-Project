@@ -1,6 +1,7 @@
 USE cooking_show;
 
 -- Empties the base by deleting all rows from all tables before the insertions happens.
+/*
 SET FOREIGN_KEY_CHECKS = 0;
 TRUNCATE TABLE cook;
 TRUNCATE TABLE countries;
@@ -22,7 +23,7 @@ TRUNCATE TABLE tags;
 TRUNCATE TABLE thematic_section;
 SET FOREIGN_KEY_CHECKS = 1;
 -- 
-
+*/
 -- Insertions 
 INSERT INTO countries (country_name) VALUES
 ('Brazil'),
@@ -7226,3 +7227,10 @@ INSERT INTO recipe_belongs_to (recipe_name, sec_name) VALUES
 ('Lemon Garlic Asparagus with Orzo', 'Healthy Choices'),
 ('Lemon Garlic Asparagus with Orzo', 'Summer BBQ'),
 ('Lemon Garlic Asparagus with Orzo', 'Date Night Dinners');
+
+call create_season();
+call create_season();
+call create_season();
+call create_season();
+call create_season();
+

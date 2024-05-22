@@ -1,4 +1,4 @@
-DROP DATABASE IF EXISTS cooking_show;
+-- DROP DATABASE IF EXISTS cooking_show;
 
 CREATE DATABASE cooking_show;
 USE cooking_show;
@@ -170,7 +170,7 @@ CREATE TABLE is_a_critic (
     id TINYINT UNSIGNED,
     FOREIGN KEY (episode_year,episode) REFERENCES episodes(episode_year,episode),
     FOREIGN KEY (first_name, last_name) REFERENCES cook (first_name,last_name),
-    PRIMARY KEY (episode_year,first_name,last_name)
+    PRIMARY KEY (episode_year,episode,first_name,last_name)
 );
 
 CREATE INDEX critic_cook_name ON is_a_critic (last_name);
@@ -189,7 +189,7 @@ CREATE TABLE is_a_contestant (
     FOREIGN KEY (recipe_name) REFERENCES recipes (recipe_name),
     FOREIGN KEY (episode_year,episode) REFERENCES episodes(episode_year,episode),
     FOREIGN KEY (first_name,last_name) REFERENCES cook (first_name,last_name),
-    PRIMARY KEY (episode,country_name)
+    PRIMARY KEY (episode_year,episode,country_name)
 );
 
 CREATE INDEX contest_cook_name ON is_a_contestant (last_name);
@@ -291,7 +291,7 @@ BEGIN
     DECLARE current_country VARCHAR(20);
     DECLARE cook_first_name VARCHAR(20);
     DECLARE cook_last_name VARCHAR(20);
-    DECLARE recipe VARCHAR(30);
+    DECLARE recipe VARCHAR(60);
     DECLARE gradea INT;
     DECLARE gradeb INT;
     DECLARE gradec INT;
@@ -328,18 +328,18 @@ DELIMITER ;
 
 -- Stored procedure that generates 1 episode while checking for duplicates of previous episodes
 DELIMITER //
-CREATE PROCEDURE create_episode2 ( INOUT episode_num INT, IN episode_year INT )
+CREATE PROCEDURE create_episode2 ( INOUT episode_num INT, IN episode_year_ INT )
 BEGIN
     DECLARE count INT;
     DECLARE current_country VARCHAR(20);
     DECLARE cook_first_name VARCHAR(20);
     DECLARE cook_last_name VARCHAR(20);
-    DECLARE recipe VARCHAR(30);
+    DECLARE recipe VARCHAR(600);
     DECLARE gradea INT;
     DECLARE gradeb INT;
     DECLARE gradec INT;
-    DECLARE cur CURSOR FOR SELECT country_name FROM countries WHERE country_name NOT IN (SELECT country_name FROM is_a_contestant WHERE (episode=episode_num-1 OR episode=episode_num-2) AND episode_year=episode_year)  ORDER BY RAND() LIMIT 10;
-    DECLARE cur2 CURSOR FOR SELECT first_name,last_name FROM cook WHERE CONCAT(first_name,' ',last_name) NOT IN (SELECT CONCAT(first_name,' ',last_name) FROM is_a_critic WHERE episode_year=episode_year AND (episode=episode-1 OR episode=episode-2)) ORDER BY RAND() LIMIT 3;
+    DECLARE cur CURSOR FOR SELECT country_name FROM countries WHERE country_name NOT IN (SELECT country_name FROM is_a_contestant WHERE (episode=episode_num-1 OR episode=episode_num-2) AND episode_year=episode_year_)  ORDER BY RAND() LIMIT 10;
+    DECLARE cur2 CURSOR FOR SELECT first_name,last_name FROM cook WHERE CONCAT(first_name,' ',last_name) NOT IN (SELECT CONCAT(first_name,' ',last_name) FROM is_a_critic WHERE episode_year=episode_year_ AND (episode=episode-1 OR episode=episode-2)) ORDER BY RAND() LIMIT 3;
 
     OPEN cur;
     SET count=0;
@@ -349,8 +349,8 @@ BEGIN
         SELECT FLOOR(RAND() * 11) INTO gradeb;
         SELECT FLOOR(RAND() * 11) INTO gradec;
         SELECT recipe_name INTO recipe FROM recipes WHERE country_name=current_country ORDER BY RAND() LIMIT 1;
-        SELECT first_name,last_name INTO cook_first_name,cook_last_name FROM expertise WHERE (country_name=current_country AND CONCAT(first_name,' ',last_name) NOT IN (SELECT CONCAT(first_name,' ',last_name) FROM is_a_contestant WHERE episode_year=episode_year AND (episode=episode-1 OR episode=episode-2))) ORDER BY RAND() LIMIT 1;
-        INSERT INTO is_a_contestant (episode_year,episode,country_name,first_name,last_name,recipe_name,grade1,grade2,grade3) VALUES (episode_year,episode_num,current_country,cook_first_name,cook_last_name,recipe,gradea,gradeb,gradec);
+        SELECT first_name,last_name INTO cook_first_name,cook_last_name FROM expertise WHERE (country_name=current_country AND CONCAT(first_name,' ',last_name) NOT IN (SELECT CONCAT(first_name,' ',last_name) FROM is_a_contestant WHERE episode_year=episode_year_ AND (episode=episode-1 OR episode=episode-2))) ORDER BY RAND() LIMIT 1;
+        INSERT INTO is_a_contestant (episode_year,episode,country_name,first_name,last_name,recipe_name,grade1,grade2,grade3) VALUES (episode_year_,episode_num,current_country,cook_first_name,cook_last_name,recipe,gradea,gradeb,gradec);
         SET count=count+1;
     UNTIL count=10
     END REPEAT;
@@ -360,7 +360,7 @@ BEGIN
     OPEN cur2;
     REPEAT
         FETCH NEXT FROM cur2 INTO cook_first_name,cook_last_name;
-        INSERT INTO is_a_critic VALUES (episode_year,episode_num,cook_first_name,cook_last_name,count);
+        INSERT INTO is_a_critic VALUES (episode_year_,episode_num,cook_first_name,cook_last_name,count);
         SET count=count+1;
     UNTIL count=4
     END REPEAT;
@@ -404,6 +404,13 @@ BEGIN
 END //
 
 DELIMITER ;
+
+-- Grant permissions
+-- CREATE ROLE IF NOT EXISTS administrator; 
+-- GRANT ALL ON cooking_show.* TO administrator;
+
+-- CREATE USER IF NOT EXISTS 'apodimanos'@'localhost' IDENTIFIED BY 'dd';
+-- GRANT ALL ON cooking_show.* TO 'apodimanos'@'localhost';
 
 -- SELECT * from countries ORDER BY RAND() LIMIT 10;
 
