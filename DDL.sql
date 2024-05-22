@@ -83,11 +83,11 @@ CREATE TABLE food_groups (
 );
 
 CREATE TABLE ingredients (
-    ingr_name VARCHAR(50),
+    ingr_name VARCHAR(50) UNIQUE,
     ingr_calories NUMERIC(6,2),  -- per gr or ml tsp or tbsp or unit or cup
     allows_loose_units TINYINT,
     group_name VARCHAR(80),
-    unit ENUM('gr','ml','','tsp','tbsp','unit','cup'),
+    unit ENUM('gr','ml','tsp','tbsp','unit','cups'),
     FOREIGN KEY (group_name) REFERENCES food_groups(group_name),
     PRIMARY KEY (ingr_name)
 );
@@ -96,7 +96,7 @@ CREATE TABLE requires_ingr (
     recipe_name VARCHAR(60),
     ingr_name VARCHAR(50),
     quantity SMALLINT UNSIGNED,
-    undefined_quantity ENUM ('cups','Some','Little','Much','A lot','pinch','to taste','as needed','to garnish','slices','stalks','cloves'),
+    undefined_quantity ENUM ('Some','Little','Much','A lot','pinch','to taste','as needed','to garnish','slices','stalks','cloves'),
     FOREIGN KEY (recipe_name) REFERENCES recipes(recipe_name),
     FOREIGN KEY (ingr_name) REFERENCES ingredients(ingr_name),
     PRIMARY KEY (recipe_name,ingr_name)
@@ -216,29 +216,34 @@ END;
 //
 DELIMITER ;
 
--- Trigger for updating recipe calories when adding an igredient to it
+
+-- Trigger for updating recipe calories when adding an igredient to it TEST
 DELIMITER //
 CREATE TRIGGER recipe_calories BEFORE INSERT ON requires_ingr FOR EACH ROW 
 BEGIN
     DECLARE calories NUMERIC(10,2);
-    DECLARE quantity INT;
-    DECLARE units VARCHAR(10);
+    DECLARE quantity_ INT;
+    DECLARE unit_ VARCHAR(10);
     DECLARE portions_ TINYINT UNSIGNED;
     
+    SELECT (CASE WHEN new.undefined_quantity IS NULL THEN new.quantity ELSE 0 END) INTO quantity_;  -- an ingeredient's calories will only contribute to the meal's calories if its quantity is well defined
+    SELECT unit INTO unit_ FROM ingredients WHERE ingr_name=new.ingr_name;
     SELECT portions INTO portions_ FROM recipes WHERE recipe_name=new.recipe_name;
-    SELECT unit INTO units FROM ingredients WHERE ingr_name=new.ingr_name;
-    SELECT (CASE WHEN new.undefined_quantity IS NULL THEN new.quantity ELSE 0 END) INTO quantity; 
-    SELECT (CASE WHEN new.undefined_quantity IS NULL THEN ingr_calories ELSE 0 END) 
-    INTO calories FROM ingredients WHERE ingr_name=new.ingr_name; 
-    IF units='gr' or units='ml' or units='tbsp' THEN
+    SELECT ingr_calories INTO calories FROM ingredients WHERE ingr_name=new.ingr_name;
+    
+    IF unit_ = 'gr' OR unit_='ml' THEN
         SET calories = calories/100;
+	ELSEIF unit_ IS NULL THEN
+		SET calories = 0;
     END IF;
+    
     UPDATE recipes
-    SET recipe_calories=recipe_calories+calories*quantity/portions_
+    SET recipe_calories=recipe_calories+calories*quantity_/portions_
     WHERE recipe_name=new.recipe_name;
 END;
 //
 DELIMITER ;
+
 
 -- POPULATING EPISODES
 
