@@ -1,7 +1,6 @@
 USE cooking_show;
 
 -- Empties the base by deleting all rows from all tables before the insertions happens.
-/*
 SET FOREIGN_KEY_CHECKS = 0;
 TRUNCATE TABLE cook;
 TRUNCATE TABLE countries;
@@ -23,7 +22,7 @@ TRUNCATE TABLE tags;
 TRUNCATE TABLE thematic_section;
 SET FOREIGN_KEY_CHECKS = 1;
 -- 
-*/
+
 -- Insertions 
 INSERT INTO countries (country_name) VALUES
 ('Brazil'),
@@ -844,10 +843,10 @@ VALUES
 ('Stir-Fry', 'Vegetables (e.g., bell peppers, broccoli, carrots)', NULL, 'Some'),
 ('Stir-Fry', 'Rice or Noodles', 200, NULL),
 ('Stir-Fry', 'Soy Sauce', 60, NULL),
-('Stir-Fry', 'Sesame Oil', 30, NULL),
+('Stir-Fry', 'Sesame Oil', 1, NULL),
 ('Stir-Fry', 'Garlic', 2, NULL),
 ('Stir-Fry', 'Ginger', 1, NULL),
-('Stir-Fry', 'Cornstarch', 15, NULL),
+('Stir-Fry', 'Cornstarch', 1.5, NULL),
 ('Stir-Fry', 'Water', 30, NULL);
 
 INSERT INTO main_ingr (recipe_name, ingr_name)
@@ -1183,10 +1182,10 @@ VALUES
 ('Fried Rice', 'Garlic', 2, NULL),
 ('Fried Rice', 'Eggs', 2, NULL),
 ('Fried Rice', 'Soy Sauce', 30, NULL),
-('Fried Rice', 'Sesame Oil', 5, NULL),
+('Fried Rice', 'Sesame Oil', 0.5, NULL),
 ('Fried Rice', 'Salt', 1, NULL),
 ('Fried Rice', 'Black Pepper', 1, NULL),
-('Fried Rice', 'Vegetable Oil', 30, NULL);
+('Fried Rice', 'Vegetable Oil', 1, NULL);
 
 INSERT INTO main_ingr (recipe_name, ingr_name)
 VALUES 
@@ -1317,7 +1316,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Cashew Chicken with Noodles', 'Cooking', 3, 'This Cashew Chicken with Noodles recipe is a delicious and satisfying meal that\'s perfect for a cozy night in. Tender chicken and crunchy cashews are tossed with noodles in a flavorful sauce.', 'For added flavor, marinate the chicken in soy sauce and garlic before cooking.', 'Feel free to use your favorite type of noodles for this recipe, such as spaghetti, linguine, or rice noodles.', 'Garnish with sliced green onions and additional cashews for extra crunch and freshness.', 20.0, 20.0, 20.0, 'China', 'http://fakephotolink.com/cashew_chicken_noodles.jpg', 'Cashew Chicken with Noodles', 20, 20, 1);
+('Cashew Chicken with Noodles', 'Cooking', 3, 'This Cashew Chicken with Noodles recipe is a delicious and satisfying meal that\'s perfect for a cozy night in. Tender chicken and crunchy cashews are tossed with noodles in a flavorful sauce.', 'For added flavor, marinate the chicken in soy sauce and garlic before cooking.', 'Feel free to use your favorite type of noodles for this recipe, such as spaghetti, linguine, or rice noodles.', 'Garnish with sliced green onions and additional cashews for extra crunch and freshness.', 20.0, 20.0, 20.0, 'China', 'http://fakephotolink.com/cashew_chicken_noodles.jpg', 'Cashew Chicken with Noodles', 20, 20, 6);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -1343,10 +1342,10 @@ VALUES
 ('Cashew Chicken with Noodles', 'Garlic', 2, NULL),
 ('Cashew Chicken with Noodles', 'Soy Sauce', 60, NULL),
 ('Cashew Chicken with Noodles', 'Honey', 30, NULL),
-('Cashew Chicken with Noodles', 'Sesame Oil', 5, NULL),
-('Cashew Chicken with Noodles', 'Rice Vinegar', 15, NULL),
-('Cashew Chicken with Noodles', 'Cornstarch', 30, NULL),
-('Cashew Chicken with Noodles', 'Vegetable Oil', 30, NULL);
+('Cashew Chicken with Noodles', 'Sesame Oil', 0.5, NULL),
+('Cashew Chicken with Noodles', 'Rice Vinegar', 1.5, NULL),
+('Cashew Chicken with Noodles', 'Cornstarch', 3, NULL),
+('Cashew Chicken with Noodles', 'Vegetable Oil', 1, NULL);
 
 INSERT INTO main_ingr (recipe_name, ingr_name)
 VALUES 
@@ -1393,7 +1392,7 @@ VALUES
 ('Herb Chicken with Honey Butter', 'Honey', 30, NULL),
 ('Herb Chicken with Honey Butter', 'Salt', 1, NULL),
 ('Herb Chicken with Honey Butter', 'Black Pepper', 1, NULL),
-('Herb Chicken with Honey Butter', 'Vegetable Oil', 30, NULL);
+('Herb Chicken with Honey Butter', 'Vegetable Oil', 1, NULL);
 
 INSERT INTO main_ingr (recipe_name, ingr_name)
 VALUES 
@@ -1565,7 +1564,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Baked Mostaccioli', 'Cooking', 3, 'Baked Mostaccioli is a classic Italian-American dish that\'s hearty, comforting, and perfect for feeding a crowd. Tube-shaped pasta is tossed in a savory tomato sauce with ground beef, Italian sausage, and plenty of cheese, then baked until bubbly and golden.', 'Feel free to customize this dish by adding your favorite vegetables, such as bell peppers, mushrooms, or spinach.', 'You can substitute mostaccioli pasta with penne or rigatoni if desired.', 'Serve with garlic bread and a side salad for a complete meal.', 20.0, 45.0, 25.0, 'Italy', 'http://fakephotolink.com/baked_mostaccioli.jpg', 'Baked Mostaccioli with melted cheese', 20, 45, 1);
+('Baked Mostaccioli', 'Cooking', 3, 'Baked Mostaccioli is a classic Italian-American dish that\'s hearty, comforting, and perfect for feeding a crowd. Tube-shaped pasta is tossed in a savory tomato sauce with ground beef, Italian sausage, and plenty of cheese, then baked until bubbly and golden.', 'Feel free to customize this dish by adding your favorite vegetables, such as bell peppers, mushrooms, or spinach.', 'You can substitute mostaccioli pasta with penne or rigatoni if desired.', 'Serve with garlic bread and a side salad for a complete meal.', 20.0, 45.0, 25.0, 'Italy', 'http://fakephotolink.com/baked_mostaccioli.jpg', 'Baked Mostaccioli with melted cheese', 20, 45, 4);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -1924,7 +1923,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Blondies with Nutella', 'Pastry', 2, 'Blondies with Nutella are a delicious twist on the classic blondie recipe. These chewy, buttery bars are swirled with rich Nutella for an indulgent treat that\'s sure to satisfy your sweet tooth.', 'For extra flavor, sprinkle chopped nuts or chocolate chips on top before baking.', 'Be careful not to overmix the batter, as this can make the blondies tough.', 'Allow the blondies to cool completely in the pan before slicing for clean edges.', 5.0, 25.0, 20.0, 'Venezuela', 'http://fakephotolink.com/blondies_nutella.jpg', 'Blondies with Nutella', 5, 25, 1);
+('Blondies with Nutella', 'Pastry', 2, 'Blondies with Nutella are a delicious twist on the classic blondie recipe. These chewy, buttery bars are swirled with rich Nutella for an indulgent treat that\'s sure to satisfy your sweet tooth.', 'For extra flavor, sprinkle chopped nuts or chocolate chips on top before baking.', 'Be careful not to overmix the batter, as this can make the blondies tough.', 'Allow the blondies to cool completely in the pan before slicing for clean edges.', 5.0, 25.0, 20.0, 'Venezuela', 'http://fakephotolink.com/blondies_nutella.jpg', 'Blondies with Nutella', 5, 25, 3);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -1947,7 +1946,7 @@ VALUES
 ('Blondies with Nutella', 'All-Purpose Flour', 200, NULL),
 ('Blondies with Nutella', 'Baking Powder', 2, NULL),
 ('Blondies with Nutella', 'Salt', 1, NULL),
-('Blondies with Nutella', 'Nutella', 120, NULL);
+('Blondies with Nutella', 'Nutella', 5, NULL);
 
 INSERT INTO main_ingr (recipe_name, ingr_name)
 VALUES 
@@ -1995,7 +1994,7 @@ INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_nam
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
-('Hot Chocolate', 'Cocoa Powder', 30, NULL),
+('Hot Chocolate', 'Cocoa Powder', 2, NULL),
 ('Hot Chocolate', 'Granulated Sugar', 50, NULL),
 ('Hot Chocolate', 'Milk', 500, NULL),
 ('Hot Chocolate', 'Vanilla Extract', 5, NULL),
@@ -2024,7 +2023,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Chocolate Mousse', 'Pastry', 4, 'Chocolate Mousse is a decadent and velvety dessert that is surprisingly easy to make. Made with rich chocolate and airy whipped cream, it\'s a classic indulgence that never fails to impress.', 'Use high-quality chocolate for the best flavor and texture.', 'Be gentle when folding the whipped cream into the chocolate mixture to keep the mousse light and airy.', 'Chill the mousse for at least 4 hours, or overnight, to allow it to set properly.', 5.0, 15.0, 30.0, 'France', 'http://fakephotolink.com/chocolate_mousse.jpg', 'Chocolate Mousse in a glass', 5, 15, 1);
+('Chocolate Mousse', 'Pastry', 4, 'Chocolate Mousse is a decadent and velvety dessert that is surprisingly easy to make. Made with rich chocolate and airy whipped cream, it\'s a classic indulgence that never fails to impress.', 'Use high-quality chocolate for the best flavor and texture.', 'Be gentle when folding the whipped cream into the chocolate mixture to keep the mousse light and airy.', 'Chill the mousse for at least 4 hours, or overnight, to allow it to set properly.', 5.0, 15.0, 30.0, 'France', 'http://fakephotolink.com/chocolate_mousse.jpg', 'Chocolate Mousse in a glass', 5, 15, 4);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -2148,12 +2147,12 @@ INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
 ('Orange Chicken', 'Chicken Breast', 500, NULL),
 ('Orange Chicken', 'Soy Sauce', 60, NULL),
-('Orange Chicken', 'Cornstarch', 60, NULL),
+('Orange Chicken', 'Cornstarch', 2, NULL),
 ('Orange Chicken', 'Vegetable Oil', NULL, 'as needed'),
 ('Orange Chicken', 'Orange Juice', 120, NULL),
 ('Orange Chicken', 'Orange Zest', 2, NULL),
 ('Orange Chicken', 'Brown Sugar', 100, NULL),
-('Orange Chicken', 'Rice Vinegar', 30, NULL),
+('Orange Chicken', 'Rice Vinegar', 3, NULL),
 ('Orange Chicken', 'Garlic', 3, NULL),
 ('Orange Chicken', 'Ginger', 1, NULL),
 ('Orange Chicken', 'Red Chili Flakes', 1, NULL),
@@ -2282,7 +2281,7 @@ INSERT INTO meal_type (recipe_name, meal) VALUES
 
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Asian Shredded Beef', 'Cooking', 5, 'Asian Shredded Beef is a savory and tender dish that\'s full of flavor. Thinly sliced beef is marinated in a mixture of soy sauce, ginger, garlic, and other spices, then slow-cooked until perfectly tender. Serve it over rice or noodles for a satisfying meal.', 'For best results, marinate the beef for at least 2 hours, or overnight, to allow the flavors to develop.', 'You can use a slow cooker or pressure cooker to cook the beef.', 'Garnish with sliced green onions and sesame seeds for extra flavor and presentation.', 15.0, 240.0, 480.0, 'China', 'http://fakephotolink.com/asian_shredded_beef.jpg', 'Asian Shredded Beef with rice', 15, 240, 1);
+('Asian Shredded Beef', 'Cooking', 5, 'Asian Shredded Beef is a savory and tender dish that\'s full of flavor. Thinly sliced beef is marinated in a mixture of soy sauce, ginger, garlic, and other spices, then slow-cooked until perfectly tender. Serve it over rice or noodles for a satisfying meal.', 'For best results, marinate the beef for at least 2 hours, or overnight, to allow the flavors to develop.', 'You can use a slow cooker or pressure cooker to cook the beef.', 'Garnish with sliced green onions and sesame seeds for extra flavor and presentation.', 15.0, 240.0, 480.0, 'China', 'http://fakephotolink.com/asian_shredded_beef.jpg', 'Asian Shredded Beef with rice', 15, 240, 2);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -2300,10 +2299,10 @@ VALUES
 ('Asian Shredded Beef', 'Beef Chuck Roast', 500, NULL),
 ('Asian Shredded Beef', 'Soy Sauce', 60, NULL),
 ('Asian Shredded Beef', 'Brown Sugar', 30, NULL),
-('Asian Shredded Beef', 'Sesame Oil', 30, NULL),
+('Asian Shredded Beef', 'Sesame Oil', 1, NULL),
 ('Asian Shredded Beef', 'Garlic', 3, NULL),
 ('Asian Shredded Beef', 'Ginger', 1, NULL),
-('Asian Shredded Beef', 'Rice Vinegar', 30, NULL),
+('Asian Shredded Beef', 'Rice Vinegar', 3, NULL),
 ('Asian Shredded Beef', 'Green Onion', NULL, 'to garnish'),
 ('Asian Shredded Beef', 'Sesame Seeds', NULL, 'to garnish');
 
@@ -3567,8 +3566,7 @@ INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, r
 VALUES 
 ('Potato Curry', 'Cooking', 3, 'A flavorful and comforting potato curry made with potatoes cooked in a fragrant and spicy sauce. Perfect served over rice or with naan.', 'For a creamier texture, mash some of the potatoes into the curry.', 'Adjust the spice level by adding more or less chili powder according to your preference.', 'Garnish with fresh cilantro before serving for extra flavor.', 5.0, 30.0, 15.0, 'India', 'http://fakephotolink.com/potato_curry.jpg', 'Delicious and aromatic Potato Curry', 15, 30, 1);
 
-INSERT INTO requires_eq (recipe_name, eq_name, quantity)
-VALUES 
+INSERT INTO requires_eq (recipe_name, eq_name, quantity) VALUES
 ('Potato Curry', 'Saucepan', 1),
 ('Potato Curry', 'Skillet', 1),
 ('Potato Curry', 'Spatula', 1);
@@ -4030,7 +4028,7 @@ INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_nam
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
-('New Potato Lentil Salad', 'New Potatoes', 100, NULL),
+('New Potato Lentil Salad', 'New Potatoes', 10, NULL),
 ('New Potato Lentil Salad', 'Lentils', 1, NULL),
 ('New Potato Lentil Salad', 'Red Onion', 0.5, NULL),
 ('New Potato Lentil Salad', 'Olive Oil', 3, NULL),
@@ -4622,7 +4620,7 @@ VALUES
 ('Naan', 'Sugar', 10, NULL),
 ('Naan', 'Salt', 5, NULL),
 ('Naan', 'Milk', 120, NULL),
-('Naan', 'Yogurt', 60, NULL),
+('Naan', 'Yogurt', 1, NULL),
 ('Naan', 'Butter', 30, NULL);
 
 INSERT INTO recipe_steps (recipe_name, instruction, step_num)
@@ -4845,7 +4843,7 @@ VALUES
 -- Chocolate Chip Irish Soda Bread
 INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, recipe_tip1, recipe_tip2, recipe_tip3, recipe_proteins, recipe_carbs, recipe_fats, country_name, recipe_photo, recipe_photo_desc, prep_time, execution_time, portions)
 VALUES 
-('Chocolate Chip Irish Soda Bread', 'Pastry', 2, 'Chocolate chip Irish soda bread is a delicious twist on the traditional Irish soda bread. It\'s quick and easy to make, with no yeast required, and is loaded with chocolate chips for a sweet treat.', 'Be sure not to overmix the dough, or the bread may become tough.', 'Fold the chocolate chips into the dough gently to prevent them from sinking to the bottom.', 'Serve warm with butter and a cups of tea for a cozy snack or breakfast.', 7.0, 40.0, 30.0, 'Ireland', 'http://fakephotolink.com/chocolate_chip_irish_soda_bread.jpg', 'Chocolate Chip Irish Soda Bread', 10, 30, 1);
+('Chocolate Chip Irish Soda Bread', 'Pastry', 2, 'Chocolate chip Irish soda bread is a delicious twist on the traditional Irish soda bread. It\'s quick and easy to make, with no yeast required, and is loaded with chocolate chips for a sweet treat.', 'Be sure not to overmix the dough, or the bread may become tough.', 'Fold the chocolate chips into the dough gently to prevent them from sinking to the bottom.', 'Serve warm with butter and a cups of tea for a cozy snack or breakfast.', 7.0, 40.0, 30.0, 'Ireland', 'http://fakephotolink.com/chocolate_chip_irish_soda_bread.jpg', 'Chocolate Chip Irish Soda Bread', 10, 30, 2);
 
 INSERT INTO requires_eq (recipe_name, eq_name, quantity)
 VALUES 
@@ -4953,7 +4951,7 @@ VALUES
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
-('Buckwheat Carrot and Onion', 'Buckwheat Groats', 200, NULL),
+('Buckwheat Carrot and Onion', 'Buckwheat Groats', 2, NULL),
 ('Buckwheat Carrot and Onion', 'Carrots', 2, NULL),
 ('Buckwheat Carrot and Onion', 'Onion', 1, NULL),
 ('Buckwheat Carrot and Onion', 'Olive Oil', 30, NULL),
@@ -5499,8 +5497,8 @@ VALUES
 ('Thai Veggie Soup', 'Red Bell Pepper', 100, NULL),
 ('Thai Veggie Soup', 'Zucchini', 100, NULL),
 ('Thai Veggie Soup', 'Thai Red Curry Paste', 15, NULL),
-('Thai Veggie Soup', 'Coconut Milk', 200, NULL),
-('Thai Veggie Soup', 'Vegetable Broth', 500, NULL),
+('Thai Veggie Soup', 'Coconut Milk', 1, NULL),
+('Thai Veggie Soup', 'Vegetable Broth', 2, NULL),
 ('Thai Veggie Soup', 'Lime', 1, NULL),
 ('Thai Veggie Soup', 'Salt', 3, NULL),
 ('Thai Veggie Soup', 'Black Pepper', 3, NULL),
@@ -5671,7 +5669,7 @@ INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
 ('Quinoa Brussels Sweet Potato Salad', 'Quinoa', 150, NULL),
 ('Quinoa Brussels Sweet Potato Salad', 'Sweet Potato', 300, NULL),
-('Quinoa Brussels Sweet Potato Salad', 'Brussels Sprouts', 200, NULL),
+('Quinoa Brussels Sweet Potato Salad', 'Brussels Sprouts', 2, NULL),
 ('Quinoa Brussels Sweet Potato Salad', 'Olive Oil', 45, NULL),
 ('Quinoa Brussels Sweet Potato Salad', 'Apple Cider Vinegar', 30, NULL),
 ('Quinoa Brussels Sweet Potato Salad', 'Maple Syrup', 15, NULL),
@@ -7233,4 +7231,3 @@ call create_season();
 call create_season();
 call create_season();
 call create_season();
-
