@@ -46,6 +46,8 @@ CREATE TABLE tags (
     PRIMARY KEY (recipe_name,tag_name)
 );
 
+CREATE INDEX get_tags ON tags (recipe_name);
+
 CREATE TABLE thematic_section (
     sec_name VARCHAR(50),
     sec_desc VARCHAR(200),
@@ -76,6 +78,8 @@ CREATE TABLE requires_eq (
     FOREIGN KEY (eq_name) REFERENCES equipment(eq_name),
     PRIMARY KEY (recipe_name,eq_name)
 );
+
+CREATE INDEX get_equipment ON requires_eq (recipe_name);
 
 CREATE TABLE food_groups (
     group_name VARCHAR(80),
