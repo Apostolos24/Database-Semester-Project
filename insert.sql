@@ -182,7 +182,7 @@ VALUES
 ('Chocolate Chip Cookies', 'Mixing Bowl', 1),
 ('Chocolate Chip Cookies', 'Baking Sheet', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Butter', 102.0, 0, 'Milk, Eggs, and Their Products', 'gr'),
 ('Brown Sugar', 380.0, 1, 'Sweeteners', 'gr'),
 ('Granulated Sugar', 387.0, 1, 'Sweeteners', 'gr'),
@@ -242,7 +242,7 @@ VALUES
 ('Jerk Chicken', 'Measuring Spoons', 1),
 ('Jerk Chicken', 'Knife', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Chicken Thighs', 245.0, 0, 'Meat and Meat Products', 'gr'),
 ('Scotch Bonnet Peppers', 30.0, 1, 'Herbs and Essential Oils', 'unit'),
 ('Green Onions', 32.0, 0, 'Herbs and Essential Oils', 'unit'),
@@ -300,7 +300,7 @@ VALUES
 ('Pasta Salad', 'Knife', 1),
 ('Pasta Salad', 'Cutting Board', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Pasta', 131.0, 0, 'Cereals and Cereal Products', 'gr'),
 ('Cherry Tomatoes', 18.0, 1, 'Various Plant-based Foods', 'unit'),
 ('Cucumber', 16.0, 1, 'Various Plant-based Foods', 'unit'),
@@ -364,7 +364,7 @@ VALUES
 ('Lasagna', 'Cutting Board', 1),
 ('Lasagna', 'Grater', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Lasagna Noodles', 131.0, 0, 'Cereals and Cereal Products', 'gr'),
 ('Ground Beef', 250.0, 0, 'Meat and Meat Products', 'gr'),
 ('Onion', 40.0, 0, 'Various Plant-based Foods', 'gr'),
@@ -436,7 +436,7 @@ VALUES
 ('Hearty Pancakes', 'Measuring Cups', 1),
 ('Hearty Pancakes', 'Measuring Spoons', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Whole Wheat Flour', 364.0, 0, 'Cereals and Cereal Products', 'gr'),
 ('Oats', 389.0, 0, 'Cereals and Cereal Products', 'gr'),
 ('Baking Powder', 2.0, 0, 'Others', 'tsp'),
@@ -492,7 +492,7 @@ VALUES
 ('Summer Garden Couscous Salad', 'Measuring Spoons', 1),
 ('Summer Garden Couscous Salad', 'Strainer', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Couscous', 376.0, 0, 'Cereals and Cereal Products', 'gr'),
 ('Water', 0.0, 0, 'Others', 'ml'),
 ('Lemon Juice', 4.0, 0, 'Coffee, Tea, and Their Products', 'tbsp'),
@@ -552,7 +552,7 @@ VALUES
 ('Squash Corn Chowder', 'Measuring Spoons', 1),
 ('Squash Corn Chowder', 'Immersion Blender', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Butternut Squash', 45.0, 1, 'Various Plant-based Foods', 'gr'),
 ('Sweet Corn', 86.0, 1, 'Various Plant-based Foods', 'gr'),
 ('Celery', 6.0, 1, 'Various Plant-based Foods', NULL),
@@ -560,8 +560,6 @@ INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_nam
 ('Potato', 77.0, 1, 'Various Plant-based Foods', 'gr'),
 ('Vegetable Broth', 3.0, 0, 'Others', 'cups'),
 ('Bay Leaf', 0.0, 0, 'Herbs and Essential Oils', NULL),
-('Thyme', 1.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp'),
 ('Heavy Cream', 345.0, 0, 'Milk, Eggs, and Their Products', 'ml');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
@@ -615,13 +613,11 @@ VALUES
 ('White Beans, Tomatoes, and Spinach', 'Measuring Cups', 1),
 ('White Beans, Tomatoes, and Spinach', 'Measuring Spoons', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('White Beans', 339.0, 1, 'Various Plant-based Foods', 'gr'),
 ('Tomatoes', 18.0, 1, 'Various Plant-based Foods', 'gr'),
 ('Spinach', 23.0, 1, 'Various Plant-based Foods', 'gr'),
-('Vegetable Broth', 3.0, 0, 'Others', 'cups'),
-('Dried Thyme', 0.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp');
+('Dried Thyme', 0.0, 0, 'Herbs and Essential Oils', 'tsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -669,14 +665,9 @@ VALUES
 ('Spaghetti', 'Measuring Cups', 1),
 ('Spaghetti', 'Measuring Spoons', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Spaghetti Noodles', 371.0, 0, 'Cereals and Cereal Products', 'gr'),
-('Tomatoes', 18.0, 1, 'Various Plant-based Foods', 'gr'),
-('Tomato Paste', 82.0, 0, 'Various Plant-based Foods', 'ml'),
-('Dried Basil', 0.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Dried Oregano', 0.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp'),
-('Parmesan Cheese', 420.0, 0, 'Milk, Eggs, and Their Products', 'gr');
+('Dried Basil', 0.0, 0, 'Herbs and Essential Oils', 'tsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -726,12 +717,8 @@ VALUES
 ('Scones', 'Measuring Cups', 1),
 ('Scones', 'Measuring Spoons', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Granulated Sugar', 387.0, 0, 'Sweeteners', 'gr'),
-('Baking Powder', 2.0, 0, 'Others', 'tsp'),
-('Unsalted Butter', 102.0, 0, 'Milk, Eggs, and Their Products', 'gr'),
-('Heavy Cream', 345.0, 0, 'Milk, Eggs, and Their Products', 'ml'),
-('Vanilla Extract', 288.0, 0, 'Flavorings', 'tsp');
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
+('Unsalted Butter', 102.0, 0, 'Milk, Eggs, and Their Products', 'gr');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -784,7 +771,7 @@ VALUES
 ('Pizza', 'Measuring Cups', 1),
 ('Pizza', 'Measuring Spoons', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Yeast', 105.0, 0, 'Various Plant-based Foods', 'gr'),
 ('Warm Water', 0.0, 0, 'Others', 'ml'),
 ('Pizza Sauce', 32.0, 0, 'Various Plant-based Foods', 'ml'),
@@ -843,15 +830,12 @@ VALUES
 ('Stir-Fry', 'Measuring Cups', 1),
 ('Stir-Fry', 'Measuring Spoons', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Protein (e.g., chicken, tofu, shrimp)', 200.0, 1, 'Meat and Meat Products', 'gr'),
 ('Vegetables (e.g., bell peppers, broccoli, carrots)', 50.0, 1, 'Various Plant-based Foods', 'gr'),
 ('Rice or Noodles', 130.0, 0, 'Cereals and Cereal Products', 'gr'),
-('Soy Sauce', 8.0, 0, 'Various Plant-based Foods', 'tbsp'),
 ('Sesame Oil', 884.0, 0, 'Fats and Oils', 'tbsp'),
-('Ginger', 18.0, 0, 'Herbs and Essential Oils', 'gr'),
-('Cornstarch', 30.0, 0, 'Various Plant-based Foods', 'tbsp'),
-('Water', 0.0, 0, 'Others', 'tbsp');
+('Cornstarch', 30.0, 0, 'Various Plant-based Foods', 'tbsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -902,15 +886,8 @@ VALUES
 ('Rustic Italian Tortellini Soup', 'Measuring Cups', 1),
 ('Rustic Italian Tortellini Soup', 'Measuring Spoons', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Cheese Tortellini', 100.0, 0, 'Cereals and Cereal Products', 'gr'),
-('Tomatoes', 18.0, 1, 'Various Plant-based Foods', 'gr'),
-('Spinach', 23.0, 1, 'Various Plant-based Foods', 'gr'),
-('Vegetable Broth', 3.0, 0, 'Others', 'cups'),
-('Dried Basil', 0.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Dried Oregano', 0.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp'),
-('Heavy Cream', 345.0, 0, 'Milk, Eggs, and Their Products', 'ml');
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
+('Cheese Tortellini', 100.0, 0, 'Cereals and Cereal Products', 'gr');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -962,16 +939,10 @@ VALUES
 ('Swedish Meatballs', 'Measuring Cups', 1),
 ('Swedish Meatballs', 'Measuring Spoons', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Ground Beef', 250.0, 0, 'Meat and Meat Products', 'gr'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Ground Pork', 310.0, 0, 'Meat and Meat Products', 'gr'),
 ('Breadcrumbs', 400.0, 0, 'Cereals and Cereal Products', 'gr'),
-('Allspice', 263.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Nutmeg', 357.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp'),
-('Butter', 717.0, 0, 'Fats and Oils', 'gr'),
-('Beef Broth', 2.0, 0, 'Others', 'cups'),
-('Heavy Cream', 345.0, 0, 'Milk, Eggs, and Their Products', 'ml');
+('Beef Broth', 2.0, 0, 'Others', 'cups');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -1026,16 +997,11 @@ VALUES
 ('Barley Beef Skillet', 'Measuring Cups', 1),
 ('Barley Beef Skillet', 'Measuring Spoons', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Beef (e.g., stew meat, ground beef)', 250.0, 1, 'Meat and Meat Products', 'gr'),
 ('Pearl Barley', 123.0, 0, 'Cereals and Cereal Products', 'gr'),
 ('Carrots', 41.0, 1, 'Various Plant-based Foods', 'gr'),
-('Celery', 16.0, 1, 'Various Plant-based Foods', 'gr'),
-('Beef Broth', 3.0, 0, 'Others', 'cups'),
-('Tomato Paste', 82.0, 0, 'Various Plant-based Foods', 'ml'),
-('Worcestershire Sauce', 66.0, 0, 'Various Plant-based Foods', 'tbsp'),
-('Dried Thyme', 0.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp');
+('Worcestershire Sauce', 66.0, 0, 'Various Plant-based Foods', 'tbsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -1087,16 +1053,12 @@ VALUES
 ('Southwest Beef & Rice Skillet', 'Measuring Cups', 1),
 ('Southwest Beef & Rice Skillet', 'Measuring Spoons', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Ground Beef', 250.0, 0, 'Meat and Meat Products', 'gr'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Rice', 130.0, 0, 'Cereals and Cereal Products', 'gr'),
 ('Black Beans', 127.0, 0, 'Legumes and Legume Products', 'gr'),
 ('Corn', 86.0, 0, 'Various Plant-based Foods', 'gr'),
-('Bell Pepper', 25.0, 1, 'Various Plant-based Foods', 'gr'),
 ('Chili Powder', 0.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Cumin', 0.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp'),
-('Olive Oil', 884.0, 0, 'Fats and Oils', 'tbsp');
+('Cumin', 0.0, 0, 'Herbs and Essential Oils', 'tsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -1149,16 +1111,11 @@ VALUES
 ('Glazed Pork Chops with Corn Bread Dressing', 'Measuring Cups', 1),
 ('Glazed Pork Chops with Corn Bread Dressing', 'Measuring Spoons', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Pork Chops', 250.0, 0, 'Meat and Meat Products', 'gr'),
 ('Cornbread', 250.0, 0, 'Cereals and Cereal Products', 'gr'),
-('Celery', 16.0, 1, 'Various Plant-based Foods', 'gr'),
-('Chicken Broth', 2.0, 0, 'Others', 'cups'),
-('Butter', 717.0, 0, 'Fats and Oils', 'gr'),
-('Brown Sugar', 380.0, 0, 'Sweeteners', 'gr'),
 ('Apple Cider Vinegar', 22.0, 0, 'Others', 'ml'),
-('Dijon Mustard', 128.0, 0, 'Others', 'tbsp'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp');
+('Chicken Broth', 17.0, 0, 'Others', 'ml');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -1211,14 +1168,9 @@ VALUES
 ('Fried Rice', 'Measuring Cups', 1),
 ('Fried Rice', 'Measuring Spoons', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Rice', 130.0, 0, 'Cereals and Cereal Products', 'gr'),
-('Carrots', 41.0, 1, 'Various Plant-based Foods', 'gr'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Peas', 67.0, 0, 'Legumes and Legume Products', 'gr'),
-('Eggs', 72.0, 0, 'Milk, Eggs, and Their Products', ''),
-('Soy Sauce', 8.0, 0, 'Others', 'tbsp'),
-('Sesame Oil', 120.0, 0, 'Fats and Oils', 'tsp'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp'),
+('Eggs', 72.0, 0, 'Milk, Eggs, and Their Products', NULL),
 ('Vegetable Oil', 884.0, 0, 'Fats and Oils', 'tbsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
@@ -1271,15 +1223,10 @@ VALUES
 ('Zesty Sausage & Beans', 'Measuring Cups', 1),
 ('Zesty Sausage & Beans', 'Measuring Spoons', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Italian Sausage', 300.0, 0, 'Meat and Meat Products', 'gr'),
 ('Canned Diced Tomatoes', 32.0, 0, 'Various Plant-based Foods', 'ml'),
-('White Beans (e.g., cannellini)', 127.0, 0, 'Legumes and Legume Products', 'gr'),
-('Chicken Broth', 2.0, 0, 'Others', 'cups'),
-('Dried Oregano', 0.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Dried Basil', 0.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp'),
-('Olive Oil', 884.0, 0, 'Fats and Oils', 'tbsp');
+('White Beans (e.g., cannellini)', 127.0, 0, 'Legumes and Legume Products', 'gr');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -1329,14 +1276,9 @@ VALUES
 ('Prosciutto Pasta Toss', 'Measuring Spoons', 1),
 ('Prosciutto Pasta Toss', 'Colander', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Pasta', 130.0, 0, 'Cereals and Cereal Products', 'gr'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Prosciutto', 195.0, 0, 'Meat and Meat Products', 'gr'),
-('Frozen Peas', 68.0, 0, 'Various Plant-based Foods', 'gr'),
-('Butter', 717.0, 0, 'Fats and Oils', 'gr'),
-('Chicken Broth', 2.0, 0, 'Others', 'cups'),
-('Lemon Juice', 4.0, 0, 'Various Plant-based Foods', 'tbsp'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp');
+('Frozen Peas', 68.0, 0, 'Various Plant-based Foods', 'gr');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -1386,16 +1328,11 @@ VALUES
 ('Cashew Chicken with Noodles', 'Measuring Spoons', 1),
 ('Cashew Chicken with Noodles', 'Pot', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Chicken Breast', 165.0, 0, 'Meat and Meat Products', 'gr'),
 ('Noodles', 130.0, 0, 'Cereals and Cereal Products', 'gr'),
 ('Cashews', 155.0, 1, 'Fats and Oils', 'gr'),
-('Soy Sauce', 8.0, 0, 'Others', 'tbsp'),
-('Honey', 304.0, 0, 'Sweeteners', 'tbsp'),
-('Sesame Oil', 120.0, 0, 'Fats and Oils', 'tsp'),
-('Rice Vinegar', 1.0, 0, 'Others', 'tbsp'),
-('Cornstarch', 381.0, 0, 'Others', 'tbsp'),
-('Vegetable Oil', 884.0, 0, 'Fats and Oils', 'tbsp');
+('Rice Vinegar', 1.0, 0, 'Others', 'tbsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -1448,20 +1385,11 @@ VALUES
 ('Herb Chicken with Honey Butter', 'Measuring Cups', 1),
 ('Herb Chicken with Honey Butter', 'Measuring Spoons', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Chicken Breast', 165.0, 0, 'Meat and Meat Products', 'gr'),
-('Butter', 717.0, 0, 'Fats and Oils', 'gr'),
-('Honey', 304.0, 0, 'Sweeteners', 'tbsp'),
-('Fresh Herbs (e.g., parsley, thyme, rosemary)', 1.0, 0, 'Herbs and Essential Oils', 'tbsp'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp'),
-('Vegetable Oil', 884.0, 0, 'Fats and Oils', 'tbsp');
-
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
 ('Herb Chicken with Honey Butter', 'Chicken Breast', 400, NULL),
 ('Herb Chicken with Honey Butter', 'Butter', 60, NULL),
 ('Herb Chicken with Honey Butter', 'Honey', 30, NULL),
-('Herb Chicken with Honey Butter', 'Fresh Herbs (e.g., parsley, thyme, rosemary)', 30, NULL),
 ('Herb Chicken with Honey Butter', 'Salt', 1, NULL),
 ('Herb Chicken with Honey Butter', 'Black Pepper', 1, NULL),
 ('Herb Chicken with Honey Butter', 'Vegetable Oil', 30, NULL);
@@ -1501,12 +1429,9 @@ VALUES
 ('French Toast', 'Measuring Spoons', 1),
 ('French Toast', 'Spatula', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Bread', 130.0, 0, 'Cereals and Cereal Products', 'slice'),
-('Eggs', 72.0, 0, 'Milk, Eggs, and Their Products', ''),
-('Cinnamon', 6.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Butter', 717.0, 0, 'Fats and Oils', 'tbsp'),
-('Maple Syrup', 52.0, 0, 'Sweeteners', 'ml');
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
+('Bread', 130.0, 0, 'Cereals and Cereal Products', 'unit'),
+('Cinnamon', 6.0, 0, 'Herbs and Essential Oils', 'tsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -1552,11 +1477,8 @@ VALUES
 ('Swedish Pancakes', 'Measuring Spoons', 1),
 ('Swedish Pancakes', 'Spatula', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Eggs', 72.0, 0, 'Milk, Eggs, and Their Products', ''),
-('Flour', 364.0, 0, 'Cereals and Cereal Products', 'gr'),
-('Sugar', 387.0, 0, 'Sweeteners', 'gr'),
-('Butter', 717.0, 0, 'Fats and Oils', 'tbsp');
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
+('Flour', 364.0, 0, 'Cereals and Cereal Products', 'gr');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -1603,12 +1525,9 @@ VALUES
 ('Baked Cheddar Eggs & Potatoes', 'Measuring Cups', 1),
 ('Baked Cheddar Eggs & Potatoes', 'Measuring Spoons', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Potatoes', 77.0, 0, 'Various Plant-based Foods', 'gr'),
-('Eggs', 72.0, 0, 'Milk, Eggs, and Their Products', ''),
-('Cheddar Cheese', 402.0, 0, 'Meat and Meat Products', 'gr'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp'),
-('Butter', 717.0, 0, 'Fats and Oils', 'tbsp');
+('Cheddar Cheese', 402.0, 0, 'Meat and Meat Products', 'gr');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -1656,18 +1575,9 @@ VALUES
 ('Baked Mostaccioli', 'Measuring Spoons', 1),
 ('Baked Mostaccioli', 'Spatula', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Mostaccioli Pasta', 131.0, 0, 'Cereals and Cereal Products', 'gr'),
-('Ground Beef', 250.0, 0, 'Meat and Meat Products', 'gr'),
-('Italian Sausage', 450.0, 0, 'Meat and Meat Products', 'gr'),
-('Onion', 44.0, 0, 'Various Plant-based Foods', 'gr'),
-('Canned Crushed Tomatoes', 32.0, 0, 'Various Plant-based Foods', 'ml'),
-('Tomato Paste', 82.0, 0, 'Various Plant-based Foods', 'gr'),
-('Dried Oregano', 0.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Dried Basil', 0.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp'),
-('Mozzarella Cheese', 300.0, 0, 'Meat and Meat Products', 'gr'),
-('Parmesan Cheese', 431.0, 0, 'Meat and Meat Products', 'gr');
+('Canned Crushed Tomatoes', 32.0, 0, 'Various Plant-based Foods', 'ml');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -1723,15 +1633,11 @@ VALUES
 ('Ravioli with Snap Peas', 'Measuring Spoons', 1),
 ('Ravioli with Snap Peas', 'Spatula', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Ravioli', 168.0, 0, 'Cereals and Cereal Products', 'gr'),
-('Snap Peas', 42.0, 0, 'Various Plant-based Foods', 'gr'),
-('Butter', 717.0, 0, 'Fats and Oils', 'tbsp'),
-('Parmesan Cheese', 431.0, 0, 'Meat and Meat Products', 'gr'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp');
+('Snap Peas', 42.0, 0, 'Various Plant-based Foods', 'gr');
 
-INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
-VALUES 
+INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity) VALUES 
 ('Ravioli with Snap Peas', 'Ravioli', 400, NULL),
 ('Ravioli with Snap Peas', 'Snap Peas', 200, NULL),
 ('Ravioli with Snap Peas', 'Garlic', 2, NULL),
@@ -1766,8 +1672,7 @@ INSERT INTO recipes (recipe_name, recipe_type, recipe_difficulty, recipe_desc, r
 VALUES 
 ('Cloverleaf Rolls','Cooking', 3, 'Cloverleaf Rolls are soft, fluffy dinner rolls that are perfect for any occasion. They get their name from their unique shape, which resembles a cloverleaf. These rolls are easy to make and are sure to impress your family and friends.', 'Make sure the yeast is activated and frothy before adding it to the flour mixture.', 'Knead the dough until it is smooth and elastic for the best texture.', 'Brush the rolls with melted butter after baking for extra flavor and shine.', 5.0, 20.0, 15.0, 'Norway', 'http://fakephotolink.com/cloverleaf_rolls.jpg', 'Cloverleaf Rolls on a baking tray', 5, 20, 1);
 
-INSERT INTO requires_eq (recipe_name, eq_name, quantity)
-VALUES 
+INSERT INTO requires_eq (recipe_name, eq_name, quantity) VALUES 
 ('Cloverleaf Rolls', 'Mixing Bowl', 1),
 ('Cloverleaf Rolls', 'Baking Sheet', 1),
 ('Cloverleaf Rolls', 'Measuring Cups', 1),
@@ -1775,12 +1680,8 @@ VALUES
 ('Cloverleaf Rolls', 'Spatula', 1),
 ('Cloverleaf Rolls', 'Pastry Brush', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Warm Water', 0.0, 0, 'Others', 'ml'),
-('Active Dry Yeast', 0.0, 0, 'Others', 'tbsp'),
-('Granulated Sugar', 387.0, 0, 'Sweeteners', 'gr'),
-('Butter', 717.0, 0, 'Fats and Oils', 'tbsp'),
-('All-Purpose Flour', 364.0, 0, 'Cereals and Cereal Products', 'gr');
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
+('Active Dry Yeast', 0.0, 0, 'Others', 'tbsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -1831,13 +1732,8 @@ VALUES
 ('Greek Yogurt and Honey Blueberry Muffins', 'Measuring Spoons', 1),
 ('Greek Yogurt and Honey Blueberry Muffins', 'Spatula', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Baking Powder', 0.0, 0, 'Others', 'tsp'),
-('Baking Soda', 0.0, 0, 'Others', 'tsp'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Greek Yogurt', 59.0, 0, 'Milk, Eggs, and Their Products', 'ml'),
-('Honey', 304.0, 0, 'Sweeteners', 'ml'),
-('Butter', 717.0, 0, 'Fats and Oils', 'tbsp'),
-('Vanilla Extract', 288.0, 0, 'Other', 'tsp'),
 ('Blueberries', 85.0, 0, 'Various Plant-based Foods', 'gr');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
@@ -1891,14 +1787,8 @@ VALUES
 ('Whole Grain Waffles', 'Measuring Spoons', 1),
 ('Whole Grain Waffles', 'Spatula', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Whole Wheat Flour', 340.0, 0, 'Cereals and Cereal Products', 'gr'),
-('Baking Powder', 0.0, 0, 'Others', 'tsp'),
-('Baking Soda', 0.0, 0, 'Others', 'tsp'),
-('Honey', 304.0, 0, 'Sweeteners', 'ml'),
-('Buttermilk', 98.0, 0, 'Milk, Eggs, and Their Products', 'ml'),
-('Butter', 717.0, 0, 'Fats and Oils', 'tbsp'),
-('Vanilla Extract', 288.0, 0, 'Others', 'tsp');
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
+('Buttermilk', 98.0, 0, 'Milk, Eggs, and Their Products', 'ml');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -1947,25 +1837,12 @@ VALUES
 ('Lemon Bars', 'Measuring Spoons', 1),
 ('Lemon Bars', 'Spatula', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Powdered Sugar', 389.0, 0, 'Sweeteners', 'gr'),
-('Butter', 717.0, 0, 'Fats and Oils', 'tbsp'),
-('Granulated Sugar', 387.0, 0, 'Sweeteners', 'gr'),
-('Lemon Juice', 4.0, 0, 'Various Plant-based Foods', 'ml'),
-('Lemon Zest', 3.0, 0, 'Various Plant-based Foods', 'tbsp'),
-('Baking Powder', 0.0, 0, 'Others', 'tsp');
+('Lemon Zest', 3.0, 0, 'Various Plant-based Foods', 'tbsp');
 
-INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
-VALUES 
-('Lemon Bars', 'All-Purpose Flour', 200, NULL),
-('Lemon Bars', 'Powdered Sugar', 50, NULL),
-('Lemon Bars', 'Butter', 115, NULL),
-('Lemon Bars', 'Salt', 1, NULL),
-('Lemon Bars', 'Egg', 2, NULL),
-('Lemon Bars', 'Granulated Sugar', 200, NULL),
-('Lemon Bars', 'Lemon Juice', 120, NULL),
-('Lemon Bars', 'Lemon Zest', 2, NULL),
-('Lemon Bars', 'Baking Powder', 2, NULL);
+INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity) VALUES
+('Lemon Bars', 'All-Purpose Flour', 200, NULL);
 
 INSERT INTO main_ingr (recipe_name, ingr_name)
 VALUES 
@@ -2005,12 +1882,9 @@ VALUES
 ('Qahaq Cookies', 'Measuring Spoons', 1),
 ('Qahaq Cookies', 'Rolling Pin', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Butter', 717.0, 0, 'Fats and Oils', 'tbsp'),
-('Granulated Sugar', 387.0, 0, 'Sweeteners', 'gr'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Rosewater', 2.0, 0, 'Herbs and Essential Oils', 'tbsp'),
-('Ground Cardamom', 0.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('All-Purpose Flour', 364.0, 0, 'Cereals and Cereal Products', 'gr');
+('Ground Cardamom', 0.0, 0, 'Herbs and Essential Oils', 'tsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -2060,11 +1934,7 @@ VALUES
 ('Blondies with Nutella', 'Measuring Spoons', 1),
 ('Blondies with Nutella', 'Spatula', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Butter', 717.0, 0, 'Fats and Oils', 'tbsp'),
-('Brown Sugar', 377.0, 0, 'Sweeteners', 'gr'),
-('Vanilla Extract', 288.0, 0, 'Others', 'tsp'),
-('Baking Powder', 0.0, 0, 'Others', 'tsp'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Nutella', 80.0, 0, 'Sweeteners', 'tbsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
@@ -2116,15 +1986,11 @@ VALUES
 ('Hot Chocolate', 'Measuring Spoons', 1),
 ('Hot Chocolate', 'Mug', 2);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Cocoa Powder', 228.0, 0, 'Sweeteners', 'tbsp'),
-('Granulated Sugar', 387.0, 0, 'Sweeteners', 'gr'),
-('Milk', 148.0, 0, 'Milk, Eggs, and Their Products', 'ml'),
-('Vanilla Extract', 288.0, 0, 'Others', 'tsp'),
-('Salt', 0.0, 0, 'Others', 'pinch'),
 ('Whipped Cream', 52.0, 0, 'Sweeteners', 'tbsp'),
 ('Mini Marshmallows', 100.0, 0, 'Sweeteners', 'tbsp'),
-('Ground Cinnamon', 6.0, 0, 'Herbs and Essential Oils', 'pinch');
+('Ground Cinnamon', 6.0, 0, 'Herbs and Essential Oils', NULL);
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -2167,12 +2033,8 @@ VALUES
 ('Chocolate Mousse', 'Spatula', 1),
 ('Chocolate Mousse', 'Glass Bowls', 4);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Semi-Sweet Chocolate', 525.0, 0, 'Sweeteners', 'gr'),
-('Heavy Cream', 414.0, 0, 'Milk, Eggs, and Their Products', 'ml'),
-('Vanilla Extract', 288.0, 0, 'Others', 'tsp'),
-('Granulated Sugar', 387.0, 0, 'Sweeteners', 'gr'),
-('Water', 0.0, 0, 'Water and Water-Based Drinks', 'tbsp');
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
+('Semi-Sweet Chocolate', 525.0, 0, 'Sweeteners', 'gr');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -2219,15 +2081,8 @@ VALUES
 ('S\'mores Cookie Bars', 'Measuring Spoons', 1),
 ('S\'mores Cookie Bars', 'Spatula', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Graham Cracker Crumbs', 108.0, 0, 'Cereals and Cereal Products', 'gr'),
-('Butter', 717.0, 0, 'Fats and Oils', 'tbsp'),
-('Granulated Sugar', 387.0, 0, 'Sweeteners', 'gr'),
-('Brown Sugar', 377.0, 0, 'Sweeteners', 'gr'),
-('Vanilla Extract', 288.0, 0, 'Others', 'tsp'),
-('Baking Powder', 0.0, 0, 'Others', 'tsp'),
-('Chocolate Chips', 805.0, 0, 'Sweeteners', 'gr'),
-('Mini Marshmallows', 100.0, 0, 'Sweeteners', 'gr');
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
+('Graham Cracker Crumbs', 108.0, 0, 'Cereals and Cereal Products', 'gr');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -2282,18 +2137,11 @@ VALUES
 ('Orange Chicken', 'Skillet', 1),
 ('Orange Chicken', 'Tongs', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Chicken Breast', 165.0, 0, 'Meat and Meat Products', 'gr'),
-('Soy Sauce', 8.0, 0, 'Legumes and Legume Products', 'tbsp'),
-('Cornstarch', 381.0, 0, 'Cereals and Cereal Products', 'tbsp'),
-('Vegetable Oil', 884.0, 0, 'Fats and Oils', 'tbsp'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Orange Juice', 39.0, 0, 'Various Plant-based Foods', 'ml'),
 ('Orange Zest', 6.0, 0, 'Various Plant-based Foods', 'tsp'),
-('Brown Sugar', 387.0, 0, 'Sweeteners', 'gr'),
-('Rice Vinegar', 43.0, 0, 'Fats and Oils', 'tbsp'),
-('Ginger', 3.0, 0, 'Herbs and Essential Oils', 'tsp'),
 ('Red Chili Flakes', 8.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Green Onion', 32.0, 0, 'Various Plant-based Foods', 'stalk');
+('Green Onion', 32.0, 0, 'Various Plant-based Foods', NULL);
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -2344,13 +2192,13 @@ VALUES
 ('Tostadas', 'Baking Sheet', 1),
 ('Tostadas', 'Mixing Bowl', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Corn Tortillas', 52.0, 0, 'Cereals and Cereal Products', 'piece'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
+('Corn Tortillas', 52.0, 0, 'Cereals and Cereal Products', NULL),
 ('Refried Beans', 91.0, 0, 'Legumes and Legume Products', 'cups'),
 ('Lettuce', 5.0, 0, 'Various Plant-based Foods', 'cups'),
-('Tomato', 22.0, 0, 'Various Plant-based Foods', 'piece'),
+('Tomato', 22.0, 0, 'Various Plant-based Foods', NULL),
 ('Cheese', 402.0, 0, 'Milk, Eggs, and Their Products', 'cups'),
-('Avocado', 234.0, 0, 'Various Plant-based Foods', 'piece');
+('Avocado', 234.0, 0, 'Various Plant-based Foods', NULL);
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -2392,20 +2240,11 @@ VALUES
 ('Black Bean Stuffed Sweet Potatoes', 'Knife', 1),
 ('Black Bean Stuffed Sweet Potatoes', 'Saucepan', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Sweet Potatoes', 90.0, 0, 'Various Plant-based Foods', 'piece'),
-('Black Beans', 241.0, 0, 'Legumes and Legume Products', 'cups'),
-('Corn', 132.0, 0, 'Various Plant-based Foods', 'cups'),
-('Tomato', 22.0, 0, 'Various Plant-based Foods', 'piece'),
-('Cumin', 8.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Chili Powder', 6.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Garlic Powder', 10.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Salt', 0.0, 0, 'Others', 'pinch'),
-('Black Pepper', 0.0, 0, 'Herbs and Essential Oils', 'pinch'),
-('Olive Oil', 119.0, 0, 'Fats and Oils', 'tbsp');
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
+('Sweet Potatoes', 90.0, 0, 'Various Plant-based Foods', NULL),
+('Garlic Powder', 10.0, 0, 'Herbs and Essential Oils', 'tsp');
 
-INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
-VALUES 
+INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity) VALUES 
 ('Black Bean Stuffed Sweet Potatoes', 'Sweet Potatoes', 4, NULL),
 ('Black Bean Stuffed Sweet Potatoes', 'Black Beans', 2, NULL),
 ('Black Bean Stuffed Sweet Potatoes', 'Corn', 1, NULL),
@@ -2451,14 +2290,8 @@ VALUES
 ('Asian Shredded Beef', 'Cutting Board', 1),
 ('Asian Shredded Beef', 'Skillet', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Beef Chuck Roast', 250.0, 0, 'Meat and Meat Products', 'gr'),
-('Soy Sauce', 8.0, 0, 'Legumes and Legume Products', 'tbsp'),
-('Brown Sugar', 387.0, 0, 'Sweeteners', 'tbsp'),
-('Sesame Oil', 40.0, 0, 'Fats and Oils', 'tbsp'),
-('Ginger', 3.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Rice Vinegar', 43.0, 0, 'Fats and Oils', 'tbsp'),
-('Green Onion', 32.0, 0, 'Various Plant-based Foods', 'stalk'),
 ('Sesame Seeds', 52.0, 0, 'Fats and Oils', 'tbsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
@@ -2509,12 +2342,9 @@ VALUES
 ('Capellini with Sausage, Spinach, and Jalapeno', 'Cutting Board', 2),
 ('Capellini with Sausage, Spinach, and Jalapeno', 'Mixing Bowl', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Capellini Pasta', 210.0, 0, 'Cereals and Cereal Products', 'gr'),
-('Italian Sausage', 289.0, 0, 'Meat and Meat Products', 'gr'),
-('Spinach', 23.0, 0, 'Various Plant-based Foods', 'cups'),
-('Jalapeno', 4.0, 0, 'Various Plant-based Foods', 'unit'),
-('Parmesan Cheese', 110.0, 0, 'Milk, Eggs, and Their Products', 'tbsp');
+('Jalapeno', 4.0, 0, 'Various Plant-based Foods', 'unit');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -2559,12 +2389,9 @@ VALUES
 ('Crispy Chicken with Kale', 'Knife', 3),
 ('Crispy Chicken with Kale', 'Cutting Board', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Chicken Breasts', 165.0, 0, 'Meat and Meat Products', 'gr'),
-('Breadcrumbs', 400.0, 0, 'Cereals and Cereal Products', 'gr'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
+('Chicken Breasts', 100.0, 0, 'Meat and Meat Products', 'gr'),
 ('Kale', 33.0, 0, 'Various Plant-based Foods', 'cups'),
-('Olive Oil', 119.0, 0, 'Fats and Oils', 'tbsp'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp'),
 ('Lemon', 17.0, 0, 'Various Plant-based Foods', 'unit');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
@@ -2614,17 +2441,12 @@ VALUES
 ('Roast Chicken Grain Bowl', 'Cutting Board',2),
 ('Roast Chicken Grain Bowl', 'Skillet', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Chicken Breasts', 165.0, 0, 'Meat and Meat Products', 'gr'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Mixed Grains', 150.0, 0, 'Cereals and Cereal Products', 'gr'),
 ('Assorted Vegetables', 40.0, 0, 'Various Plant-based Foods', 'cups'),
-('Mixed Greens', 4.0, 0, 'Various Plant-based Foods', 'cups'),
-('Olive Oil', 119.0, 0, 'Fats and Oils', 'tbsp'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp'),
-('Lemon', 17.0, 0, 'Various Plant-based Foods', 'unit');
+('Mixed Greens', 4.0, 0, 'Various Plant-based Foods', 'cups');
 
-INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
-VALUES 
+INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity) VALUES 
 ('Roast Chicken Grain Bowl', 'Chicken Breasts', 400, NULL),
 ('Roast Chicken Grain Bowl', 'Mixed Grains', 200, NULL),
 ('Roast Chicken Grain Bowl', 'Assorted Vegetables', 1, NULL),
@@ -2669,13 +2491,8 @@ VALUES
 ('Chicken Thighs with Barley and Peas', 'Cutting Board', 2),
 ('Chicken Thighs with Barley and Peas', 'Mixing Spoon', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Chicken Thighs', 209.0, 0, 'Meat and Meat Products', 'gr'),
-('Barley', 123.0, 0, 'Cereals and Cereal Products', 'gr'),
-('Peas', 134.0, 0, 'Various Plant-based Foods', 'cups'),
-('Onion', 44.0, 0, 'Various Plant-based Foods', 'unit'),
-('Chicken Broth', 17.0, 0, 'Others', 'cups'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp');
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
+('Barley', 123.0, 0, 'Cereals and Cereal Products', 'gr');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -2724,17 +2541,10 @@ VALUES
 ('Rice Noodles with Meatballs and Bok Choy', 'Knife', 3),
 ('Rice Noodles with Meatballs and Bok Choy', 'Cutting Board', 2);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Rice Noodles', 192.0, 0, 'Cereals and Cereal Products', 'gr'),
 ('Ground Meat', 250.0, 0, 'Meat and Meat Products', 'gr'),
-('Bok Choy', 13.0, 0, 'Various Plant-based Foods', 'cups'),
-('Ginger', 18.0, 0, 'Various Plant-based Foods', 'tsp'),
-('Soy Sauce', 8.0, 0, 'Others', 'tbsp'),
-('Rice Vinegar', 4.0, 0, 'Others', 'tbsp'),
-('Brown Sugar', 380.0, 1, 'Sweeteners', 'tbsp'),
-('Sesame Oil', 120.0, 0, 'Fats and Oils', 'tbsp'),
-('Green Onions', 32.0, 0, 'Various Plant-based Foods', 'tbsp'),
-('Sesame Seeds', 52.0, 0, 'Fats and Oils', 'tbsp');
+('Bok Choy', 13.0, 0, 'Various Plant-based Foods', 'cups');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -2786,14 +2596,9 @@ VALUES
 ('Paprika Pork with Roasted Potatoes and Dill Cream', 'Knife', 2),
 ('Paprika Pork with Roasted Potatoes and Dill Cream', 'Cutting Board', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Pork Chops', 250.0, 0, 'Meat and Meat Products', 'gr'),
-('Potatoes', 163.0, 0, 'Various Plant-based Foods', 'cups'),
-('Greek Yogurt', 59.0, 0, 'Milk, Eggs, and Their Products', 'cups'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Fresh Dill', 7.0, 0, 'Various Plant-based Foods', 'tbsp'),
-('Paprika', 20.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Olive Oil', 119.0, 0, 'Fats and Oils', 'tbsp'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp');
+('Paprika', 20.0, 0, 'Herbs and Essential Oils', 'tsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -2841,13 +2646,8 @@ VALUES
 ('Chicken Cutlets with Carrot and Kale Salad', 'Knife', 1),
 ('Chicken Cutlets with Carrot and Kale Salad', 'Cutting Board', 2);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Chicken Cutlets', 165.0, 0, 'Meat and Meat Products', 'gr'),
-('Carrots', 41.0, 0, 'Various Plant-based Foods', 'cups'),
-('Kale', 33.0, 0, 'Various Plant-based Foods', 'cups'),
-('Lemon', 17.0, 0, 'Various Plant-based Foods', 'unit'),
-('Olive Oil', 119.0, 0, 'Fats and Oils', 'tbsp'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp'),
 ('White Wine Vinegar', 4.0, 0, 'Others', 'tbsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
@@ -2897,13 +2697,8 @@ VALUES
 ('Gnocchi and Sweet Potatoes', 'Knife', 1),
 ('Gnocchi and Sweet Potatoes', 'Cutting Board', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Gnocchi', 130.0, 0, 'Cereals and Cereal Products', 'gr'),
-('Sweet Potatoes', 86.0, 0, 'Various Plant-based Foods', 'cups'),
-('Spinach', 7.0, 0, 'Various Plant-based Foods', 'cups'),
-('Parmesan Cheese', 110.0, 0, 'Milk, Eggs, and Their Products', 'tbsp'),
-('Olive Oil', 119.0, 0, 'Fats and Oils', 'tbsp'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp');
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
+('Gnocchi', 130.0, 0, 'Cereals and Cereal Products', 'gr');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -2953,18 +2748,8 @@ VALUES
 ('Shepherd''s Pie', 'Knife', 1),
 ('Shepherd''s Pie', 'Cutting Board', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Ground Beef', 250.0, 0, 'Meat and Meat Products', 'gr'),
-('Onion', 44.0, 0, 'Various Plant-based Foods', 'unit'),
-('Carrots', 41.0, 0, 'Various Plant-based Foods', 'cups'),
-('Frozen Corn', 177.0, 0, 'Various Plant-based Foods', 'cups'),
-('Tomato Paste', 53.0, 0, 'Various Plant-based Foods', 'tbsp'),
-('Worcestershire Sauce', 3.0, 0, 'Others', 'tbsp'),
-('Beef Broth', 17.0, 0, 'Others', 'cups'),
-('Potatoes', 104.0, 0, 'Various Plant-based Foods', 'cups'),
-('Butter', 204.0, 0, 'Fats and Oils', 'tbsp'),
-('Milk', 8.0, 0, 'Milk, Eggs, and Their Products', 'cups'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp');
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
+('Frozen Corn', 177.0, 0, 'Various Plant-based Foods', 'cups');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -2973,7 +2758,7 @@ VALUES
 ('Shepherd''s Pie', 'Carrots', 1, NULL),
 ('Shepherd''s Pie', 'Frozen Corn', 1, NULL),
 ('Shepherd''s Pie', 'Garlic', 2,NULL),
-('Shepherd''s Pie', 'Tomato Paste', 2,NULL),
+('Shepherd''s Pie', 'Tomato Paste', 20,NULL),
 ('Shepherd''s Pie', 'Worcestershire Sauce', 2,NULL),
 ('Shepherd''s Pie', 'Beef Broth', 1, NULL),
 ('Shepherd''s Pie', 'Potatoes', 600, NULL),
@@ -3020,16 +2805,7 @@ VALUES
 ('Garlic Parmesan Chicken', 'Knife', 1),
 ('Garlic Parmesan Chicken', 'Cutting Board', 2);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Chicken Breasts', 165.0, 0, 'Meat and Meat Products', 'gr'),
-('Breadcrumbs', 265.0, 0, 'Cereals and Cereal Products', 'cups'),
-('Parmesan Cheese', 110.0, 0, 'Milk, Eggs, and Their Products', 'tbsp'),
-('Garlic Powder', 10.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Butter', 204.0, 0, 'Fats and Oils', 'tbsp'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp');
-
-INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
-VALUES 
+INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity) VALUES 
 ('Garlic Parmesan Chicken', 'Chicken Breasts', 600, NULL),
 ('Garlic Parmesan Chicken', 'Breadcrumbs', 1, NULL),
 ('Garlic Parmesan Chicken', 'Parmesan Cheese', 3, NULL),
@@ -3075,17 +2851,9 @@ VALUES
 ('Turkey Pot Pie', 'Knife', 2),
 ('Turkey Pot Pie', 'Cutting Board', 2);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Turkey Meat', 189.0, 0, 'Meat and Meat Products', 'cups'),
-('Onion', 44.0, 0, 'Various Plant-based Foods', 'unit'),
-('Carrots', 41.0, 0, 'Various Plant-based Foods', 'cups'),
-('Frozen Peas', 62.0, 0, 'Various Plant-based Foods', 'cups'),
-('Butter', 204.0, 0, 'Fats and Oils', 'tbsp'),
-('All-Purpose Flour', 455.0, 0, 'Cereals and Cereal Products', 'cups'),
-('Chicken Broth', 17.0, 0, 'Others', 'cups'),
-('Milk', 8.0, 0, 'Milk, Eggs, and Their Products', 'cups'),
-('Pie Crust', 49.0, 0, 'Cereals and Cereal Products', 'cups'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp');
+('Pie Crust', 49.0, 0, 'Cereals and Cereal Products', 'cups');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -3138,12 +2906,10 @@ VALUES
 ('Balsamic Bacon Brussels Sprouts', 'Knife', 1),
 ('Balsamic Bacon Brussels Sprouts', 'Cutting Board', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Brussels Sprouts', 38.0, 0, 'Various Plant-based Foods', 'cups'),
-('Bacon', 42.0, 0, 'Meat and Meat Products', 'slice'),
-('Balsamic Vinegar', 14.0, 0, 'Others', 'tbsp'),
-('Brown Sugar', 52.0, 0, 'Sweeteners', 'tbsp'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp');
+('Bacon', 42.0, 0, 'Meat and Meat Products', 'unit'),
+('Balsamic Vinegar', 14.0, 0, 'Others', 'tbsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -3189,12 +2955,9 @@ VALUES
 ('Lemon Red Potatoes', 'Knife', 1),
 ('Lemon Red Potatoes', 'Cutting Board', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Red Potatoes', 105.0, 0, 'Various Plant-based Foods', 'cups'),
-('Olive Oil', 239.0, 0, 'Fats and Oils', 'tbsp'),
-('Lemon Juice', 4.0, 0, 'Various Plant-based Foods', 'tbsp'),
-('Parsley', 1.0, 0, 'Various Plant-based Foods', 'tbsp'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp');
+('Parsley', 1.0, 0, 'Various Plant-based Foods', 'tbsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -3237,16 +3000,6 @@ VALUES
 ('Potato and Corn Chowder', 'Pot', 1),
 ('Potato and Corn Chowder', 'Knife', 1),
 ('Potato and Corn Chowder', 'Cutting Board', 1);
-
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Potatoes', 104.0, 0, 'Various Plant-based Foods', 'cups'),
-('Bacon', 42.0, 0, 'Meat and Meat Products', 'slice'),
-('Onion', 44.0, 0, 'Various Plant-based Foods', 'unit'),
-('Corn', 86.0, 0, 'Various Plant-based Foods', 'cups'),
-('Chicken Broth', 17.0, 0, 'Others', 'cups'),
-('Milk', 8.0, 0, 'Milk, Eggs, and Their Products', 'cups'),
-('Cheddar Cheese', 113.0, 0, 'Milk, Eggs, and Their Products', 'cups'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -3294,16 +3047,11 @@ VALUES
 ('Thai Chicken', 'Knife', 1),
 ('Thai Chicken', 'Cutting Board', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Chicken Breasts', 165.0, 0, 'Meat and Meat Products', 'gr'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Coconut Milk', 230.0, 0, 'Milk, Eggs, and Their Products', 'cups'),
 ('Lime Juice', 8.0, 0, 'Various Plant-based Foods', 'tbsp'),
-('Ginger', 18.0, 0, 'Herbs and Essential Oils', 'slice'),
-('Soy Sauce', 8.0, 0, 'Legumes and Legume Products', 'tbsp'),
-('Brown Sugar', 52.0, 0, 'Sweeteners', 'tbsp'),
 ('Peanuts', 166.0, 0, 'Legumes and Legume Products', 'tbsp'),
-('Cilantro', 1.0, 0, 'Various Plant-based Foods', 'tbsp'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp');
+('Cilantro', 1.0, 0, 'Various Plant-based Foods', 'tbsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -3352,17 +3100,10 @@ VALUES
 ('Italian Fagoli Vegetable Soup', 'Knife', 1),
 ('Italian Fagoli Vegetable Soup', 'Cutting Board', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Cannellini Beans', 127.0, 0, 'Legumes and Legume Products', 'cups'),
 ('Tomato Sauce', 39.0, 0, 'Various Plant-based Foods', 'cups'),
-('Vegetable Broth', 3.0, 0, 'Others', 'cups'),
-('Carrots', 41.0, 0, 'Various Plant-based Foods', 'cups'),
-('Celery', 6.0, 0, 'Various Plant-based Foods', 'stalk'),
-('Spinach', 7.0, 0, 'Various Plant-based Foods', 'cups'),
-('Pasta', 200.0, 0, 'Cereals and Cereal Products', 'cups'),
-('Parmesan Cheese', 110.0, 0, 'Milk, Eggs, and Their Products', 'tbsp'),
-('Basil', 1.0, 0, 'Various Plant-based Foods', 'tbsp'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp');
+('Basil', 1.0, 0, 'Various Plant-based Foods', 'tbsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -3410,15 +3151,6 @@ VALUES
 ('Blueberry Pie', 'Knife', 1),
 ('Blueberry Pie', 'Cutting Board', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Blueberries', 84.0, 0, 'Various Plant-based Foods', 'cups'),
-('Granulated Sugar', 774.0, 0, 'Sweeteners', 'cups'),
-('Cornstarch', 488.0, 0, 'Cereals and Cereal Products', 'tbsp'),
-('Lemon Juice', 4.0, 0, 'Various Plant-based Foods', 'tbsp'),
-('Pie Crust', 49.0, 0, 'Cereals and Cereal Products', 'cups'),
-('Butter', 204.0, 0, 'Fats and Oils', 'tbsp'),
-('Salt', 0.0, 0, 'Others', 'tsp');
-
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
 ('Blueberry Pie', 'Blueberries', 4, NULL),
@@ -3464,13 +3196,6 @@ VALUES
 ('Chocolate Pudding', 'Measuring Cups', 1),
 ('Chocolate Pudding', 'Measuring Spoons', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Granulated Sugar', 774.0, 0, 'Sweeteners', 'cups'),
-('Cocoa Powder', 197.0, 0, 'Sweeteners', 'cups'),
-('Cornstarch', 488.0, 0, 'Cereals and Cereal Products', 'tbsp'),
-('Milk', 42.0, 0, 'Milk, Eggs, and Their Products', 'cups'),
-('Vanilla Extract', 37.0, 0, 'Herbs and Essential Oils', 'tsp');
-
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
 ('Chocolate Pudding', 'Granulated Sugar', 0.5, NULL),
@@ -3510,10 +3235,8 @@ VALUES
 ('Browned Butter Beets', 'Knife', 1),
 ('Browned Butter Beets', 'Cutting Board', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Beets', 44.0, 0, 'Various Plant-based Foods', 'cups'),
-('Butter', 204.0, 0, 'Fats and Oils', 'tbsp'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp'),
 ('Fresh Herbs', 1.0, 0, 'Various Plant-based Foods', 'tbsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
@@ -3557,17 +3280,8 @@ VALUES
 ('Turkey Soup with Homemade Noodles', 'Rolling Pin', 1),
 ('Turkey Soup with Homemade Noodles', 'Pasta Machine', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Turkey', 189.0, 0, 'Meat and Meat Products', 'cups'),
-('Onion', 44.0, 0, 'Various Plant-based Foods', 'unit'),
-('Carrots', 41.0, 0, 'Various Plant-based Foods', 'cups'),
-('Celery', 6.0, 0, 'Various Plant-based Foods', 'stalk'),
-('Bay Leaf', 1.0, 0, 'Herbs and Essential Oils', 'leaf'),
-('Thyme', 1.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Chicken Broth', 17.0, 0, 'Others', 'cups'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp'),
-('Eggs', 72.0, 0, 'Milk, Eggs, and Their Products', 'unit'),
-('All-Purpose Flour', 455.0, 0, 'Cereals and Cereal Products', 'cups');
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
+('Turkey', 189.0, 0, 'Meat and Meat Products', 'cups');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -3616,12 +3330,6 @@ VALUES
 ('Home fries', 'Knife', 1),
 ('Home fries', 'Cutting Board', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Potatoes', 77.0, 0, 'Various Plant-based Foods', 'unit'),
-('Vegetable Oil', 192.0, 0, 'Fats and Oils', 'tbsp'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp'),
-('Paprika', 2.0, 0, 'Herbs and Essential Oils', 'tsp');
-
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
 ('Home fries', 'Potatoes', 4, NULL),
@@ -3665,19 +3373,8 @@ VALUES
 ('Chocolate Raspberry Torte', 'Spatula', 1),
 ('Chocolate Raspberry Torte', 'Cooling Rack', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('All-Purpose Flour', 455.0, 0, 'Cereals and Cereal Products', 'cups'),
-('Cocoa Powder', 197.0, 0, 'Sweeteners', 'cups'),
-('Baking Powder', 5.0, 0, 'Cereals and Cereal Products', 'tsp'),
-('Baking Soda', 0.0, 0, 'Others', 'tsp'),
-('Butter', 204.0, 0, 'Fats and Oils', 'cups'),
-('Granulated Sugar', 774.0, 0, 'Sweeteners', 'cups'),
-('Eggs', 72.0, 0, 'Milk, Eggs, and Their Products', 'unit'),
-('Vanilla Extract', 37.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Buttermilk', 98.0, 0, 'Milk, Eggs, and Their Products', 'cups'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Raspberry Preserves', 120.0, 0, 'Sweeteners', 'cups'),
-('Heavy Cream', 52.0, 0, 'Milk, Eggs, and Their Products', 'cups'),
-('Semi-Sweet Chocolate', 401.0, 0, 'Sweeteners', 'cups'),
 ('Fresh Raspberries', 64.0, 0, 'Various Plant-based Foods', 'cups');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
@@ -3736,13 +3433,8 @@ VALUES
 ('Golden Latte', 'Mug', 1),
 ('Golden Latte', 'Measuring Spoons', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Turmeric', 24.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Cinnamon', 6.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Ginger', 9.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Black Pepper', 0.0, 0, 'Others', 'pinch'),
-('Milk', 42.0, 0, 'Milk, Eggs, and Their Products', 'cups'),
-('Honey', 304.0, 0, 'Sweeteners', 'tbsp');
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
+('Turmeric', 24.0, 0, 'Herbs and Essential Oils', 'tsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -3784,10 +3476,9 @@ VALUES
 ('Fig Shake', 'Knife', 1),
 ('Fig Shake', 'Cutting Board', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Fresh Figs', 74.0, 0, 'Various Plant-based Foods', 'cups'),
-('Yogurt', 149.0, 0, 'Milk, Eggs, and Their Products', 'cups'),
-('Honey', 304.0, 0, 'Sweeteners', 'tbsp');
+('Yogurt', 149.0, 0, 'Milk, Eggs, and Their Products', 'cups');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -3825,17 +3516,8 @@ VALUES
 ('Lentil Soup', 'Knife', 1),
 ('Lentil Soup', 'Cutting Board', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Lentils', 353.0, 0, 'Various Plant-based Foods', 'gr'),
-('Onion', 44.0, 0, 'Various Plant-based Foods', 'unit'),
-('Carrots', 41.0, 0, 'Various Plant-based Foods', 'cups'),
-('Celery', 6.0, 0, 'Various Plant-based Foods', 'stalk'),
-('Vegetable Broth', 11.0, 0, 'Others', 'cups'),
-('Tomato Paste', 29.0, 0, 'Various Plant-based Foods', 'tbsp'),
-('Bay Leaf', 1.0, 0, 'Herbs and Essential Oils', 'leaf'),
-('Cumin', 8.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp'),
-('Fresh Parsley', 1.0, 0, 'Various Plant-based Foods', 'tbsp');
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
+('Lentils', 353.0, 0, 'Various Plant-based Foods', 'gr');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -3890,17 +3572,9 @@ VALUES
 ('Potato Curry', 'Skillet', 1),
 ('Potato Curry', 'Spatula', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
-('Potatoes', 77.0, 0, 'Cereals and Cereal Products', 'gr'),
-('Onion', 44.0, 0, 'Herbs and Essential Oils', 'gr'),
-('Tomatoes', 18.0, 0, 'Vegetables', 'gr'),
-('Ginger', 80.0, 0, 'Herbs and Essential Oils', 'gr'),
-('Chili Powder', 282.0, 0, 'Herbs and Essential Oils', 'gr'),
-('Turmeric', 525.0, 0, 'Herbs and Essential Oils', 'gr'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Cumin Seeds', 375.0, 0, 'Herbs and Essential Oils', 'gr'),
-('Coriander Powder', 23.0, 0, 'Herbs and Essential Oils', 'gr'),
-('Vegetable Oil', 884.0, 0, 'Fats and Oils', 'ml'),
-('Water', 0.0, 0, 'Others', 'ml');
+('Coriander Powder', 23.0, 0, 'Herbs and Essential Oils', 'gr');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -3949,15 +3623,11 @@ VALUES
 ('Bucatini all\'Amatriciana', 'Skillet', 1),
 ('Bucatini all\'Amatriciana', 'Colander', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Bucatini Pasta', 349.0, 0, 'Cereals and Cereal Products', 'gr'),
 ('Pancetta', 416.0, 0, 'Meat and Meat Products', 'gr'),
-('Onion', 44.0, 0, 'Herbs and Essential Oils', 'gr'),
 ('Canned Tomatoes', 32.0, 0, 'Various Plant-based Foods', 'gr'),
-('Red Chili Flakes', 282.0, 0, 'Herbs and Essential Oils', 'gr'),
-('Pecorino Cheese', 392.0, 0, 'Milk, Eggs, and Their Products', 'gr'),
-('Black Pepper', 255.0, 0, 'Herbs and Essential Oils', 'gr'),
-('Olive Oil', 884.0, 0, 'Fats and Oils', 'ml');
+('Pecorino Cheese', 392.0, 0, 'Milk, Eggs, and Their Products', 'gr');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -4004,11 +3674,8 @@ VALUES
 ('Brioche Chocolate Rolls', 'Baking Sheet', 1),
 ('Brioche Chocolate Rolls', 'Rolling Pin', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
-('Bread Flour', 364.0, 0, 'Cereals and Cereal Products', 'gr'),
-('Sugar', 387.0, 1, 'Sweeteners', 'gr'),
-('Active Dry Yeast', 47.0, 0, 'Others', 'gr'),
-('Eggs', 72.0, 0, 'Milk, Eggs, and Their Products', ''),;
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
+('Bread Flour', 364.0, 0, 'Cereals and Cereal Products', 'gr');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -4055,16 +3722,8 @@ VALUES
 ('Buckwheat Tabbouleh', 'Whisk', 1),
 ('Buckwheat Tabbouleh', 'Bowl', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Buckwheat Groats', 155.0, 0, 'Cereals and Cereal Products', 'cups'),
-('Water', 0.0, 0, 'Beverages', 'cups'),
-('Tomatoes', 18.0, 0, 'Various Plant-based Foods', 'unit'),
-('Green Onion', 4.0, 0, 'Various Plant-based Foods', 'unit'),
-('Fresh Parsley', 1.0, 0, 'Various Plant-based Foods', 'cups'),
-('Fresh Mint', 2.0, 0, 'Various Plant-based Foods', 'cups'),
-('Lemon Juice', 4.0, 0, 'Various Plant-based Foods', 'tbsp'),
-('Olive Oil', 119.0, 0, 'Fats and Oils', 'tbsp'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp');
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
+('Buckwheat Groats', 155.0, 0, 'Cereals and Cereal Products', 'cups');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -4117,11 +3776,8 @@ VALUES
 ('Lentil Rice Bowls with Egg', 'Mixing Bowl', 1),
 ('Lentil Rice Bowls with Egg', 'Whisk', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Rice', 205.0, 0, 'Cereals and Cereal Products', 'cups'),
-('Mixed Vegetables', 25.0, 0, 'Various Plant-based Foods', 'cups'),
-('Olive Oil', 119.0, 0, 'Fats and Oils', 'tbsp'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp');
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
+('Mixed Vegetables', 25.0, 0, 'Various Plant-based Foods', 'cups');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -4170,15 +3826,8 @@ VALUES
 ('Italian Vegetable Lentil Soup', 'Mixing Spoon', 1),
 ('Italian Vegetable Lentil Soup', 'Immersion Blender', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Vegetable Broth', 15.0, 0, 'Others', 'cups'),
-('Tomatoes', 18.0, 0, 'Various Plant-based Foods', 'unit'),
-('Carrots', 25.0, 0, 'Various Plant-based Foods', 'unit'),
-('Celery', 6.0, 0, 'Various Plant-based Foods', 'stalk'),
-('Onion', 44.0, 0, 'Various Plant-based Foods', 'unit'),
-('Olive Oil', 119.0, 0, 'Fats and Oils', 'tbsp'),
-('Italian Seasoning', 0.0, 0, 'Others', 'tbsp'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp');
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
+('Italian Seasoning', 0.0, 0, 'Others', 'tbsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -4229,13 +3878,6 @@ VALUES
 ('One Pot Chicken & Potatoes', 'Mixing Spoon', 1),
 ('One Pot Chicken & Potatoes', 'Tongs', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Chicken Thighs', 280.0, 0, 'Meat and Meat Products', 'unit'),
-('Potatoes', 163.0, 0, 'Various Plant-based Foods', 'unit'),
-('Olive Oil', 119.0, 0, 'Fats and Oils', 'tbsp'),
-('Italian Seasoning', 0.0, 0, 'Others', 'tbsp'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp');
-
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
 ('One Pot Chicken & Potatoes', 'Chicken Thighs', 4, NULL),
@@ -4280,15 +3922,8 @@ VALUES
 ('Sweet Korean Lentils', 'Cutting Board', 1),
 ('Sweet Korean Lentils', 'Mixing Spoon', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Water', 0.0, 0, 'Others', 'cups'),
-('Soy Sauce', 8.0, 0, 'Others', 'tbsp'),
-('Gochujang Sauce', 40.0, 0, 'Others', 'tbsp'),
-('Honey', 64.0, 1, 'Sweeteners', 'tbsp'),
-('Rice Vinegar', 4.0, 0, 'Others', 'tbsp'),
-('Sesame Oil', 120.0, 0, 'Fats and Oils', 'tbsp'),
-('Green Onions', 4.0, 0, 'Various Plant-based Foods', 'stalk'),
-('Sesame Seeds', 52.0, 0, 'Others', 'tbsp');
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
+('Gochujang Sauce', 40.0, 0, 'Others', 'tbsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -4338,16 +3973,6 @@ VALUES
 ('Buckwheat Beetroot Salad', 'Cutting Board', 1),
 ('Buckwheat Beetroot Salad', 'Mixing Bowl', 1),
 ('Buckwheat Beetroot Salad', 'Whisk', 1);
-
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Buckwheat Groats', 155.0, 0, 'Cereals and Cereal Products', 'cups'),
-('Beets', 43.0, 0, 'Various Plant-based Foods', 'unit'),
-('Bell Pepper', 25.0, 0, 'Various Plant-based Foods', 'unit'),
-('Olive Oil', 119.0, 0, 'Fats and Oils', 'tbsp'),
-('Balsamic Vinegar', 14.0, 0, 'Others', 'tbsp'),
-('Dijon Mustard', 15.0, 0, 'Others', 'tsp'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp'),
-('Fresh Herbs', 2.0, 0, 'Various Plant-based Foods', 'tbsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -4399,13 +4024,8 @@ VALUES
 ('New Potato Lentil Salad', 'Knife', 1),
 ('New Potato Lentil Salad', 'Cutting Board', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('New Potatoes', 77.0, 0, 'Various Plant-based Foods', 'unit'),
-('Olive Oil', 119.0, 0, 'Fats and Oils', 'tbsp'),
-('White Wine Vinegar', 2.0, 0, 'Others', 'tbsp'),
-('Dijon Mustard', 15.0, 0, 'Others', 'tsp'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp'),
-('Fresh Herbs', 2.0, 0, 'Various Plant-based Foods', 'tbsp');
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
+('New Potatoes', 77.0, 0, 'Various Plant-based Foods', 'unit');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -4454,17 +4074,8 @@ VALUES
 ('Ham & Potato Soup', 'Cutting Board', 2),
 ('Ham & Potato Soup', 'Mixing Spoon', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Ham', 145.0, 0, 'Meat and Meat Products', 'cups'),
-('Potatoes', 163.0, 0, 'Various Plant-based Foods', 'unit'),
-('Onion', 44.0, 0, 'Various Plant-based Foods', 'unit'),
-('Celery', 6.0, 0, 'Various Plant-based Foods', 'stalk'),
-('Carrots', 25.0, 0, 'Various Plant-based Foods', 'unit'),
-('Chicken Broth', 15.0, 0, 'Others', 'cups'),
-('Milk', 103.0, 0, 'Milk, Eggs, and Their Products', 'cups'),
-('Flour', 455.0, 0, 'Cereals and Cereal Products', 'tbsp'),
-('Butter', 102.0, 0, 'Fats and Oils', 'tbsp'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp');
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
+('Ham', 145.0, 0, 'Meat and Meat Products', 'cups');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -4517,13 +4128,8 @@ VALUES
 ('Lemon Dill Potatoes', 'Cutting Board', 2),
 ('Lemon Dill Potatoes', 'Zester', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Baby Potatoes', 77.0, 0, 'Various Plant-based Foods', 'unit'),
-('Olive Oil', 119.0, 0, 'Fats and Oils', 'tbsp'),
-('Lemon Juice', 4.0, 0, 'Various Plant-based Foods', 'tbsp'),
-('Lemon Zest', 2.0, 0, 'Various Plant-based Foods', 'tsp'),
-('Fresh Dill', 2.0, 0, 'Various Plant-based Foods', 'tbsp'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp');
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
+('Baby Potatoes', 77.0, 0, 'Various Plant-based Foods', 'unit');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -4569,12 +4175,8 @@ VALUES
 ('BBQ Lentils', 'Cutting Board', 1),
 ('BBQ Lentils', 'Mixing Spoon', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Water', 0.0, 0, 'Others', 'cups'),
-('Barbecue Sauce', 29.0, 0, 'Others', 'cups'),
-('Onion', 44.0, 0, 'Various Plant-based Foods', 'unit'),
-('Vegetable Oil', 124.0, 0, 'Fats and Oils', 'tbsp'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp');
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
+('Barbecue Sauce', 29.0, 0, 'Others', 'cups');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -4619,18 +4221,6 @@ VALUES
 ('Healthy Buckwheat Soup', 'Knife', 1),
 ('Healthy Buckwheat Soup', 'Cutting Board', 1),
 ('Healthy Buckwheat Soup', 'Mixing Spoon', 1);
-
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Buckwheat Groats', 155.0, 0, 'Cereals and Cereal Products', 'cups'),
-('Water', 0.0, 0, 'Others', 'cups'),
-('Carrots', 25.0, 0, 'Various Plant-based Foods', 'unit'),
-('Celery', 6.0, 0, 'Various Plant-based Foods', 'stalk'),
-('Onion', 44.0, 0, 'Various Plant-based Foods', 'unit'),
-('Vegetable Broth', 15.0, 0, 'Others', 'cups'),
-('Bay Leaf', 2.0, 0, 'Herbs and Essential Oils', 'unit'),
-('Thyme', 3.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp'),
-('Fresh Herbs', 2.0, 0, 'Various Plant-based Foods', 'tbsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -4677,16 +4267,6 @@ VALUES
 ('Buckwheat Chicken Pilaf', 'Knife', 1),
 ('Buckwheat Chicken Pilaf', 'Cutting Board', 1),
 ('Buckwheat Chicken Pilaf', 'Mixing Spoon', 1);
-
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Chicken Thighs', 209.0, 0, 'Meat and Meat Products', 'unit'),
-('Onion', 44.0, 0, 'Various Plant-based Foods', 'unit'),
-('Carrots', 25.0, 0, 'Various Plant-based Foods', 'unit'),
-('Buckwheat Groats', 155.0, 0, 'Cereals and Cereal Products', 'cups'),
-('Chicken Broth', 15.0, 0, 'Others', 'cups'),
-('Bay Leaf', 2.0, 0, 'Herbs and Essential Oils', 'unit'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp'),
-('Fresh Herbs', 2.0, 0, 'Various Plant-based Foods', 'tbsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -4736,18 +4316,6 @@ VALUES
 ('Vegetable Noodle Soup', 'Knife', 1),
 ('Vegetable Noodle Soup', 'Cutting Board', 1),
 ('Vegetable Noodle Soup', 'Mixing Spoon', 1);
-
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Vegetable Broth', 15.0, 0, 'Others', 'cups'),
-('Water', 0.0, 0, 'Others', 'cups'),
-('Carrots', 25.0, 0, 'Various Plant-based Foods', 'unit'),
-('Celery', 6.0, 0, 'Various Plant-based Foods', 'stalk'),
-('Onion', 44.0, 0, 'Various Plant-based Foods', 'unit'),
-('Noodles', 221.0, 0, 'Cereals and Cereal Products', 'cups'),
-('Bay Leaf', 2.0, 0, 'Herbs and Essential Oils', 'unit'),
-('Thyme', 3.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp'),
-('Fresh Herbs', 2.0, 0, 'Various Plant-based Foods', 'tbsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -4799,13 +4367,8 @@ VALUES
 ('Bacon and Honey Potato Salad', 'Mixing Bowl', 1),
 ('Bacon and Honey Potato Salad', 'Whisk', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Potatoes', 163.0, 0, 'Various Plant-based Foods', 'unit'),
-('Bacon', 145.0, 0, 'Meat and Meat Products', 'cups'),
-('Honey', 304.0, 0, 'Sweeteners', 'tbsp'),
-('Mustard', 66.0, 0, 'Others', 'tbsp'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp'),
-('Green Onions', 32.0, 0, 'Various Plant-based Foods', 'unit');
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
+('Mustard', 66.0, 0, 'Others', 'tbsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -4852,13 +4415,7 @@ VALUES
 ('Pretzel Sticks', 'Whisk', 1),
 ('Pretzel Sticks', 'Slotted Spoon', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('All-Purpose Flour', 455.0, 0, 'Cereals and Cereal Products', 'cups'),
-('Active Dry Yeast', 23.0, 0, 'Baked Products', 'tsp'),
-('Warm Water', 0.0, 0, 'Others', 'cups'),
-('Sugar', 49.0, 0, 'Sweeteners', 'tbsp'),
-('Baking Soda', 0.0, 0, 'Baked Products', 'tbsp'),
-('Water', 0.0, 0, 'Others', 'cups'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Coarse Salt', 0.0, 0, 'Others', 'tbsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
@@ -4904,18 +4461,6 @@ VALUES
 ('Golden French Lentil Soup', 'Knife', 1),
 ('Golden French Lentil Soup', 'Cutting Board',1),
 ('Golden French Lentil Soup', 'Mixing Spoon', 1);
-
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Water', 0.0, 0, 'Others', 'cups'),
-('Carrots', 25.0, 0, 'Various Plant-based Foods', 'unit'),
-('Celery', 6.0, 0, 'Various Plant-based Foods', 'stalk'),
-('Onion', 44.0, 0, 'Various Plant-based Foods', 'unit'),
-('Vegetable Broth', 15.0, 0, 'Others', 'cups'),
-('Bay Leaf', 2.0, 0, 'Herbs and Essential Oils', 'unit'),
-('Thyme', 3.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Lemon', 17.0, 0, 'Various Plant-based Foods', 'unit'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp'),
-('Fresh Herbs', 2.0, 0, 'Various Plant-based Foods', 'tbsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -4967,20 +4512,6 @@ VALUES
 ('Lentil Shepherd''s Pie', 'Knife', 1),
 ('Lentil Shepherd''s Pie', 'Cutting Board', 1),
 ('Lentil Shepherd''s Pie', 'Potato Masher', 1);
-
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Water', 0.0, 0, 'Others', 'cups'),
-('Onion', 44.0, 0, 'Various Plant-based Foods', 'unit'),
-('Carrots', 25.0, 0, 'Various Plant-based Foods', 'unit'),
-('Celery', 6.0, 0, 'Various Plant-based Foods', 'stalk'),
-('Vegetable Broth', 15.0, 0, 'Others', 'cups'),
-('Tomato Paste', 29.0, 0, 'Others', 'tbsp'),
-('Worcestershire Sauce', 3.0, 0, 'Others', 'tbsp'),
-('Frozen Peas', 134.0, 0, 'Various Plant-based Foods', 'cups'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp'),
-('Potatoes', 163.0, 0, 'Various Plant-based Foods', 'unit'),
-('Milk', 50.0, 0, 'Milk, Eggs, and Their Products', 'cups'),
-('Butter', 102.0, 0, 'Milk, Eggs, and Their Products', 'tbsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -5040,13 +4571,6 @@ VALUES
 ('Honey Lime Chicken', 'Measuring Cups', 1),
 ('Honey Lime Chicken', 'Pastry Brush', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Chicken Breasts', 165.0, 0, 'Meat and Meat Products', 'unit'),
-('Honey', 304.0, 0, 'Sweeteners', 'tbsp'),
-('Lime Juice', 8.0, 0, 'Various Plant-based Foods', 'tbsp'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp'),
-('Olive Oil', 119.0, 0, 'Fats and Oils', 'tbsp');
-
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
 ('Honey Lime Chicken', 'Chicken Breasts', 4, NULL),
@@ -5090,12 +4614,6 @@ VALUES
 ('Naan', 'Rolling Pin', 1),
 ('Naan', 'Skillet', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
-('Yeast', 7.0, 0, 'Others', 'gr'),
-('Sugar', 387.0, 1, 'Sweeteners', 'gr'),
-('Yogurt', 59.0, 0, 'Milk, Eggs, and Their Products', 'ml'),
-('Butter', 102.0, 0, 'Milk, Eggs, and Their Products', 'gr');
-
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
 ('Naan', 'All-Purpose Flour', 400, NULL),
@@ -5136,12 +4654,8 @@ VALUES
 ('Lemon Poppy Seed Scones', 'Baking Sheet', 1),
 ('Lemon Poppy Seed Scones', 'Rolling Pin', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
-('Sugar', 387.0, 1, 'Sweeteners', 'gr'),
-('Baking Powder', 0.0, 0, 'Others', 'gr'),
-('Lemon Zest', 29.0, 0, 'Herbs and Essential Oils', 'gr'),
-('Poppy Seeds', 525.0, 1, 'Herbs and Essential Oils', 'gr'),
-('Heavy Cream', 345.0, 0, 'Milk, Eggs, and Their Products', 'ml');
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
+('Poppy Seeds', 525.0, 1, 'Herbs and Essential Oils', 'gr');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -5190,14 +4704,8 @@ VALUES
 ('Balsamic Dijon Root Vegetables', 'Mixing Bowl', 1),
 ('Balsamic Dijon Root Vegetables', 'Whisk', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
-('Potatoes', 77.0, 0, 'Various Plant-based Foods', 'gr'),
-('Carrots', 41.0, 0, 'Various Plant-based Foods', 'gr'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Parsnips', 75.0, 0, 'Various Plant-based Foods', 'gr'),
-('Balsamic Vinegar', 88.0, 0, 'Herbs and Essential Oils', 'ml'),
-('Dijon Mustard', 73.0, 0, 'Various Plant-based Foods', 'ml'),
-('Honey', 304.0, 0, 'Sweeteners', 'ml'),
-('Black Pepper', 0.0, 0, 'Others', 'gr'),
 ('Fresh Rosemary', 131.0, 0, 'Herbs and Essential Oils', 'gr');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
@@ -5246,11 +4754,8 @@ VALUES
 -- ('Best Baked Chicken Legs', 'Wire Rack', 1),
 ('Best Baked Chicken Legs', 'Mixing Bowl', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
-('Chicken Legs', 209.0, 0, 'Meat and Meat Products', 'gr'),
-('Black Pepper', 0.0, 0, 'Others', 'gr'),
-('Garlic Powder', 331.0, 0, 'Others', 'gr'),
-('Paprika', 282.0, 0, 'Others', 'gr');
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
+('Chicken Legs', 209.0, 0, 'Meat and Meat Products', 'gr');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -5293,15 +4798,8 @@ VALUES
 ('Spanish Lentil Soup', 'Mixing Spoon', 1),
 ('Spanish Lentil Soup', 'Knife', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
-('Spanish Chorizo', 455.0, 0, 'Meat and Meat Products', 'gr'),
-('Onion', 44.0, 0, 'Various Plant-based Foods', 'unit'),
-('Carrots', 41.0, 0, 'Various Plant-based Foods', 'unit'),
-('Celery', 16.0, 0, 'Various Plant-based Foods', 'unit'),
-('Tomatoes', 18.0, 0, 'Various Plant-based Foods', 'unit'),
-('Bay Leaf', 5.0, 0, 'Herbs and Essential Oils', NULL),
-('Chicken Broth', 7.0, 0, 'Others', 'ml'),
-('Black Pepper', 0.0, 0, 'Others', 'gr');
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
+('Spanish Chorizo', 455.0, 0, 'Meat and Meat Products', 'gr');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -5354,11 +4852,6 @@ VALUES
 ('Chocolate Chip Irish Soda Bread', 'Baking Sheet', 1),
 ('Chocolate Chip Irish Soda Bread', 'Pastry Cutter', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
-('Sugar', 387.0, 1, 'Sweeteners', 'gr'),
-('Buttermilk', 62.0, 0, 'Milk, Eggs, and Their Products', 'ml'),
-('Chocolate Chips', 535.0, 1, 'Products with Added Fats and/or Sugar', 'gr');
-
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
 ('Chocolate Chip Irish Soda Bread', 'All-Purpose Flour', 400, NULL),
@@ -5408,13 +4901,9 @@ VALUES
 ('Malteese Gilatti', 'Mixing Bowl', 1),
 ('Malteese Gilatti', 'Rolling Pin', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Puff Pastry', 466.0, 0, 'Cereals and Cereal Products', 'gr'),
-('Ricotta Cheese', 174.0, 0, 'Milk, Eggs, and Their Products', 'gr'),
-('Sugar', 387.0, 1, 'Sweeteners', 'gr'),
-('Lemon Zest', 29.0, 0, 'Herbs and Essential Oils', 'gr'),
-('Orange Zest', 27.0, 0, 'Herbs and Essential Oils', 'gr'),
-('Vanilla Extract', 288.0, 0, 'Herbs and Essential Oils', 'ml');
+('Ricotta Cheese', 174.0, 0, 'Milk, Eggs, and Their Products', 'gr');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -5461,12 +4950,6 @@ VALUES
 ('Buckwheat Carrot and Onion', 'Saucepan', 1),
 ('Buckwheat Carrot and Onion', 'Mixing Spoon', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
-('Buckwheat Groats', 343.0, 0, 'Cereals and Cereal Products', 'gr'),
-('Carrots', 41.0, 0, 'Various Plant-based Foods', 'gr'),
-('Onion', 44.0, 0, 'Various Plant-based Foods', ''),
-('Black Pepper', 0.0, 0, 'Others', 'gr');
-
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
 ('Buckwheat Carrot and Onion', 'Buckwheat Groats', 200, NULL),
@@ -5511,14 +4994,9 @@ VALUES
 ('Sweet Potatoes with Yogurt and Chickpeas', 'Mixing Bowl', 1),
 ('Sweet Potatoes with Yogurt and Chickpeas', 'Saucepan', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
-('Sweet Potatoes', 86.0, 0, 'Various Plant-based Foods', 'gr'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Chickpeas', 164.0, 0, 'Various Plant-based Foods', 'gr'),
-('Greek Yogurt', 59.0, 0, 'Milk, Eggs, and Their Products', 'ml'),
 ('Tahini', 89.0, 0, 'Fats and Oils', 'ml'),
-('Cumin', 375.0, 0, 'Herbs and Essential Oils', 'gr'),
-('Paprika', 282.0, 0, 'Others', 'gr'),
-('Black Pepper', 0.0, 0, 'Others', 'gr'),
 ('Fresh Cilantro', 23.0, 0, 'Herbs and Essential Oils', 'gr');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
@@ -5570,17 +5048,9 @@ VALUES
 ('Lentil Curry', 'Cutting Board', 1),
 ('Lentil Curry', 'Mixing Spoon', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Water', 0.0, 0, 'Others', 'cups'),
-('Onion', 44.0, 0, 'Various Plant-based Foods', 'unit'),
-('Ginger', 18.0, 0, 'Various Plant-based Foods', 'tsp'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Curry Powder', 20.0, 0, 'Herbs and Essential Oils', 'tbsp'),
-('Turmeric', 29.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Cumin', 8.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Coriander', 5.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Coconut Milk', 230.0, 0, 'Nut and Seed Products', 'cups'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp'),
-('Fresh Cilantro', 1.0, 0, 'Various Plant-based Foods', 'tbsp');
+('Coriander', 5.0, 0, 'Herbs and Essential Oils', 'tsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -5633,11 +5103,6 @@ VALUES
 ('Dutch Oven Bread', 'Baking Sheet', 1);
 -- ('Dutch Oven Bread', 'Bench Scraper', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('All-Purpose Flour', 455.0, 0, 'Cereals and Cereal Products', 'cups'),
-('Active Dry Yeast', 23.0, 0, 'Baked Products', 'tsp'),
-('Water', 0.0, 0, 'Others', 'cups');
-
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
 ('Dutch Oven Bread', 'All-Purpose Flour', 3, NULL),
@@ -5683,14 +5148,9 @@ VALUES
 ('Potato Apple Roast', 'Measuring Spoons', 1),
 ('Potato Apple Roast', 'Measuring Cups', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Potatoes', 77.0, 0, 'Various Plant-based Foods', 'unit'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Apples', 95.0, 0, 'Various Plant-based Foods', 'unit'),
-('Olive Oil', 119.0, 0, 'Fats and Oils', 'tbsp'),
-('Black Pepper', 0.0, 0, 'Others', 'tsp'),
-('Thyme', 3.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Rosemary', 2.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Maple Syrup', 52.0, 0, 'Sweeteners', 'tbsp');
+('Rosemary', 2.0, 0, 'Herbs and Essential Oils', 'tsp');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -5737,12 +5197,6 @@ VALUES
 ('Baking Powder Biscuits', 'Pastry Cutter', 1),
 ('Baking Powder Biscuits', 'Blender', 1),
 ('Baking Powder Biscuits', 'Rolling Pin', 1);
-
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('All-Purpose Flour', 455.0, 0, 'Cereals and Cereal Products', 'cups'),
-('Baking Powder', 5.0, 0, 'Baked Products', 'tbsp'),
-('Butter', 102.0, 0, 'Milk, Eggs, and Their Products', 'tbsp'),
-('Milk', 50.0, 0, 'Milk, Eggs, and Their Products', 'cups');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -5791,15 +5245,6 @@ VALUES
 -- ('Sugar Cookies', 'Parchment Paper', NULL),
 ('Sugar Cookies', 'Spatula', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES 
-('Butter', 102.0, 0, 'Milk, Eggs, and Their Products', 'cups'),
-('Sugar', 774.0, 0, 'Sweeteners', 'cups'),
-('Egg', 72.0, 0, 'Milk, Eggs, and Their Products', 'unit'),
-('Vanilla Extract', 12.0, 0, 'Baked Products', 'tsp'),
-('All-Purpose Flour', 455.0, 0, 'Cereals and Cereal Products', 'cups'),
-('Baking Powder', 5.0, 0, 'Baked Products', 'tsp'),
-('Salt', 0.0, 0, 'Others', 'tsp');
-
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
 ('Sugar Cookies', 'Butter', 1, NULL),
@@ -5846,11 +5291,6 @@ VALUES
 ('Spanish Chickpeas', 'Skillet', 1),
 ('Spanish Chickpeas', 'Saucepan', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
-('Tomatoes', 18.0, 0, 'Various Plant-based Foods', 'gr'),
-('Paprika', 282.0, 0, 'Herbs and Essential Oils', 'gr'),
-('Black Pepper', 0.0, 0, 'Others', 'gr');
-
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
 ('Spanish Chickpeas', 'Chickpeas', 400, NULL),
@@ -5894,13 +5334,8 @@ VALUES
 ('Lemon Fettuchini', 'Saucepan', 1),
 ('Lemon Fettuchini', 'Skillet', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
-('Fettuccine', 210.0, 0, 'Cereals and Cereal Products', 'gr'),
-('Heavy Cream', 340.0, 0, 'Milk, Eggs, and Their Products', 'ml'),
-('Lemon', 29.0, 0, 'Herbs and Essential Oils', 'unit'),
-('Parmesan Cheese', 420.0, 0, 'Milk, Eggs, and Their Products', 'gr'),
-('Black Pepper', 0.0, 0, 'Others', 'gr'),
-('Fresh Parsley', 4.0, 0, 'Herbs and Essential Oils', 'gr');
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
+('Fettuccine', 210.0, 0, 'Cereals and Cereal Products', 'gr');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -5945,15 +5380,8 @@ VALUES
 ('Chickpea Masala', 'Skillet', 1),
 ('Chickpea Masala', 'Saucepan', 1);
 
-INSERT  INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
-('Tomato', 18.0, 0, 'Various Plant-based Foods', 'gr'),
-('Ginger', 80.0, 0, 'Herbs and Essential Oils', 'gr'),
-('Garam Masala', 340.0, 0, 'Herbs and Essential Oils', 'gr'),
-('Turmeric', 312.0, 0, 'Herbs and Essential Oils', 'gr'),
-('Cumin', 375.0, 0, 'Herbs and Essential Oils', 'gr'),
-('Coriander', 23.0, 0, 'Herbs and Essential Oils', 'gr'),
-('Black Pepper', 0.0, 0, 'Others', 'gr'),
-('Cilantro', 4.0, 0, 'Herbs and Essential Oils', 'gr');
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
+('Garam Masala', 340.0, 0, 'Herbs and Essential Oils', 'gr');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -6001,12 +5429,9 @@ VALUES
 ('Chickpea Broccoli Pesto', 'Saucepan', 1),
 ('Chickpea Broccoli Pesto', 'Skillet', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
-('Pasta', 210.0, 0, 'Cereals and Cereal Products', 'gr'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Broccoli', 34.0, 0, 'Various Plant-based Foods', 'gr'),
-('Parmesan Cheese', 420.0, 0, 'Milk, Eggs, and Their Products', 'gr'),
 ('Pine Nuts', 673.0, 0, 'Various Plant-based Foods', 'gr'),
-('Black Pepper', 0.0, 0, 'Others', 'gr'),
 ('Fresh Basil', 3.0, 0, 'Herbs and Essential Oils', 'gr');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
@@ -6056,18 +5481,12 @@ VALUES
 ('Thai Veggie Soup', 'Cutting Board', 1),
 ('Thai Veggie Soup', 'Saucepan', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Coconut Oil', 884.0, 0, 'Fats and Oils', 'ml'),
-('Ginger', 80.0, 0, 'Herbs and Essential Oils', 'gr'),
-('Carrot', 41.0, 0, 'Various Plant-based Foods', 'gr'),
 ('Red Bell Pepper', 31.0, 0, 'Various Plant-based Foods', 'gr'),
 ('Zucchini', 17.0, 0, 'Various Plant-based Foods', 'gr'),
 ('Thai Red Curry Paste', 30.0, 0, 'Herbs and Essential Oils', 'gr'),
-('Coconut Milk', 230.0, 0, 'Milk, Eggs, and Their Products', 'ml'),
-('Vegetable Broth', 10.0, 0, 'Various Plant-based Foods', 'ml'),
-('Lime', 30.0, 0, 'Herbs and Essential Oils', 'unit'),
-('Black Pepper', 0.0, 0, 'Others', 'gr'),
-('Fresh Cilantro', 4.0, 0, 'Herbs and Essential Oils', 'gr');
+('Lime', 30.0, 0, 'Herbs and Essential Oils', 'unit');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -6113,15 +5532,6 @@ VALUES
 ('Buttery Herb Chicken', 'Skillet', 1),
 ('Buttery Herb Chicken', 'Saucepan', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
-('Chicken Breast', 165.0, 0, 'Meat and Meat Products', 'gr'),
-('Flour', 364.0, 0, 'Cereals and Cereal Products', 'gr'),
-('Chicken Broth', 10.0, 0, 'Meat and Meat Products', 'ml'),
-('Heavy Cream', 340.0, 0, 'Milk, Eggs, and Their Products', 'ml'),
-('Garlic Powder', 5.0, 0, 'Herbs and Essential Oils', 'gr'),
-('Dried Thyme', 2.0, 0, 'Herbs and Essential Oils', 'gr'),
-('Black Pepper', 0.0, 0, 'Others', 'gr');
-
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
 ('Buttery Herb Chicken', 'Chicken Breast', 500, NULL),
@@ -6166,11 +5576,6 @@ VALUES
 ('Rosemary Parsnips', 'Baking Sheet', 1),
 ('Rosemary Parsnips', 'Mixing Bowl', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
-('Parsnips', 75.0, 0, 'Various Plant-based Foods', 'gr'),
-('Fresh Rosemary', 3.0, 0, 'Herbs and Essential Oils', 'sprigs'),
-('Black Pepper', 0.0, 0, 'Others', 'gr');
-
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
 ('Rosemary Parsnips', 'Parsnips', 500, NULL),
@@ -6211,12 +5616,8 @@ VALUES
 ('Balsamic Potatoes and Asparagus', 'Baking Sheet', 1),
 ('Balsamic Potatoes and Asparagus', 'Mixing Bowl', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
-('Potatoes', 77.0, 0, 'Various Plant-based Foods', 'gr'),
-('Asparagus', 20.0, 0, 'Various Plant-based Foods', 'gr'),
-('Balsamic Vinegar', 88.0, 0, 'Various Plant-based Foods', 'ml'),
-('Dried Thyme', 2.0, 0, 'Herbs and Essential Oils', 'gr'),
-('Black Pepper', 0.0, 0, 'Others', 'gr');
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
+('Asparagus', 20.0, 0, 'Various Plant-based Foods', 'gr');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -6260,14 +5661,9 @@ VALUES
 ('Quinoa Brussels Sweet Potato Salad', 'Mixing Bowl', 1),
 ('Quinoa Brussels Sweet Potato Salad', 'Pot', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Quinoa', 120.0, 0, 'Cereals and Cereal Products', 'gr'),
 ('Sweet Potato', 86.0, 0, 'Various Plant-based Foods', 'gr'),
-('Brussels Sprouts', 43.0, 0, 'Various Plant-based Foods', 'gr'),
-('Apple Cider Vinegar', 3.0, 0, 'Various Plant-based Foods', 'ml'),
-('Maple Syrup', 260.0, 0, 'Various Plant-based Foods', 'ml'),
-('Dijon Mustard', 130.0, 0, 'Various Plant-based Foods', 'ml'),
-('Black Pepper', 0.0, 0, 'Others', 'gr'),
 ('Chopped Nuts', 607.0, 0, 'Various Plant-based Foods', 'gr');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
@@ -6315,17 +5711,9 @@ VALUES
 ('Thai Peanut Cabbage Quinoa', 'Pot', 1),
 ('Thai Peanut Cabbage Quinoa', 'Skillet', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
-('Quinoa', 120.0, 0, 'Cereals and Cereal Products', 'gr'),
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
 ('Cabbage', 25.0, 0, 'Various Plant-based Foods', 'gr'),
-('Carrot', 41.0, 0, 'Various Plant-based Foods', 'gr'),
 ('Peanut Butter', 588.0, 0, 'Various Plant-based Foods', 'gr'),
-('Soy Sauce', 9.0, 0, 'Various Plant-based Foods', 'ml'),
-('Lime', 30.0, 0, 'Herbs and Essential Oils', 'unit'),
-('Ginger', 80.0, 0, 'Herbs and Essential Oils', 'gr'),
-('Honey', 304.0, 0, 'Various Plant-based Foods', 'ml'),
-('Water', 0.0, 0, 'Various Plant-based Foods', 'ml'),
-('Black Pepper', 0.0, 0, 'Others', 'gr'),
 ('Chopped Peanuts', 607.0, 0, 'Various Plant-based Foods', 'gr');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
@@ -6373,14 +5761,8 @@ VALUES
 ('Lemon Garlic Asparagus with Orzo', 'Pot', 1),
 ('Lemon Garlic Asparagus with Orzo', 'Skillet', 1);
 
-INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit)VALUES 
-('Orzo Pasta', 364.0, 0, 'Cereals and Cereal Products', 'gr'),
-('Asparagus', 20.0, 0, 'Various Plant-based Foods', 'gr'),
-('Lemon Zest', 3.0, 0, 'Herbs and Essential Oils', 'tsp'),
-('Lemon Juice', 4.0, 0, 'Herbs and Essential Oils', 'tbsp'),
-('Black Pepper', 0.0, 0, 'Others', 'gr'),
-('Parmesan Cheese', 420.0, 0, 'Milk, Eggs, and Their Products', 'gr'),
-('Fresh Parsley', 4.0, 0, 'Herbs and Essential Oils', 'tbsp');
+INSERT INTO ingredients (ingr_name, ingr_calories, allows_loose_units, group_name, unit) VALUES
+('Orzo Pasta', 364.0, 0, 'Cereals and Cereal Products', 'gr');
 
 INSERT INTO requires_ingr (recipe_name, ingr_name, quantity, undefined_quantity)
 VALUES 
@@ -6580,4 +5962,3 @@ INSERT INTO expertise (first_name, last_name, country_name) VALUES
 ('Mikhail', 'Ivanov', 'Australia'),
 ('Sara', 'Larsson', 'Turkey'),
 ('Sara', 'Larsson', 'Sweden');
-
