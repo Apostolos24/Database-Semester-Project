@@ -156,14 +156,14 @@ CREATE TABLE expertise (
 
 CREATE TABLE episodes (
     episode INT,
-    episode_year INT UNSIGNED,
+    episode_year INT,
     ep_image VARCHAR(200),
     PRIMARY KEY (episode_year,episode)
 );
 
 
 CREATE TABLE is_a_critic (
-    episode_year INT UNSIGNED,
+    episode_year INT,
     episode INT,
     first_name VARCHAR(20),
     last_name VARCHAR(20),
@@ -176,7 +176,7 @@ CREATE TABLE is_a_critic (
 CREATE INDEX critic_cook_name ON is_a_critic (last_name);
 
 CREATE TABLE is_a_contestant (
-    episode_year INT UNSIGNED,
+    episode_year INT,
     episode INT,
     country_name VARCHAR(20),
     first_name VARCHAR(20),
