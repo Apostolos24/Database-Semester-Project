@@ -1,3 +1,5 @@
+DROP DATABASE cooking_show;
+
 CREATE DATABASE cooking_show;
 USE cooking_show;
 
@@ -50,7 +52,7 @@ CREATE TABLE thematic_section (
 
 CREATE TABLE recipe_belongs_to (
     recipe_name VARCHAR(60),
-    sec_name VARCHAR(20),
+    sec_name VARCHAR(50),
     FOREIGN KEY (recipe_name) REFERENCES recipes (recipe_name),
     FOREIGN KEY (sec_name) REFERENCES thematic_section (sec_name),
     PRIMARY KEY (recipe_name,sec_name)
@@ -66,7 +68,7 @@ CREATE TABLE equipment (
 
 CREATE TABLE requires_eq (
     recipe_name VARCHAR(60),
-    eq_name VARCHAR(20),
+    eq_name VARCHAR(50),
     quantity TINYINT UNSIGNED NOT NULL,
     FOREIGN KEY (recipe_name) REFERENCES recipes(recipe_name),
     FOREIGN KEY (eq_name) REFERENCES equipment(eq_name),
@@ -165,7 +167,7 @@ CREATE TABLE is_a_contestant (
     country_name VARCHAR(20),
     first_name VARCHAR(20),
     last_name VARCHAR(20),
-    recipe_name VARCHAR(30),
+    recipe_name VARCHAR(60),
     grade1 TINYINT UNSIGNED,
     grade2 TINYINT UNSIGNED,
     grade3 TINYINT UNSIGNED,
