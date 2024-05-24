@@ -254,7 +254,7 @@ from	(
         
 
 -- QUESTION 3.11
-
+/*
 SELECT
 c.first_name AS critic_first_name,
     c.last_name AS critic_last_name,
@@ -274,6 +274,20 @@ GROUP BY
 ORDER BY
     total_score DESC
 LIMIT 5;
+*/
+
+select critic_name,critic_surname,contestant_name,contestant_surname,sum(grade) as total_grade  from
+(select a.first_name as critic_name,a.last_name as critic_surname,b.first_name as contestant_name,b.last_name as contestant_surname,
+case
+    when a.id=1 then b.grade1
+    when a.id=2 then b.grade2
+    when a.id=3 then b.grade3
+end as grade
+from 
+is_a_critic as a inner join is_a_contestant as b on a.episode_year=b.episode_year and a.episode=b.episode) as t
+group by critic_name,critic_surname,contestant_name,contestant_surname
+order by total_grade desc
+limit 5;
 
 -- QUESTION 3.12
 
