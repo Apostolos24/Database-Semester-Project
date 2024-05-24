@@ -1,7 +1,4 @@
 
-
--- ---------------------------------------------------------------------
-
 USE cooking_show;
 
 -- QUESTION 3.1
@@ -253,7 +250,7 @@ from	(
 				) as b
 		where (a.episode_year - b.episode_year) = 1 and a.country_name = b.country_name and a.num >= 3 and b.num >= 3
 		) as R
-		using (sum_num)
+		using (sum_num);
         
 
 -- QUESTION 3.11
