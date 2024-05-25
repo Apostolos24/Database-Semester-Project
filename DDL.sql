@@ -27,6 +27,8 @@ CREATE TABLE recipes (
     execution_time SMALLINT UNSIGNED,
     portions TINYINT UNSIGNED,
     FOREIGN KEY (country_name) REFERENCES countries(country_name),
+    CHECK (recipe_difficulty <=5 and recipe_difficulty >=0),
+    CHECK (recipe_carbs >=0 and recipe_calories>=0 and recipe_proteins>=0 and recipe_fats>=0),
     PRIMARY KEY (recipe_name)
 );
 
@@ -76,6 +78,7 @@ CREATE TABLE requires_eq (
     quantity TINYINT UNSIGNED NOT NULL,
     FOREIGN KEY (recipe_name) REFERENCES recipes(recipe_name),
     FOREIGN KEY (eq_name) REFERENCES equipment(eq_name),
+    CHECK (quantity>=0),
     PRIMARY KEY (recipe_name,eq_name)
 );
 
@@ -89,7 +92,7 @@ CREATE TABLE food_groups (
 );
 
 CREATE TABLE ingredients (
-    ingr_name VARCHAR(50) UNIQUE,
+    ingr_name VARCHAR(50),
     ingr_calories NUMERIC(6,2),  -- per gr or ml tsp or tbsp or unit or cup
     allows_loose_units TINYINT,
     group_name VARCHAR(80),
@@ -107,6 +110,7 @@ CREATE TABLE requires_ingr (
     undefined_quantity ENUM ('Some','Little','Much','A lot','pinch','to taste','as needed','to garnish','slices','stalks','cloves'),
     FOREIGN KEY (recipe_name) REFERENCES recipes(recipe_name),
     FOREIGN KEY (ingr_name) REFERENCES ingredients(ingr_name),
+    CHECK (quantity>=0),
     PRIMARY KEY (recipe_name,ingr_name)
 );
 
@@ -139,11 +143,13 @@ CREATE TABLE cook (
     years_of_expertise TINYINT UNSIGNED,
     cook_status ENUM('C Cook','B Cook','A Cook','Sous Chef','Chef') NOT NULL DEFAULT 'C Cook',
     cook_photo VARCHAR(400),
+    CHECK (age>15 and age<100),
+    CHECK (birthdate > '1900-00-00'),
+    CHECK (years_of_expertise < age),
     PRIMARY KEY (first_name,last_name)
 );
 
 CREATE INDEX find_cook ON cook (last_name);
-
 
 CREATE TABLE expertise (
     first_name VARCHAR(20),
@@ -155,9 +161,12 @@ CREATE TABLE expertise (
 );
 
 CREATE TABLE episodes (
-    episode INT,
     episode_year INT,
+    episode INT,
     ep_image VARCHAR(200),
+    ep_desc VARCHAR(1000),
+    CHECK (episode>0 and episode<=10),
+    CHECK (episode_year >=2000),
     PRIMARY KEY (episode_year,episode)
 );
 
@@ -170,6 +179,7 @@ CREATE TABLE is_a_critic (
     id TINYINT UNSIGNED,
     FOREIGN KEY (episode_year,episode) REFERENCES episodes(episode_year,episode),
     FOREIGN KEY (first_name, last_name) REFERENCES cook (first_name,last_name),
+    CHECK (id<=3 and id>=0),
     PRIMARY KEY (episode_year,episode,first_name,last_name)
 );
 
@@ -189,6 +199,9 @@ CREATE TABLE is_a_contestant (
     FOREIGN KEY (recipe_name) REFERENCES recipes (recipe_name),
     FOREIGN KEY (episode_year,episode) REFERENCES episodes(episode_year,episode),
     FOREIGN KEY (first_name,last_name) REFERENCES cook (first_name,last_name),
+    CHECK (grade1 >=0 and grade1 <=5),
+    CHECK (grade2 >=0 and grade2 <=5),
+    CHECK (grade3 >=0 and grade3 <=5),
     PRIMARY KEY (episode_year,episode,country_name)
 );
 
@@ -371,52 +384,49 @@ DELIMITER ;
 -- Stored procedure that creates the episodes of a season
 DELIMITER //
 
+DELIMITER //
+
 CREATE PROCEDURE create_season ()
 BEGIN 
     DECLARE current_yr INT;
-    DECLARE ep INT;
-    DECLARE current_country VARCHAR(20);
+    DECLARE ep INT DEFAULT 0;
+    DECLARE ep_image VARCHAR(200);
+    DECLARE ep_desc VARCHAR(1000);
 
-    -- Populating episodes table
-    SET current_yr=(SELECT ep_year FROM current_year);
-    SET current_yr=current_yr+1;
-    UPDATE current_year SET ep_year=current_yr;
-    SET ep=0;
+    -- Fetch and increment the current year
+    SET current_yr = (SELECT ep_year FROM current_year);
+    SET current_yr = current_yr + 1;
+    UPDATE current_year SET ep_year = current_yr;
+
+    -- Populate the episodes table with 10 episodes
     insert_episodes: LOOP
-        SET ep=ep+1;
-        INSERT INTO episodes(episode_year,episode) VALUES (current_yr,ep);
-        IF ep=10 THEN 
+        SET ep = ep + 1;
+        
+        -- Set values for ep_image and ep_desc
+        SET ep_image = CONCAT('https://example.com/episode_', ep, '_year_', current_yr, '.jpg'); -- Example image filename
+        SET ep_desc = CONCAT('Episode ', ep, ' in ', current_yr); -- Example description
+        
+        INSERT INTO episodes (episode_year, episode, ep_image, ep_desc) 
+        VALUES (current_yr, ep, ep_image, ep_desc);
+        
+        IF ep = 10 THEN 
             LEAVE insert_episodes;
         END IF;
     END LOOP;
 
-    -- Populating is_a_contestant table
-    SET ep=0;
+    -- Reset ep for populating is_a_contestant table
+    SET ep = 0;
+
+    -- Populate the is_a_contestant and is_a_critic tables for each episode
     REPEAT 
-        SET ep=ep+1;
-        IF ep<3 THEN 
-            CALL create_episode1(ep,current_yr);
+        SET ep = ep + 1;
+        IF ep < 3 THEN 
+            CALL create_episode1(ep, current_yr);
         ELSE 
-            CALL create_episode2(ep,current_yr);
+            CALL create_episode2(ep, current_yr);
         END IF;
-    UNTIL ep=10
+    UNTIL ep = 10
     END REPEAT;
 END //
 
 DELIMITER ;
-
--- Grant permissions
--- CREATE ROLE IF NOT EXISTS administrator; 
--- GRANT ALL ON cooking_show.* TO administrator;
-
--- CREATE USER IF NOT EXISTS 'apodimanos'@'localhost' IDENTIFIED BY 'dd';
--- GRANT ALL ON cooking_show.* TO 'apodimanos'@'localhost';
-
--- SELECT * from countries ORDER BY RAND() LIMIT 10;
-
--- SELECT * FROM food_groups LIMIT 1 OFFSET n-1;
-
--- SELECT country_name from countries WHERE country_name NOT IN (SELECT * FROM test) ORDER BY RAND() LIMIT 10;
-
--- INSERT INTO cook VALUES ('Gordon','Ramsay',4536136,STR_TO_DATE("August 10 2017", "%M %d %Y"),TIMESTAMPDIFF(YEAR,STR_TO_DATE("August 10 2017", "%M %d %Y"),CURRENT_DATE()),'Chef');
--- INSERT INTO cook VALUES ('Gordon','Ramsay',4536136,STR_TO_DATE("August 10 2017", "%M %d %Y"),TIMESTAMPDIFF(YEAR,STR_TO_DATE("August 10 2017", "%M %d %Y"),CURRENT_DATE()),'Chef');
