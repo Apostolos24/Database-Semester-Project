@@ -9,4 +9,4 @@ We also used:
 
 * DBeaver 24.0.5/24.0.4
 
-* MySQL Workbench 8.0.37
+* MySQL Workbench 8.0.36
