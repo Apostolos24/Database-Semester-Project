@@ -1,0 +1,12 @@
+Before executing any sql scripts the user should check that he has the following:
+
+* mysql  Ver 15.1 Distrib 10.4.32-MariaDB, for Win64 (AMD64)
+
+* xampp version 8.2.12 (PHP 8.2.12)
+
+
+We also used:
+
+* DBeaver 24.0.5/24.0.4
+
+* MySQL Workbench 8.0.37
