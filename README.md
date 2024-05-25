@@ -7,7 +7,7 @@
 ![Progress](https://progress-bar.dev/75/?scale=100&title=Progress&width=300&color=babaca&suffix=%)
 > - [x] ER Diagram
 > - [x] Relational Diagram
-> - [ ] DDL
+> - [x] DDL
 > - [ ] DML
 
 <br/>
