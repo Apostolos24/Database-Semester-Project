@@ -7231,3 +7231,919 @@ call create_season();
 call create_season();
 call create_season();
 call create_season();
+
+CREATE USER IF NOT EXISTS 'apodimanos'@'localhost' IDENTIFIED BY 'dd';
+GRANT ALL PRIVILEGES ON cooking_show.* TO 'apodimanos'@'localhost';
+
+DROP USER IF EXISTS 'alex_andersson'@'localhost';
+DROP USER IF EXISTS 'ahmed_el_masry'@'localhost';
+DROP USER IF EXISTS 'ali_al_mansoori'@'localhost';
+DROP USER IF EXISTS 'alice_rossi'@'localhost';
+DROP USER IF EXISTS 'anastasia_kuznetsova'@'localhost';
+DROP USER IF EXISTS 'andrew_cooper'@'localhost';
+DROP USER IF EXISTS 'anna_novak'@'localhost';
+DROP USER IF EXISTS 'anna_smith'@'localhost';
+DROP USER IF EXISTS 'daniel_schmidt'@'localhost';
+DROP USER IF EXISTS 'elena_petrova'@'localhost';
+DROP USER IF EXISTS 'emilia_nowak'@'localhost';
+DROP USER IF EXISTS 'emily_garcia'@'localhost';
+DROP USER IF EXISTS 'emma_larsson'@'localhost';
+DROP USER IF EXISTS 'enrique_dalaz'@'localhost';
+DROP USER IF EXISTS 'eva_schneider'@'localhost';
+DROP USER IF EXISTS 'fabio_moreno'@'localhost';
+DROP USER IF EXISTS 'fatima_ali'@'localhost';
+DROP USER IF EXISTS 'hamza_khan'@'localhost';
+DROP USER IF EXISTS 'hana_samio'@'localhost';
+DROP USER IF EXISTS 'hannah_andersen'@'localhost';
+DROP USER IF EXISTS 'jack_solon'@'localhost';
+DROP USER IF EXISTS 'javier_martinez'@'localhost';
+DROP USER IF EXISTS 'john_doe'@'localhost';
+DROP USER IF EXISTS 'julia_santos'@'localhost';
+DROP USER IF EXISTS 'kenji_tanaka'@'localhost';
+DROP USER IF EXISTS 'laura_silva'@'localhost';
+DROP USER IF EXISTS 'lily_brown'@'localhost';
+DROP USER IF EXISTS 'luca_rossi'@'localhost';
+DROP USER IF EXISTS 'maria_garcia'@'localhost';
+DROP USER IF EXISTS 'maria_kowalska'@'localhost';
+DROP USER IF EXISTS 'matteo_ricci'@'localhost';
+DROP USER IF EXISTS 'matthew_ampton'@'localhost';
+DROP USER IF EXISTS 'max_schmidt'@'localhost';
+DROP USER IF EXISTS 'mikhail_ivanov'@'localhost';
+DROP USER IF EXISTS 'mohammed_al_mansoori'@'localhost';
+DROP USER IF EXISTS 'mohammed_ali'@'localhost';
+DROP USER IF EXISTS 'muhammad_chowdhury'@'localhost';
+DROP USER IF EXISTS 'nenson_atam'@'localhost';
+DROP USER IF EXISTS 'nina_ivanova'@'localhost';
+DROP USER IF EXISTS 'raj_patel'@'localhost';
+DROP USER IF EXISTS 'ravi_sharma'@'localhost';
+DROP USER IF EXISTS 'sadau_fernadez'@'localhost';
+DROP USER IF EXISTS 'sahar_badim'@'localhost';
+DROP USER IF EXISTS 'sara_larsson'@'localhost';
+DROP USER IF EXISTS 'satoshi_tanaka'@'localhost';
+DROP USER IF EXISTS 'sophie_lefebvre'@'localhost';
+DROP USER IF EXISTS 'thomas_muller'@'localhost';
+DROP USER IF EXISTS 'xi_zing'@'localhost';
+DROP USER IF EXISTS 'yuki_yamamoto'@'localhost';
+DROP USER IF EXISTS 'yusuf_yilmaz'@'localhost';
+DROP USER IF EXISTS 'amir_khan'@'localhost';
+DROP USER IF EXISTS 'charlotte_martin'@'localhost';
+DROP USER IF EXISTS 'david_andersson'@'localhost';
+DROP USER IF EXISTS 'isabella_silva'@'localhost';
+DROP USER IF EXISTS 'marta_perez'@'localhost';
+DROP USER IF EXISTS 'mia_johnson'@'localhost';
+DROP USER IF EXISTS 'olga_ivanova'@'localhost';
+DROP USER IF EXISTS 'pablo_hernadez'@'localhost';
+DROP USER IF EXISTS 'rafael_gonzalez'@'localhost';
+DROP USER IF EXISTS 'tomas_novak'@'localhost';
+DROP USER IF EXISTS 'sophia_nguyen'@'localhost';
+
+CREATE USER 'alex_andersson'@'localhost' IDENTIFIED BY '00';
+CREATE USER 'ahmed_el_masry'@'localhost' IDENTIFIED BY '01';
+CREATE USER 'ali_al_mansoori'@'localhost' IDENTIFIED BY '02';
+CREATE USER 'alice_rossi'@'localhost' IDENTIFIED BY '03';
+CREATE USER 'anastasia_kuznetsova'@'localhost' IDENTIFIED BY '04';
+CREATE USER 'andrew_cooper'@'localhost' IDENTIFIED BY '05';
+CREATE USER 'anna_novak'@'localhost' IDENTIFIED BY '06';
+CREATE USER 'anna_smith'@'localhost' IDENTIFIED BY '07';
+CREATE USER 'daniel_schmidt'@'localhost' IDENTIFIED BY '08';
+CREATE USER 'elena_petrova'@'localhost' IDENTIFIED BY '09';
+CREATE USER 'emilia_nowak'@'localhost' IDENTIFIED BY '10';
+CREATE USER 'emily_garcia'@'localhost' IDENTIFIED BY '11';
+CREATE USER 'emma_larsson'@'localhost' IDENTIFIED BY '12';
+CREATE USER 'enrique_dalaz'@'localhost' IDENTIFIED BY '13';
+CREATE USER 'eva_schneider'@'localhost' IDENTIFIED BY '14';
+CREATE USER 'fabio_moreno'@'localhost' IDENTIFIED BY '15';
+CREATE USER 'fatima_ali'@'localhost' IDENTIFIED BY '16';
+CREATE USER 'hamza_khan'@'localhost' IDENTIFIED BY '17';
+CREATE USER 'hana_samio'@'localhost' IDENTIFIED BY '18';
+CREATE USER 'hannah_andersen'@'localhost' IDENTIFIED BY '19';
+CREATE USER 'jack_solon'@'localhost' IDENTIFIED BY '20';
+CREATE USER 'javier_martinez'@'localhost' IDENTIFIED BY '21';
+CREATE USER 'john_doe'@'localhost' IDENTIFIED BY '22';
+CREATE USER 'julia_santos'@'localhost' IDENTIFIED BY '23';
+CREATE USER 'kenji_tanaka'@'localhost' IDENTIFIED BY '24';
+CREATE USER 'laura_silva'@'localhost' IDENTIFIED BY '25';
+CREATE USER 'lily_brown'@'localhost' IDENTIFIED BY '26';
+CREATE USER 'luca_rossi'@'localhost' IDENTIFIED BY '27';
+CREATE USER 'maria_garcia'@'localhost' IDENTIFIED BY '28';
+CREATE USER 'maria_kowalska'@'localhost' IDENTIFIED BY '29';
+CREATE USER 'matteo_ricci'@'localhost' IDENTIFIED BY '30';
+CREATE USER 'matthew_ampton'@'localhost' IDENTIFIED BY '31';
+CREATE USER 'max_schmidt'@'localhost' IDENTIFIED BY '32';
+CREATE USER 'mikhail_ivanov'@'localhost' IDENTIFIED BY '33';
+CREATE USER 'mohammed_al_mansoori'@'localhost' IDENTIFIED BY '34';
+CREATE USER 'mohammed_ali'@'localhost' IDENTIFIED BY '35';
+CREATE USER 'muhammad_chowdhury'@'localhost' IDENTIFIED BY '36';
+CREATE USER 'nenson_atam'@'localhost' IDENTIFIED BY '37';
+CREATE USER 'nina_ivanova'@'localhost' IDENTIFIED BY '38';
+CREATE USER 'raj_patel'@'localhost' IDENTIFIED BY '39';
+CREATE USER 'ravi_sharma'@'localhost' IDENTIFIED BY '40';
+CREATE USER 'sadau_fernadez'@'localhost' IDENTIFIED BY '41';
+CREATE USER 'sahar_badim'@'localhost' IDENTIFIED BY '42';
+CREATE USER 'sara_larsson'@'localhost' IDENTIFIED BY '43';
+CREATE USER 'satoshi_tanaka'@'localhost' IDENTIFIED BY '44';
+CREATE USER 'sophie_lefebvre'@'localhost' IDENTIFIED BY '45';
+CREATE USER 'thomas_muller'@'localhost' IDENTIFIED BY '46';
+CREATE USER 'xi_zing'@'localhost' IDENTIFIED BY '47';
+CREATE USER 'yuki_yamamoto'@'localhost' IDENTIFIED BY '48';
+CREATE USER 'yusuf_yilmaz'@'localhost' IDENTIFIED BY '49';
+CREATE USER 'amir_khan'@'localhost' IDENTIFIED BY '50';
+CREATE USER 'charlotte_martin'@'localhost' IDENTIFIED BY '51';
+CREATE USER 'david_andersson'@'localhost' IDENTIFIED BY '52';
+CREATE USER 'isabella_silva'@'localhost' IDENTIFIED BY '53';
+CREATE USER 'marta_perez'@'localhost' IDENTIFIED BY '54';
+CREATE USER 'mia_johnson'@'localhost' IDENTIFIED BY '55';
+CREATE USER 'olga_ivanova'@'localhost' IDENTIFIED BY '56';
+CREATE USER 'pablo_hernadez'@'localhost' IDENTIFIED BY '57';
+CREATE USER 'rafael_gonzalez'@'localhost' IDENTIFIED BY '58';
+CREATE USER 'sophia_nguyen'@'localhost' IDENTIFIED BY '59';
+CREATE USER 'tomas_novak'@'localhost' IDENTIFIED BY '60';
+
+-- Create a view for rows where first name is 'Alex' and last name is 'Andersson'
+CREATE VIEW alex_andersson_cooks AS
+SELECT *
+FROM cook
+WHERE first_name = 'Alex' AND last_name = 'Andersson';
+
+-- Grant select and update permissions on the view to Alex Andersson
+GRANT SELECT, UPDATE ON cooking_show.alex_andersson_cooks TO 'alex_andersson'@'localhost';
+
+-- Create a view for rows where first name is 'Alex' and last name is 'Andersson'
+CREATE VIEW alex_andersson_responsible AS
+SELECT *
+FROM recipes
+WHERE recipe_name IN (select recipe_name from is_a_contestant where first_name = 'Alex' and last_name = 'Andersson');
+
+-- Grant select and update permissions on the view to Alex Andersson
+GRANT SELECT, UPDATE ON cooking_show.alex_andersson_responsible TO 'alex_andersson'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'alex_andersson'@'localhost';
+
+-- Create a view for rows where first name is 'Ahmed' and last name is 'El-Masry' in the cook table
+CREATE VIEW ahmed_el_masry_cooks AS
+SELECT *
+FROM cook
+WHERE first_name = 'Ahmed' AND last_name = 'El-Masry';
+
+-- Grant select and update permissions on the view to Ahmed El-Masry
+GRANT SELECT, UPDATE ON cooking_show.ahmed_el_masry_cooks TO 'ahmed_el_masry'@'localhost';
+
+-- Create a view for rows where first name is 'Ahmed' and last name is 'El-Masry' in the is_responsible_for table
+CREATE VIEW ahmed_el_masry_responsible AS
+SELECT *
+FROM recipes
+WHERE recipe_name IN (select recipe_name from is_a_contestant where first_name = 'Ahmed' and last_name = 'El-Masry');
+
+-- Grant select and update permissions on the view to Ahmed El-Masry
+GRANT SELECT, UPDATE ON cooking_show.ahmed_el_masry_responsible TO 'ahmed_el_masry'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'ahmed_el_masry'@'localhost';
+
+-- Create a view for rows where first name is 'Ali' and last name is 'Al-Mansoori' in the cook table
+CREATE VIEW ali_al_mansoori_cooks AS
+SELECT *
+FROM cook
+WHERE first_name = 'Ali' AND last_name = 'Al-Mansoori';
+
+-- Grant select and update permissions on the view to Ali Al-Mansoori
+GRANT SELECT, UPDATE ON cooking_show.ali_al_mansoori_cooks TO 'ali_al_mansoori'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'ali_al_mansoori'@'localhost';
+
+-- Create a view for rows where first name is 'Ali' and last name is 'Al-Mansoori' in the is_responsible_for table
+CREATE VIEW ali_al_mansoori_responsible AS
+SELECT *
+FROM recipes
+WHERE recipe_name IN (select recipe_name from is_a_contestant where first_name = 'Ali' and last_name = 'Al-Mansoori');
+
+
+-- Grant select and update permissions on the view to Ali Al-Mansoori
+GRANT SELECT, UPDATE ON cooking_show.ali_al_mansoori_responsible TO 'ali_al_mansoori'@'localhost';
+
+-- Create a view for rows where first name is 'Alice' and last name is 'Rossi' in the cook table
+CREATE VIEW alice_rossi_cooks AS
+SELECT *
+FROM cook
+WHERE first_name = 'Alice' AND last_name = 'Rossi';
+
+-- Grant select and update permissions on the view to Alice Rossi
+GRANT SELECT, UPDATE ON cooking_show.alice_rossi_cooks TO 'alice_rossi'@'localhost';
+
+-- Create a view for rows where first name is 'Alice' and last name is 'Rossi' in the is_responsible_for table
+CREATE VIEW alice_rossi_responsible AS
+SELECT *
+FROM recipes
+WHERE recipe_name IN (select recipe_name from is_a_contestant where first_name = 'Alice' and last_name = 'Rossi');
+
+
+-- Grant select and update permissions on the view to Alice Rossi
+GRANT SELECT, UPDATE ON cooking_show.alice_rossi_responsible TO 'alice_rossi'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'alice_rossi'@'localhost';
+
+-- Create a view for rows where first name is 'Anastasia' and last name is 'Kuznetsova' in the cook table
+CREATE VIEW anastasia_kuznetsova_cooks AS
+SELECT *
+FROM cook
+WHERE first_name = 'Anastasia' AND last_name = 'Kuznetsova';
+
+-- Grant select and update permissions on the view to Anastasia Kuznetsova
+GRANT SELECT, UPDATE ON cooking_show.anastasia_kuznetsova_cooks TO 'anastasia_kuznetsova'@'localhost';
+
+-- Create a view for rows where first name is 'Anastasia' and last name is 'Kuznetsova' in the is_responsible_for table
+CREATE VIEW anastasia_kuznetsova_responsible AS
+SELECT *
+FROM recipes
+WHERE recipe_name IN (select recipe_name from is_a_contestant where first_name = 'Anastasia' and last_name = 'Kuznetsova');
+
+-- Grant select and update permissions on the view to Anastasia Kuznetsova
+GRANT SELECT, UPDATE ON cooking_show.anastasia_kuznetsova_responsible TO 'anastasia_kuznetsova'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'anastasia_kuznetsova'@'localhost';
+
+-- Create a view for rows where first name is 'Andrew' and last name is 'Cooper' in the cook table
+CREATE VIEW andrew_cooper_cooks AS
+SELECT *
+FROM cook
+WHERE first_name = 'Andrew' AND last_name = 'Cooper';
+
+-- Grant select and update permissions on the view to Andrew Cooper
+GRANT SELECT, UPDATE ON cooking_show.andrew_cooper_cooks TO 'andrew_cooper'@'localhost';
+
+-- Create a view for rows where first name is 'Andrew' and last name is 'Cooper' in the is_responsible_for table
+CREATE VIEW andrew_cooper_responsible AS
+SELECT *
+FROM recipes
+WHERE recipe_name IN (select recipe_name from is_a_contestant where first_name = 'Andrew' and last_name = 'Cooper');
+
+-- Grant select and update permissions on the view to Andrew Cooper
+GRANT SELECT, UPDATE ON cooking_show.andrew_cooper_responsible TO 'andrew_cooper'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'andrew_cooper'@'localhost';
+
+-- Create a view for rows where first name is 'Anna' and last name is 'Novak' in the cook table
+CREATE VIEW anna_novak_cooks AS
+SELECT *
+FROM cook
+WHERE first_name = 'Anna' AND last_name = 'Novak';
+
+-- Grant select and update permissions on the view to Anna Novak
+GRANT SELECT, UPDATE ON cooking_show.anna_novak_cooks TO 'anna_novak'@'localhost';
+
+-- Create a view for rows where first name is 'Anna' and last name is 'Novak' in the is_responsible_for table
+CREATE VIEW anna_novak_responsible AS
+SELECT *
+FROM recipes
+WHERE recipe_name IN (SELECT recipe_name FROM is_a_contestant WHERE first_name = 'Anna' AND last_name = 'Novak');
+
+-- Grant select and update permissions on the view to Anna Novak
+GRANT SELECT, UPDATE ON cooking_show.anna_novak_responsible TO 'anna_novak'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'anna_novak'@'localhost';
+
+-- Create a view for rows where first name is 'Anna' and last name is 'Smith' in the cook table
+CREATE VIEW anna_smith_cooks AS
+SELECT *
+FROM cook
+WHERE first_name = 'Anna' AND last_name = 'Smith';
+
+-- Grant select and update permissions on the view to Anna Smith
+GRANT SELECT, UPDATE ON cooking_show.anna_smith_cooks TO 'anna_smith'@'localhost';
+
+-- Create a view for rows where first name is 'Anna' and last name is 'Smith' in the is_responsible_for table
+CREATE VIEW anna_smith_responsible AS
+SELECT *
+FROM recipes
+WHERE recipe_name IN (SELECT recipe_name FROM is_a_contestant WHERE first_name = 'Anna' AND last_name = 'Smith');
+
+-- Grant select and update permissions on the view to Anna Smith
+GRANT SELECT, UPDATE ON cooking_show.anna_smith_responsible TO 'anna_smith'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'anna_smith'@'localhost';
+
+-- Create a view for rows where first name is 'Daniel' and last name is 'Schmidt' in the cook table
+CREATE VIEW daniel_schmidt_cooks AS
+SELECT *
+FROM cook
+WHERE first_name = 'Daniel' AND last_name = 'Schmidt';
+
+-- Grant select and update permissions on the view to Daniel Schmidt
+GRANT SELECT, UPDATE ON cooking_show.daniel_schmidt_cooks TO 'daniel_schmidt'@'localhost';
+
+-- Create a view for rows where first name is 'Daniel' and last name is 'Schmidt' in the is_responsible_for table
+CREATE VIEW daniel_schmidt_responsible AS
+SELECT *
+FROM recipes
+WHERE recipe_name IN (SELECT recipe_name FROM is_a_contestant WHERE first_name = 'Daniel' AND last_name = 'Schmidt');
+
+-- Grant select and update permissions on the view to Daniel Schmidt
+GRANT SELECT, UPDATE ON cooking_show.daniel_schmidt_responsible TO 'daniel_schmidt'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'daniel_schmidt'@'localhost';
+
+-- Create a view for rows where first name is 'Elena' and last name is 'Petrova' in the cook table
+CREATE VIEW elena_petrova_cooks AS
+SELECT *
+FROM cook
+WHERE first_name = 'Elena' AND last_name = 'Petrova';
+
+-- Grant select and update permissions on the view to Elena Petrova
+GRANT SELECT, UPDATE ON cooking_show.elena_petrova_cooks TO 'elena_petrova'@'localhost';
+
+-- Create a view for rows where first name is 'Elena' and last name is 'Petrova' in the is_responsible_for table
+CREATE VIEW elena_petrova_responsible AS
+SELECT *
+FROM recipes
+WHERE recipe_name IN (SELECT recipe_name FROM is_a_contestant WHERE first_name = 'Elena' AND last_name = 'Petrova');
+
+-- Grant select and update permissions on the view to Elena Petrova
+GRANT SELECT, UPDATE ON cooking_show.elena_petrova_responsible TO 'elena_petrova'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'elena_petrova'@'localhost';
+
+-- Create a view for rows where first name is 'Emilia' and last name is 'Nowak' in the cook table
+CREATE VIEW emilia_nowak_cooks AS
+SELECT *
+FROM cook
+WHERE first_name = 'Emilia' AND last_name = 'Nowak';
+
+-- Grant select and update permissions on the view to Emilia Nowak
+GRANT SELECT, UPDATE ON cooking_show.emilia_nowak_cooks TO 'emilia_nowak'@'localhost';
+
+-- Create a view for rows where first name is 'Emilia' and last name is 'Nowak' in the is_responsible_for table
+CREATE VIEW emilia_nowak_responsible AS
+SELECT *
+FROM recipes
+WHERE recipe_name IN (SELECT recipe_name FROM is_a_contestant WHERE first_name = 'Emilia' AND last_name = 'Nowak');
+
+-- Grant select and update permissions on the view to Emilia Nowak
+GRANT SELECT, UPDATE ON cooking_show.emilia_nowak_responsible TO 'emilia_nowak'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'emilia_nowak'@'localhost';
+
+-- Create views for each cook in the cook table
+CREATE VIEW emily_garcia_cooks AS SELECT * FROM cook WHERE first_name = 'Emily' AND last_name = 'Garcia';
+CREATE VIEW emma_larsson_cooks AS SELECT * FROM cook WHERE first_name = 'Emma' AND last_name = 'Larsson';
+CREATE VIEW enrique_dalaz_cooks AS SELECT * FROM cook WHERE first_name = 'Enrique' AND last_name = 'Dalaz';
+CREATE VIEW eva_schneider_cooks AS SELECT * FROM cook WHERE first_name = 'Eva' AND last_name = 'Schneider';
+CREATE VIEW fabio_moreno_cooks AS SELECT * FROM cook WHERE first_name = 'Fabio' AND last_name = 'Moreno';
+
+-- Grant select and update permissions on the cook views to the respective users
+GRANT SELECT, UPDATE ON cooking_show.emily_garcia_cooks TO 'emily_garcia'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.emma_larsson_cooks TO 'emma_larsson'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.enrique_dalaz_cooks TO 'enrique_dalaz'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.eva_schneider_cooks TO 'eva_schneider'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.fabio_moreno_cooks TO 'fabio_moreno'@'localhost';
+
+-- Create views for each cook in the is_responsible_for table
+CREATE VIEW emily_garcia_responsible AS SELECT *
+FROM recipes
+WHERE recipe_name IN (SELECT recipe_name FROM is_a_contestant WHERE first_name = 'Emily' AND last_name = 'Garcia');
+
+CREATE VIEW emma_larsson_responsible AS SELECT *
+FROM recipes
+WHERE recipe_name IN (SELECT recipe_name FROM is_a_contestant WHERE first_name = 'Emma' AND last_name = 'Larsson');
+
+CREATE VIEW enrique_dalaz_responsible AS SELECT *
+FROM recipes
+WHERE recipe_name IN (SELECT recipe_name FROM is_a_contestant WHERE first_name = 'Enrique' AND last_name = 'Dalaz');
+
+CREATE VIEW eva_schneider_responsible AS SELECT *
+FROM recipes
+WHERE recipe_name IN (SELECT recipe_name FROM is_a_contestant WHERE first_name = 'Eva' AND last_name = 'Schneider');
+
+CREATE VIEW fabio_moreno_responsible AS SELECT *
+FROM recipes
+WHERE recipe_name IN (SELECT recipe_name FROM is_a_contestant WHERE first_name = 'Fabio' AND last_name = 'Moreno');
+
+
+-- Grant select and update permissions on the is_responsible_for views to the respective users
+GRANT SELECT, UPDATE ON cooking_show.emily_garcia_responsible TO 'emily_garcia'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.emma_larsson_responsible TO 'emma_larsson'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.enrique_dalaz_responsible TO 'enrique_dalaz'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.eva_schneider_responsible TO 'eva_schneider'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.fabio_moreno_responsible TO 'fabio_moreno'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'emily_garcia'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'emma_larsson'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'enrique_dalaz'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'eva_schneider'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'fabio_moreno'@'localhost';
+
+-- Create views for each cook in the cook table
+CREATE VIEW fatima_ali_cooks AS SELECT * FROM cook WHERE first_name = 'Fatima' AND last_name = 'Ali';
+CREATE VIEW hamza_khan_cooks AS SELECT * FROM cook WHERE first_name = 'Hamza' AND last_name = 'Khan';
+
+-- Grant select and update permissions on the cook views to the respective users
+GRANT SELECT, UPDATE ON cooking_show.fatima_ali_cooks TO 'fatima_ali'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.hamza_khan_cooks TO 'hamza_khan'@'localhost';
+
+-- Create views for each cook in the is_responsible_for table
+CREATE VIEW fatima_ali_responsible AS SELECT *
+FROM recipes
+WHERE recipe_name IN (SELECT recipe_name FROM is_a_contestant WHERE first_name = 'Fatima' AND last_name = 'Ali');
+
+CREATE VIEW hamza_khan_responsible AS SELECT *
+FROM recipes
+WHERE recipe_name IN (SELECT recipe_name FROM is_a_contestant WHERE first_name = 'Hamza' AND last_name = 'Khan');
+
+
+-- Grant select and update permissions on the is_responsible_for views to the respective users
+GRANT SELECT, UPDATE ON cooking_show.fatima_ali_responsible TO 'fatima_ali'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.hamza_khan_responsible TO 'hamza_khan'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'fatima_ali'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'hamza_khan'@'localhost';
+
+-- Create views for each cook in the cook table
+CREATE VIEW hana_samio_cooks AS SELECT * FROM cook WHERE first_name = 'Hana' AND last_name = 'Samio';
+CREATE VIEW hannah_andersen_cooks AS SELECT * FROM cook WHERE first_name = 'Hannah' AND last_name = 'Andersen';
+
+-- Grant select and update permissions on the cook views to the respective users
+GRANT SELECT, UPDATE ON cooking_show.hana_samio_cooks TO 'hana_samio'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.hannah_andersen_cooks TO 'hannah_andersen'@'localhost';
+
+-- Create views for each cook in the is_responsible_for table
+CREATE VIEW hana_samio_responsible AS SELECT *
+FROM recipes
+WHERE recipe_name IN (SELECT recipe_name FROM is_a_contestant WHERE first_name = 'Hana' AND last_name = 'Samio');
+
+CREATE VIEW hannah_andersen_responsible AS SELECT *
+FROM recipes
+WHERE recipe_name IN (SELECT recipe_name FROM is_a_contestant WHERE first_name = 'Hannah' AND last_name = 'Andersen');
+
+-- Grant select and update permissions on the is_responsible_for views to the respective users
+GRANT SELECT, UPDATE ON cooking_show.hana_samio_responsible TO 'hana_samio'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.hannah_andersen_responsible TO 'hannah_andersen'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'hana_samio'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'hannah_andersen'@'localhost';
+
+-- Create views for each cook in the cook table
+CREATE VIEW jack_solon_cooks AS SELECT * FROM cook WHERE first_name = 'Jack' AND last_name = 'Solon';
+CREATE VIEW javier_martinez_cooks AS SELECT * FROM cook WHERE first_name = 'Javier' AND last_name = 'Martinez';
+CREATE VIEW john_doe_cooks AS SELECT * FROM cook WHERE first_name = 'John' AND last_name = 'Doe';
+
+-- Grant select and update permissions on the cook views to the respective users
+GRANT SELECT, UPDATE ON cooking_show.jack_solon_cooks TO 'jack_solon'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.javier_martinez_cooks TO 'javier_martinez'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.john_doe_cooks TO 'john_doe'@'localhost';
+
+-- Create views for each cook in the is_responsible_for table
+CREATE VIEW jack_solon_responsible AS SELECT *
+FROM recipes
+WHERE recipe_name IN (SELECT recipe_name FROM is_a_contestant WHERE first_name = 'Jack' AND last_name = 'Solon');
+
+CREATE VIEW javier_martinez_responsible AS SELECT *
+FROM recipes
+WHERE recipe_name IN (SELECT recipe_name FROM is_a_contestant WHERE first_name = 'Javier' AND last_name = 'Martinez');
+
+CREATE VIEW john_doe_responsible AS SELECT *
+FROM recipes
+WHERE recipe_name IN (SELECT recipe_name FROM is_a_contestant WHERE first_name = 'John' AND last_name = 'Doe');
+
+
+-- Grant select and update permissions on the is_responsible_for views to the respective users
+GRANT SELECT, UPDATE ON cooking_show.jack_solon_responsible TO 'jack_solon'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.javier_martinez_responsible TO 'javier_martinez'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.john_doe_responsible TO 'john_doe'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'jack_solon'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'javier_martinez'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'john_doe'@'localhost';
+
+-- Create views for each cook in the cook table
+CREATE VIEW julia_santos_cooks AS SELECT * FROM cook WHERE first_name = 'Julia' AND last_name = 'Santos';
+CREATE VIEW kenji_tanaka_cooks AS SELECT * FROM cook WHERE first_name = 'Kenji' AND last_name = 'Tanaka';
+CREATE VIEW laura_silva_cooks AS SELECT * FROM cook WHERE first_name = 'Laura' AND last_name = 'Silva';
+
+-- Grant select and update permissions on the cook views to the respective users
+GRANT SELECT, UPDATE ON cooking_show.julia_santos_cooks TO 'julia_santos'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.kenji_tanaka_cooks TO 'kenji_tanaka'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.laura_silva_cooks TO 'laura_silva'@'localhost';
+
+-- Create views for each cook in the is_responsible_for table
+CREATE VIEW julia_santos_responsible AS SELECT *
+FROM recipes
+WHERE recipe_name IN (SELECT recipe_name FROM is_a_contestant WHERE first_name = 'Julia' AND last_name = 'Santos');
+
+CREATE VIEW kenji_tanaka_responsible AS SELECT *
+FROM recipes
+WHERE recipe_name IN (SELECT recipe_name FROM is_a_contestant WHERE first_name = 'Kenji' AND last_name = 'Tanaka');
+
+CREATE VIEW laura_silva_responsible AS SELECT *
+FROM recipes
+WHERE recipe_name IN (SELECT recipe_name FROM is_a_contestant WHERE first_name = 'Laura' AND last_name = 'Silva');
+
+
+-- Grant select and update permissions on the is_responsible_for views to the respective users
+GRANT SELECT, UPDATE ON cooking_show.julia_santos_responsible TO 'julia_santos'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.kenji_tanaka_responsible TO 'kenji_tanaka'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.laura_silva_responsible TO 'laura_silva'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'julia_santos'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'kenji_tanaka'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'laura_silva'@'localhost';
+
+-- Create views for each cook in the cook table
+CREATE VIEW lily_brown_cooks AS SELECT * FROM cook WHERE first_name = 'Lily' AND last_name = 'Brown';
+CREATE VIEW luca_rossi_cooks AS SELECT * FROM cook WHERE first_name = 'Luca' AND last_name = 'Rossi';
+
+-- Grant select and update permissions on the cook views to the respective users
+GRANT SELECT, UPDATE ON cooking_show.lily_brown_cooks TO 'lily_brown'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.luca_rossi_cooks TO 'luca_rossi'@'localhost';
+
+-- Create views for each cook in the is_responsible_for table
+CREATE VIEW lily_brown_responsible AS SELECT *
+FROM recipes
+WHERE recipe_name IN (SELECT recipe_name FROM is_a_contestant WHERE first_name = 'Lily' AND last_name = 'Brown');
+
+CREATE VIEW luca_rossi_responsible AS SELECT *
+FROM recipes
+WHERE recipe_name IN (SELECT recipe_name FROM is_a_contestant WHERE first_name = 'Luca' AND last_name = 'Rossi');
+
+
+-- Grant select and update permissions on the is_responsible_for views to the respective users
+GRANT SELECT, UPDATE ON cooking_show.lily_brown_responsible TO 'lily_brown'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.luca_rossi_responsible TO 'luca_rossi'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'lily_brown'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'luca_rossi'@'localhost';
+
+-- Create views for each cook in the cook table
+CREATE VIEW maria_garcia_cooks AS SELECT * FROM cook WHERE first_name = 'Maria' AND last_name = 'Garcia';
+CREATE VIEW maria_kowalska_cooks AS SELECT * FROM cook WHERE first_name = 'Maria' AND last_name = 'Kowalska';
+
+-- Grant select and update permissions on the cook views to the respective users
+GRANT SELECT, UPDATE ON cooking_show.maria_garcia_cooks TO 'maria_garcia'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.maria_kowalska_cooks TO 'maria_kowalska'@'localhost';
+
+-- Create views for each cook in the is_responsible_for table
+CREATE VIEW maria_garcia_responsible AS SELECT *
+FROM recipes
+WHERE recipe_name IN (SELECT recipe_name FROM is_a_contestant WHERE first_name = 'Maria' AND last_name = 'Garcia');
+
+CREATE VIEW maria_kowalska_responsible AS SELECT *
+FROM recipes
+WHERE recipe_name IN (SELECT recipe_name FROM is_a_contestant WHERE first_name = 'Maria' AND last_name = 'Kowalska');
+
+
+-- Grant select and update permissions on the is_responsible_for views to the respective users
+GRANT SELECT, UPDATE ON cooking_show.maria_garcia_responsible TO 'maria_garcia'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.maria_kowalska_responsible TO 'maria_kowalska'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'maria_garcia'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'maria_kowalska'@'localhost';
+
+-- Create views for each cook in the cook table
+CREATE VIEW matteo_ricci_cooks AS SELECT * FROM cook WHERE first_name = 'Matteo' AND last_name = 'Ricci';
+CREATE VIEW matthew_ampton_cooks AS SELECT * FROM cook WHERE first_name = 'Matthew' AND last_name = 'Ampton';
+
+-- Grant select and update permissions on the cook views to the respective users
+GRANT SELECT, UPDATE ON cooking_show.matteo_ricci_cooks TO 'matteo_ricci'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.matthew_ampton_cooks TO 'matthew_ampton'@'localhost';
+
+-- Create views for each cook in the is_responsible_for table
+CREATE VIEW matteo_ricci_responsible AS SELECT *
+FROM recipes
+WHERE recipe_name IN (SELECT recipe_name FROM is_a_contestant WHERE first_name = 'Matteo' AND last_name = 'Ricci');
+
+CREATE VIEW matthew_ampton_responsible AS SELECT *
+FROM recipes
+WHERE recipe_name IN (SELECT recipe_name FROM is_a_contestant WHERE first_name = 'Matthew' AND last_name = 'Ampton');
+
+
+-- Grant select and update permissions on the is_responsible_for views to the respective users
+GRANT SELECT, UPDATE ON cooking_show.matteo_ricci_responsible TO 'matteo_ricci'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.matthew_ampton_responsible TO 'matthew_ampton'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'matteo_ricci'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'matthew_ampton'@'localhost';
+
+-- Create views for each cook in the cook table
+CREATE VIEW max_schmidt_cooks AS SELECT * FROM cook WHERE first_name = 'Max' AND last_name = 'Schmidt';
+CREATE VIEW mikhail_ivanov_cooks AS SELECT * FROM cook WHERE first_name = 'Mikhail' AND last_name = 'Ivanov';
+CREATE VIEW mohammed_al_mansoori_cooks AS SELECT * FROM cook WHERE first_name = 'Mohammed' AND last_name = 'Al-Mansoori';
+CREATE VIEW mohammed_ali_cooks AS SELECT * FROM cook WHERE first_name = 'Mohammed' AND last_name = 'Ali';
+
+-- Grant select and update permissions on the cook views to the respective users
+GRANT SELECT, UPDATE ON cooking_show.max_schmidt_cooks TO 'max_schmidt'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.mikhail_ivanov_cooks TO 'mikhail_ivanov'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.mohammed_al_mansoori_cooks TO 'mohammed_al_mansoori'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.mohammed_ali_cooks TO 'mohammed_ali'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'max_schmidt'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'mikhail_ivanov'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'mohammed_al_mansoori'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'mohammed_ali'@'localhost';
+
+-- Create views for each cook in the is_responsible_for table
+CREATE VIEW max_schmidt_responsible AS SELECT *
+FROM recipes
+WHERE recipe_name IN (SELECT recipe_name FROM is_a_contestant WHERE first_name = 'Max' AND last_name = 'Schmidt');
+
+CREATE VIEW mikhail_ivanov_responsible AS SELECT *
+FROM recipes
+WHERE recipe_name IN (SELECT recipe_name FROM is_a_contestant WHERE first_name = 'Mikhail' AND last_name = 'Ivanov');
+
+CREATE VIEW mohammed_al_mansoori_responsible AS SELECT *
+FROM recipes
+WHERE recipe_name IN (SELECT recipe_name FROM is_a_contestant WHERE first_name = 'Mohammed' AND last_name = 'Al-Mansoori');
+
+CREATE VIEW mohammed_ali_responsible AS SELECT *
+FROM recipes
+WHERE recipe_name IN (SELECT recipe_name FROM is_a_contestant WHERE first_name = 'Mohammed' AND last_name = 'Ali');
+
+
+-- Grant select and update permissions on the is_responsible_for views to the respective users
+GRANT SELECT, UPDATE ON cooking_show.max_schmidt_responsible TO 'max_schmidt'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.mikhail_ivanov_responsible TO 'mikhail_ivanov'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.mohammed_al_mansoori_responsible TO 'mohammed_al_mansoori'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.mohammed_ali_responsible TO 'mohammed_ali'@'localhost';
+
+-- Create views for each cook in the cook table
+CREATE VIEW muhammad_chowdhury_cooks AS SELECT * FROM cook WHERE first_name = 'Muhammad' AND last_name = 'Chowdhury';
+CREATE VIEW nenson_atam_cooks AS SELECT * FROM cook WHERE first_name = 'Nenson' AND last_name = 'Atam';
+CREATE VIEW nina_ivanova_cooks AS SELECT * FROM cook WHERE first_name = 'Nina' AND last_name = 'Ivanova';
+CREATE VIEW raj_patel_cooks AS SELECT * FROM cook WHERE first_name = 'Raj' AND last_name = 'Patel';
+
+-- Grant select and update permissions on the cook views to the respective users
+GRANT SELECT, UPDATE ON cooking_show.muhammad_chowdhury_cooks TO 'muhammad_chowdhury'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.nenson_atam_cooks TO 'nenson_atam'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.nina_ivanova_cooks TO 'nina_ivanova'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.raj_patel_cooks TO 'raj_patel'@'localhost';
+
+-- Create views for each cook in the is_responsible_for table
+CREATE VIEW muhammad_chowdhury_responsible AS SELECT *
+FROM recipes
+WHERE recipe_name IN (SELECT recipe_name FROM is_a_contestant WHERE first_name = 'Muhammad' AND last_name = 'Chowdhury');
+
+CREATE VIEW nenson_atam_responsible AS SELECT *
+FROM recipes
+WHERE recipe_name IN (SELECT recipe_name FROM is_a_contestant WHERE first_name = 'Nenson' AND last_name = 'Atam');
+
+CREATE VIEW nina_ivanova_responsible AS SELECT *
+FROM recipes
+WHERE recipe_name IN (SELECT recipe_name FROM is_a_contestant WHERE first_name = 'Nina' AND last_name = 'Ivanova');
+
+CREATE VIEW raj_patel_responsible AS SELECT *
+FROM recipes
+WHERE recipe_name IN (SELECT recipe_name FROM is_a_contestant WHERE first_name = 'Raj' AND last_name = 'Patel');
+
+
+-- Grant select and update permissions on the is_responsible_for views to the respective users
+GRANT SELECT, UPDATE ON cooking_show.muhammad_chowdhury_responsible TO 'muhammad_chowdhury'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.nenson_atam_responsible TO 'nenson_atam'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.nina_ivanova_responsible TO 'nina_ivanova'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.raj_patel_responsible TO 'raj_patel'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'muhammad_chowdhury'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'nenson_atam'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'nina_ivanova'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'raj_patel'@'localhost';
+
+-- Create views for each cook in the cook table
+CREATE VIEW ravi_sharma_cooks AS SELECT * FROM cook WHERE first_name = 'Ravi' AND last_name = 'Sharma';
+CREATE VIEW sadau_fernadez_cooks AS SELECT * FROM cook WHERE first_name = 'Sadau' AND last_name = 'Fernadez';
+CREATE VIEW sahar_badim_cooks AS SELECT * FROM cook WHERE first_name = 'Sahar' AND last_name = 'Badim';
+CREATE VIEW sara_larsson_cooks AS SELECT * FROM cook WHERE first_name = 'Sara' AND last_name = 'Larsson';
+CREATE VIEW satoshi_tanaka_cooks AS SELECT * FROM cook WHERE first_name = 'Satoshi' AND last_name = 'Tanaka';
+
+-- Grant select and update permissions on the cook views to the respective users
+GRANT SELECT, UPDATE ON cooking_show.ravi_sharma_cooks TO 'ravi_sharma'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.sadau_fernadez_cooks TO 'sadau_fernadez'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.sahar_badim_cooks TO 'sahar_badim'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.sara_larsson_cooks TO 'sara_larsson'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.satoshi_tanaka_cooks TO 'satoshi_tanaka'@'localhost';
+
+-- Create views for each cook in the is_responsible_for table
+CREATE VIEW ravi_sharma_responsible AS SELECT *
+FROM recipes
+WHERE recipe_name IN (SELECT recipe_name FROM is_a_contestant WHERE first_name = 'Ravi' AND last_name = 'Sharma');
+
+CREATE VIEW sadau_fernadez_responsible AS SELECT *
+FROM recipes
+WHERE recipe_name IN (SELECT recipe_name FROM is_a_contestant WHERE first_name = 'Sadau' AND last_name = 'Fernadez');
+
+CREATE VIEW sahar_badim_responsible AS SELECT *
+FROM recipes
+WHERE recipe_name IN (SELECT recipe_name FROM is_a_contestant WHERE first_name = 'Sahar' AND last_name = 'Badim');
+
+CREATE VIEW sara_larsson_responsible AS SELECT *
+FROM recipes
+WHERE recipe_name IN (SELECT recipe_name FROM is_a_contestant WHERE first_name = 'Sara' AND last_name = 'Larsson');
+
+CREATE VIEW satoshi_tanaka_responsible AS SELECT *
+FROM recipes
+WHERE recipe_name IN (SELECT recipe_name FROM is_a_contestant WHERE first_name = 'Satoshi' AND last_name = 'Tanaka');
+
+-- Grant select and update permissions on the is_responsible_for views to the respective users
+GRANT SELECT, UPDATE ON cooking_show.ravi_sharma_responsible TO 'ravi_sharma'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.sadau_fernadez_responsible TO 'sadau_fernadez'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.sahar_badim_responsible TO 'sahar_badim'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.sara_larsson_responsible TO 'sara_larsson'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.satoshi_tanaka_responsible TO 'satoshi_tanaka'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'ravi_sharma'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'sadau_fernadez'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'sahar_badim'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'sara_larsson'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'satoshi_tanaka'@'localhost';
+
+-- Create views for each cook in the cook table
+CREATE VIEW sophie_lefebvre_cooks AS SELECT * FROM cook WHERE first_name = 'Sophie' AND last_name = 'Lefebvre';
+CREATE VIEW thomas_muller_cooks AS SELECT * FROM cook WHERE first_name = 'Thomas' AND last_name = 'Muller';
+
+-- Grant select and update permissions on the cook views to the respective users
+GRANT SELECT, UPDATE ON cooking_show.sophie_lefebvre_cooks TO 'sophie_lefebvre'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.thomas_muller_cooks TO 'thomas_muller'@'localhost';
+
+-- Create views for each cook in the is_responsible_for table
+CREATE VIEW sophie_lefebvre_responsible AS SELECT *
+FROM recipes
+WHERE recipe_name IN (SELECT recipe_name FROM is_a_contestant WHERE first_name = 'Sophie' AND last_name = 'Lefebvre');
+
+CREATE VIEW thomas_muller_responsible AS SELECT *
+FROM recipes
+WHERE recipe_name IN (SELECT recipe_name FROM is_a_contestant WHERE first_name = 'Thomas' AND last_name = 'Muller');
+
+
+-- Grant select and update permissions on the is_responsible_for views to the respective users
+GRANT SELECT, UPDATE ON cooking_show.sophie_lefebvre_responsible TO 'sophie_lefebvre'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.thomas_muller_responsible TO 'thomas_muller'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'sophie_lefebvre'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'thomas_muller'@'localhost';
+
+-- Create views for each cook in the cook table
+CREATE VIEW xi_zing_cooks AS SELECT * FROM cook WHERE first_name = 'Xi' AND last_name = 'Zing';
+CREATE VIEW yuki_yamamoto_cooks AS SELECT * FROM cook WHERE first_name = 'Yuki' AND last_name = 'Yamamoto';
+CREATE VIEW yusuf_yilmaz_cooks AS SELECT * FROM cook WHERE first_name = 'Yusuf' AND last_name = 'Yilmaz';
+
+-- Grant select and update permissions on the cook views to the respective users
+GRANT SELECT, UPDATE ON cooking_show.xi_zing_cooks TO 'xi_zing'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.yuki_yamamoto_cooks TO 'yuki_yamamoto'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.yusuf_yilmaz_cooks TO 'yusuf_yilmaz'@'localhost';
+
+-- Create views for each cook in the is_responsible_for table
+CREATE VIEW xi_zing_responsible AS SELECT *
+FROM recipes
+WHERE recipe_name IN (SELECT recipe_name FROM is_a_contestant WHERE first_name = 'Xi' AND last_name = 'Zing');
+
+CREATE VIEW yuki_yamamoto_responsible AS SELECT *
+FROM recipes
+WHERE recipe_name IN (SELECT recipe_name FROM is_a_contestant WHERE first_name = 'Yuki' AND last_name = 'Yamamoto');
+
+CREATE VIEW yusuf_yilmaz_responsible AS SELECT *
+FROM recipes
+WHERE recipe_name IN (SELECT recipe_name FROM is_a_contestant WHERE first_name = 'Yusuf' AND last_name = 'Yilmaz');
+
+-- Grant select and update permissions on the is_responsible_for views to the respective users
+GRANT SELECT, UPDATE ON cooking_show.xi_zing_responsible TO 'xi_zing'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.yuki_yamamoto_responsible TO 'yuki_yamamoto'@'localhost';
+GRANT SELECT, UPDATE ON cooking_show.yusuf_yilmaz_responsible TO 'yusuf_yilmaz'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'xi_zing'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'yuki_yamamoto'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'yusuf_yilmaz'@'localhost';
+
+CREATE VIEW amir_khan_cooks AS
+SELECT *
+FROM cook
+WHERE first_name = 'Amir' AND last_name = 'Khan';
+
+GRANT SELECT, UPDATE ON cooking_show.amir_khan_cooks TO 'amir_khan'@'localhost';
+
+CREATE VIEW amir_khan_responsible AS
+SELECT *
+FROM recipes
+WHERE recipe_name IN (select recipe_name from is_a_contestant where first_name = 'Amir' and last_name = 'Khan');
+
+GRANT SELECT, UPDATE ON cooking_show.amir_khan_responsible TO 'amir_khan'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'amir_khan'@'localhost';
+
+CREATE VIEW charlotte_martin_cooks AS
+SELECT *
+FROM cook
+WHERE first_name = 'Charlotte' AND last_name = 'Martin';
+
+GRANT SELECT, UPDATE ON cooking_show.charlotte_martin_cooks TO 'charlotte_martin'@'localhost';
+
+CREATE VIEW charlotte_martin_responsible AS
+SELECT *
+FROM recipes
+WHERE recipe_name IN (select recipe_name from is_a_contestant where first_name = 'Charlotte' and last_name = 'Martin');
+
+GRANT SELECT, UPDATE ON cooking_show.charlotte_martin_responsible TO 'charlotte_martin'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'charlotte_martin'@'localhost';
+
+CREATE VIEW david_andersson_cooks AS
+SELECT *
+FROM cook
+WHERE first_name = 'David' AND last_name = 'Andersson';
+
+GRANT SELECT, UPDATE ON cooking_show.david_andersson_cooks TO 'david_andersson'@'localhost';
+
+CREATE VIEW david_andersson_responsible AS
+SELECT *
+FROM recipes
+WHERE recipe_name IN (select recipe_name from is_a_contestant where first_name = 'David' and last_name = 'Andersson');
+
+GRANT SELECT, UPDATE ON cooking_show.david_andersson_responsible TO 'david_andersson'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'david_andersson'@'localhost';
+
+CREATE VIEW isabella_silva_cooks AS
+SELECT *
+FROM cook
+WHERE first_name = 'Isabella' AND last_name = 'Silva';
+
+GRANT SELECT, UPDATE ON cooking_show.isabella_silva_cooks TO 'isabella_silva'@'localhost';
+
+CREATE VIEW isabella_silva_responsible AS
+SELECT *
+FROM recipes
+WHERE recipe_name IN (select recipe_name from is_a_contestant where first_name = 'Isabella' and last_name = 'Silva');
+
+GRANT SELECT, UPDATE ON cooking_show.isabella_silva_responsible TO 'isabella_silva'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'isabella_silva'@'localhost';
+
+CREATE VIEW marta_perez_cooks AS
+SELECT *
+FROM cook
+WHERE first_name = 'Marta' AND last_name = 'Perez';
+
+GRANT SELECT, UPDATE ON cooking_show.marta_perez_cooks TO 'marta_perez'@'localhost';
+
+CREATE VIEW marta_perez_responsible AS
+SELECT *
+FROM recipes
+WHERE recipe_name IN (select recipe_name from is_a_contestant where first_name = 'Marta' and last_name = 'Perez');
+
+GRANT SELECT, UPDATE ON cooking_show.marta_perez_responsible TO 'marta_perez'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'marta_perez'@'localhost';
+
+CREATE VIEW mia_johnson_cooks AS
+SELECT *
+FROM cook
+WHERE first_name = 'Mia' AND last_name = 'Johnson';
+
+GRANT SELECT, UPDATE ON cooking_show.mia_johnson_cooks TO 'mia_johnson'@'localhost';
+
+CREATE VIEW mia_johnson_responsible AS
+SELECT *
+FROM recipes
+WHERE recipe_name IN (select recipe_name from is_a_contestant where first_name = 'Mia' and last_name = 'Johnson');
+
+GRANT SELECT, UPDATE ON cooking_show.mia_johnson_responsible TO 'mia_johnson'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'mia_johnson'@'localhost';
+
+CREATE VIEW olga_ivanova_cooks AS
+SELECT *
+FROM cook
+WHERE first_name = 'Olga' AND last_name = 'Ivanova';
+
+GRANT SELECT, UPDATE ON cooking_show.olga_ivanova_cooks TO 'olga_ivanova'@'localhost';
+
+CREATE VIEW olga_ivanova_responsible AS
+SELECT *
+FROM recipes
+WHERE recipe_name IN (select recipe_name from is_a_contestant where first_name = 'Olga' and last_name = 'Ivanova');
+
+GRANT SELECT, UPDATE ON cooking_show.olga_ivanova_responsible TO 'olga_ivanova'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'olga_ivanova'@'localhost';
+
+CREATE VIEW pablo_hernadez_cooks AS
+SELECT *
+FROM cook
+WHERE first_name = 'Pablo' AND last_name = 'Hernadez';
+
+GRANT SELECT, UPDATE ON cooking_show.pablo_hernadez_cooks TO 'pablo_hernadez'@'localhost';
+
+CREATE VIEW pablo_hernadez_responsible AS
+SELECT *
+FROM recipes
+WHERE recipe_name IN (select recipe_name from is_a_contestant where first_name = 'Pablo' and last_name = 'Hernadez');
+
+GRANT SELECT, UPDATE ON cooking_show.pablo_hernadez_responsible TO 'pablo_hernadez'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'pablo_hernadez'@'localhost';
+
+CREATE VIEW rafael_gonzalez_cooks AS
+SELECT *
+FROM cook
+WHERE first_name = 'Rafael' AND last_name = 'Gonzalez';
+
+GRANT SELECT, UPDATE ON cooking_show.rafael_gonzalez_cooks TO 'rafael_gonzalez'@'localhost';
+
+CREATE VIEW rafael_gonzalez_responsible AS
+SELECT *
+FROM recipes
+WHERE recipe_name IN (select recipe_name from is_a_contestant where first_name = 'Rafael' and last_name = 'Gonzalez');
+
+GRANT SELECT, UPDATE ON cooking_show.rafael_gonzalez_responsible TO 'rafael_gonzalez'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'rafael_gonzalez'@'localhost';
+
+CREATE VIEW sophia_nguyen_cooks AS
+SELECT *
+FROM cook
+WHERE first_name = 'Sophia' AND last_name = 'Nguyen';
+
+GRANT SELECT, UPDATE ON cooking_show.sophia_nguyen_cooks TO 'sophia_nguyen'@'localhost';
+
+CREATE VIEW sophia_nguyen_responsible AS
+SELECT *
+FROM recipes
+WHERE recipe_name IN (select recipe_name from is_a_contestant where first_name = 'Sophia' and last_name = 'Nguyen');
+
+GRANT SELECT, UPDATE ON cooking_show.sophia_nguyen_responsible TO 'sophia_nguyen'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'sophia_nguyen'@'localhost';
+
+CREATE VIEW tomas_novak_cooks AS
+SELECT *
+FROM cook
+WHERE first_name = 'Tomas' AND last_name = 'Novak';
+
+GRANT SELECT, UPDATE ON cooking_show.tomas_novak_cooks TO 'tomas_novak'@'localhost';
+
+CREATE VIEW tomas_novak_responsible AS
+SELECT *
+FROM recipes
+WHERE recipe_name IN (select recipe_name from is_a_contestant where first_name = 'Tomas' and last_name = 'Novak');
+
+GRANT SELECT, UPDATE ON cooking_show.tomas_novak_responsible TO 'tomas_novak'@'localhost';
+GRANT INSERT ON cooking_show.recipes TO 'tomas_novak'@'localhost';
