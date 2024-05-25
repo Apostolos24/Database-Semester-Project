@@ -4,7 +4,7 @@
 <br/>
 
 ### Progress
-![Progress](https://progress-bar.dev/75/?scale=500&title=Progress&width=400&color=babaca&suffix=%)
+![Progress](https://progress-bar.dev/75/?scale=100&title=Progress&width=200&color=babaca&suffix=%)
 > - [x] ER Diagram
 > - [x] Relational Diagram
 > - [ ] DDL
