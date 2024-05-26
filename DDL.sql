@@ -430,3 +430,25 @@ BEGIN
 END //
 
 DELIMITER ;
+
+drop view if exists season_winner;
+create view season_winner as
+select first_name, last_name, grade, episode_year, cook_status
+from ( 
+        select first_name, last_name, grade, rank() over (partition by episode_year order by grade desc, status_to_int(cook_status) desc, RAND()) as ggrank, episode_year, cook_status
+        from episode_winner
+        group by first_name, last_name, grade, episode_year
+      ) as ep_rank_table
+where ggrank = 1
+order by episode_year;
+
+drop view if exists episode_winner;
+create view episode_winner as
+select first_name, last_name, grade, episode, episode_year, cook_status
+from (
+    select first_name, last_name, grade1+grade2+grade3 as grade, rank() over (partition by episode_year, episode order by grade1+grade2+grade3 desc, status_to_int(cook_status) desc, RAND()) as grank, episode, episode_year, cook_status
+    from is_a_contestant natural join cook 
+    group by first_name, last_name, grade, episode, episode_year
+    ) as rank_table 
+where grank = 1
+order by episode_year, episode;
