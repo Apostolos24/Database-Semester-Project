@@ -1,4 +1,4 @@
--- DROP DATABASE IF EXISTS cooking_show;
+DROP DATABASE IF EXISTS cooking_show;
 
 CREATE DATABASE cooking_show;
 USE cooking_show;
@@ -144,7 +144,7 @@ CREATE TABLE cook (
     cook_status ENUM('C Cook','B Cook','A Cook','Sous Chef','Chef') NOT NULL DEFAULT 'C Cook',
     cook_photo VARCHAR(400),
     CHECK (age>15 and age<100),
-    CHECK (birthdate > '1900-00-00'),
+    CHECK (birthdate > '1900-01-01'),
     CHECK (years_of_expertise < age),
     PRIMARY KEY (first_name,last_name)
 );
