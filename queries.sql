@@ -214,6 +214,69 @@ select episode_year,episode,sum(quantity) as total_equipment, rank() over (order
 as table1 
 where table1.rk = 1;
 
+WITH EquipmentTotals AS (
+    SELECT 
+        ic.episode_year,
+        ic.episode,
+        SUM(req.quantity) AS total_equipment,
+        RANK() OVER (PARTITION BY ic.episode_year, ic.episode ORDER BY SUM(req.quantity) DESC) AS rk
+    FROM 
+        is_a_contestant AS ic
+    JOIN 
+        requires_eq AS req ON ic.recipe_name = req.recipe_name
+    GROUP BY 
+        ic.episode_year,
+        ic.episode
+)
+SELECT 
+    episode_year,
+    episode,
+    total_equipment
+FROM 
+    (
+        SELECT 
+            *,
+            ROW_NUMBER() OVER (ORDER BY total_equipment DESC) AS row_num
+        FROM 
+            EquipmentTotals
+    ) AS ranked_totals
+WHERE 
+    row_num = 1;
+
+explain select episode_year,episode,total_equipment from (
+select episode_year,episode,sum(quantity) as total_equipment, rank() over (order by total_equipment desc) as rk from is_a_contestant as a join requires_eq as b on a.recipe_name = b.recipe_name group by episode_year,episode)
+as table1 
+where table1.rk = 1;
+
+explain WITH EquipmentTotals AS (
+    SELECT 
+        ic.episode_year,
+        ic.episode,
+        SUM(req.quantity) AS total_equipment,
+        RANK() OVER (PARTITION BY ic.episode_year, ic.episode ORDER BY SUM(req.quantity) DESC) AS rk
+    FROM 
+        is_a_contestant AS ic
+    JOIN 
+        requires_eq AS req ON ic.recipe_name = req.recipe_name
+    GROUP BY 
+        ic.episode_year,
+        ic.episode
+)
+SELECT 
+    episode_year,
+    episode,
+    total_equipment
+FROM 
+    (
+        SELECT 
+            *,
+            ROW_NUMBER() OVER (ORDER BY total_equipment DESC) AS row_num
+        FROM 
+            EquipmentTotals
+    ) AS ranked_totals
+WHERE 
+    row_num = 1;
+
 -- QUESTION 3.9
 
 select episode_year,avg(recipe_carbs) from is_a_contestant as a inner join recipes as b on a.recipe_name=b.recipe_name group by episode_year;
