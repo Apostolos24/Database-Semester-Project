@@ -1,4 +1,3 @@
-
 USE cooking_show;
 
 -- QUESTION 3.1
