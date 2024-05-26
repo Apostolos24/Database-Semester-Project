@@ -10,7 +10,6 @@
 > - [x] DDL
 > - [x] DML
 > - [x] Αναφορά
-> - [x] Big Chungus
 
 <br/>
 
