@@ -291,11 +291,23 @@ limit 5;
 
 -- QUESTION 3.12
 
+SELECT episode_year, episode, average_difficulty 
+FROM (
+    SELECT episode_year, episode, a.recipe_name, AVG(recipe_difficulty) AS average_difficulty, 
+           RANK() OVER (PARTITION BY episode_year ORDER BY AVG(recipe_difficulty) DESC) AS rk 
+    FROM is_a_contestant AS a 
+    INNER JOIN recipes AS b ON a.recipe_name = b.recipe_name 
+    GROUP BY episode_year, episode
+) AS res 
+WHERE res.rk = 1 
+ORDER BY average_difficulty DESC;
+
+/*
 select episode_year,episode,average_difficulty from (
 select episode_year,episode,a.recipe_name,avg(recipe_difficulty) as average_difficulty, rank() over (partition by episode_year order by average_difficulty desc) as rk from is_a_contestant as a inner join recipes as b on a.recipe_name=b.recipe_name group by episode_year,episode)
 as res 
 where res.rk=1;
-
+*/
 -- QUESTION 3.13
 
 select episode_year,episode,tot_prof_level from (
