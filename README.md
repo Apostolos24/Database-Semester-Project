@@ -8,7 +8,8 @@
 > - [x] ER Diagram
 > - [x] Relational Diagram
 > - [x] DDL
-> - [ ] DML
+> - [x] DML
+> - [ ] Αναφορά
 
 <br/>
 
