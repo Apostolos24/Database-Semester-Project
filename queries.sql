@@ -34,7 +34,7 @@ select episode_year,first_name,last_name, count(*) as c1 from is_a_critic group 
 as table2
 where c1>=2 -- MUST BE c1>3 
 group by episode_year,c1
-having c2>1) as table3);
+having c2>1) as table3)order by c1 DESC;
 
 -- QUESTION 3.6
 WITH recipe_tags AS (
