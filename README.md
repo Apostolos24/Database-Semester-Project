@@ -4,12 +4,12 @@
 <br/>
 
 ### Progress
-![Progress](https://progress-bar.dev/95/?scale=100&title=Progress&width=300&color=babaca&suffix=%)
+![Progress](https://progress-bar.dev/100/?scale=100&title=Progress&width=300&color=babaca&suffix=%)
 > - [x] ER Diagram
 > - [x] Relational Diagram
 > - [x] DDL
 > - [x] DML
-> - [ ] Αναφορά
+> - [x] Αναφορά
 
 <br/>
 
