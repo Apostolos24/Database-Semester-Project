@@ -228,70 +228,7 @@ explain select sql_buffer_result episode_year,episode,total_equipment from (
 select episode_year,episode,sum(quantity) as total_equipment, rank() over (order by total_equipment desc) as rk from is_a_contestant as a join requires_eq as b force index (get_equipment) on a.recipe_name = b.recipe_name group by episode_year,episode)
 as table1 
 where table1.rk = 1;
-/*
-WITH EquipmentTotals AS (
-    SELECT 
-        ic.episode_year,
-        ic.episode,
-        SUM(req.quantity) AS total_equipment,
-        RANK() OVER (PARTITION BY ic.episode_year, ic.episode ORDER BY SUM(req.quantity) DESC) AS rk
-    FROM 
-        is_a_contestant AS ic
-    JOIN 
-        requires_eq AS req ON ic.recipe_name = req.recipe_name
-    GROUP BY 
-        ic.episode_year,
-        ic.episode
-)
-SELECT 
-    episode_year,
-    episode,
-    total_equipment
-FROM 
-    (
-        SELECT 
-            *,
-            ROW_NUMBER() OVER (ORDER BY total_equipment DESC) AS row_num
-        FROM 
-            EquipmentTotals
-    ) AS ranked_totals
-WHERE 
-    row_num = 1;
 
-explain select episode_year,episode,total_equipment from (
-select episode_year,episode,sum(quantity) as total_equipment, rank() over (order by total_equipment desc) as rk from is_a_contestant as a join requires_eq as b on a.recipe_name = b.recipe_name group by episode_year,episode)
-as table1 
-where table1.rk = 1;
-
-explain WITH EquipmentTotals AS (
-    SELECT 
-        ic.episode_year,
-        ic.episode,
-        SUM(req.quantity) AS total_equipment,
-        RANK() OVER (PARTITION BY ic.episode_year, ic.episode ORDER BY SUM(req.quantity) DESC) AS rk
-    FROM 
-        is_a_contestant AS ic
-    JOIN 
-        requires_eq AS req ON ic.recipe_name = req.recipe_name
-    GROUP BY 
-        ic.episode_year,
-        ic.episode
-)
-SELECT 
-    episode_year,
-    episode,
-    total_equipment
-FROM 
-    (
-        SELECT 
-            *,
-            ROW_NUMBER() OVER (ORDER BY total_equipment DESC) AS row_num
-        FROM 
-            EquipmentTotals
-    ) AS ranked_totals
-WHERE 
-    row_num = 1;
-*/
 -- QUESTION 3.9
 
 select episode_year,avg(recipe_carbs) from is_a_contestant as a inner join recipes as b on a.recipe_name=b.recipe_name group by episode_year;
@@ -332,27 +269,6 @@ from	(
         
 
 -- QUESTION 3.11
-/*
-SELECT
-c.first_name AS critic_first_name,
-    c.last_name AS critic_last_name,
-    co.first_name AS cook_first_name,
-    co.last_name AS cook_last_name,
-    SUM(ia.grade1 + ia.grade2 + ia.grade3) AS total_score
-FROM
-    is_a_critic ic
-JOIN
-    is_a_contestant ia ON ic.episode_year = ia.episode_year AND ic.episode = ia.episode
-JOIN
-    cook co ON ia.first_name = co.first_name AND ia.last_name = co.last_name
-JOIN
-    cook c ON ic.first_name = c.first_name AND ic.last_name = c.last_name
-GROUP BY
-    c.first_name, c.last_name, co.first_name, co.last_name
-ORDER BY
-    total_score DESC
-LIMIT 5;
-*/
 
 select critic_name,critic_surname,contestant_name,contestant_surname,sum(grade) as total_grade  from
 (select a.first_name as critic_name,a.last_name as critic_surname,b.first_name as contestant_name,b.last_name as contestant_surname,
@@ -380,12 +296,6 @@ FROM (
 WHERE res.rk = 1 
 ORDER BY average_difficulty DESC;
 
-/*
-select episode_year,episode,average_difficulty from (
-select episode_year,episode,a.recipe_name,avg(recipe_difficulty) as average_difficulty, rank() over (partition by episode_year order by average_difficulty desc) as rk from is_a_contestant as a inner join recipes as b on a.recipe_name=b.recipe_name group by episode_year,episode)
-as res 
-where res.rk=1;
-*/
 -- QUESTION 3.13
 
 select episode_year,episode,tot_prof_level from (
@@ -397,9 +307,6 @@ as final
 group by episode_year,episode)
 as finalfinal
 where finalfinal.rk = 1;
-
-
--- select episode_year,episode,a.first_name,a.last_name,status_to_int(cook_status) as prof_level from is_a_contestant as a join cook as b on (concat(a.first_name,a.last_name) = concat(b.first_name,b.last_name)) order by episode_year,episode;
 
 -- QUESTION 3.14
 
