@@ -8147,3 +8147,102 @@ WHERE recipe_name IN (select recipe_name from is_a_contestant where first_name =
 
 GRANT SELECT, UPDATE ON cooking_show.tomas_novak_responsible TO 'tomas_novak'@'localhost';
 GRANT INSERT ON cooking_show.recipes TO 'tomas_novak'@'localhost';
+
+-- Create a view for episode winners
+CREATE VIEW episode_winners AS
+WITH GradeSum AS (
+    SELECT 
+        episode_year, 
+        episode, 
+        first_name, 
+        last_name, 
+        country_name,
+        recipe_name,
+        grade1 + grade2 + grade3 AS total_grades
+    FROM 
+        is_a_contestant
+),
+RankedContestants AS (
+    SELECT 
+        gs.episode_year, 
+        gs.episode, 
+        gs.first_name, 
+        gs.last_name, 
+        gs.country_name,
+        gs.recipe_name,
+        gs.total_grades,
+        c.cook_status,
+        ROW_NUMBER() OVER (
+            PARTITION BY gs.episode_year, gs.episode
+            ORDER BY 
+                gs.total_grades DESC, 
+                status_to_int(c.cook_status) DESC,
+                RAND()
+        ) AS rank
+    FROM 
+        GradeSum gs
+        JOIN cook c ON gs.first_name = c.first_name AND gs.last_name = c.last_name
+)
+SELECT 
+    episode_year, 
+    episode, 
+    first_name, 
+    last_name, 
+    country_name,
+    recipe_name,
+    total_grades,
+    cook_status
+FROM 
+    RankedContestants
+WHERE 
+    rank = 1;
+
+-- Create a view for season winners
+CREATE VIEW season_winner AS
+WITH EpisodeWinners AS (
+    SELECT 
+        ew.episode_year,
+        ew.episode,
+        ew.first_name, 
+        ew.last_name,
+        ew.country_name,
+        ew.total_grades,
+        ew.cook_status
+    FROM 
+        episode_winners ew
+),
+RankedSeasonWinners AS (
+    SELECT 
+        ew.episode_year, 
+        ew.first_name, 
+        ew.last_name, 
+        ew.country_name,
+        MAX(ew.total_grades) AS max_grade,
+        c.cook_status,
+        ROW_NUMBER() OVER (
+            PARTITION BY ew.episode_year
+            ORDER BY 
+                MAX(ew.total_grades) DESC, 
+                status_to_int(c.cook_status) DESC,
+                RAND()
+        ) AS rank
+    FROM 
+        EpisodeWinners ew
+        JOIN cook c ON ew.first_name = c.first_name AND ew.last_name = c.last_name
+    GROUP BY 
+        ew.episode_year, 
+        ew.first_name, 
+        ew.last_name, 
+        ew.country_name
+)
+SELECT 
+    episode_year, 
+    first_name, 
+    last_name, 
+    country_name,
+    max_grade AS highest_grade,
+    cook_status
+FROM 
+    RankedSeasonWinners
+WHERE 
+    rank = 1;
